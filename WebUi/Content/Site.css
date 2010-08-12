@@ -1,0 +1,114 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    
+    font-family: Tahoma, Verdana, Arial, Serif;
+    font-size: 12px;
+    background-color: #edede0;
+    
+    width:100%;
+    min-width:800px;    /* Minimum width of layout - remove line if not required */
+						/* The min-width property does not work in old versions of Internet Explorer */
+}
+
+
+ /*-------------------------------------------------------------------------------------+
+ |									Page Layout: 3Columns								|
+ +-------------------------------------------------------------------------------------*/
+.colmask 
+{
+	margin: 0px;
+	position:relative;		/* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
+    clear:both;
+    float:left;
+    width:100%;				/* width of whole page */
+	overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* holy grail 3 column settings */
+.holygrail 
+{
+}
+
+.holygrail .colmid 
+{
+    float:left;
+    width:200%;
+    margin-left:-206px; 	/* Width of right column */
+    position:relative;
+    right:100%;
+}
+.holygrail .colleft 
+{
+    float:left;
+    width:100%;
+    margin-left:-50%;
+    position:relative;
+    left:412px;         	/* Left column width + right column width */
+}
+.holygrail .col1wrap 
+{
+    float:left;
+    width:50%;
+    position:relative;
+    right:206px;        	/* Width of left column */
+    padding-bottom:1em; 	/* Centre column bottom padding. Leave it out if it's zero */
+}
+
+.holygrail .centercol
+{
+	margin:0 206px;     	/* Centre column side padding:
+                    		Left padding = left column width + centre column left padding width
+                    		Right padding = right column width + centre column right padding width */
+	position:relative;
+	left:200%;
+	overflow:hidden;
+}
+
+.holygrail .leftcol
+{
+    float:right;			/* This overrides the float:left above */
+    width:200px;        	/* Width of left column content (left column width minus left and right padding) */
+    position:relative;
+    right: 3px;         	/* Width of the left-had side padding on the left column */
+}
+
+.holygrail .rightcol
+{
+    float:right;			/* This overrides the float:left above */
+    width:200px;        	/* Width of right column content (right column width minus left and right padding) */
+    margin-right: 9px;  	/* Width of right column right-hand padding + left column left and right padding */
+    position:relative;
+    left:50%;
+}
+
+
+ /*-------------------------------------------------------------------------------------+
+ |									Page								|
+ +-------------------------------------------------------------------------------------*/
+
+#header
+{
+    clear:both;
+    float:left;
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 105px;
+    background-color:#bfd8ef;
+    background-image: url('images/head_bk.gif');
+}
+
+
+#logo
+{
+    padding: 0px;
+    margin: 0px;
+    margin-left:auto;
+    width: 425px;
+    height: 105px;
+    
+    background-image: url('images/logo.gif');
+}

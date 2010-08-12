@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" />Best persian softwares</title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div class="page" dir="<%: UiResources.UiTexts.page_direction %>">
+
+        <div id="header">
+            <div id="logo"></div>
+        </div>
+
+        <div id="menu_bar">
+
+            <div id="culture_selector">
+                <% Html.RenderPartial("CultureSelector"); %>
+            </div>
+
+            <div id="nav_menu">
+            </div>
+
+        </div>
+
+        <!--[if lt IE 7]>
+        <style media="screen" type="text/css" rel="stylesheet">
+        .holygrail .colleft
+        {
+	        margin-left:-100%;
+	    };
+	
+        .box input
+        {
+           background-color: #fefefa;
+           border-color: #bbbbbb;
+           font-size: 10px;
+        };
+        </style>
+        <![endif]-->
+    
+        <!--[if lte IE 7]>
+        <![endif]-->
+        
+        <div class="colmask holygrail">
+        <div class="colmid">
+        <div class="colleft" runat="server">
+
+
+            <div class="col1wrap">
+                <div class="centercol">
+                    <asp:ContentPlaceHolder ID="CenterContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>        
+        
+
+            <div class="leftcol">
+                <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            
+
+            <div class="rightcol">
+                <asp:ContentPlaceHolder ID="RightContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+
+        </div>
+        </div>
+        </div>
+
+
+        <div id="footer" style="clear:both;">
+            <p> <%: UiResources.UiTexts.welcome %> </p>
+        </div>
+
+
+    </div>
+</body>
+</html>
