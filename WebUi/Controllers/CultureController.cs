@@ -6,12 +6,13 @@ using System.Web.Mvc;
 
 namespace WebUi.Controllers
 {
-    public class CultureController : Controller
+    public class CultureController : BaseController
     {
         
         public ActionResult Index(string SelectedCulture,string ReturnUrl)
         {
-            if (!DomainModel.Security.InputController.IsValid(SelectedCulture))
+            if (!DomainModel.Security.InputController.IsValid(SelectedCulture) ||
+                !DomainModel.Security.InputController.IsValid(ReturnUrl))
             {
                 return RedirectToAction("BadInput", "Security");
             }
@@ -20,7 +21,9 @@ namespace WebUi.Controllers
             WebUi.Models.AppCulture.CurrentCulture =
                 WebUi.Models.AppCulture.CultureList[SelectedCulture];
 
-            return RedirectToAction("Index", "Home", ReturnUrl);
+
+            // Return to previous page
+            return Redirect(ReturnUrl);
         }
 
     }

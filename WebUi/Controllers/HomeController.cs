@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace WebUi.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
 
         public ActionResult Index()

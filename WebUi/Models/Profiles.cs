@@ -20,11 +20,18 @@ namespace WebUi.Models
 
                 if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {
-                    if (HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture] != null)
+                    try
                     {
-                        return (CultureItem)HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture];
+                        if (HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture] != null)
+                        {
+                            return (CultureItem)HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture];
+                        }
+                        else
+                        {
+                            Errors.Add(1);
+                        }
                     }
-                    else
+                    catch (Exception)
                     {
                         Errors.Add(1);
                     }
@@ -43,11 +50,18 @@ namespace WebUi.Models
 
                 if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {
-                    if (HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture] != null)
+                    try
                     {
-                        HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture] = value;
+                        if (HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture] != null)
+                        {
+                            HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture] = value;
+                        }
+                        else
+                        {
+                            Errors.Add(1);
+                        }
                     }
-                    else
+                    catch (Exception)
                     {
                         Errors.Add(1);
                     }

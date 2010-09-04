@@ -32,24 +32,54 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IProductRepository.cs" />
+    <Compile Include="Abstract\ICrypt.cs" />
+    <Compile Include="Abstract\IMembership.cs" />
+    <Compile Include="Abstract\IPasswordGenerator.cs" />
+    <Compile Include="Abstract\IUsersRepository.cs" />
     <Compile Include="Entities\ApplicationProduct.cs" />
+    <Compile Include="Entities\ContactMediaType.cs" />
+    <Compile Include="Entities\ContactUnit.cs" />
+    <Compile Include="Entities\ProductBrand.cs" />
+    <Compile Include="Entities\ProductCategory.cs" />
+    <Compile Include="Entities\ProductContact.cs" />
+    <Compile Include="Entities\ProductCustomizationOption.cs" />
+    <Compile Include="Entities\ProductDataBackupOption.cs" />
+    <Compile Include="Entities\ProductDemoOption.cs" />
+    <Compile Include="Entities\ProductEnvironmentOption.cs" />
+    <Compile Include="Entities\ProductExtensionOptions.cs" />
+    <Compile Include="Entities\ProductGuarantyOption.cs" />
+    <Compile Include="Entities\ProductInstallationOption.cs" />
+    <Compile Include="Entities\ProductLanguage.cs" />
+    <Compile Include="Entities\ProductOptionBase.cs" />
+    <Compile Include="Entities\ProductPaymentOption.cs" />
     <Compile Include="Entities\ProductBase.cs" />
     <Compile Include="Entities\ProductOwner.cs" />
+    <Compile Include="Entities\ProductPublishOption.cs" />
+    <Compile Include="Entities\ProductSourceOption.cs" />
+    <Compile Include="Entities\ProductSupportOption.cs" />
+    <Compile Include="Entities\ProductSupportType.cs" />
     <Compile Include="Entities\ProductTechnology.cs" />
+    <Compile Include="Entities\ProductTrainingOption.cs" />
+    <Compile Include="Entities\ProductUpdateOption.cs" />
     <Compile Include="Entities\SoftwarePlatform.cs" />
     <Compile Include="Entities\WebsiteProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Sql\Products.cs" />
+    <Compile Include="Repository\Sql\Users.cs" />
     <Compile Include="Security\InputController.cs" />
+    <Compile Include="Security\MembershipService.cs" />
+    <Compile Include="Security\SimpleCrypt.cs" />
+    <Compile Include="Security\SimplePasswordGenerator.cs" />
+    <Compile Include="Security\UserMembershipProvider.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

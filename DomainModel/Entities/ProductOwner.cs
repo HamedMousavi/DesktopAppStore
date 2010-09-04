@@ -17,5 +17,6 @@ namespace DomainModel.Entities
         public int OwnerId { get; set; }
         public OwnerTypes OwnerType { get; set; }
         public string OwnermName { get; set; }   // Name of the owner
+        public string ResourceUrl { get; set; }
     }
 }

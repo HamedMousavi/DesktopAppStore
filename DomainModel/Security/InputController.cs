@@ -12,5 +12,13 @@ namespace DomainModel.Security
             // UNDONE: Check input
             return true;
         }
+
+        public static bool IsValidEmail(string Email)
+        {
+            // UNDONE: ENFORCE EMAIL VALIDATIONS
+            if (string.IsNullOrWhiteSpace(Email)) return false;
+
+            return true;
+        }
     }
 }

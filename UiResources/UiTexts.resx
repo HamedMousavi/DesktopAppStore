@@ -117,10 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="account_information" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="become_a_member" xml:space="preserve">
+    <value>Become a member</value>
+  </data>
+  <data name="email_address" xml:space="preserve">
+    <value>Email address</value>
+  </data>
+  <data name="enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="error_already_a_user" xml:space="preserve">
+    <value>This email belongs to a registered member already. If it's yours and you forgot your password please visit recovery page. If there's any problem logging in please contact us. You'll find contact information at the bottom of the page.</value>
+  </data>
+  <data name="error_authentication_failed" xml:space="preserve">
+    <value>The user name or password provided is incorrect.</value>
+  </data>
+  <data name="error_email" xml:space="preserve">
+    <value>Mistype? Email address is incorrect. Please review it and then retry.</value>
+  </data>
+  <data name="error_internal" xml:space="preserve">
+    <value>Error! Unfortunately wesite can't respond to requests temporarily. This problem will be fixed soon. Please retry in a few minutes. Sorry for the inconvinience.</value>
+  </data>
+  <data name="error_security" xml:space="preserve">
+    <value>There was a security issue with data you provided. Probably a typing mistake. Please retry.</value>
+  </data>
+  <data name="forgot_your_password" xml:space="preserve">
+    <value>Forgot your password</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="log_off" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
+  <data name="log_on" xml:space="preserve">
+    <value>Log On</value>
+  </data>
   <data name="page_direction" xml:space="preserve">
     <value>ltr</value>
   </data>
+  <data name="password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="password_recovery_wizard" xml:space="preserve">
+    <value>Password recovery wizard</value>
+  </data>
+  <data name="persian" xml:space="preserve">
+    <value>فارسی</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Register Me!</value>
+  </data>
+  <data name="registration_information" xml:space="preserve">
+    <value>Registration Information</value>
+  </data>
+  <data name="remember_me" xml:space="preserve">
+    <value>RememberMe</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="user_name" xml:space="preserve">
+    <value>UserName</value>
+  </data>
   <data name="welcome" xml:space="preserve">
-    <value>Hi there!</value>
+    <value>Welcome</value>
   </data>
 </root>

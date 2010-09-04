@@ -61,6 +61,123 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Information.
+        /// </summary>
+        public static string account_information {
+            get {
+                return ResourceManager.GetString("account_information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Become a member.
+        /// </summary>
+        public static string become_a_member {
+            get {
+                return ResourceManager.GetString("become_a_member", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email address.
+        /// </summary>
+        public static string email_address {
+            get {
+                return ResourceManager.GetString("email_address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter.
+        /// </summary>
+        public static string enter {
+            get {
+                return ResourceManager.GetString("enter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This email belongs to a registered member already. If it&apos;s yours and you forgot your password please visit recovery page. If there&apos;s any problem logging in please contact us. You&apos;ll find contact information at the bottom of the page..
+        /// </summary>
+        public static string error_already_a_user {
+            get {
+                return ResourceManager.GetString("error_already_a_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user name or password provided is incorrect..
+        /// </summary>
+        public static string error_authentication_failed {
+            get {
+                return ResourceManager.GetString("error_authentication_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mistype? Email address is incorrect. Please review it and then retry..
+        /// </summary>
+        public static string error_email {
+            get {
+                return ResourceManager.GetString("error_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error! Unfortunately wesite can&apos;t respond to requests temporarily. This problem will be fixed soon. Please retry in a few minutes. Sorry for the inconvinience..
+        /// </summary>
+        public static string error_internal {
+            get {
+                return ResourceManager.GetString("error_internal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was a security issue with data you provided. Probably a typing mistake. Please retry..
+        /// </summary>
+        public static string error_security {
+            get {
+                return ResourceManager.GetString("error_security", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forgot your password.
+        /// </summary>
+        public static string forgot_your_password {
+            get {
+                return ResourceManager.GetString("forgot_your_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string language {
+            get {
+                return ResourceManager.GetString("language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log Off.
+        /// </summary>
+        public static string log_off {
+            get {
+                return ResourceManager.GetString("log_off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log On.
+        /// </summary>
+        public static string log_on {
+            get {
+                return ResourceManager.GetString("log_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ltr.
         /// </summary>
         public static string page_direction {
@@ -70,7 +187,79 @@ namespace UiResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi there!.
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string password {
+            get {
+                return ResourceManager.GetString("password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password recovery wizard.
+        /// </summary>
+        public static string password_recovery_wizard {
+            get {
+                return ResourceManager.GetString("password_recovery_wizard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فارسی.
+        /// </summary>
+        public static string persian {
+            get {
+                return ResourceManager.GetString("persian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register Me!.
+        /// </summary>
+        public static string register {
+            get {
+                return ResourceManager.GetString("register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration Information.
+        /// </summary>
+        public static string registration_information {
+            get {
+                return ResourceManager.GetString("registration_information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RememberMe.
+        /// </summary>
+        public static string remember_me {
+            get {
+                return ResourceManager.GetString("remember_me", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string search {
+            get {
+                return ResourceManager.GetString("search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserName.
+        /// </summary>
+        public static string user_name {
+            get {
+                return ResourceManager.GetString("user_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome.
         /// </summary>
         public static string welcome {
             get {

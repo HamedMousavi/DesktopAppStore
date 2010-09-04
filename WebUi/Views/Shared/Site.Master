@@ -13,38 +13,24 @@
 
         <div id="header">
             <div id="logo"></div>
+            <div id="quick_access">
+                <div id="culture_selector">
+                    <% Html.RenderPartial("CultureSelector"); %>
+                </div>
+                <div id="logon_viewer">
+                    <% Html.RenderPartial("LogonViewer"); %>
+                </div>
+            </div>
         </div>
 
         <div id="menu_bar">
 
-            <div id="culture_selector">
-                <% Html.RenderPartial("CultureSelector"); %>
-            </div>
 
             <div id="nav_menu">
             </div>
 
         </div>
-
-        <!--[if lt IE 7]>
-        <style media="screen" type="text/css" rel="stylesheet">
-        .holygrail .colleft
-        {
-	        margin-left:-100%;
-	    };
-	
-        .box input
-        {
-           background-color: #fefefa;
-           border-color: #bbbbbb;
-           font-size: 10px;
-        };
-        </style>
-        <![endif]-->
-    
-        <!--[if lte IE 7]>
-        <![endif]-->
-        
+  
         <div class="colmask holygrail">
         <div class="colmid">
         <div class="colleft" runat="server">
@@ -81,5 +67,35 @@
 
 
     </div>
+
+
+        <!--[if lt IE 7]>
+        <style media="screen" type="text/css" rel="stylesheet">
+        .holygrail .colleft
+        {
+	        margin-left:-100%;
+	    };
+	
+        .box input
+        {
+           background-color: #fefefa;
+           border-color: #bbbbbb;
+           font-size: 10px;
+        };
+        </style>
+        <![endif]-->
+    
+        <!--[if lte IE 7]>
+        <![endif]-->
+      
+
 </body>
 </html>
+
+
+<!--
+
+                <div id="search_box">
+                    <% Html.RenderPartial("SearchBox"); %>
+                </div>
+ -->

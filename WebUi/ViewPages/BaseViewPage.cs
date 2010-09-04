@@ -9,12 +9,13 @@ namespace WebUi.ViewPages
     {
         protected override void InitializeCulture()
         {
+            base.InitializeCulture();
+
             string cuture = WebUi.Models.AppCulture.CurrentCulture.Culture;
             
             this.Culture = cuture;
             this.UICulture = cuture;
 
-            base.InitializeCulture();
         }
     }
 }

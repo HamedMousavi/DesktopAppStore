@@ -117,8 +117,71 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="account_information" xml:space="preserve">
+    <value>اطلاعات حساب کاربری</value>
+  </data>
+  <data name="become_a_member" xml:space="preserve">
+    <value>عضو شوید</value>
+  </data>
+  <data name="email_address" xml:space="preserve">
+    <value>آدرس پست الکترونیک (ایمیل)</value>
+  </data>
+  <data name="enter" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="error_already_a_user" xml:space="preserve">
+    <value>این ایمیل قبلا در سایت به عنوان کاربر ثبت شده است. در صورتیکه کلمه عبور را فراموش کرده اید به صفحه بازیابی مراجعه کنید. در صورتیکه برای ورود دچار مشکلی شده اید با مسئولان سایت تماس بگیرید. (بخش تماس با ما)</value>
+  </data>
+  <data name="error_authentication_failed" xml:space="preserve">
+    <value>نام کاربری و یا رمز عبور را اشتباه وارد نموده اید. لطفا دوباره سعی کنید.</value>
+  </data>
+  <data name="error_email" xml:space="preserve">
+    <value>آدرس پست الکترونیک وارد شده  صحیح نیست. لطفا آنرا اصلاح نموده، مجددا سعی کنید</value>
+  </data>
+  <data name="error_internal" xml:space="preserve">
+    <value>متاسفانه به دلیل اشکال فنی، موقتا سرور قادر به پاسخگویی به درخواست شما نیست. به خاطر شرایط به وجود آمده عذرخواهی میکنیم. لطفا چند دقیقه دیگر مجددا سعی کنید.</value>
+  </data>
+  <data name="error_security" xml:space="preserve">
+    <value>مشکل امنییتی در اطلاعات وارد شده مانع ادامه اجرای دستورات شما شد. احتمالا اطلاعات را اشتباها وارد نموده اید. لطفا مجددا تلاش کنید.</value>
+  </data>
+  <data name="forgot_your_password" xml:space="preserve">
+    <value>اطلاعات حساب خود را گم کرده اید؟</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="log_off" xml:space="preserve">
+    <value>خروج از حساب کاربری</value>
+  </data>
+  <data name="log_on" xml:space="preserve">
+    <value>ورود اعضا</value>
+  </data>
   <data name="page_direction" xml:space="preserve">
     <value>rtl</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>رمز عبور</value>
+  </data>
+  <data name="password_recovery_wizard" xml:space="preserve">
+    <value>گام به گام بازیابی رمز عبور</value>
+  </data>
+  <data name="persian" xml:space="preserve">
+    <value>Persian</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>ارسال درخواست عضویت</value>
+  </data>
+  <data name="registration_information" xml:space="preserve">
+    <value>اطلاعات ثبت نام</value>
+  </data>
+  <data name="remember_me" xml:space="preserve">
+    <value>روی این کامپیوتر، دیگر از من نام کاربری و رمز عبور نپرس</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="user_name" xml:space="preserve">
+    <value>نام کاربری</value>
   </data>
   <data name="welcome" xml:space="preserve">
     <value>خوش آمدید</value>
