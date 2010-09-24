@@ -1548,9 +1548,9 @@ namespace DataAdministration {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ListCategoryTagsDataTable : global::System.Data.TypedTableBase<ListCategoryTagsRow> {
             
-            private global::System.Data.DataColumn columnTagId;
+            private global::System.Data.DataColumn columnOptionId;
             
-            private global::System.Data.DataColumn columnTagName;
+            private global::System.Data.DataColumn columnOptionName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1587,17 +1587,17 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TagIdColumn {
+            public global::System.Data.DataColumn OptionIdColumn {
                 get {
-                    return this.columnTagId;
+                    return this.columnOptionId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TagNameColumn {
+            public global::System.Data.DataColumn OptionNameColumn {
                 get {
-                    return this.columnTagName;
+                    return this.columnOptionName;
                 }
             }
             
@@ -1638,11 +1638,11 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListCategoryTagsRow AddListCategoryTagsRow(string TagName) {
+            public ListCategoryTagsRow AddListCategoryTagsRow(string OptionName) {
                 ListCategoryTagsRow rowListCategoryTagsRow = ((ListCategoryTagsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        TagName};
+                        OptionName};
                 rowListCategoryTagsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListCategoryTagsRow);
                 return rowListCategoryTagsRow;
@@ -1650,9 +1650,9 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListCategoryTagsRow FindByTagId(int TagId) {
+            public ListCategoryTagsRow FindByOptionId(int OptionId) {
                 return ((ListCategoryTagsRow)(this.Rows.Find(new object[] {
-                            TagId})));
+                            OptionId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1672,26 +1672,26 @@ namespace DataAdministration {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnTagId = base.Columns["TagId"];
-                this.columnTagName = base.Columns["TagName"];
+                this.columnOptionId = base.Columns["OptionId"];
+                this.columnOptionName = base.Columns["OptionName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnTagId = new global::System.Data.DataColumn("TagId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTagId);
-                this.columnTagName = new global::System.Data.DataColumn("TagName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTagName);
+                this.columnOptionId = new global::System.Data.DataColumn("OptionId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionId);
+                this.columnOptionName = new global::System.Data.DataColumn("OptionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnTagId}, true));
-                this.columnTagId.AutoIncrement = true;
-                this.columnTagId.AutoIncrementSeed = -1;
-                this.columnTagId.AutoIncrementStep = -1;
-                this.columnTagId.AllowDBNull = false;
-                this.columnTagId.ReadOnly = true;
-                this.columnTagId.Unique = true;
-                this.columnTagName.MaxLength = 50;
+                                this.columnOptionId}, true));
+                this.columnOptionId.AutoIncrement = true;
+                this.columnOptionId.AutoIncrementSeed = -1;
+                this.columnOptionId.AutoIncrementStep = -1;
+                this.columnOptionId.AllowDBNull = false;
+                this.columnOptionId.ReadOnly = true;
+                this.columnOptionId.Unique = true;
+                this.columnOptionName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3487,9 +3487,9 @@ namespace DataAdministration {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ListExtensionOptionsDataTable : global::System.Data.TypedTableBase<ListExtensionOptionsRow> {
             
-            private global::System.Data.DataColumn columnExtensionOptionId;
+            private global::System.Data.DataColumn columnOptionId;
             
-            private global::System.Data.DataColumn columnExtensionOptionName;
+            private global::System.Data.DataColumn columnOptionName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3526,17 +3526,17 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ExtensionOptionIdColumn {
+            public global::System.Data.DataColumn OptionIdColumn {
                 get {
-                    return this.columnExtensionOptionId;
+                    return this.columnOptionId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ExtensionOptionNameColumn {
+            public global::System.Data.DataColumn OptionNameColumn {
                 get {
-                    return this.columnExtensionOptionName;
+                    return this.columnOptionName;
                 }
             }
             
@@ -3577,11 +3577,11 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListExtensionOptionsRow AddListExtensionOptionsRow(string ExtensionOptionName) {
+            public ListExtensionOptionsRow AddListExtensionOptionsRow(string OptionName) {
                 ListExtensionOptionsRow rowListExtensionOptionsRow = ((ListExtensionOptionsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        ExtensionOptionName};
+                        OptionName};
                 rowListExtensionOptionsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListExtensionOptionsRow);
                 return rowListExtensionOptionsRow;
@@ -3589,9 +3589,9 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListExtensionOptionsRow FindByExtensionOptionId(int ExtensionOptionId) {
+            public ListExtensionOptionsRow FindByOptionId(int OptionId) {
                 return ((ListExtensionOptionsRow)(this.Rows.Find(new object[] {
-                            ExtensionOptionId})));
+                            OptionId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3611,26 +3611,26 @@ namespace DataAdministration {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnExtensionOptionId = base.Columns["ExtensionOptionId"];
-                this.columnExtensionOptionName = base.Columns["ExtensionOptionName"];
+                this.columnOptionId = base.Columns["OptionId"];
+                this.columnOptionName = base.Columns["OptionName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnExtensionOptionId = new global::System.Data.DataColumn("ExtensionOptionId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExtensionOptionId);
-                this.columnExtensionOptionName = new global::System.Data.DataColumn("ExtensionOptionName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExtensionOptionName);
+                this.columnOptionId = new global::System.Data.DataColumn("OptionId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionId);
+                this.columnOptionName = new global::System.Data.DataColumn("OptionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnExtensionOptionId}, true));
-                this.columnExtensionOptionId.AutoIncrement = true;
-                this.columnExtensionOptionId.AutoIncrementSeed = -1;
-                this.columnExtensionOptionId.AutoIncrementStep = -1;
-                this.columnExtensionOptionId.AllowDBNull = false;
-                this.columnExtensionOptionId.ReadOnly = true;
-                this.columnExtensionOptionId.Unique = true;
-                this.columnExtensionOptionName.MaxLength = 50;
+                                this.columnOptionId}, true));
+                this.columnOptionId.AutoIncrement = true;
+                this.columnOptionId.AutoIncrementSeed = -1;
+                this.columnOptionId.AutoIncrementStep = -1;
+                this.columnOptionId.AllowDBNull = false;
+                this.columnOptionId.ReadOnly = true;
+                this.columnOptionId.Unique = true;
+                this.columnOptionName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4332,11 +4332,11 @@ namespace DataAdministration {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ListLanguagesDataTable : global::System.Data.TypedTableBase<ListLanguagesRow> {
             
-            private global::System.Data.DataColumn columnLanguageId;
+            private global::System.Data.DataColumn columnOptionId;
             
-            private global::System.Data.DataColumn columnLanguageName;
+            private global::System.Data.DataColumn columnOptionName;
             
-            private global::System.Data.DataColumn columnLanguageLocalName;
+            private global::System.Data.DataColumn columnLocalName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -4373,25 +4373,25 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LanguageIdColumn {
+            public global::System.Data.DataColumn OptionIdColumn {
                 get {
-                    return this.columnLanguageId;
+                    return this.columnOptionId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LanguageNameColumn {
+            public global::System.Data.DataColumn OptionNameColumn {
                 get {
-                    return this.columnLanguageName;
+                    return this.columnOptionName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LanguageLocalNameColumn {
+            public global::System.Data.DataColumn LocalNameColumn {
                 get {
-                    return this.columnLanguageLocalName;
+                    return this.columnLocalName;
                 }
             }
             
@@ -4432,12 +4432,12 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListLanguagesRow AddListLanguagesRow(string LanguageName, string LanguageLocalName) {
+            public ListLanguagesRow AddListLanguagesRow(string OptionName, string LocalName) {
                 ListLanguagesRow rowListLanguagesRow = ((ListLanguagesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        LanguageName,
-                        LanguageLocalName};
+                        OptionName,
+                        LocalName};
                 rowListLanguagesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListLanguagesRow);
                 return rowListLanguagesRow;
@@ -4445,9 +4445,9 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListLanguagesRow FindByLanguageId(int LanguageId) {
+            public ListLanguagesRow FindByOptionId(int OptionId) {
                 return ((ListLanguagesRow)(this.Rows.Find(new object[] {
-                            LanguageId})));
+                            OptionId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4467,30 +4467,30 @@ namespace DataAdministration {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnLanguageId = base.Columns["LanguageId"];
-                this.columnLanguageName = base.Columns["LanguageName"];
-                this.columnLanguageLocalName = base.Columns["LanguageLocalName"];
+                this.columnOptionId = base.Columns["OptionId"];
+                this.columnOptionName = base.Columns["OptionName"];
+                this.columnLocalName = base.Columns["LocalName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnLanguageId = new global::System.Data.DataColumn("LanguageId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLanguageId);
-                this.columnLanguageName = new global::System.Data.DataColumn("LanguageName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLanguageName);
-                this.columnLanguageLocalName = new global::System.Data.DataColumn("LanguageLocalName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLanguageLocalName);
+                this.columnOptionId = new global::System.Data.DataColumn("OptionId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionId);
+                this.columnOptionName = new global::System.Data.DataColumn("OptionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionName);
+                this.columnLocalName = new global::System.Data.DataColumn("LocalName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocalName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnLanguageId}, true));
-                this.columnLanguageId.AutoIncrement = true;
-                this.columnLanguageId.AutoIncrementSeed = -1;
-                this.columnLanguageId.AutoIncrementStep = -1;
-                this.columnLanguageId.AllowDBNull = false;
-                this.columnLanguageId.ReadOnly = true;
-                this.columnLanguageId.Unique = true;
-                this.columnLanguageName.MaxLength = 50;
-                this.columnLanguageLocalName.MaxLength = 50;
+                                this.columnOptionId}, true));
+                this.columnOptionId.AutoIncrement = true;
+                this.columnOptionId.AutoIncrementSeed = -1;
+                this.columnOptionId.AutoIncrementStep = -1;
+                this.columnOptionId.AllowDBNull = false;
+                this.columnOptionId.ReadOnly = true;
+                this.columnOptionId.Unique = true;
+                this.columnOptionName.MaxLength = 50;
+                this.columnLocalName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4901,9 +4901,9 @@ namespace DataAdministration {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ListProductTechnologiesDataTable : global::System.Data.TypedTableBase<ListProductTechnologiesRow> {
             
-            private global::System.Data.DataColumn columnTechnologyId;
+            private global::System.Data.DataColumn columnOptionId;
             
-            private global::System.Data.DataColumn columnTechnologyName;
+            private global::System.Data.DataColumn columnOptionName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -4940,17 +4940,17 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TechnologyIdColumn {
+            public global::System.Data.DataColumn OptionIdColumn {
                 get {
-                    return this.columnTechnologyId;
+                    return this.columnOptionId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TechnologyNameColumn {
+            public global::System.Data.DataColumn OptionNameColumn {
                 get {
-                    return this.columnTechnologyName;
+                    return this.columnOptionName;
                 }
             }
             
@@ -4991,11 +4991,11 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListProductTechnologiesRow AddListProductTechnologiesRow(string TechnologyName) {
+            public ListProductTechnologiesRow AddListProductTechnologiesRow(string OptionName) {
                 ListProductTechnologiesRow rowListProductTechnologiesRow = ((ListProductTechnologiesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        TechnologyName};
+                        OptionName};
                 rowListProductTechnologiesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListProductTechnologiesRow);
                 return rowListProductTechnologiesRow;
@@ -5003,9 +5003,9 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListProductTechnologiesRow FindByTechnologyId(int TechnologyId) {
+            public ListProductTechnologiesRow FindByOptionId(int OptionId) {
                 return ((ListProductTechnologiesRow)(this.Rows.Find(new object[] {
-                            TechnologyId})));
+                            OptionId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5025,26 +5025,26 @@ namespace DataAdministration {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnTechnologyId = base.Columns["TechnologyId"];
-                this.columnTechnologyName = base.Columns["TechnologyName"];
+                this.columnOptionId = base.Columns["OptionId"];
+                this.columnOptionName = base.Columns["OptionName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnTechnologyId = new global::System.Data.DataColumn("TechnologyId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTechnologyId);
-                this.columnTechnologyName = new global::System.Data.DataColumn("TechnologyName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTechnologyName);
+                this.columnOptionId = new global::System.Data.DataColumn("OptionId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionId);
+                this.columnOptionName = new global::System.Data.DataColumn("OptionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnTechnologyId}, true));
-                this.columnTechnologyId.AutoIncrement = true;
-                this.columnTechnologyId.AutoIncrementSeed = -1;
-                this.columnTechnologyId.AutoIncrementStep = -1;
-                this.columnTechnologyId.AllowDBNull = false;
-                this.columnTechnologyId.ReadOnly = true;
-                this.columnTechnologyId.Unique = true;
-                this.columnTechnologyName.MaxLength = 128;
+                                this.columnOptionId}, true));
+                this.columnOptionId.AutoIncrement = true;
+                this.columnOptionId.AutoIncrementSeed = -1;
+                this.columnOptionId.AutoIncrementStep = -1;
+                this.columnOptionId.AllowDBNull = false;
+                this.columnOptionId.ReadOnly = true;
+                this.columnOptionId.Unique = true;
+                this.columnOptionName.MaxLength = 128;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5455,9 +5455,9 @@ namespace DataAdministration {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ListSoftwarePlatformsDataTable : global::System.Data.TypedTableBase<ListSoftwarePlatformsRow> {
             
-            private global::System.Data.DataColumn columnPlatformId;
+            private global::System.Data.DataColumn columnOptionId;
             
-            private global::System.Data.DataColumn columnPlatformName;
+            private global::System.Data.DataColumn columnOptionName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5494,17 +5494,17 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PlatformIdColumn {
+            public global::System.Data.DataColumn OptionIdColumn {
                 get {
-                    return this.columnPlatformId;
+                    return this.columnOptionId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PlatformNameColumn {
+            public global::System.Data.DataColumn OptionNameColumn {
                 get {
-                    return this.columnPlatformName;
+                    return this.columnOptionName;
                 }
             }
             
@@ -5545,11 +5545,11 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListSoftwarePlatformsRow AddListSoftwarePlatformsRow(string PlatformName) {
+            public ListSoftwarePlatformsRow AddListSoftwarePlatformsRow(string OptionName) {
                 ListSoftwarePlatformsRow rowListSoftwarePlatformsRow = ((ListSoftwarePlatformsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        PlatformName};
+                        OptionName};
                 rowListSoftwarePlatformsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListSoftwarePlatformsRow);
                 return rowListSoftwarePlatformsRow;
@@ -5557,9 +5557,9 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListSoftwarePlatformsRow FindByPlatformId(int PlatformId) {
+            public ListSoftwarePlatformsRow FindByOptionId(int OptionId) {
                 return ((ListSoftwarePlatformsRow)(this.Rows.Find(new object[] {
-                            PlatformId})));
+                            OptionId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5579,26 +5579,26 @@ namespace DataAdministration {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnPlatformId = base.Columns["PlatformId"];
-                this.columnPlatformName = base.Columns["PlatformName"];
+                this.columnOptionId = base.Columns["OptionId"];
+                this.columnOptionName = base.Columns["OptionName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnPlatformId = new global::System.Data.DataColumn("PlatformId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPlatformId);
-                this.columnPlatformName = new global::System.Data.DataColumn("PlatformName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPlatformName);
+                this.columnOptionId = new global::System.Data.DataColumn("OptionId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionId);
+                this.columnOptionName = new global::System.Data.DataColumn("OptionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnPlatformId}, true));
-                this.columnPlatformId.AutoIncrement = true;
-                this.columnPlatformId.AutoIncrementSeed = -1;
-                this.columnPlatformId.AutoIncrementStep = -1;
-                this.columnPlatformId.AllowDBNull = false;
-                this.columnPlatformId.ReadOnly = true;
-                this.columnPlatformId.Unique = true;
-                this.columnPlatformName.MaxLength = 50;
+                                this.columnOptionId}, true));
+                this.columnOptionId.AutoIncrement = true;
+                this.columnOptionId.AutoIncrementSeed = -1;
+                this.columnOptionId.AutoIncrementStep = -1;
+                this.columnOptionId.AllowDBNull = false;
+                this.columnOptionId.ReadOnly = true;
+                this.columnOptionId.Unique = true;
+                this.columnOptionName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6286,9 +6286,9 @@ namespace DataAdministration {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ListSupportTypesDataTable : global::System.Data.TypedTableBase<ListSupportTypesRow> {
             
-            private global::System.Data.DataColumn columnTypeId;
+            private global::System.Data.DataColumn columnOptionId;
             
-            private global::System.Data.DataColumn columnTypeName;
+            private global::System.Data.DataColumn columnOptionName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -6325,17 +6325,17 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TypeIdColumn {
+            public global::System.Data.DataColumn OptionIdColumn {
                 get {
-                    return this.columnTypeId;
+                    return this.columnOptionId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TypeNameColumn {
+            public global::System.Data.DataColumn OptionNameColumn {
                 get {
-                    return this.columnTypeName;
+                    return this.columnOptionName;
                 }
             }
             
@@ -6376,11 +6376,11 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListSupportTypesRow AddListSupportTypesRow(string TypeName) {
+            public ListSupportTypesRow AddListSupportTypesRow(string OptionName) {
                 ListSupportTypesRow rowListSupportTypesRow = ((ListSupportTypesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        TypeName};
+                        OptionName};
                 rowListSupportTypesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListSupportTypesRow);
                 return rowListSupportTypesRow;
@@ -6388,9 +6388,9 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ListSupportTypesRow FindByTypeId(int TypeId) {
+            public ListSupportTypesRow FindByOptionId(int OptionId) {
                 return ((ListSupportTypesRow)(this.Rows.Find(new object[] {
-                            TypeId})));
+                            OptionId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6410,26 +6410,26 @@ namespace DataAdministration {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnTypeId = base.Columns["TypeId"];
-                this.columnTypeName = base.Columns["TypeName"];
+                this.columnOptionId = base.Columns["OptionId"];
+                this.columnOptionName = base.Columns["OptionName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnTypeId = new global::System.Data.DataColumn("TypeId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTypeId);
-                this.columnTypeName = new global::System.Data.DataColumn("TypeName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTypeName);
+                this.columnOptionId = new global::System.Data.DataColumn("OptionId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionId);
+                this.columnOptionName = new global::System.Data.DataColumn("OptionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOptionName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnTypeId}, true));
-                this.columnTypeId.AutoIncrement = true;
-                this.columnTypeId.AutoIncrementSeed = -1;
-                this.columnTypeId.AutoIncrementStep = -1;
-                this.columnTypeId.AllowDBNull = false;
-                this.columnTypeId.ReadOnly = true;
-                this.columnTypeId.Unique = true;
-                this.columnTypeName.MaxLength = 50;
+                                this.columnOptionId}, true));
+                this.columnOptionId.AutoIncrement = true;
+                this.columnOptionId.AutoIncrementSeed = -1;
+                this.columnOptionId.AutoIncrementStep = -1;
+                this.columnOptionId.AllowDBNull = false;
+                this.columnOptionId.ReadOnly = true;
+                this.columnOptionId.Unique = true;
+                this.columnOptionName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6985,41 +6985,41 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int TagId {
+            public int OptionId {
                 get {
-                    return ((int)(this[this.tableListCategoryTags.TagIdColumn]));
+                    return ((int)(this[this.tableListCategoryTags.OptionIdColumn]));
                 }
                 set {
-                    this[this.tableListCategoryTags.TagIdColumn] = value;
+                    this[this.tableListCategoryTags.OptionIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TagName {
+            public string OptionName {
                 get {
                     try {
-                        return ((string)(this[this.tableListCategoryTags.TagNameColumn]));
+                        return ((string)(this[this.tableListCategoryTags.OptionNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TagName\' in table \'ListCategoryTags\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'OptionName\' in table \'ListCategoryTags\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableListCategoryTags.TagNameColumn] = value;
+                    this[this.tableListCategoryTags.OptionNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTagNameNull() {
-                return this.IsNull(this.tableListCategoryTags.TagNameColumn);
+            public bool IsOptionNameNull() {
+                return this.IsNull(this.tableListCategoryTags.OptionNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTagNameNull() {
-                this[this.tableListCategoryTags.TagNameColumn] = global::System.Convert.DBNull;
+            public void SetOptionNameNull() {
+                this[this.tableListCategoryTags.OptionNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7363,42 +7363,41 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ExtensionOptionId {
+            public int OptionId {
                 get {
-                    return ((int)(this[this.tableListExtensionOptions.ExtensionOptionIdColumn]));
+                    return ((int)(this[this.tableListExtensionOptions.OptionIdColumn]));
                 }
                 set {
-                    this[this.tableListExtensionOptions.ExtensionOptionIdColumn] = value;
+                    this[this.tableListExtensionOptions.OptionIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ExtensionOptionName {
+            public string OptionName {
                 get {
                     try {
-                        return ((string)(this[this.tableListExtensionOptions.ExtensionOptionNameColumn]));
+                        return ((string)(this[this.tableListExtensionOptions.OptionNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExtensionOptionName\' in table \'ListExtensionOptions\' is DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'OptionName\' in table \'ListExtensionOptions\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableListExtensionOptions.ExtensionOptionNameColumn] = value;
+                    this[this.tableListExtensionOptions.OptionNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExtensionOptionNameNull() {
-                return this.IsNull(this.tableListExtensionOptions.ExtensionOptionNameColumn);
+            public bool IsOptionNameNull() {
+                return this.IsNull(this.tableListExtensionOptions.OptionNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExtensionOptionNameNull() {
-                this[this.tableListExtensionOptions.ExtensionOptionNameColumn] = global::System.Convert.DBNull;
+            public void SetOptionNameNull() {
+                this[this.tableListExtensionOptions.OptionNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7554,69 +7553,69 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int LanguageId {
+            public int OptionId {
                 get {
-                    return ((int)(this[this.tableListLanguages.LanguageIdColumn]));
+                    return ((int)(this[this.tableListLanguages.OptionIdColumn]));
                 }
                 set {
-                    this[this.tableListLanguages.LanguageIdColumn] = value;
+                    this[this.tableListLanguages.OptionIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LanguageName {
-                get {
-                    try {
-                        return ((string)(this[this.tableListLanguages.LanguageNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LanguageName\' in table \'ListLanguages\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableListLanguages.LanguageNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string LanguageLocalName {
+            public string OptionName {
                 get {
                     try {
-                        return ((string)(this[this.tableListLanguages.LanguageLocalNameColumn]));
+                        return ((string)(this[this.tableListLanguages.OptionNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LanguageLocalName\' in table \'ListLanguages\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'OptionName\' in table \'ListLanguages\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableListLanguages.LanguageLocalNameColumn] = value;
+                    this[this.tableListLanguages.OptionNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLanguageNameNull() {
-                return this.IsNull(this.tableListLanguages.LanguageNameColumn);
+            public string LocalName {
+                get {
+                    try {
+                        return ((string)(this[this.tableListLanguages.LocalNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LocalName\' in table \'ListLanguages\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListLanguages.LocalNameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLanguageNameNull() {
-                this[this.tableListLanguages.LanguageNameColumn] = global::System.Convert.DBNull;
+            public bool IsOptionNameNull() {
+                return this.IsNull(this.tableListLanguages.OptionNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLanguageLocalNameNull() {
-                return this.IsNull(this.tableListLanguages.LanguageLocalNameColumn);
+            public void SetOptionNameNull() {
+                this[this.tableListLanguages.OptionNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLanguageLocalNameNull() {
-                this[this.tableListLanguages.LanguageLocalNameColumn] = global::System.Convert.DBNull;
+            public bool IsLocalNameNull() {
+                return this.IsNull(this.tableListLanguages.LocalNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLocalNameNull() {
+                this[this.tableListLanguages.LocalNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7690,42 +7689,41 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int TechnologyId {
+            public int OptionId {
                 get {
-                    return ((int)(this[this.tableListProductTechnologies.TechnologyIdColumn]));
+                    return ((int)(this[this.tableListProductTechnologies.OptionIdColumn]));
                 }
                 set {
-                    this[this.tableListProductTechnologies.TechnologyIdColumn] = value;
+                    this[this.tableListProductTechnologies.OptionIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TechnologyName {
+            public string OptionName {
                 get {
                     try {
-                        return ((string)(this[this.tableListProductTechnologies.TechnologyNameColumn]));
+                        return ((string)(this[this.tableListProductTechnologies.OptionNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TechnologyName\' in table \'ListProductTechnologies\' is DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'OptionName\' in table \'ListProductTechnologies\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableListProductTechnologies.TechnologyNameColumn] = value;
+                    this[this.tableListProductTechnologies.OptionNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTechnologyNameNull() {
-                return this.IsNull(this.tableListProductTechnologies.TechnologyNameColumn);
+            public bool IsOptionNameNull() {
+                return this.IsNull(this.tableListProductTechnologies.OptionNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTechnologyNameNull() {
-                this[this.tableListProductTechnologies.TechnologyNameColumn] = global::System.Convert.DBNull;
+            public void SetOptionNameNull() {
+                this[this.tableListProductTechnologies.OptionNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7799,41 +7797,41 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int PlatformId {
+            public int OptionId {
                 get {
-                    return ((int)(this[this.tableListSoftwarePlatforms.PlatformIdColumn]));
+                    return ((int)(this[this.tableListSoftwarePlatforms.OptionIdColumn]));
                 }
                 set {
-                    this[this.tableListSoftwarePlatforms.PlatformIdColumn] = value;
+                    this[this.tableListSoftwarePlatforms.OptionIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PlatformName {
+            public string OptionName {
                 get {
                     try {
-                        return ((string)(this[this.tableListSoftwarePlatforms.PlatformNameColumn]));
+                        return ((string)(this[this.tableListSoftwarePlatforms.OptionNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PlatformName\' in table \'ListSoftwarePlatforms\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'OptionName\' in table \'ListSoftwarePlatforms\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableListSoftwarePlatforms.PlatformNameColumn] = value;
+                    this[this.tableListSoftwarePlatforms.OptionNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPlatformNameNull() {
-                return this.IsNull(this.tableListSoftwarePlatforms.PlatformNameColumn);
+            public bool IsOptionNameNull() {
+                return this.IsNull(this.tableListSoftwarePlatforms.OptionNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPlatformNameNull() {
-                this[this.tableListSoftwarePlatforms.PlatformNameColumn] = global::System.Convert.DBNull;
+            public void SetOptionNameNull() {
+                this[this.tableListSoftwarePlatforms.OptionNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7961,41 +7959,41 @@ namespace DataAdministration {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int TypeId {
+            public int OptionId {
                 get {
-                    return ((int)(this[this.tableListSupportTypes.TypeIdColumn]));
+                    return ((int)(this[this.tableListSupportTypes.OptionIdColumn]));
                 }
                 set {
-                    this[this.tableListSupportTypes.TypeIdColumn] = value;
+                    this[this.tableListSupportTypes.OptionIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TypeName {
+            public string OptionName {
                 get {
                     try {
-                        return ((string)(this[this.tableListSupportTypes.TypeNameColumn]));
+                        return ((string)(this[this.tableListSupportTypes.OptionNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TypeName\' in table \'ListSupportTypes\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'OptionName\' in table \'ListSupportTypes\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableListSupportTypes.TypeNameColumn] = value;
+                    this[this.tableListSupportTypes.OptionNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTypeNameNull() {
-                return this.IsNull(this.tableListSupportTypes.TypeNameColumn);
+            public bool IsOptionNameNull() {
+                return this.IsNull(this.tableListSupportTypes.OptionNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTypeNameNull() {
-                this[this.tableListSupportTypes.TypeNameColumn] = global::System.Convert.DBNull;
+            public void SetOptionNameNull() {
+                this[this.tableListSupportTypes.OptionNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9575,35 +9573,34 @@ SELECT OptionId, OptionName FROM ListUpdateOptions WHERE (OptionId = @OptionId)"
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ListCategoryTags";
-            tableMapping.ColumnMappings.Add("TagId", "TagId");
-            tableMapping.ColumnMappings.Add("TagName", "TagName");
+            tableMapping.ColumnMappings.Add("OptionId", "OptionId");
+            tableMapping.ColumnMappings.Add("OptionName", "OptionName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListCategoryTags] WHERE (([TagId] = @Original_TagId) AND ((@Is" +
-                "Null_TagName = 1 AND [TagName] IS NULL) OR ([TagName] = @Original_TagName)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListCategoryTags] WHERE (([OptionId] = @Original_OptionId) AND" +
+                " ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Original" +
+                "_OptionName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TagId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TagId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TagName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TagName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TagName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TagName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListCategoryTags] ([TagName]) VALUES (@TagName);\r\nSELECT TagId" +
-                ", TagName FROM ListCategoryTags WHERE (TagId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListCategoryTags] ([OptionName]) VALUES (@OptionName);\r\nSELECT" +
+                " OptionId, OptionName FROM ListCategoryTags WHERE (OptionId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TagName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TagName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[ListCategoryTags] SET [TagName] = @TagName WHERE (([TagId] = @Origi" +
-                "nal_TagId) AND ((@IsNull_TagName = 1 AND [TagName] IS NULL) OR ([TagName] = @Ori" +
-                "ginal_TagName)));\r\nSELECT TagId, TagName FROM ListCategoryTags WHERE (TagId = @T" +
-                "agId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListCategoryTags] SET [OptionName] = @OptionName WHERE (([OptionId] = @Original_OptionId) AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Original_OptionName)));
+SELECT OptionId, OptionName FROM ListCategoryTags WHERE (OptionId = @OptionId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TagName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TagName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TagId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TagId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TagName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TagName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TagName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TagName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TagId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TagId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9619,7 +9616,7 @@ SELECT OptionId, OptionName FROM ListUpdateOptions WHERE (OptionId = @OptionId)"
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TagId, TagName FROM dbo.ListCategoryTags";
+            this._commandCollection[0].CommandText = "SELECT OptionId, OptionName FROM dbo.ListCategoryTags";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9680,15 +9677,15 @@ SELECT OptionId, OptionName FROM ListUpdateOptions WHERE (OptionId = @OptionId)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_TagId, string Original_TagName) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_TagId));
-            if ((Original_TagName == null)) {
+        public virtual int Delete(int Original_OptionId, string Original_OptionName) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_TagName));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9710,12 +9707,12 @@ SELECT OptionId, OptionName FROM ListUpdateOptions WHERE (OptionId = @OptionId)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TagName) {
-            if ((TagName == null)) {
+        public virtual int Insert(string OptionName) {
+            if ((OptionName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TagName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9737,23 +9734,23 @@ SELECT OptionId, OptionName FROM ListUpdateOptions WHERE (OptionId = @OptionId)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TagName, int Original_TagId, string Original_TagName, int TagId) {
-            if ((TagName == null)) {
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName, int OptionId) {
+            if ((OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(TagName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_TagId));
-            if ((Original_TagName == null)) {
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_TagName));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(TagId));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(OptionId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9774,8 +9771,8 @@ SELECT OptionId, OptionName FROM ListUpdateOptions WHERE (OptionId = @OptionId)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TagName, int Original_TagId, string Original_TagName) {
-            return this.Update(TagName, Original_TagId, Original_TagName, Original_TagId);
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName) {
+            return this.Update(OptionName, Original_OptionId, Original_OptionName, Original_OptionId);
         }
     }
     
@@ -11849,35 +11846,35 @@ SELECT OptionId, OptionName FROM ListEnvironmentOptions WHERE (OptionId = @Optio
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ListExtensionOptions";
-            tableMapping.ColumnMappings.Add("ExtensionOptionId", "ExtensionOptionId");
-            tableMapping.ColumnMappings.Add("ExtensionOptionName", "ExtensionOptionName");
+            tableMapping.ColumnMappings.Add("OptionId", "OptionId");
+            tableMapping.ColumnMappings.Add("OptionName", "OptionName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListExtensionOptions] WHERE (([ExtensionOptionId] = @Original_" +
-                "ExtensionOptionId) AND ((@IsNull_ExtensionOptionName = 1 AND [ExtensionOptionNam" +
-                "e] IS NULL) OR ([ExtensionOptionName] = @Original_ExtensionOptionName)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListExtensionOptions] WHERE (([OptionId] = @Original_OptionId)" +
+                " AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Orig" +
+                "inal_OptionName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExtensionOptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExtensionOptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ExtensionOptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExtensionOptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExtensionOptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExtensionOptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListExtensionOptions] ([ExtensionOptionName]) VALUES (@Extensi" +
-                "onOptionName);\r\nSELECT ExtensionOptionId, ExtensionOptionName FROM ListExtension" +
-                "Options WHERE (ExtensionOptionId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListExtensionOptions] ([OptionName]) VALUES (@OptionName);\r\nSE" +
+                "LECT OptionId, OptionName FROM ListExtensionOptions WHERE (OptionId = SCOPE_IDEN" +
+                "TITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExtensionOptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExtensionOptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListExtensionOptions] SET [ExtensionOptionName] = @ExtensionOptionName WHERE (([ExtensionOptionId] = @Original_ExtensionOptionId) AND ((@IsNull_ExtensionOptionName = 1 AND [ExtensionOptionName] IS NULL) OR ([ExtensionOptionName] = @Original_ExtensionOptionName)));
-SELECT ExtensionOptionId, ExtensionOptionName FROM ListExtensionOptions WHERE (ExtensionOptionId = @ExtensionOptionId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListExtensionOptions] SET [OptionName] = @OptionName WHERE (([OptionId] = @Original_OptionId) AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Original_OptionName)));
+SELECT OptionId, OptionName FROM ListExtensionOptions WHERE (OptionId = @OptionId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExtensionOptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExtensionOptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExtensionOptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExtensionOptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ExtensionOptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExtensionOptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExtensionOptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExtensionOptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExtensionOptionId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ExtensionOptionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11893,7 +11890,7 @@ SELECT ExtensionOptionId, ExtensionOptionName FROM ListExtensionOptions WHERE (E
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ExtensionOptionId, ExtensionOptionName FROM dbo.ListExtensionOptions";
+            this._commandCollection[0].CommandText = "SELECT OptionId, OptionName FROM dbo.ListExtensionOptions";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11954,15 +11951,15 @@ SELECT ExtensionOptionId, ExtensionOptionName FROM ListExtensionOptions WHERE (E
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ExtensionOptionId, string Original_ExtensionOptionName) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ExtensionOptionId));
-            if ((Original_ExtensionOptionName == null)) {
+        public virtual int Delete(int Original_OptionId, string Original_OptionName) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_ExtensionOptionName));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11984,12 +11981,12 @@ SELECT ExtensionOptionId, ExtensionOptionName FROM ListExtensionOptions WHERE (E
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ExtensionOptionName) {
-            if ((ExtensionOptionName == null)) {
+        public virtual int Insert(string OptionName) {
+            if ((OptionName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ExtensionOptionName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12011,23 +12008,23 @@ SELECT ExtensionOptionId, ExtensionOptionName FROM ListExtensionOptions WHERE (E
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ExtensionOptionName, int Original_ExtensionOptionId, string Original_ExtensionOptionName, int ExtensionOptionId) {
-            if ((ExtensionOptionName == null)) {
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName, int OptionId) {
+            if ((OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ExtensionOptionName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_ExtensionOptionId));
-            if ((Original_ExtensionOptionName == null)) {
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_ExtensionOptionName));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ExtensionOptionId));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(OptionId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12048,8 +12045,8 @@ SELECT ExtensionOptionId, ExtensionOptionName FROM ListExtensionOptions WHERE (E
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ExtensionOptionName, int Original_ExtensionOptionId, string Original_ExtensionOptionName) {
-            return this.Update(ExtensionOptionName, Original_ExtensionOptionId, Original_ExtensionOptionName, Original_ExtensionOptionId);
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName) {
+            return this.Update(OptionName, Original_OptionId, Original_OptionName, Original_OptionId);
         }
     }
     
@@ -12857,40 +12854,40 @@ SELECT OptionId, OptionName FROM ListInstallationOptions WHERE (OptionId = @Opti
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ListLanguages";
-            tableMapping.ColumnMappings.Add("LanguageId", "LanguageId");
-            tableMapping.ColumnMappings.Add("LanguageName", "LanguageName");
-            tableMapping.ColumnMappings.Add("LanguageLocalName", "LanguageLocalName");
+            tableMapping.ColumnMappings.Add("OptionId", "OptionId");
+            tableMapping.ColumnMappings.Add("OptionName", "OptionName");
+            tableMapping.ColumnMappings.Add("LocalName", "LocalName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ListLanguages] WHERE (([LanguageId] = @Original_LanguageId) AND ((@IsNull_LanguageName = 1 AND [LanguageName] IS NULL) OR ([LanguageName] = @Original_LanguageName)) AND ((@IsNull_LanguageLocalName = 1 AND [LanguageLocalName] IS NULL) OR ([LanguageLocalName] = @Original_LanguageLocalName)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ListLanguages] WHERE (([OptionId] = @Original_OptionId) AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Original_OptionName)) AND ((@IsNull_LocalName = 1 AND [LocalName] IS NULL) OR ([LocalName] = @Original_LocalName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LanguageId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LanguageName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LanguageName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LanguageLocalName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageLocalName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LanguageLocalName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageLocalName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LocalName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocalName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LocalName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocalName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListLanguages] ([LanguageName], [LanguageLocalName]) VALUES (@" +
-                "LanguageName, @LanguageLocalName);\r\nSELECT LanguageId, LanguageName, LanguageLoc" +
-                "alName FROM ListLanguages WHERE (LanguageId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListLanguages] ([OptionName], [LocalName]) VALUES (@OptionName" +
+                ", @LocalName);\r\nSELECT OptionId, OptionName, LocalName FROM ListLanguages WHERE " +
+                "(OptionId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LanguageName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LanguageLocalName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageLocalName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocalName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocalName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListLanguages] SET [LanguageName] = @LanguageName, [LanguageLocalName] = @LanguageLocalName WHERE (([LanguageId] = @Original_LanguageId) AND ((@IsNull_LanguageName = 1 AND [LanguageName] IS NULL) OR ([LanguageName] = @Original_LanguageName)) AND ((@IsNull_LanguageLocalName = 1 AND [LanguageLocalName] IS NULL) OR ([LanguageLocalName] = @Original_LanguageLocalName)));
-SELECT LanguageId, LanguageName, LanguageLocalName FROM ListLanguages WHERE (LanguageId = @LanguageId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListLanguages] SET [OptionName] = @OptionName, [LocalName] = @LocalName WHERE (([OptionId] = @Original_OptionId) AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Original_OptionName)) AND ((@IsNull_LocalName = 1 AND [LocalName] IS NULL) OR ([LocalName] = @Original_LocalName)));
+SELECT OptionId, OptionName, LocalName FROM ListLanguages WHERE (OptionId = @OptionId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LanguageName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LanguageLocalName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageLocalName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LanguageId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LanguageName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LanguageName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LanguageLocalName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageLocalName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LanguageLocalName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageLocalName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LanguageId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LanguageId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocalName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocalName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LocalName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocalName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LocalName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocalName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12906,7 +12903,7 @@ SELECT LanguageId, LanguageName, LanguageLocalName FROM ListLanguages WHERE (Lan
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT LanguageId, LanguageName, LanguageLocalName FROM dbo.ListLanguages";
+            this._commandCollection[0].CommandText = "SELECT OptionId, OptionName, LocalName FROM dbo.ListLanguages";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12967,23 +12964,23 @@ SELECT LanguageId, LanguageName, LanguageLocalName FROM ListLanguages WHERE (Lan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_LanguageId, string Original_LanguageName, string Original_LanguageLocalName) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_LanguageId));
-            if ((Original_LanguageName == null)) {
+        public virtual int Delete(int Original_OptionId, string Original_OptionName, string Original_LocalName) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_LanguageName));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_OptionName));
             }
-            if ((Original_LanguageLocalName == null)) {
+            if ((Original_LocalName == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_LanguageLocalName));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_LocalName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13005,18 +13002,18 @@ SELECT LanguageId, LanguageName, LanguageLocalName FROM ListLanguages WHERE (Lan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string LanguageName, string LanguageLocalName) {
-            if ((LanguageName == null)) {
+        public virtual int Insert(string OptionName, string LocalName) {
+            if ((OptionName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(LanguageName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(OptionName));
             }
-            if ((LanguageLocalName == null)) {
+            if ((LocalName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(LanguageLocalName));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(LocalName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13038,37 +13035,37 @@ SELECT LanguageId, LanguageName, LanguageLocalName FROM ListLanguages WHERE (Lan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string LanguageName, string LanguageLocalName, int Original_LanguageId, string Original_LanguageName, string Original_LanguageLocalName, int LanguageId) {
-            if ((LanguageName == null)) {
+        public virtual int Update(string OptionName, string LocalName, int Original_OptionId, string Original_OptionName, string Original_LocalName, int OptionId) {
+            if ((OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(LanguageName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(OptionName));
             }
-            if ((LanguageLocalName == null)) {
+            if ((LocalName == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(LanguageLocalName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(LocalName));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_LanguageId));
-            if ((Original_LanguageName == null)) {
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_LanguageName));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_OptionName));
             }
-            if ((Original_LanguageLocalName == null)) {
+            if ((Original_LocalName == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_LanguageLocalName));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_LocalName));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(LanguageId));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(OptionId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -13089,8 +13086,8 @@ SELECT LanguageId, LanguageName, LanguageLocalName FROM ListLanguages WHERE (Lan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string LanguageName, string LanguageLocalName, int Original_LanguageId, string Original_LanguageName, string Original_LanguageLocalName) {
-            return this.Update(LanguageName, LanguageLocalName, Original_LanguageId, Original_LanguageName, Original_LanguageLocalName, Original_LanguageId);
+        public virtual int Update(string OptionName, string LocalName, int Original_OptionId, string Original_OptionName, string Original_LocalName) {
+            return this.Update(OptionName, LocalName, Original_OptionId, Original_OptionName, Original_LocalName, Original_OptionId);
         }
     }
     
@@ -13540,35 +13537,35 @@ SELECT OptionId, OptionName FROM ListPaymentOptions WHERE (OptionId = @OptionId)
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ListProductTechnologies";
-            tableMapping.ColumnMappings.Add("TechnologyId", "TechnologyId");
-            tableMapping.ColumnMappings.Add("TechnologyName", "TechnologyName");
+            tableMapping.ColumnMappings.Add("OptionId", "OptionId");
+            tableMapping.ColumnMappings.Add("OptionName", "OptionName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListProductTechnologies] WHERE (([TechnologyId] = @Original_Te" +
-                "chnologyId) AND ((@IsNull_TechnologyName = 1 AND [TechnologyName] IS NULL) OR ([" +
-                "TechnologyName] = @Original_TechnologyName)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListProductTechnologies] WHERE (([OptionId] = @Original_Option" +
+                "Id) AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @O" +
+                "riginal_OptionName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechnologyId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechnologyId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TechnologyName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechnologyName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechnologyName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechnologyName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListProductTechnologies] ([TechnologyName]) VALUES (@Technolog" +
-                "yName);\r\nSELECT TechnologyId, TechnologyName FROM ListProductTechnologies WHERE " +
-                "(TechnologyId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListProductTechnologies] ([OptionName]) VALUES (@OptionName);\r" +
+                "\nSELECT OptionId, OptionName FROM ListProductTechnologies WHERE (OptionId = SCOP" +
+                "E_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechnologyName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechnologyName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListProductTechnologies] SET [TechnologyName] = @TechnologyName WHERE (([TechnologyId] = @Original_TechnologyId) AND ((@IsNull_TechnologyName = 1 AND [TechnologyName] IS NULL) OR ([TechnologyName] = @Original_TechnologyName)));
-SELECT TechnologyId, TechnologyName FROM ListProductTechnologies WHERE (TechnologyId = @TechnologyId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListProductTechnologies] SET [OptionName] = @OptionName WHERE (([OptionId] = @Original_OptionId) AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Original_OptionName)));
+SELECT OptionId, OptionName FROM ListProductTechnologies WHERE (OptionId = @OptionId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechnologyName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechnologyName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechnologyId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechnologyId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TechnologyName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechnologyName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TechnologyName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TechnologyName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TechnologyId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TechnologyId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13584,7 +13581,7 @@ SELECT TechnologyId, TechnologyName FROM ListProductTechnologies WHERE (Technolo
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TechnologyId, TechnologyName FROM dbo.ListProductTechnologies";
+            this._commandCollection[0].CommandText = "SELECT OptionId, OptionName FROM dbo.ListProductTechnologies";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13645,15 +13642,15 @@ SELECT TechnologyId, TechnologyName FROM ListProductTechnologies WHERE (Technolo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_TechnologyId, string Original_TechnologyName) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_TechnologyId));
-            if ((Original_TechnologyName == null)) {
+        public virtual int Delete(int Original_OptionId, string Original_OptionName) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_TechnologyName));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13675,12 +13672,12 @@ SELECT TechnologyId, TechnologyName FROM ListProductTechnologies WHERE (Technolo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TechnologyName) {
-            if ((TechnologyName == null)) {
+        public virtual int Insert(string OptionName) {
+            if ((OptionName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TechnologyName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13702,23 +13699,23 @@ SELECT TechnologyId, TechnologyName FROM ListProductTechnologies WHERE (Technolo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TechnologyName, int Original_TechnologyId, string Original_TechnologyName, int TechnologyId) {
-            if ((TechnologyName == null)) {
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName, int OptionId) {
+            if ((OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(TechnologyName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_TechnologyId));
-            if ((Original_TechnologyName == null)) {
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_TechnologyName));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(TechnologyId));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(OptionId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -13739,8 +13736,8 @@ SELECT TechnologyId, TechnologyName FROM ListProductTechnologies WHERE (Technolo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TechnologyName, int Original_TechnologyId, string Original_TechnologyName) {
-            return this.Update(TechnologyName, Original_TechnologyId, Original_TechnologyName, Original_TechnologyId);
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName) {
+            return this.Update(OptionName, Original_OptionId, Original_OptionName, Original_OptionId);
         }
     }
     
@@ -14190,35 +14187,35 @@ SELECT OptionId, OptionName FROM ListPublishOptions WHERE (OptionId = @OptionId)
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ListSoftwarePlatforms";
-            tableMapping.ColumnMappings.Add("PlatformId", "PlatformId");
-            tableMapping.ColumnMappings.Add("PlatformName", "PlatformName");
+            tableMapping.ColumnMappings.Add("OptionId", "OptionId");
+            tableMapping.ColumnMappings.Add("OptionName", "OptionName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListSoftwarePlatforms] WHERE (([PlatformId] = @Original_Platfo" +
-                "rmId) AND ((@IsNull_PlatformName = 1 AND [PlatformName] IS NULL) OR ([PlatformNa" +
-                "me] = @Original_PlatformName)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListSoftwarePlatforms] WHERE (([OptionId] = @Original_OptionId" +
+                ") AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Ori" +
+                "ginal_OptionName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PlatformId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlatformId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PlatformName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlatformName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PlatformName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlatformName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListSoftwarePlatforms] ([PlatformName]) VALUES (@PlatformName)" +
-                ";\r\nSELECT PlatformId, PlatformName FROM ListSoftwarePlatforms WHERE (PlatformId " +
-                "= SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListSoftwarePlatforms] ([OptionName]) VALUES (@OptionName);\r\nS" +
+                "ELECT OptionId, OptionName FROM ListSoftwarePlatforms WHERE (OptionId = SCOPE_ID" +
+                "ENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlatformName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlatformName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListSoftwarePlatforms] SET [PlatformName] = @PlatformName WHERE (([PlatformId] = @Original_PlatformId) AND ((@IsNull_PlatformName = 1 AND [PlatformName] IS NULL) OR ([PlatformName] = @Original_PlatformName)));
-SELECT PlatformId, PlatformName FROM ListSoftwarePlatforms WHERE (PlatformId = @PlatformId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListSoftwarePlatforms] SET [OptionName] = @OptionName WHERE (([OptionId] = @Original_OptionId) AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Original_OptionName)));
+SELECT OptionId, OptionName FROM ListSoftwarePlatforms WHERE (OptionId = @OptionId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlatformName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlatformName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PlatformId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlatformId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PlatformName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlatformName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PlatformName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlatformName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlatformId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PlatformId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14234,7 +14231,7 @@ SELECT PlatformId, PlatformName FROM ListSoftwarePlatforms WHERE (PlatformId = @
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PlatformId, PlatformName FROM dbo.ListSoftwarePlatforms";
+            this._commandCollection[0].CommandText = "SELECT OptionId, OptionName FROM dbo.ListSoftwarePlatforms";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -14295,15 +14292,15 @@ SELECT PlatformId, PlatformName FROM ListSoftwarePlatforms WHERE (PlatformId = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PlatformId, string Original_PlatformName) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PlatformId));
-            if ((Original_PlatformName == null)) {
+        public virtual int Delete(int Original_OptionId, string Original_OptionName) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PlatformName));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14325,12 +14322,12 @@ SELECT PlatformId, PlatformName FROM ListSoftwarePlatforms WHERE (PlatformId = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string PlatformName) {
-            if ((PlatformName == null)) {
+        public virtual int Insert(string OptionName) {
+            if ((OptionName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PlatformName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14352,23 +14349,23 @@ SELECT PlatformId, PlatformName FROM ListSoftwarePlatforms WHERE (PlatformId = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PlatformName, int Original_PlatformId, string Original_PlatformName, int PlatformId) {
-            if ((PlatformName == null)) {
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName, int OptionId) {
+            if ((OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(PlatformName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_PlatformId));
-            if ((Original_PlatformName == null)) {
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_PlatformName));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(PlatformId));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(OptionId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14389,8 +14386,8 @@ SELECT PlatformId, PlatformName FROM ListSoftwarePlatforms WHERE (PlatformId = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PlatformName, int Original_PlatformId, string Original_PlatformName) {
-            return this.Update(PlatformName, Original_PlatformId, Original_PlatformName, Original_PlatformId);
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName) {
+            return this.Update(OptionName, Original_OptionId, Original_OptionName, Original_OptionId);
         }
     }
     
@@ -15165,34 +15162,34 @@ SELECT OptionId, OptionName FROM ListSupportOptions WHERE (OptionId = @OptionId)
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ListSupportTypes";
-            tableMapping.ColumnMappings.Add("TypeId", "TypeId");
-            tableMapping.ColumnMappings.Add("TypeName", "TypeName");
+            tableMapping.ColumnMappings.Add("OptionId", "OptionId");
+            tableMapping.ColumnMappings.Add("OptionName", "OptionName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListSupportTypes] WHERE (([TypeId] = @Original_TypeId) AND ((@" +
-                "IsNull_TypeName = 1 AND [TypeName] IS NULL) OR ([TypeName] = @Original_TypeName)" +
-                "))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ListSupportTypes] WHERE (([OptionId] = @Original_OptionId) AND" +
+                " ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Original" +
+                "_OptionName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TypeName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TypeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListSupportTypes] ([TypeName]) VALUES (@TypeName);\r\nSELECT Typ" +
-                "eId, TypeName FROM ListSupportTypes WHERE (TypeId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ListSupportTypes] ([OptionName]) VALUES (@OptionName);\r\nSELECT" +
+                " OptionId, OptionName FROM ListSupportTypes WHERE (OptionId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TypeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListSupportTypes] SET [TypeName] = @TypeName WHERE (([TypeId] = @Original_TypeId) AND ((@IsNull_TypeName = 1 AND [TypeName] IS NULL) OR ([TypeName] = @Original_TypeName)));
-SELECT TypeId, TypeName FROM ListSupportTypes WHERE (TypeId = @TypeId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ListSupportTypes] SET [OptionName] = @OptionName WHERE (([OptionId] = @Original_OptionId) AND ((@IsNull_OptionName = 1 AND [OptionName] IS NULL) OR ([OptionName] = @Original_OptionName)));
+SELECT OptionId, OptionName FROM ListSupportTypes WHERE (OptionId = @OptionId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TypeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TypeName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TypeName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TypeName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TypeId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TypeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OptionName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OptionName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OptionName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OptionId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OptionId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15208,7 +15205,7 @@ SELECT TypeId, TypeName FROM ListSupportTypes WHERE (TypeId = @TypeId)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TypeId, TypeName FROM dbo.ListSupportTypes";
+            this._commandCollection[0].CommandText = "SELECT OptionId, OptionName FROM dbo.ListSupportTypes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15269,15 +15266,15 @@ SELECT TypeId, TypeName FROM ListSupportTypes WHERE (TypeId = @TypeId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_TypeId, string Original_TypeName) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_TypeId));
-            if ((Original_TypeName == null)) {
+        public virtual int Delete(int Original_OptionId, string Original_OptionName) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_TypeName));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -15299,12 +15296,12 @@ SELECT TypeId, TypeName FROM ListSupportTypes WHERE (TypeId = @TypeId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TypeName) {
-            if ((TypeName == null)) {
+        public virtual int Insert(string OptionName) {
+            if ((OptionName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TypeName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(OptionName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -15326,23 +15323,23 @@ SELECT TypeId, TypeName FROM ListSupportTypes WHERE (TypeId = @TypeId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TypeName, int Original_TypeId, string Original_TypeName, int TypeId) {
-            if ((TypeName == null)) {
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName, int OptionId) {
+            if ((OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(TypeName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_TypeId));
-            if ((Original_TypeName == null)) {
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_OptionId));
+            if ((Original_OptionName == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_TypeName));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_OptionName));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(TypeId));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(OptionId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15363,8 +15360,8 @@ SELECT TypeId, TypeName FROM ListSupportTypes WHERE (TypeId = @TypeId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TypeName, int Original_TypeId, string Original_TypeName) {
-            return this.Update(TypeName, Original_TypeId, Original_TypeName, Original_TypeId);
+        public virtual int Update(string OptionName, int Original_OptionId, string Original_OptionName) {
+            return this.Update(OptionName, Original_OptionId, Original_OptionName, Original_OptionId);
         }
     }
     

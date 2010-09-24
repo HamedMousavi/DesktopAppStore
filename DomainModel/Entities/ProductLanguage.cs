@@ -4,9 +4,7 @@
 
 namespace DomainModel.Entities
 {
-    public class ProductLanguage
+    public class ProductLanguage : ProductOptionBase
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
     }
 }

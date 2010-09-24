@@ -11,7 +11,8 @@
     <RootNamespace>DataAdministration</RootNamespace>
     <AssemblyName>DataAdministration</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -36,21 +37,47 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FlatGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrmContactEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContactEditor.Designer.cs">
+      <DependentUpon>FrmContactEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmContactMediaEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContactMediaEditor.Designer.cs">
+      <DependentUpon>FrmContactMediaEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmContactUnitEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContactUnitEditor.Designer.cs">
+      <DependentUpon>FrmContactUnitEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductContacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductContacts.Designer.cs">
+      <DependentUpon>FrmProductContacts.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProductEditor.cs">
       <SubType>Form</SubType>
@@ -58,7 +85,17 @@
     <Compile Include="FrmProductEditor.Designer.cs">
       <DependentUpon>FrmProductEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="OptionCheckedListBox.cs" />
+    <Compile Include="FrmSearchContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearchContact.Designer.cs">
+      <DependentUpon>FrmSearchContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListContactMedia.cs" />
+    <Compile Include="ListContactUnits.cs" />
+    <Compile Include="OptionCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PersianSoftwareDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,11 +103,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Sql\Options.cs" />
+    <Compile Include="Repository\Sql\Product.cs" />
+    <Compile Include="Repository\Sql\ProductContacts.cs" />
+    <Compile Include="Repository\Sql\ProductOptions.cs" />
+    <Compile Include="Repository\Utils\Convert.cs" />
+    <EmbeddedResource Include="FrmContactEditor.resx">
+      <DependentUpon>FrmContactEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmContactMediaEditor.resx">
+      <DependentUpon>FrmContactMediaEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmContactUnitEditor.resx">
+      <DependentUpon>FrmContactUnitEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductContacts.resx">
+      <DependentUpon>FrmProductContacts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProductEditor.resx">
       <DependentUpon>FrmProductEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearchContact.resx">
+      <DependentUpon>FrmSearchContact.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,6 +137,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
     <None Include="PersianSoftwareDataSet.xsc">
@@ -93,7 +151,6 @@
     <None Include="PersianSoftwareDataSet.xss">
       <DependentUpon>PersianSoftwareDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ProductOptionBase.cs.lnk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,6 +161,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{1B479C80-B78C-4F26-BFDD-3EFEA8678F3F}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

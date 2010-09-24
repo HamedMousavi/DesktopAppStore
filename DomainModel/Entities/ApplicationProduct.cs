@@ -8,12 +8,43 @@ namespace DomainModel.Entities
 {
     public class ApplicationProduct : ProductBase
     {
+        public ApplicationProduct()
+            : base()
+        {
+            this.Price = null;
+            this.MinimumVolumeSize = null;
+            this.MultiUser = false;
+            this.MultiLanguage = false;
+            this.LanguageExtendable = false;
+
+            this.HardwareRequirements = new List<string>();
+            
+            this.Brands = new List<ProductBrand>();
+            this.ExtensionOptions = new List<ProductExtensionOptions>();
+            this.PaymentOptions = new List<ProductPaymentOption>();
+            this.PublishOptions = new List<ProductPublishOption>();
+            this.DemoOptions = new List<ProductDemoOption>();
+            this.TrainingOptions = new List<ProductTrainingOption>();
+            this.SupportOptions = new List<ProductSupportOption>();
+            this.SupportTypes = new List<ProductSupportType>();
+            this.GuarantyOptions = new List<ProductGuarantyOption>();
+            this.CustomizationOptions = new List<ProductCustomizationOption>();
+            this.InstallationOptions = new List<ProductInstallationOption>();
+            this.UpdateOptions = new List<ProductUpdateOption>();
+            this.ProductContacts = new List<ProductContact>();
+            this.CategoryTags = new List<ProductCategory>();
+            this.SupportedLanguages = new List<ProductLanguage>();
+            this.SourceOptions = new List<ProductSourceOption>();
+            this.EnvironmentOptions = new List<ProductEnvironmentOption>();
+            this.BackupOptions = new List<ProductDataBackupOption>();
+        }
+
         public decimal?                         Price { get; set; }
         public string                           PriceDetails { get; set; }
         public float?                           MinimumVolumeSize { get; set; } // MB
-        public bool?                            MultiUser { get; set; }
-        public bool?                            MultiLanguage { get; set; }
-        public bool?                            LanguageExtendable { get; set; }
+        public bool                             MultiUser { get; set; }
+        public bool                             MultiLanguage { get; set; }
+        public bool                             LanguageExtendable { get; set; }
 
         public List<string>                     HardwareRequirements { get; set; }
         public List<ProductBrand>               Brands { get; set; }

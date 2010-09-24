@@ -43,6 +43,8 @@ namespace DomainModel.Repository.Sql
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.Add(new SqlParameter("@UserName", username));
                     cmd.Parameters.Add(new SqlParameter("@Password", password));
+                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+
                     cnn.Open();
 
                     object queryRes = cmd.ExecuteScalar();
@@ -75,6 +77,8 @@ namespace DomainModel.Repository.Sql
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.Add(new SqlParameter("@Email", Email));
+                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+                    
                     cnn.Open();
 
                     object queryRes = cmd.ExecuteScalar();
@@ -125,6 +129,8 @@ namespace DomainModel.Repository.Sql
                     cmd.Parameters.Add(new SqlParameter("@EmailAddress", Email));
                     cmd.Parameters.Add(new SqlParameter("@MembershipDate", DateTime.Now));
                     cmd.Parameters.Add(new SqlParameter("@Password", Password));
+                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+                    
                     cnn.Open();
 
                     object queryRes = cmd.ExecuteScalar();
@@ -155,6 +161,8 @@ namespace DomainModel.Repository.Sql
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.Add(new SqlParameter("@Email", Email));
+                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+                    
                     cnn.Open();
 
                     object queryRes = cmd.ExecuteScalar();

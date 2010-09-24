@@ -5,7 +5,18 @@ namespace DomainModel.Entities
 {
     public class ProductBase
     {
-        public int?                     ProductId           { get; set; }   // Unique Id of the product
+        public ProductBase()
+        {
+            this.ProductId = null;
+            this.ProductReleaseDate = null;
+            
+            this.SupportedPlatforms = new List<SoftwarePlatform>();
+            this.ProductOwners = new List<ProductOwner>();
+            this.ProductTechnologies = new List<ProductTechnology>();
+        }
+
+
+        public Int64?                  ProductId           { get; set; }   // Unique Id of the product
         public string                   ProductName         { get; set; }   // Name of the product
         public string                   ProductWebsite      { get; set; }   // Link to the product page online
         public string                   BriefDescription    { get; set; }   // A brief description of the product
