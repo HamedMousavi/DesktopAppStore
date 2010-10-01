@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DomainModel.Entities;
 
 namespace WebUi.Models
 {
@@ -12,19 +13,23 @@ namespace WebUi.Models
         public static List<int> Errors = new List<int>();
 
 
-        public static CultureItem Culture
+        public static ProductLanguage Culture
         {
             get
             {
                 Errors.Clear();
 
-                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                if (HttpContext.Current.User == null)
+                {
+                    Errors.Add(0);
+                }
+                else if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {
                     try
                     {
                         if (HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture] != null)
                         {
-                            return (CultureItem)HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture];
+                            return (ProductLanguage)HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture];
                         }
                         else
                         {

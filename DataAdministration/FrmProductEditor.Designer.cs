@@ -53,14 +53,10 @@
             this.btnCreateProduct = new System.Windows.Forms.Button();
             this.btnContacts = new System.Windows.Forms.Button();
             this.btnOwners = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dgvBrands = new System.Windows.Forms.DataGridView();
             this.splitMain = new System.Windows.Forms.SplitContainer();
             this.btnUpdateProduct = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBrands)).BeginInit();
+            this.btnHardwareRequirements = new System.Windows.Forms.Button();
+            this.btnBrands = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitMain)).BeginInit();
             this.splitMain.Panel1.SuspendLayout();
             this.splitMain.Panel2.SuspendLayout();
@@ -181,12 +177,14 @@
             // 
             // btnProductResourceDirBrowse
             // 
+            this.btnProductResourceDirBrowse.BackColor = System.Drawing.Color.Silver;
+            this.btnProductResourceDirBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProductResourceDirBrowse.Location = new System.Drawing.Point(475, 85);
             this.btnProductResourceDirBrowse.Name = "btnProductResourceDirBrowse";
             this.btnProductResourceDirBrowse.Size = new System.Drawing.Size(34, 23);
             this.btnProductResourceDirBrowse.TabIndex = 16;
             this.btnProductResourceDirBrowse.Text = "...";
-            this.btnProductResourceDirBrowse.UseVisualStyleBackColor = true;
+            this.btnProductResourceDirBrowse.UseVisualStyleBackColor = false;
             this.btnProductResourceDirBrowse.Click += new System.EventHandler(this.btnProductResourceDirBrowse_Click);
             // 
             // label8
@@ -253,67 +251,43 @@
             // 
             // btnCreateProduct
             // 
+            this.btnCreateProduct.BackColor = System.Drawing.Color.Silver;
+            this.btnCreateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCreateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateProduct.Location = new System.Drawing.Point(515, 85);
             this.btnCreateProduct.Name = "btnCreateProduct";
             this.btnCreateProduct.Size = new System.Drawing.Size(121, 55);
             this.btnCreateProduct.TabIndex = 22;
             this.btnCreateProduct.Text = "Create";
-            this.btnCreateProduct.UseVisualStyleBackColor = true;
+            this.btnCreateProduct.UseVisualStyleBackColor = false;
             this.btnCreateProduct.Click += new System.EventHandler(this.btnCreateProduct_Click);
             // 
             // btnContacts
             // 
+            this.btnContacts.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnContacts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnContacts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnContacts.ForeColor = System.Drawing.Color.White;
             this.btnContacts.Location = new System.Drawing.Point(5, 3);
             this.btnContacts.Name = "btnContacts";
             this.btnContacts.Size = new System.Drawing.Size(113, 23);
             this.btnContacts.TabIndex = 0;
             this.btnContacts.Text = "Contacts";
-            this.btnContacts.UseVisualStyleBackColor = true;
+            this.btnContacts.UseVisualStyleBackColor = false;
             this.btnContacts.Click += new System.EventHandler(this.btnContacts_Click);
             // 
             // btnOwners
             // 
-            this.btnOwners.Location = new System.Drawing.Point(124, 3);
+            this.btnOwners.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnOwners.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOwners.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnOwners.ForeColor = System.Drawing.Color.White;
+            this.btnOwners.Location = new System.Drawing.Point(362, 3);
             this.btnOwners.Name = "btnOwners";
             this.btnOwners.Size = new System.Drawing.Size(113, 23);
             this.btnOwners.TabIndex = 1;
             this.btnOwners.Text = "Owners";
-            this.btnOwners.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(562, 477);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(118, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "HardwareRequirements";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(565, 493);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(120, 93);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(688, 477);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(40, 13);
-            this.label20.TabIndex = 4;
-            this.label20.Text = "Brands";
-            // 
-            // dgvBrands
-            // 
-            this.dgvBrands.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBrands.Location = new System.Drawing.Point(691, 493);
-            this.dgvBrands.Name = "dgvBrands";
-            this.dgvBrands.Size = new System.Drawing.Size(120, 93);
-            this.dgvBrands.TabIndex = 5;
+            this.btnOwners.UseVisualStyleBackColor = false;
             // 
             // splitMain
             // 
@@ -325,6 +299,7 @@
             // 
             // splitMain.Panel1
             // 
+            this.splitMain.Panel1.BackColor = System.Drawing.Color.Gray;
             this.splitMain.Panel1.Controls.Add(this.btnUpdateProduct);
             this.splitMain.Panel1.Controls.Add(this.btnCreateProduct);
             this.splitMain.Panel1.Controls.Add(this.label1);
@@ -349,45 +324,73 @@
             this.splitMain.Panel1.Controls.Add(this.label8);
             this.splitMain.Panel1.Controls.Add(this.label9);
             this.splitMain.Panel1.Controls.Add(this.tbxProductPrice);
+            this.splitMain.Panel1.ForeColor = System.Drawing.Color.White;
             // 
             // splitMain.Panel2
             // 
+            this.splitMain.Panel2.BackColor = System.Drawing.Color.Gray;
+            this.splitMain.Panel2.Controls.Add(this.btnBrands);
+            this.splitMain.Panel2.Controls.Add(this.btnHardwareRequirements);
             this.splitMain.Panel2.Controls.Add(this.btnContacts);
-            this.splitMain.Panel2.Controls.Add(this.dgvBrands);
-            this.splitMain.Panel2.Controls.Add(this.dataGridView1);
             this.splitMain.Panel2.Controls.Add(this.btnOwners);
-            this.splitMain.Panel2.Controls.Add(this.label13);
-            this.splitMain.Panel2.Controls.Add(this.label20);
-            this.splitMain.Size = new System.Drawing.Size(820, 742);
+            this.splitMain.Panel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.splitMain.Size = new System.Drawing.Size(772, 237);
             this.splitMain.SplitterDistance = 143;
             this.splitMain.TabIndex = 0;
             // 
             // btnUpdateProduct
             // 
+            this.btnUpdateProduct.BackColor = System.Drawing.Color.Silver;
+            this.btnUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateProduct.Location = new System.Drawing.Point(641, 85);
             this.btnUpdateProduct.Name = "btnUpdateProduct";
             this.btnUpdateProduct.Size = new System.Drawing.Size(121, 55);
             this.btnUpdateProduct.TabIndex = 23;
             this.btnUpdateProduct.Text = "Update";
-            this.btnUpdateProduct.UseVisualStyleBackColor = true;
+            this.btnUpdateProduct.UseVisualStyleBackColor = false;
             this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
+            // 
+            // btnHardwareRequirements
+            // 
+            this.btnHardwareRequirements.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnHardwareRequirements.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHardwareRequirements.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnHardwareRequirements.ForeColor = System.Drawing.Color.White;
+            this.btnHardwareRequirements.Location = new System.Drawing.Point(124, 3);
+            this.btnHardwareRequirements.Name = "btnHardwareRequirements";
+            this.btnHardwareRequirements.Size = new System.Drawing.Size(113, 23);
+            this.btnHardwareRequirements.TabIndex = 0;
+            this.btnHardwareRequirements.Text = "HardwareReq.";
+            this.btnHardwareRequirements.UseVisualStyleBackColor = false;
+            this.btnHardwareRequirements.Click += new System.EventHandler(this.btnHardwareRequirements_Click);
+            // 
+            // btnBrands
+            // 
+            this.btnBrands.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBrands.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBrands.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnBrands.ForeColor = System.Drawing.Color.White;
+            this.btnBrands.Location = new System.Drawing.Point(243, 3);
+            this.btnBrands.Name = "btnBrands";
+            this.btnBrands.Size = new System.Drawing.Size(113, 23);
+            this.btnBrands.TabIndex = 0;
+            this.btnBrands.Text = "Brands";
+            this.btnBrands.UseVisualStyleBackColor = false;
+            this.btnBrands.Click += new System.EventHandler(this.btnBrands_Click);
             // 
             // FrmProductEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 742);
+            this.ClientSize = new System.Drawing.Size(772, 237);
             this.Controls.Add(this.splitMain);
             this.Name = "FrmProductEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmProductEditor";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBrands)).EndInit();
             this.splitMain.Panel1.ResumeLayout(false);
             this.splitMain.Panel1.PerformLayout();
             this.splitMain.Panel2.ResumeLayout(false);
-            this.splitMain.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitMain)).EndInit();
             this.splitMain.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -421,11 +424,9 @@
         private System.Windows.Forms.Button btnCreateProduct;
         private System.Windows.Forms.Button btnContacts;
         private System.Windows.Forms.Button btnOwners;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DataGridView dgvBrands;
         private System.Windows.Forms.SplitContainer splitMain;
         private System.Windows.Forms.Button btnUpdateProduct;
+        private System.Windows.Forms.Button btnBrands;
+        private System.Windows.Forms.Button btnHardwareRequirements;
     }
 }

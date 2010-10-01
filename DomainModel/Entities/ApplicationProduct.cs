@@ -32,7 +32,7 @@ namespace DomainModel.Entities
             this.InstallationOptions = new List<ProductInstallationOption>();
             this.UpdateOptions = new List<ProductUpdateOption>();
             this.ProductContacts = new List<ProductContact>();
-            this.CategoryTags = new List<ProductCategory>();
+            this.Tags = new List<ProductTag>();
             this.SupportedLanguages = new List<ProductLanguage>();
             this.SourceOptions = new List<ProductSourceOption>();
             this.EnvironmentOptions = new List<ProductEnvironmentOption>();
@@ -60,7 +60,7 @@ namespace DomainModel.Entities
         public List<ProductInstallationOption>  InstallationOptions { get; set; }
         public List<ProductUpdateOption>        UpdateOptions { get; set; }
         public List<ProductContact>             ProductContacts { get; set; }
-        public List<ProductCategory>            CategoryTags { get; set; }
+        public List<ProductTag>                 Tags { get; set; }
         public List<ProductLanguage>            SupportedLanguages { get; set; }
         public List<ProductSourceOption>        SourceOptions { get; set; }
         public List<ProductEnvironmentOption>   EnvironmentOptions { get; set; }

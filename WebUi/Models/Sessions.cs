@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Collections.Generic;
+using DomainModel.Entities;
 
 
 namespace WebUi.Models
@@ -10,15 +11,16 @@ namespace WebUi.Models
         // 0: Session does not exists
         public static List<int> Errors = new List<int>();
 
-        public static CultureItem Culture
+        public static ProductLanguage Culture
         {
             get 
             {
                 Errors.Clear();
 
-                if (HttpContext.Current.Session[WebUi.Models.SessionKeys.Culture] != null)
+                if (HttpContext.Current.Session != null &&
+                    HttpContext.Current.Session[WebUi.Models.SessionKeys.Culture] != null)
                 {
-                    return (CultureItem)HttpContext.Current.Session[WebUi.Models.SessionKeys.Culture];
+                    return (ProductLanguage)HttpContext.Current.Session[WebUi.Models.SessionKeys.Culture];
                 }
                 else
                 {

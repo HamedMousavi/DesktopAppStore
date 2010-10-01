@@ -58,7 +58,7 @@ namespace WebUi.Controllers
 
 
         [HttpPost]
-        public ActionResult Logon(WebUi.Models.LoginInfo model, string returnUrl)
+        public ActionResult Logon(WebUi.ViewModels.LoginInfo model, string returnUrl)
         {
             try
             {
@@ -112,7 +112,6 @@ namespace WebUi.Controllers
         {
             try
             {
-
                 // Validate input
                 if (!DomainModel.Security.InputController.IsValid(Email))
                 {

@@ -19,7 +19,7 @@ namespace WebUi.Controllers
 
             // Save culture
             WebUi.Models.AppCulture.CurrentCulture =
-                WebUi.Models.AppCulture.CultureList[SelectedCulture];
+                DomainModel.Repository.Memory.Languages.Instance.Items[SelectedCulture];
 
 
             // Return to previous page

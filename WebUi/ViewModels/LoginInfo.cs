@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
 
-namespace WebUi.Models
+namespace WebUi.ViewModels
 {
     public class LoginInfo
     {

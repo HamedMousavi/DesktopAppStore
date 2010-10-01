@@ -9,12 +9,8 @@ namespace DomainModel.Repository.Sql
 {
     public class Users : IUsersRepository
     {
-        string ConnectionString { get; set; }
-
-
-        public Users(string ConnectionString)
+        public Users()
         {
-            this.ConnectionString = ConnectionString;
         }
 
 
@@ -36,7 +32,7 @@ namespace DomainModel.Repository.Sql
                 " END" +
                 " SELECT 0";
 
-            using (SqlConnection cnn = new SqlConnection(this.ConnectionString))
+            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, cnn))
                 {
@@ -71,7 +67,7 @@ namespace DomainModel.Repository.Sql
                 " END" +
                 "   SELECT 0";
 
-            using (SqlConnection cnn = new SqlConnection(this.ConnectionString))
+            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, cnn))
                 {
@@ -120,7 +116,7 @@ namespace DomainModel.Repository.Sql
                 "SELECT @RES; ";
 
 
-            using (SqlConnection cnn = new SqlConnection(this.ConnectionString))
+            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, cnn))
                 {
@@ -155,7 +151,7 @@ namespace DomainModel.Repository.Sql
                 " FROM Users" +
                 " WHERE (EmailAddress = @Email)";
 
-            using (SqlConnection cnn = new SqlConnection(this.ConnectionString))
+            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, cnn))
                 {

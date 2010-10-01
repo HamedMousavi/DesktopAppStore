@@ -3,7 +3,7 @@
 <% 
 object htmlAttribs;
 
-foreach (WebUi.Models.CultureItem item in WebUi.Models.AppCulture.CultureList)
+foreach (DomainModel.Entities.ProductLanguage item in DomainModel.Repository.Memory.Languages.Instance.Items)
 {
     if (item == WebUi.Models.AppCulture.CurrentCulture)
     {
@@ -13,15 +13,16 @@ foreach (WebUi.Models.CultureItem item in WebUi.Models.AppCulture.CultureList)
     {
         htmlAttribs = null;
     }
-%>
+    %>
        
-<%:
+    <%:
     Html.ActionLink(
-        item.Text, 
+        item.Name, 
         "Index", 
         "Culture", 
-        new { SelectedCulture = item.Culture, ReturnUrl = Request.Url.AbsoluteUri },
+        new { SelectedCulture = item.CultureId, ReturnUrl = Request.Url.AbsoluteUri },
         htmlAttribs)
-%>
+    %>
 <%}%>
+
 <!--// MVC Get current URL action and controller(navigation options) -->

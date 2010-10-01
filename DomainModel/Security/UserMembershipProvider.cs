@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.Security;
-using System.Configuration;
 
 
 
@@ -17,8 +16,7 @@ namespace DomainModel.Security
         public UserMembershipProvider()
         {
             this.users = new 
-                DomainModel.Repository.Sql.Users(
-                ConfigurationManager.ConnectionStrings["ApplicationServices"].ConnectionString);
+                DomainModel.Repository.Sql.Users();
         }
 
 

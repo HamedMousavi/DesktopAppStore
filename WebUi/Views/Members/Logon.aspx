@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<WebUi.Models.LoginInfo>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<WebUi.ViewModels.LoginInfo>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Persian Softwares - Membership
@@ -31,7 +31,7 @@
                 
                     <div class="editor-label">
                         <%: Html.CheckBox("RememberMe") %>
-                        <%: Html.Label(UiTexts.remember_me) %>
+                        <%: Html.Label(UiTexts.remember_me)%>
                     </div>
                 
                     <p>

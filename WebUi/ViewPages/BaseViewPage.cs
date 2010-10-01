@@ -11,7 +11,7 @@ namespace WebUi.ViewPages
         {
             base.InitializeCulture();
 
-            string cuture = WebUi.Models.AppCulture.CurrentCulture.Culture;
+            string cuture = WebUi.Models.AppCulture.CurrentCulture.CultureId;
             
             this.Culture = cuture;
             this.UICulture = cuture;

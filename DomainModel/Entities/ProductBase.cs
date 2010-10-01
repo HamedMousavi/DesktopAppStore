@@ -16,7 +16,7 @@ namespace DomainModel.Entities
         }
 
 
-        public Int64?                  ProductId           { get; set; }   // Unique Id of the product
+        public Int64?                   ProductId           { get; set; }   // Unique Id of the product
         public string                   ProductName         { get; set; }   // Name of the product
         public string                   ProductWebsite      { get; set; }   // Link to the product page online
         public string                   BriefDescription    { get; set; }   // A brief description of the product

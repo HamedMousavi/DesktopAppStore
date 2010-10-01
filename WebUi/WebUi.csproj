@@ -65,15 +65,13 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CultureController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
-    <Compile Include="Models\AppCultureList.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Models\ChromeAgentConst.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\CultureItem.cs" />
-    <Compile Include="Models\LoginInfo.cs" />
+    <Compile Include="ViewModels\LoginInfo.cs" />
     <Compile Include="Models\Profiles.cs" />
     <Compile Include="Models\SessionKeys.cs" />
     <Compile Include="Models\Sessions.cs" />
@@ -91,9 +89,12 @@
     <Content Include="Views\Members\Logon.aspx" />
     <Content Include="Views\Members\Register.aspx" />
     <Content Include="Views\Members\Welcome.aspx" />
+    <Content Include="Views\Search\Advanced.aspx" />
+    <Content Include="Views\Search\Basic.aspx" />
     <Content Include="Views\Shared\CultureSelector.ascx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\LogonViewer.ascx" />
+    <Content Include="Views\Shared\ProductCategories.ascx" />
     <Content Include="Views\Shared\SearchBox.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

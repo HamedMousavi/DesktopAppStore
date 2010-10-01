@@ -63,8 +63,8 @@ namespace DataAdministration
             this.listInstallationOptionsTableAdapter.Fill(this.persianSoftwareDataSet.ListInstallationOptions);
             // TODO: This line of code loads data into the 'persianSoftwareDataSet.ListProductTechnologies' table. You can move, or remove it, as needed.
             this.listProductTechnologiesTableAdapter.Fill(this.persianSoftwareDataSet.ListProductTechnologies);
-            // TODO: This line of code loads data into the 'persianSoftwareDataSet.ListCategoryTags' table. You can move, or remove it, as needed.
-            this.listCategoryTagsTableAdapter.Fill(this.persianSoftwareDataSet.ListCategoryTags);
+            // TODO: This line of code loads data into the 'persianSoftwareDataSet.ListTags' table. You can move, or remove it, as needed.
+            this.ListTagsTableAdapter.Fill(this.persianSoftwareDataSet.ListTags);
             // TODO: This line of code loads data into the 'persianSoftwareDataSet.ListLanguages' table. You can move, or remove it, as needed.
             this.listLanguagesTableAdapter.Fill(this.persianSoftwareDataSet.ListLanguages);
             // TODO: This line of code loads data into the 'persianSoftwareDataSet.ListSourceOptions' table. You can move, or remove it, as needed.
@@ -90,7 +90,7 @@ namespace DataAdministration
             this.listDemoOptionsTableAdapter.Update(this.persianSoftwareDataSet.ListDemoOptions);
             this.listInstallationOptionsTableAdapter.Update(this.persianSoftwareDataSet.ListInstallationOptions);
             this.listLanguagesTableAdapter.Update(this.persianSoftwareDataSet.ListLanguages);
-            this.listCategoryTagsTableAdapter.Update(this.persianSoftwareDataSet.ListCategoryTags);
+            this.ListTagsTableAdapter.Update(this.persianSoftwareDataSet.ListTags);
             this.listProductTechnologiesTableAdapter.Update(this.persianSoftwareDataSet.ListProductTechnologies);
             this.listSourceOptionsTableAdapter.Update(this.persianSoftwareDataSet.ListSourceOptions);
             this.listSoftwarePlatformsTableAdapter.Update(this.persianSoftwareDataSet.ListSoftwarePlatforms);

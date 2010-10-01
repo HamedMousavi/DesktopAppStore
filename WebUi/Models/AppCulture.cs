@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.Mvc;
+using DomainModel.Entities;
 
 
 
@@ -9,14 +10,11 @@ namespace WebUi.Models
     public class AppCulture
     {
 
-        public static AppCultureList CultureList = new AppCultureList();
-
-
-        public static CultureItem CurrentCulture
+        public static ProductLanguage CurrentCulture
         {
             get
             {
-                CultureItem culture = WebUi.Models.Profiles.Culture;
+                ProductLanguage culture = WebUi.Models.Profiles.Culture;
 
                 if (culture == null)
                 {
@@ -24,7 +22,7 @@ namespace WebUi.Models
 
                     if (culture == null)
                     {
-                        culture = CultureList.DefaultCulture;
+                        culture = DomainModel.Repository.Memory.Languages.Instance.Default;
                     }
                 }
 

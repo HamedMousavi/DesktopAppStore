@@ -8,13 +8,13 @@ namespace WebUi.Controllers
     {
         protected override void Initialize(RequestContext requestContext)
         {
-            string cuture = WebUi.Models.AppCulture.CurrentCulture.Culture;
+            string culture = WebUi.Models.AppCulture.CurrentCulture.CultureId;
 
-            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name != cuture)
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.Name != culture)
             {
                 // Update thread culture
-                System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cuture);
-                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cuture);
+                System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture);
             }
 
             base.Initialize(requestContext);

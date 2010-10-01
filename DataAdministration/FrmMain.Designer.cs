@@ -101,7 +101,7 @@
             this.dgvCategoryTags = new System.Windows.Forms.DataGridView();
             this.optionIdDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.optionNameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listCategoryTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ListTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvTechnologies = new System.Windows.Forms.DataGridView();
             this.optionIdDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.optionNameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,7 +135,7 @@
             this.listSoftwarePlatformsTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListSoftwarePlatformsTableAdapter();
             this.listSourceOptionsTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListSourceOptionsTableAdapter();
             this.listLanguagesTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListLanguagesTableAdapter();
-            this.listCategoryTagsTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListCategoryTagsTableAdapter();
+            this.ListTagsTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListTagsTableAdapter();
             this.listProductTechnologiesTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListProductTechnologiesTableAdapter();
             this.listInstallationOptionsTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListInstallationOptionsTableAdapter();
             this.listDemoOptionsTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListDemoOptionsTableAdapter();
@@ -196,7 +196,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLanguages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listLanguagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoryTags)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listCategoryTagsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListTagsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTechnologies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listProductTechnologiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSource)).BeginInit();
@@ -827,7 +827,7 @@
             this.dgvCategoryTags.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.optionIdDataGridViewTextBoxColumn3,
             this.optionNameDataGridViewTextBoxColumn3});
-            this.dgvCategoryTags.DataSource = this.listCategoryTagsBindingSource;
+            this.dgvCategoryTags.DataSource = this.ListTagsBindingSource;
             this.dgvCategoryTags.Location = new System.Drawing.Point(412, 38);
             this.dgvCategoryTags.Name = "dgvCategoryTags";
             this.dgvCategoryTags.RowHeadersVisible = false;
@@ -847,10 +847,10 @@
             this.optionNameDataGridViewTextBoxColumn3.HeaderText = "OptionName";
             this.optionNameDataGridViewTextBoxColumn3.Name = "optionNameDataGridViewTextBoxColumn3";
             // 
-            // listCategoryTagsBindingSource
+            // ListTagsBindingSource
             // 
-            this.listCategoryTagsBindingSource.DataMember = "ListCategoryTags";
-            this.listCategoryTagsBindingSource.DataSource = this.persianSoftwareDataSet;
+            this.ListTagsBindingSource.DataMember = "ListTags";
+            this.ListTagsBindingSource.DataSource = this.persianSoftwareDataSet;
             // 
             // dgvTechnologies
             // 
@@ -1123,9 +1123,9 @@
             // 
             this.listLanguagesTableAdapter.ClearBeforeFill = true;
             // 
-            // listCategoryTagsTableAdapter
+            // ListTagsTableAdapter
             // 
-            this.listCategoryTagsTableAdapter.ClearBeforeFill = true;
+            this.ListTagsTableAdapter.ClearBeforeFill = true;
             // 
             // listProductTechnologiesTableAdapter
             // 
@@ -1323,7 +1323,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLanguages)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listLanguagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoryTags)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listCategoryTagsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListTagsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTechnologies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listProductTechnologiesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSource)).EndInit();
@@ -1401,8 +1401,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn optionIdDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn optionNameDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn localNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource listCategoryTagsBindingSource;
-        private PersianSoftwareDataSetTableAdapters.ListCategoryTagsTableAdapter listCategoryTagsTableAdapter;
+        private System.Windows.Forms.BindingSource ListTagsBindingSource;
+        private PersianSoftwareDataSetTableAdapters.ListTagsTableAdapter ListTagsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn optionIdDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn optionNameDataGridViewTextBoxColumn3;
         private System.Windows.Forms.BindingSource listProductTechnologiesBindingSource;

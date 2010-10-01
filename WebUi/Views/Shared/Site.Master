@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" />Best persian softwares</title>
-    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Site.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -19,6 +19,9 @@
                 </div>
                 <div id="logon_viewer">
                     <% Html.RenderPartial("LogonViewer"); %>
+                </div>
+                <div id="search_box">
+                    <% Html.RenderPartial("SearchBox"); %>
                 </div>
             </div>
         </div>
@@ -45,6 +48,9 @@
         
 
             <div class="leftcol">
+                <div id="product_categories">
+                    <% Html.RenderPartial("ProductCategories"); %>
+                </div>
                 <asp:ContentPlaceHolder ID="LeftContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
@@ -91,11 +97,3 @@
 
 </body>
 </html>
-
-
-<!--
-
-                <div id="search_box">
-                    <% Html.RenderPartial("SearchBox"); %>
-                </div>
- -->

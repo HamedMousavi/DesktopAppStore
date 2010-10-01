@@ -14,7 +14,7 @@ namespace DataAdministration.Repository.Sql
             {"ListSoftwarePlatforms", "ProductPlatforms"}, 
             {"ListSourceOptions", "ProductSourceOptions"},  
             {"ListProductTechnologies", "ProductTechnologies"},  
-            {"ListCategoryTags", "ProductCategories"}, 
+            {"ListTags", "ProductTags"}, 
             {"ListLanguages", "ProductLanguages"},  
             {"ListExtensionOptions", "ProductExtensionOptions"},  
             {"ListPaymentOptions", "ProductPaymentOptions"},  
@@ -103,6 +103,7 @@ namespace DataAdministration.Repository.Sql
             Reload(product.SupportTypes, typeof(ProductSupportType), "ListSupportTypes", product.ProductId);
             Reload(product.SupportedLanguages, typeof(ProductLanguage), "ListLanguages", product.ProductId);
             Reload(product.ProductTechnologies, typeof(ProductTechnology), "ListProductTechnologies", product.ProductId);
+            Reload(product.Tags, typeof(ProductTag), "ListTags", product.ProductId);
         }
 
 

@@ -25,13 +25,13 @@ namespace WebUi
             routes.MapRoute(
                 null,
                 "",
-                new { controller = "Home", action = "Index"}
+                new { controller = "Home", action = "Index" }
             );
 
             routes.MapRoute(
                 null,
                 "{controller}/{action}",
-                new { controller = "Home", action = "Index"}
+                new { controller = "Home", action = "Index" }
             );
 
 /*
@@ -60,9 +60,27 @@ namespace WebUi
 
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            try
+            {
+                AreaRegistration.RegisterAllAreas();
 
-            RegisterRoutes(RouteTable.Routes);
+                RegisterRoutes(RouteTable.Routes);
+                // RouteDebug.RouteDebugger.RewriteRoutesForTesting(RouteTable.Routes);
+
+                // Load application languages
+                DomainModel.Repository.Memory.Languages.Instance.Load();
+
+                // Load application product categories
+                // DomainModel.Repository.Memory.Categories.Instance.Load(WebUi.Models.AppCulture.CurrentCulture.CultureId);
+                foreach (DomainModel.Entities.ProductLanguage lang in DomainModel.Repository.Memory.Languages.Instance.Items)
+                {
+                    DomainModel.Repository.Memory.Categories.Instance.Load(lang.CultureId);
+                }
+            }
+            catch (Exception ex)
+            {
+                // UNDONE: DAMN EXCEPTION IN HERE? NOW WHAT?!
+            }
         }
 
     }

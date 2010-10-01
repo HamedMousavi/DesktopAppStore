@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
 
-<% using(Html.BeginForm("", "")) %>
+<% using(Html.BeginForm("Basic", "Search")) %>
 <% { %>
 <%:     Html.Label(UiResources.UiTexts.search) %>
 <%:     Html.TextBox("search_term") %>

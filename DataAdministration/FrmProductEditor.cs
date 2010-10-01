@@ -78,7 +78,7 @@ namespace DataAdministration
             this.chbxOptions[0].SelectedDataSource = this.Product.SupportedPlatforms;
             this.chbxOptions[1].SelectedDataSource = this.Product.SourceOptions;
             this.chbxOptions[2].SelectedDataSource = this.Product.ProductTechnologies;
-            this.chbxOptions[3].SelectedDataSource = this.Product.CategoryTags;
+            this.chbxOptions[3].SelectedDataSource = this.Product.Tags;
             this.chbxOptions[4].SelectedDataSource = this.Product.SupportedLanguages;
             this.chbxOptions[5].SelectedDataSource = this.Product.ExtensionOptions;
             this.chbxOptions[6].SelectedDataSource = this.Product.PaymentOptions;
@@ -104,7 +104,7 @@ namespace DataAdministration
                 "ListSoftwarePlatforms", 
                 "ListSourceOptions", 
                 "ListProductTechnologies", 
-                "ListCategoryTags",
+                "ListTags",
                 "ListLanguages", 
                 "ListExtensionOptions", 
                 "ListPaymentOptions", 
@@ -207,6 +207,26 @@ namespace DataAdministration
                 {
                     this.tbxProductResourceDir.Text = dlg.SelectedPath;
                 }
+            }
+        }
+
+
+
+        private void btnHardwareRequirements_Click(object sender, EventArgs e)
+        {
+            using (FrmHardwareRequirements frm = new FrmHardwareRequirements(this.Product))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+
+
+        private void btnBrands_Click(object sender, EventArgs e)
+        {
+            using (FrmBrands frm = new FrmBrands(this.Product))
+            {
+                frm.ShowDialog();
             }
         }
 
