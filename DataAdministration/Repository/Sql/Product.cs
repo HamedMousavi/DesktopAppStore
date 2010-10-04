@@ -14,9 +14,9 @@ namespace DataAdministration.Repository.Sql
                 "DECLARE @productId BIGINT " +
                 "SET @productId = -1 " +
                 "INSERT INTO SoftwareProduct " +
-                "(ProductName, ProductWebsite, BriefDescription, ResourceDir, ProductVersion, ProductReleaseDate, ProductPrice, PriceDetails, MinimumVolumeSize, IsMultiUser, IsMultiLanguage, IsLanguageExtendable) " +
+                "(ProductName, ProductWebsite, BriefDescription, ProductVersion, ProductReleaseDate, ProductPrice, PriceDetails, MinimumVolumeSize, IsMultiUser, IsMultiLanguage, IsLanguageExtendable) " +
                 "VALUES " +
-                "(@ProductName, @ProductWebsite, @BriefDescription, @ResourceDir, @ProductVersion, @ProductReleaseDate, @ProductPrice, @PriceDetails, @MinimumVolumeSize, @IsMultiUser, @IsMultiLanguage, @IsLanguageExtendable) " +
+                "(@ProductName, @ProductWebsite, @BriefDescription, @ProductVersion, @ProductReleaseDate, @ProductPrice, @PriceDetails, @MinimumVolumeSize, @IsMultiUser, @IsMultiLanguage, @IsLanguageExtendable) " +
                 "SELECT @productId = SCOPE_IDENTITY(); " +
                 "SELECT @productId; "
                 );
@@ -29,7 +29,7 @@ namespace DataAdministration.Repository.Sql
                     cmd.Parameters.Add(new SqlParameter("@ProductName", Repository.Utils.Convert.ToString(product.ProductName) ));
                     cmd.Parameters.Add(new SqlParameter("@ProductWebsite", Repository.Utils.Convert.ToString(product.ProductWebsite)));
                     cmd.Parameters.Add(new SqlParameter("@BriefDescription", Repository.Utils.Convert.ToString(product.BriefDescription)));
-                    cmd.Parameters.Add(new SqlParameter("@ResourceDir", Repository.Utils.Convert.ToString(product.ResourceDir)));
+                    //cmd.Parameters.Add(new SqlParameter("@ResourceDir", Repository.Utils.Convert.ToString(product.ResourceDir)));
                     cmd.Parameters.Add(new SqlParameter("@ProductVersion", product.ProductVersion));
                     cmd.Parameters.Add(new SqlParameter("@ProductReleaseDate", product.ProductReleaseDate));
                     cmd.Parameters.Add(new SqlParameter("@ProductPrice", product.Price));
@@ -65,7 +65,7 @@ namespace DataAdministration.Repository.Sql
             string query = string.Format(
                 "UPDATE SoftwareProduct SET " +
                 "ProductName = @ProductName, ProductWebsite = @ProductWebsite, BriefDescription = @BriefDescription, " +
-                "ResourceDir = @ResourceDir, ProductVersion = @ProductVersion, ProductReleaseDate = @ProductReleaseDate, " +
+                "ProductVersion = @ProductVersion, ProductReleaseDate = @ProductReleaseDate, " +
                 "ProductPrice = @ProductPrice, PriceDetails = @PriceDetails, MinimumVolumeSize = @MinimumVolumeSize, " + 
                 "IsMultiUser = @IsMultiUser, IsMultiLanguage = @IsMultiLanguage, IsLanguageExtendable = @IsLanguageExtendable " +
                 "WHERE ProductId = @ProductId"
@@ -80,7 +80,7 @@ namespace DataAdministration.Repository.Sql
                     cmd.Parameters.Add(new SqlParameter("@ProductName", product.ProductName));
                     cmd.Parameters.Add(new SqlParameter("@ProductWebsite", product.ProductWebsite));
                     cmd.Parameters.Add(new SqlParameter("@BriefDescription", product.BriefDescription));
-                    cmd.Parameters.Add(new SqlParameter("@ResourceDir", product.ResourceDir));
+                    //cmd.Parameters.Add(new SqlParameter("@ResourceDir", product.ResourceDir));
                     cmd.Parameters.Add(new SqlParameter("@ProductVersion", product.ProductVersion));
                     cmd.Parameters.Add(new SqlParameter("@ProductReleaseDate", product.ProductReleaseDate));
                     cmd.Parameters.Add(new SqlParameter("@ProductPrice", product.Price));
@@ -133,7 +133,7 @@ namespace DataAdministration.Repository.Sql
                             product.Price               = Repository.Utils.Convert.ToDecimal(reader["ProductPrice"]);
                             product.PriceDetails        = Repository.Utils.Convert.ToString(reader["PriceDetails"]);
                             product.ProductReleaseDate  = Repository.Utils.Convert.ToDateTime(reader["ProductReleaseDate"]);
-                            product.ResourceDir         = Repository.Utils.Convert.ToString(reader["ResourceDir"]);
+                            product.Catalog.ResourceDir = Repository.Utils.Convert.ToString(reader["ResourceDir"]);
                             product.ProductVersion      = Repository.Utils.Convert.ToString(reader["ProductVersion"]);
                             product.MinimumVolumeSize   = Repository.Utils.Convert.ToFloat(reader["MinimumVolumeSize"]);
                             product.ProductWebsite      = Repository.Utils.Convert.ToString(reader["ProductWebsite"]);

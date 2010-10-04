@@ -8,6 +8,8 @@ namespace DomainModel.Entities
     {
         public Int32 CategoryId { get; set; }
         public string CategoryName { get; set; }
+        public string UrlName { get; set; }
+
         public CategoryCollection SubCategories { get; set; }
 
 
@@ -22,6 +24,13 @@ namespace DomainModel.Entities
         {
             this.CategoryId = categoryId;
             this.CategoryName = categoryName;
+        }
+
+
+        public override string ToString()
+        {
+            return this.CategoryName;
+            //return base.ToString();
         }
     }
 }

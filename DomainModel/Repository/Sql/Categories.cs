@@ -15,7 +15,7 @@ namespace DomainModel.Repository.Sql
             ProductLanguage language = Repository.Memory.Languages.Instance.Items[culture];
 
             string query =
-                " SELECT CategoryId, CategoryName" +
+                " SELECT CategoryId, CategoryName, UrlName" +
                 " FROM Categories" +
                 " WHERE (ParentId<0 AND LanguageId=@LanguageId)" +
                 " ORDER BY CategoryName";
@@ -38,6 +38,7 @@ namespace DomainModel.Repository.Sql
                             Entities.Category cat = new Entities.Category();
                             cat.CategoryId = Repository.Utils.Convert.ToInt32(reader[0]);
                             cat.CategoryName= Repository.Utils.Convert.ToString(reader[1]);
+                            cat.UrlName= Repository.Utils.Convert.ToString(reader[2]);
 
                             LoadSubCategories(cat.SubCategories, cat.CategoryId, language.Id);
 
@@ -55,7 +56,7 @@ namespace DomainModel.Repository.Sql
         private static void LoadSubCategories(Entities.CategoryCollection categories, int categoryId, int languageId)
         {
             string query =
-                " SELECT CategoryId, CategoryName" +
+                " SELECT CategoryId, CategoryName, UrlName" +
                 " FROM Categories" +
                 " WHERE (ParentId=@ParentId AND LanguageId=@LanguageId)" +
                 " ORDER BY CategoryName";
@@ -79,6 +80,7 @@ namespace DomainModel.Repository.Sql
                             Entities.Category cat = new Entities.Category();
                             cat.CategoryId = Repository.Utils.Convert.ToInt32(reader[0]);
                             cat.CategoryName = Repository.Utils.Convert.ToString(reader[1]);
+                            cat.UrlName = Repository.Utils.Convert.ToString(reader[2]);
 
                             LoadSubCategories(cat.SubCategories, cat.CategoryId, languageId);
 

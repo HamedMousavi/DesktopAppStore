@@ -147,6 +147,12 @@
   <data name="forgot_your_password" xml:space="preserve">
     <value>Forgot your password</value>
   </data>
+  <data name="has" xml:space="preserve">
+    <value>Has</value>
+  </data>
+  <data name="has_not" xml:space="preserve">
+    <value>Has NOT</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Language</value>
   </data>
@@ -159,6 +165,9 @@
   <data name="page_direction" xml:space="preserve">
     <value>ltr</value>
   </data>
+  <data name="page_number" xml:space="preserve">
+    <value>Page number</value>
+  </data>
   <data name="password" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -167,6 +176,18 @@
   </data>
   <data name="persian" xml:space="preserve">
     <value>فارسی</value>
+  </data>
+  <data name="product_name" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="product_price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="product_release_date" xml:space="preserve">
+    <value>Releaseed at</value>
+  </data>
+  <data name="product_version" xml:space="preserve">
+    <value>Version</value>
   </data>
   <data name="register" xml:space="preserve">
     <value>Register Me!</value>
@@ -179,6 +200,9 @@
   </data>
   <data name="search" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="support_multiple_languages" xml:space="preserve">
+    <value>Support multiple languages</value>
   </data>
   <data name="user_name" xml:space="preserve">
     <value>UserName</value>

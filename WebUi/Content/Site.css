@@ -8,11 +8,13 @@
     font-size: 12px;
     
     background-color: #101600;
-    color: White;
+    color: Black;
     
     width:100%;
     min-width:800px;    /* Minimum width of layout - remove line if not required */
 						/* The min-width property does not work in old versions of Internet Explorer */
+   
+    text-decoration: none;
 }
 
 
@@ -91,35 +93,39 @@
  +-------------------------------------------------------------------------------------*/
 
 
-div a
+a
 {
-    color: White;
     display: block inline;
     
     font-weight: bold;
     
     text-decoration: none;
-    text-align:center;
     vertical-align:middle;
     
     padding: 3px;
 }
 
 
-div a:hover
+a:hover
 {
     background-color: #90af90;
 }
 
 
-div a.selected
+a:visited
+{
+    color: White;
+}
+
+
+a.selected
 {
     color: Yellow;
     background-color: #90af90;
 }
 
 
-div a.selected:hover
+a.selected:hover
 {
 }
 
@@ -149,15 +155,8 @@ div a.selected:hover
 #culture_selector
 {
     float: right;
- 
-    width: 400px;
     padding: 4px;
-    margin: 15px 5px 0px 0px;
-    
     text-align: right;
-    
-    border: 1px solid #000000;
-    background-color: #0a2a0a;
 }
 
 
@@ -165,22 +164,60 @@ div a.selected:hover
 {
     padding: 4px;
     border: 1px solid #000000;
-    background-color: #0a2a0a;
+    background-color: #303030;
+}
+
+
+.accordion_list_title
+{
+    cursor:pointer;
+    padding: 4px;
+    border: 1px solid black;
+    background-color: #508040;
+}
+
+.accordion_list_title a, .accordion_list_title a:hover, .accordion_list_title a:visited
+{
+    display: block;
+    color: White;
+    background-color: #508040;
+}
+
+
+.accordion_dropdown
+{
+    padding: 0 1px 0 1px;
+}
+
+
+.accordion_list_item
+{
+    cursor:pointer;
+    margin: 0 0 0 0px;
+    padding: 2px 2px 2px 2px;
+    border: 0;
+    background-color: #b0d0a0;
+}
+
+
+.accordion_list_item a
+{
+    display:block;
+    color: #202010;
+}
+
+.accordion_list_item a:hover
+{
+    background-color: #efffa0;
+    color: #000000;
 }
 
 
 #logon_viewer
 {
     float: right;
- 
-    width: 400px;
     padding: 4px;
-    margin: 2px 5px 0px 0px;
-    
     text-align: right;
-    
-    border: 1px solid #000000;
-    background-color: #0a2a0a;
 }
 
 
@@ -188,30 +225,100 @@ div a.selected:hover
 {
     float: right;
     display: inline;
-    
-    width: 400px;
     padding: 4px;
-    margin: 2px 5px 0px 0px;
-    
     text-align: right;
-    
-    border: 1px solid #000000;
-    background-color: #0a2a0a;
 }
 
 
-#quick_access
+.search_results
 {
-    width: 400px;
+    background-color: #dadac0;
+    padding: 8px 8px 8px 8px;
+}
+
+
+.search_results_item
+{
+    border-bottom: 1px dashed gray;
+    background-color: #ffffff;
+    padding: 10px 30px;
+    line-height: 1.8em;
+}
+
+
+.list_title_link
+{
+    margin : 0 -20px;
+}
+
+
+.list_title_link a
+{
+    color: #5080ff;
+    font-weight: bold;
+}
+
+
+.list_title_link a:hover
+{
+    background-color: transparent;
+}
+
+
+.list_label
+{
+    color: #606060;
+}
+
+
+.list_field
+{
+    color: black;
+    font-weight: bold;
+    margin: 0 3px 0 3px;
+}
+
+
+.list_description
+{
+    color: black;
+    font-weight: normal;
+}
+
+
+.list_pager
+{
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    background-color: #dadac0;
+    border: 1px solid black;
+}
+
+
+#quick_access 
+{
+    background-color: #1B4220;
+    color: #80a050;
     
-    right: 2px;
-    top: 2px;
     position: absolute;
-    vertical-align:middle;
+    right: 15px;
+    top: 15px;
+    
+    width:300px;
+    padding: 6px;
+
+    border: 1px solid #102B00;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 #menu_bar
 {
     background-color: #000000;
     height: 25px;
+}
+
+fieldset
+{
+    background-color: White;
 }

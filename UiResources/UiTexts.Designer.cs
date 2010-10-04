@@ -151,6 +151,24 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Has.
+        /// </summary>
+        public static string has {
+            get {
+                return ResourceManager.GetString("has", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Has NOT.
+        /// </summary>
+        public static string has_not {
+            get {
+                return ResourceManager.GetString("has_not", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string language {
@@ -187,6 +205,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Page number.
+        /// </summary>
+        public static string page_number {
+            get {
+                return ResourceManager.GetString("page_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string password {
@@ -210,6 +237,42 @@ namespace UiResources {
         public static string persian {
             get {
                 return ResourceManager.GetString("persian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Name.
+        /// </summary>
+        public static string product_name {
+            get {
+                return ResourceManager.GetString("product_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string product_price {
+            get {
+                return ResourceManager.GetString("product_price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Releaseed at.
+        /// </summary>
+        public static string product_release_date {
+            get {
+                return ResourceManager.GetString("product_release_date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        public static string product_version {
+            get {
+                return ResourceManager.GetString("product_version", resourceCulture);
             }
         }
         
@@ -246,6 +309,15 @@ namespace UiResources {
         public static string search {
             get {
                 return ResourceManager.GetString("search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support multiple languages.
+        /// </summary>
+        public static string support_multiple_languages {
+            get {
+                return ResourceManager.GetString("support_multiple_languages", resourceCulture);
             }
         }
         

@@ -147,6 +147,12 @@
   <data name="forgot_your_password" xml:space="preserve">
     <value>اطلاعات حساب خود را گم کرده اید؟</value>
   </data>
+  <data name="has" xml:space="preserve">
+    <value>دارد</value>
+  </data>
+  <data name="has_not" xml:space="preserve">
+    <value>ندارد</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Language</value>
   </data>
@@ -159,6 +165,9 @@
   <data name="page_direction" xml:space="preserve">
     <value>rtl</value>
   </data>
+  <data name="page_number" xml:space="preserve">
+    <value>شماره صفحه</value>
+  </data>
   <data name="password" xml:space="preserve">
     <value>رمز عبور</value>
   </data>
@@ -167,6 +176,18 @@
   </data>
   <data name="persian" xml:space="preserve">
     <value>Persian</value>
+  </data>
+  <data name="product_name" xml:space="preserve">
+    <value>نام محصول</value>
+  </data>
+  <data name="product_price" xml:space="preserve">
+    <value>قیمت نرم افزار</value>
+  </data>
+  <data name="product_release_date" xml:space="preserve">
+    <value>تاریخ عرضه نرم افزار</value>
+  </data>
+  <data name="product_version" xml:space="preserve">
+    <value>نسخه</value>
   </data>
   <data name="register" xml:space="preserve">
     <value>ارسال درخواست عضویت</value>
@@ -179,6 +200,9 @@
   </data>
   <data name="search" xml:space="preserve">
     <value>جستجو</value>
+  </data>
+  <data name="support_multiple_languages" xml:space="preserve">
+    <value>پشتیبانی از زبانهای غیر فارسی</value>
   </data>
   <data name="user_name" xml:space="preserve">
     <value>نام کاربری</value>

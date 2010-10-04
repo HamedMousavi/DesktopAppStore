@@ -7,12 +7,16 @@ namespace DomainModel.Entities
     {
         public ProductBase()
         {
+            this.MultiLanguage = false;
+
+            this.Price = null;
             this.ProductId = null;
             this.ProductReleaseDate = null;
             
             this.SupportedPlatforms = new List<SoftwarePlatform>();
             this.ProductOwners = new List<ProductOwner>();
             this.ProductTechnologies = new List<ProductTechnology>();
+            this.Catalog = new ProductCatalog();
         }
 
 
@@ -20,13 +24,15 @@ namespace DomainModel.Entities
         public string                   ProductName         { get; set; }   // Name of the product
         public string                   ProductWebsite      { get; set; }   // Link to the product page online
         public string                   BriefDescription    { get; set; }   // A brief description of the product
-        public string                   ResourceDir         { get; set; }   // Directory containing resources for the article
         public string                   ProductVersion      { get; set; }   // Version of this product
         public DateTime?                ProductReleaseDate  { get; set; }   // Release date of the product
+        public decimal?                 Price { get; set; }
+        public string                   PriceDetails { get; set; }
+        public bool                     MultiLanguage { get; set; }
         
         public List<SoftwarePlatform>   SupportedPlatforms  { get; protected set; }
         public List<ProductOwner>       ProductOwners       { get; protected set; }
         public List<ProductTechnology>  ProductTechnologies { get; protected set; }
-
+        public ProductCatalog           Catalog { get; private set; }
     }
 }

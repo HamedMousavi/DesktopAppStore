@@ -16,12 +16,35 @@ namespace WebUi
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // /Culture?SelectedCulture=...&ReturnUrl=...
             routes.MapRoute(
                 null,
                 "Culture",
                 new { controller = "Culture", action = "Index" }
             );
 
+            // /Products/Yaas/Home
+            routes.MapRoute(null,
+                "Products/{productName}/Home", // Matches ~/Football or ~/AnythingWithNoSlash
+                new { controller = "Products", action = "Details", productName = (string)null }
+            );
+
+            // /Products/Yaas/Catalog
+            routes.MapRoute(null,
+                "Products/{productName}/Catalog", // Matches ~/Football or ~/AnythingWithNoSlash
+                new { controller = "Products", action = "Details", productName = (string)null }
+            );
+
+
+            // /Products/Medical/EMR
+            // /Products/Medical
+            // /Products
+            routes.MapRoute(null,
+                "Products/{category}/{subcategory}", // Matches ~/Football or ~/AnythingWithNoSlash
+                new { controller = "Products", action = "List", category = (string)null, subcategory = (string)null, page=1 }
+            );
+
+            // /Homde
             routes.MapRoute(
                 null,
                 "",

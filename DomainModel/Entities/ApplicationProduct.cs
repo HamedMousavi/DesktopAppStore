@@ -11,10 +11,8 @@ namespace DomainModel.Entities
         public ApplicationProduct()
             : base()
         {
-            this.Price = null;
             this.MinimumVolumeSize = null;
             this.MultiUser = false;
-            this.MultiLanguage = false;
             this.LanguageExtendable = false;
 
             this.HardwareRequirements = new List<string>();
@@ -39,11 +37,8 @@ namespace DomainModel.Entities
             this.BackupOptions = new List<ProductDataBackupOption>();
         }
 
-        public decimal?                         Price { get; set; }
-        public string                           PriceDetails { get; set; }
         public float?                           MinimumVolumeSize { get; set; } // MB
         public bool                             MultiUser { get; set; }
-        public bool                             MultiLanguage { get; set; }
         public bool                             LanguageExtendable { get; set; }
 
         public List<string>                     HardwareRequirements { get; set; }

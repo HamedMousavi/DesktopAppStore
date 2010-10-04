@@ -59,10 +59,10 @@ namespace DataAdministration
             this.tbxProductPrice.DataBindings.Add(new Binding("Text", this.Product, "Price", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductPriceDetails.DataBindings.Add(new Binding("Text", this.Product, "PriceDetails", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductReleaseDate.DataBindings.Add(new Binding("Text", this.Product, "ProductReleaseDate", true, DataSourceUpdateMode.OnPropertyChanged, ""));
-            this.tbxProductResourceDir.DataBindings.Add(new Binding("Text", this.Product, "ResourceDir", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductVersion.DataBindings.Add(new Binding("Text", this.Product, "ProductVersion", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductVolumeSize.DataBindings.Add(new Binding("Text", this.Product, "MinimumVolumeSize", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductWebsite.DataBindings.Add(new Binding("Text", this.Product, "ProductWebsite", true, DataSourceUpdateMode.OnPropertyChanged, ""));
+            this.tbxProductResourceDir.DataBindings.Add(new Binding("Text", this.Product.Catalog, "ResourceDir", true, DataSourceUpdateMode.OnPropertyChanged, ""));
 
             this.chbxProductLangExtendable.DataBindings.Add(new Binding("Checked", this.Product, "LanguageExtendable"));
             this.chbxProductMultiLanguage.DataBindings.Add(new Binding("Checked", this.Product, "MultiLanguage"));

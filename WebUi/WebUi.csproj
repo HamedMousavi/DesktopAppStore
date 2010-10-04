@@ -13,7 +13,7 @@
     <RootNamespace>WebUi</RootNamespace>
     <AssemblyName>WebUi</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
+    <MvcBuildViews>true</MvcBuildViews>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,7 +65,11 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CultureController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="HtmlHelpers\ListingHelpers.cs" />
+    <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Models\ChromeAgentConst.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -76,6 +80,7 @@
     <Compile Include="Models\SessionKeys.cs" />
     <Compile Include="Models\Sessions.cs" />
     <Compile Include="Models\AppCulture.cs" />
+    <Compile Include="ViewModels\PagingInfo.cs" />
     <Compile Include="ViewPages\BaseViewPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -89,12 +94,14 @@
     <Content Include="Views\Members\Logon.aspx" />
     <Content Include="Views\Members\Register.aspx" />
     <Content Include="Views\Members\Welcome.aspx" />
+    <Content Include="Views\Products\List.aspx" />
     <Content Include="Views\Search\Advanced.aspx" />
     <Content Include="Views\Search\Basic.aspx" />
     <Content Include="Views\Shared\CultureSelector.ascx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\LogonViewer.ascx" />
     <Content Include="Views\Shared\ProductCategories.ascx" />
+    <Content Include="Views\Shared\ProductSummary.ascx" />
     <Content Include="Views\Shared\SearchBox.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -121,7 +128,9 @@
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModels\Abstract\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DomainModel\DomainModel.csproj">
       <Project>{1B479C80-B78C-4F26-BFDD-3EFEA8678F3F}</Project>
