@@ -45,8 +45,6 @@ namespace WebUi.Controllers
             pagingInf.TotalItems = list.TotalCount;
 
             ViewData["PagingInf"] = pagingInf;
-            ViewData["CurrentCategory"] = category;
-            ViewData["CurrentSubcategory"] = subcategory;
 
             return View(list.List);
         }

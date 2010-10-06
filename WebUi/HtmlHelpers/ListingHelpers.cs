@@ -11,19 +11,31 @@ namespace WebUi.HtmlHelpers
 {
     public static class ListingHelpers
     {
-        public static MvcHtmlString AccordionList(this HtmlHelper html, IEnumerable items)
+        public static MvcHtmlString AccordionList(this HtmlHelper html, IEnumerable items, WebUi.ViewModels.CurrentListItem current)
         {
+            int selected = 0;
+
             StringBuilder ret = new StringBuilder();
 
             foreach (DomainModel.Entities.Category category in items)
             {
-                ret.Append(BeginTitleTag(category));
+                if (category.UrlName == current.Category) selected = 1;
+                ret.Append(BeginTitleTag(category, selected == 1));
 
                 foreach(DomainModel.Entities.Category sub in category.SubCategories)
                 {
-                    ret.Append(GetSubcategoryTag(html, category, sub));
+                    if (selected == 1)
+                    {
+                        if (sub.UrlName == current.Subcategory)
+                        {
+                            selected = 2;
+                        }
+                    }
+
+                    ret.Append(GetSubcategoryTag(html, category, sub, selected == 2));
                 }
 
+                selected = 0;
                 ret.Append(EndTitleTag());
             }
 
@@ -39,7 +51,7 @@ namespace WebUi.HtmlHelpers
 
 
 
-        private static string BeginTitleTag(DomainModel.Entities.Category category)
+        private static string BeginTitleTag(DomainModel.Entities.Category category, bool selected)
         {
             string titleUrl = string.Format(
                 "<a onclick=\"return ToggleAccordionList('{0}');\"  href=\"/Products/{1}\">{2}</a>",
@@ -51,14 +63,15 @@ namespace WebUi.HtmlHelpers
                 "<div class=\"accordion_list_title\">" +
                     "{0}" +
                 "</div>" +
-                    "<div id=\"{1}\" class=\"accordion_dropdown\" style=\"display: none;\">",
+                    "<div id=\"{1}\" class=\"accordion_dropdown\" style=\"display: {2};\">",
                 titleUrl,
-                category.CategoryId);
+                category.CategoryId,
+                selected?"block":"none");
         }
 
 
 
-        private static string GetSubcategoryTag(HtmlHelper html, DomainModel.Entities.Category category, DomainModel.Entities.Category sub)
+        private static string GetSubcategoryTag(HtmlHelper html, DomainModel.Entities.Category category, DomainModel.Entities.Category sub, bool selected)
         {
             MvcHtmlString url = System.Web.Mvc.Html.LinkExtensions.ActionLink(
                        html,
@@ -68,9 +81,10 @@ namespace WebUi.HtmlHelpers
                        new { category = category.UrlName, subcategory = sub.UrlName }, null);
 
             return string.Format(
-                "<div class=\"accordion_list_item\">" +
-                    "{0}" +
+                "<div class=\"accordion_list_item{0}\">" +
+                    "{1}" +
                 "</div>",
+                selected?"_selected":"",
                 url.ToString());
         }
     }

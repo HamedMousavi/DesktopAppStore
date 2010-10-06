@@ -6,9 +6,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
-    <div>
+    <div class = "form">
         <h2><%: UiTexts.log_on %></h2>
-        <% using (Html.BeginForm("Logon", "Members")) { %>
+        <% using (Html.BeginForm("Logon", "Members"/*, FormMethod.Post, new { @class = "form" }*/))
+           { %>
             <%: Html.ValidationSummary(true, "Login was NOT successful. Please correct the errors and try again.") %>
                 <fieldset>
                     <legend><%: UiTexts.account_information %></legend>
@@ -40,11 +41,11 @@
                 </fieldset>
         <% } %>
     </div>
-    <div>
+    <div class = "form">
         <h2><%: UiTexts.become_a_member %></h2>
             <%: Html.ActionLink(UiTexts.become_a_member, "Register", "Members") %>
     </div>
-    <div>
+    <div class = "form">
         <h2><%: UiTexts.forgot_your_password %></h2>
         <%: Html.ActionLink(UiTexts.password_recovery_wizard, "ResetPassword", "Members") %>
     </div>

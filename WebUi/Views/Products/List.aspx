@@ -17,7 +17,7 @@
 
     </div>
 
-    <div class="list_pager">
+    <div class="list_pager button_link">
         <%: UiResources.UiTexts.page_number %>
         <%: Html.PageLinks(Url, (WebUi.ViewModels.PagingInfo)ViewData["PagingInf"]) %>
     </div>

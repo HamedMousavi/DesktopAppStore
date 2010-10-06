@@ -192,6 +192,9 @@
   <data name="register" xml:space="preserve">
     <value>Register Me!</value>
   </data>
+  <data name="registeration_form" xml:space="preserve">
+    <value>Registration form</value>
+  </data>
   <data name="registration_information" xml:space="preserve">
     <value>Registration Information</value>
   </data>

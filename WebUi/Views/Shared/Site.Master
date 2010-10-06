@@ -24,18 +24,26 @@
 
 <body>
 
+    <!--[if lt IE 7]>
+    <style media="screen" type="text/css" rel="stylesheet">
+    .holygrail .colleft
+    {
+	    margin-left:-100%;
+	};
+
+    </style>
+    <![endif]-->
+
+
     <div class="page" dir="<%: UiResources.UiTexts.page_direction %>">
 
         <div id="header">
             <div id="logo"></div>
             <div id="quick_access">
-                <div id="culture_selector">
+                <div id="culture_selector" class="button_link">
                     <% Html.RenderPartial("CultureSelector"); %>
                 </div>
-                <div id="logon_viewer">
-                    <% Html.RenderPartial("LogonViewer"); %>
-                </div>
-                <div id="search_box">
+                <div id="search_box" class="button_link">
                     <% Html.RenderPartial("SearchBox"); %>
                 </div>
             </div>
@@ -43,8 +51,11 @@
 
         <div id="menu_bar">
 
-
             <div id="nav_menu">
+            </div>
+
+            <div id="logon_viewer" class="button_link">
+                <% Html.RenderPartial("LogonViewer"); %>
             </div>
 
         </div>
@@ -64,7 +75,7 @@
 
             <div class="leftcol">
                 <div id="product_categories">
-                    <% Html.RenderPartial("ProductCategories"); %>
+                    <% Html.RenderAction("ProductCategories", "Navigation"); %>
                 </div>
                 <asp:ContentPlaceHolder ID="LeftContent" runat="server">
                 </asp:ContentPlaceHolder>
@@ -89,26 +100,7 @@
 
     </div>
 
-
-        <!--[if lt IE 7]>
-        <style media="screen" type="text/css" rel="stylesheet">
-        .holygrail .colleft
-        {
-	        margin-left:-100%;
-	    };
-	
-        .box input
-        {
-           background-color: #fefefa;
-           border-color: #bbbbbb;
-           font-size: 10px;
-        };
-        </style>
-        <![endif]-->
-    
-        <!--[if lte IE 7]>
-        <![endif]-->
-      
+   
 
 </body>
 </html>

@@ -6,27 +6,31 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
-<% using (Html.BeginForm("Register", "Members")) { %>
-    <%: Html.ValidationSummary() %>
+    <div class = "form">
+        <h2><%: UiTexts.registeration_form %></h2>
+        <% using (Html.BeginForm("Register", "Members"/*, FormMethod.Post, new { @class="form" }*/))
+           { %>
+            <%: Html.ValidationSummary()%>
     
-    <fieldset>
-        <legend><%: UiTexts.registration_information%></legend>
+            <fieldset>
+                <legend><%: UiTexts.registration_information%></legend>
 
-        <div class="editor-label">
-            <%: Html.Label(UiTexts.email_address)%>
-        </div>
+                <div class="editor-label">
+                    <%: Html.Label(UiTexts.email_address)%>
+                </div>
 
-        <div class="editor-field">
-            <%: Html.TextBox("Email")%>
-            <%: Html.ValidationMessage("Email")%>
-        </div>
+                <div class="editor-field">
+                    <%: Html.TextBox("Email")%>
+                    <%: Html.ValidationMessage("Email")%>
+                </div>
 
-        <p>
-            <input type="submit" value="<%: UiTexts.register %>" />
-        </p>
+                <p>
+                    <input type="submit" value="<%: UiTexts.register %>" />
+                </p>
 
-    </fieldset>
-<% } %>
+            </fieldset>
+        <% } %>
+    </div>
 
 </asp:Content>
 

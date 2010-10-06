@@ -192,6 +192,9 @@
   <data name="register" xml:space="preserve">
     <value>ارسال درخواست عضویت</value>
   </data>
+  <data name="registeration_form" xml:space="preserve">
+    <value>فرم عضویت</value>
+  </data>
   <data name="registration_information" xml:space="preserve">
     <value>اطلاعات ثبت نام</value>
   </data>

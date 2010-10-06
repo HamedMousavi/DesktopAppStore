@@ -10,6 +10,7 @@ namespace DomainModel.Tools
     {
         public static string Format(decimal? money, ProductLanguage culture)
         {
+            // UNDONE:
             return string.Format("{0}", money.Value);
         }
     }

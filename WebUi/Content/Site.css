@@ -92,41 +92,102 @@
  |									Page								|
  +-------------------------------------------------------------------------------------*/
 
+fieldset, fieldset fieldset
+{
+    background-color:#FAFAF3;
+    
+    border-color:#BFBAB0;
+    border-style:dotted;
+    
+    line-height:1.9em;
+    
+    margin: 0;
+    padding: 8px 8px 8px 8px;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+legend, fieldset legend
+{  
+	display: block !important;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+
+
+.form
+{
+    background-color:White;
+    border:1px solid black;
+
+    line-height:1.9em;
+
+    margin:2px 2px;
+    padding:10px;
+
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+.form a
+{
+    padding: 6px;
+    
+    color: White;
+    background: #70A040;
+    
+    border: 1px solid #80a070;
+
+    font-family: Tahoma;
+    font-weight: bold;
+    
+    vertical-align:middle;
+    cursor: pointer;
+}
+
+
+.form a:hover
+{
+    color: black;
+    background: #80A070;
+}
+
+input[type='submit']
+{
+    padding: 2px 2px;
+    
+    color: White;
+    background: green;
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #80a070 #607050 #607050 #80a070;
+
+    font-family: Tahoma;
+    font-weight: bold;
+    
+    vertical-align:middle;
+    cursor: pointer;
+}
 
 a
 {
-    display: block inline;
-    
-    font-weight: bold;
-    
     text-decoration: none;
-    vertical-align:middle;
-    
-    padding: 3px;
+    cursor: pointer;
 }
 
 
 a:hover
 {
-    background-color: #90af90;
-}
-
-
-a:visited
-{
-    color: White;
-}
-
-
-a.selected
-{
-    color: Yellow;
-    background-color: #90af90;
-}
-
-
-a.selected:hover
-{
+    text-decoration: underline;
 }
 
 
@@ -168,12 +229,50 @@ a.selected:hover
 }
 
 
+.button_link a
+{
+    display: block inline;
+    
+    font-weight: bold;
+    color: White;
+    
+    vertical-align:middle;
+    
+    padding: 3px;
+}
+
+
+.button_link a:hover
+{
+    background-color: #90af90;
+}
+
+
+.button_link a:visited
+{
+    color: White;
+}
+
+
+.button_link a.selected
+{
+    color: Yellow;
+    background-color: #90af90;
+}
+
+
+.button_link a.selected:hover
+{
+}
+
+
 .accordion_list_title
 {
     cursor:pointer;
-    padding: 4px;
+    padding: 3px 3px;
     border: 1px solid black;
     background-color: #508040;
+    font-weight: bold;
 }
 
 .accordion_list_title a, .accordion_list_title a:hover, .accordion_list_title a:visited
@@ -181,6 +280,8 @@ a.selected:hover
     display: block;
     color: White;
     background-color: #508040;
+    padding: 4px 4px;
+    text-decoration: none;
 }
 
 
@@ -190,13 +291,32 @@ a.selected:hover
 }
 
 
-.accordion_list_item
+.accordion_list_item, .accordion_list_item_selected
 {
     cursor:pointer;
-    margin: 0 0 0 0px;
-    padding: 2px 2px 2px 2px;
-    border: 0;
+    padding: 4px 4px;
     background-color: #b0d0a0;
+    vertical-align:middle;
+}
+
+
+.accordion_list_item_selected
+{
+    border: 1px dotted black;
+}
+
+
+.accordion_list_item_selected a
+{
+    display:block;
+    padding: 4px 4px;
+    color: #202010;
+    background-color: #efffa0;
+}
+
+.accordion_list_item_selected a:hover 
+{
+    text-decoration: none;
 }
 
 
@@ -204,12 +324,14 @@ a.selected:hover
 {
     display:block;
     color: #202010;
+    padding: 4px 4px;
 }
 
 .accordion_list_item a:hover
 {
     background-color: #efffa0;
     color: #000000;
+    text-decoration: none;
 }
 
 
@@ -227,20 +349,25 @@ a.selected:hover
     display: inline;
     padding: 4px;
     text-align: right;
+    margin-top: 30px;
 }
 
 
 .search_results
 {
-    background-color: #dadac0;
-    padding: 8px 8px 8px 8px;
+    padding: 8px;
+    
+    background-color: White;
+    
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 
 .search_results_item
 {
     border-bottom: 1px dashed gray;
-    background-color: #ffffff;
+    background-color:#FAFAF3;
     padding: 10px 30px;
     line-height: 1.8em;
 }
@@ -288,17 +415,21 @@ a.selected:hover
 
 .list_pager
 {
-    margin: 10px 0px 0px 0px;
+    margin: 5px 0px 0px 0px;
     padding: 10px;
-    background-color: #dadac0;
+    
+    background-color: White;
     border: 1px solid black;
+    
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 
 #quick_access 
 {
     background-color: #1B4220;
-    color: #80a050;
+    color: #a0d080;
     
     position: absolute;
     right: 15px;
@@ -316,9 +447,4 @@ a.selected:hover
 {
     background-color: #000000;
     height: 25px;
-}
-
-fieldset
-{
-    background-color: White;
 }

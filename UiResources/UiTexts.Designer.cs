@@ -286,6 +286,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registration form.
+        /// </summary>
+        public static string registeration_form {
+            get {
+                return ResourceManager.GetString("registeration_form", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registration Information.
         /// </summary>
         public static string registration_information {
