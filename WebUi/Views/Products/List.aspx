@@ -18,8 +18,11 @@
     </div>
 
     <div class="list_pager button_link">
-        <%: UiResources.UiTexts.page_number %>
-        <%: Html.PageLinks(Url, (WebUi.ViewModels.PagingInfo)ViewData["PagingInf"]) %>
+        <% WebUi.ViewModels.PagingInfo pagingData = (WebUi.ViewModels.PagingInfo)ViewData[WebUi.ViewModels.ViewDataKeys.ListPagingDetails]; %>
+        
+        <%: Html.ListDetail(pagingData) %>
+
+        <%: Html.PageLinks(Url, pagingData) %>
     </div>
 
 </asp:Content>

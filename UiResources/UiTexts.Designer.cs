@@ -169,6 +169,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Found &lt;b&gt;{0}&lt;/b&gt; softwares in this category.
+        /// </summary>
+        public static string items_found {
+            get {
+                return ResourceManager.GetString("items_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string language {
@@ -192,6 +201,15 @@ namespace UiResources {
         public static string log_on {
             get {
                 return ResourceManager.GetString("log_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorted in &lt;b&gt;{0}&lt;/b&gt; pages.
+        /// </summary>
+        public static string page_count {
+            get {
+                return ResourceManager.GetString("page_count", resourceCulture);
             }
         }
         

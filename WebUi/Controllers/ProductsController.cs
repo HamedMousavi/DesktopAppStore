@@ -44,9 +44,17 @@ namespace WebUi.Controllers
             pagingInf.CurrentPage = page;
             pagingInf.TotalItems = list.TotalCount;
 
-            ViewData["PagingInf"] = pagingInf;
+            ViewData[ViewModels.ViewDataKeys.ListPagingDetails] = pagingInf;
 
             return View(list.List);
+        }
+
+
+        public ActionResult Details(string productName)
+        {
+            // GET ALL INFO ABOUT PRODUCT
+            // SHOW IT NICELY TO USER
+            return View();
         }
 
     }

@@ -32,5 +32,24 @@ namespace WebUi.HtmlHelpers
 
             return MvcHtmlString.Create(ret.ToString());
         }
+
+
+
+        public static MvcHtmlString ListDetail(this HtmlHelper html, PagingInfo inf)
+        {
+            string ret = "<span class=\"list_pager_details\">";
+
+            ret += string.Format(UiResources.UiTexts.items_found, inf.TotalItems);
+            ret += "<span class=\"pager_inf_separator\">|</span>";
+
+            ret += string.Format(UiResources.UiTexts.page_count, inf.TotalPages);
+            ret += "<span class=\"pager_inf_separator\">|</span>";
+
+            ret += "</span>";
+
+            return MvcHtmlString.Create(ret);
+        }
+    
     }
+
 }

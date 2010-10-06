@@ -426,6 +426,19 @@ a:hover
 }
 
 
+.pager_inf_separator
+{
+    padding: 8px;
+    color: Orange;
+    font-weight: bold;
+}
+
+
+.list_pager_details
+{
+}
+
+
 #quick_access 
 {
     background-color: #1B4220;

@@ -153,6 +153,9 @@
   <data name="has_not" xml:space="preserve">
     <value>Has NOT</value>
   </data>
+  <data name="items_found" xml:space="preserve">
+    <value>Found &lt;b&gt;{0}&lt;/b&gt; softwares in this category</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Language</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="log_on" xml:space="preserve">
     <value>Log On</value>
+  </data>
+  <data name="page_count" xml:space="preserve">
+    <value>Sorted in &lt;b&gt;{0}&lt;/b&gt; pages</value>
   </data>
   <data name="page_direction" xml:space="preserve">
     <value>ltr</value>

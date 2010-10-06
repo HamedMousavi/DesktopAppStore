@@ -153,6 +153,9 @@
   <data name="has_not" xml:space="preserve">
     <value>ندارد</value>
   </data>
+  <data name="items_found" xml:space="preserve">
+    <value>در این دسته &lt;b&gt;{0}&lt;/b&gt; عدد نرم افزار یافت شد</value>
+  </data>
   <data name="language" xml:space="preserve">
     <value>Language</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="log_on" xml:space="preserve">
     <value>ورود اعضا</value>
+  </data>
+  <data name="page_count" xml:space="preserve">
+    <value>مرتب شده در &lt;b&gt;{0}&lt;/b&gt; صفحه</value>
   </data>
   <data name="page_direction" xml:space="preserve">
     <value>rtl</value>
