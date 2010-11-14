@@ -294,11 +294,13 @@ namespace DataAdministration.Repository.Sql
         internal static void Reload(ApplicationProduct product)
         {
             string query = string.Format(
-                "SELECT Contacts.ContactId, ContactValue, ContactPerson, UnitTitleName, dbo.Contacts.ContactMediaId, ContactUnitTitleId, dbo.ListContactMedias.ContactMediaName " +
-                "FROM dbo.Contacts, dbo.ListContactUnitTitles, dbo.ListContactMedias " +
-                "WHERE dbo.Contacts.ContactId IN (SELECT ContactId FROM dbo.ProductContacts WHERE ProductId = {0}) " +
-                "AND dbo.Contacts.ContactMediaId = dbo.ListContactMedias.ContactMediaId AND " +
-                "dbo.ListContactUnitTitles.UnitTitleId = dbo.Contacts.ContactUnitTitleId", product.ProductId);
+                "SELECT Contacts.ContactId, ContactValue, ContactPerson, UnitTitleName, Contacts.ContactMediaId, ContactUnitTitleId, ListContactMedias.ContactMediaName " +
+                "FROM Contacts, ListContactUnitTitles, ListContactMedias " +
+                "WHERE Contacts.ContactId IN (SELECT ContactId FROM ProductContacts WHERE ProductId = {0}) " +
+                "AND Contacts.ContactMediaId = ListContactMedias.ContactMediaId AND " +
+                "ListContactUnitTitles.UnitTitleId = Contacts.ContactUnitTitleId AND" +
+                " ListContactUnitTitles.LanguageId = {1} AND ListContactMedias.LanguageId = {1}", 
+                product.ProductId, product.ArticleLanguage);
 
             using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.PersianSoftwareConnectionString))
             {

@@ -11,11 +11,17 @@ namespace DataAdministration.Repository.Sql
 {
     class Options
     {
-        internal static IEnumerable GetOptions(string tableName)
+        internal static IEnumerable GetOptions(string tableName, int languageId)
         {
             List<ProductOptionBase> list = null;
 
+            int idIndex = 0;
+            int nameIndex = 2;
             string query = string.Format("SELECT * FROM {0}", tableName);
+            if (tableName != "ListLanguages")
+            {
+                query += string.Format(" WHERE LanguageId = {0}", languageId);
+            }
 
             using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.PersianSoftwareConnectionString))
             {
@@ -35,8 +41,8 @@ namespace DataAdministration.Repository.Sql
                                 if (reader[0] != null)
                                 {
                                     ProductOptionBase option = new ProductOptionBase();
-                                    option.Id = Convert.ToInt32(reader[0]);
-                                    option.Name = Convert.ToString(reader[1]);
+                                    option.Id = Convert.ToInt32(reader[idIndex]);
+                                    option.Name = Convert.ToString(reader[nameIndex]);
 
                                     list.Add(option);
                                 }

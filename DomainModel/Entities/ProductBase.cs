@@ -17,9 +17,11 @@ namespace DomainModel.Entities
             this.ProductOwners = new List<ProductOwner>();
             this.ProductTechnologies = new List<ProductTechnology>();
             this.Catalog = new ProductCatalog();
+            this.Article = new ProductArticle();
         }
 
 
+        public Int16                    Status              { get; set; }
         public Int64?                   ProductId           { get; set; }   // Unique Id of the product
         public string                   ProductName         { get; set; }   // Name of the product
         public string                   ProductWebsite      { get; set; }   // Link to the product page online
@@ -34,5 +36,7 @@ namespace DomainModel.Entities
         public List<ProductOwner>       ProductOwners       { get; protected set; }
         public List<ProductTechnology>  ProductTechnologies { get; protected set; }
         public ProductCatalog           Catalog { get; private set; }
+        public int                      ArticleLanguage { get; set; }
+        public ProductArticle           Article { get; set; }
     }
 }

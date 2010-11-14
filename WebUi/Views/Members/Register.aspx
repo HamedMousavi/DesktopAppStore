@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Register
+	Register - <%:UiResources.UiTexts.app_title %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
     <div class = "form">
         <h2><%: UiTexts.registeration_form %></h2>
-        <% using (Html.BeginForm("Register", "Members"/*, FormMethod.Post, new { @class="form" }*/))
+        <% using (Html.BeginForm(WebUi.ViewModels.NavigationKeys.MemberRegisterAction, WebUi.ViewModels.NavigationKeys.MemberController/*, FormMethod.Post, new { @class="form" }*/))
            { %>
             <%: Html.ValidationSummary()%>
     

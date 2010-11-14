@@ -10,7 +10,10 @@ namespace DataAdministration
     {
 
         public ApplicationProduct Product { get; set; }
-        
+
+        protected ProductCategoriesCheckedListBox chbxCategories;
+        protected Label lblCategories;
+
         protected OptionCheckedListBox[] chbxOptions;
         protected Label[] lblOptions;
         protected string[] optionCheckedListBoxNames;
@@ -18,14 +21,14 @@ namespace DataAdministration
         // 5 Columns. Width and heights of options is by default
         // defined in main class
         protected readonly int OptionBoxColumnCount = 5;
-        private Point topLeft = new Point(10, 50);
+        private Point topLeft = new Point(10, 100);
 
 
         public FrmProductEditor(ApplicationProduct product)
         {
-            InitializeComponent();
-
             this.Product = product;
+
+            InitializeComponent();
 
             InitializeOptionBoxes();
 
@@ -54,15 +57,11 @@ namespace DataAdministration
        
         private void BindProduct()
         {
-            this.tbxProductName.DataBindings.Add(new Binding("Text", this.Product, "ProductName", true, DataSourceUpdateMode.OnPropertyChanged, ""));
-            this.tbxProductDescription.DataBindings.Add(new Binding("Text", this.Product, "BriefDescription", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductPrice.DataBindings.Add(new Binding("Text", this.Product, "Price", true, DataSourceUpdateMode.OnPropertyChanged, ""));
-            this.tbxProductPriceDetails.DataBindings.Add(new Binding("Text", this.Product, "PriceDetails", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductReleaseDate.DataBindings.Add(new Binding("Text", this.Product, "ProductReleaseDate", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductVersion.DataBindings.Add(new Binding("Text", this.Product, "ProductVersion", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductVolumeSize.DataBindings.Add(new Binding("Text", this.Product, "MinimumVolumeSize", true, DataSourceUpdateMode.OnPropertyChanged, ""));
             this.tbxProductWebsite.DataBindings.Add(new Binding("Text", this.Product, "ProductWebsite", true, DataSourceUpdateMode.OnPropertyChanged, ""));
-            this.tbxProductResourceDir.DataBindings.Add(new Binding("Text", this.Product.Catalog, "ResourceDir", true, DataSourceUpdateMode.OnPropertyChanged, ""));
 
             this.chbxProductLangExtendable.DataBindings.Add(new Binding("Checked", this.Product, "LanguageExtendable"));
             this.chbxProductMultiLanguage.DataBindings.Add(new Binding("Checked", this.Product, "MultiLanguage"));
@@ -93,6 +92,7 @@ namespace DataAdministration
             this.chbxOptions[15].SelectedDataSource = this.Product.CustomizationOptions;
             this.chbxOptions[16].SelectedDataSource = this.Product.UpdateOptions;
             this.chbxOptions[17].SelectedDataSource = this.Product.BackupOptions;
+            this.chbxCategories.SelectedDataSource = this.Product.Categories;
         }
 
 
@@ -118,15 +118,17 @@ namespace DataAdministration
                 "ListEnvironmentOptions", 
                 "ListCustomizationOptions", 
                 "ListUpdateOptions", 
-                "ListDataBackupOptions" 
+                "ListDataBackupOptions"
             };
 
+            int i;
             Point ptLocation;
+
             int itemCount = this.optionCheckedListBoxNames.GetLength(0);
             this.chbxOptions = new OptionCheckedListBox[itemCount];
             this.lblOptions = new Label[itemCount];
 
-            for (int i = 0; i < itemCount; i++)
+            for (i = 0; i < itemCount; i++)
             {
                 ptLocation = GetChbxLocation(i);
 
@@ -138,11 +140,14 @@ namespace DataAdministration
                 this.chbxOptions[i].TabIndex = i + 7;
                 this.chbxOptions[i].Name = "chbx" + optionCheckedListBoxNames[i];
                 this.chbxOptions[i].Location = ptLocation;
-                this.chbxOptions[i].AllDataSource = Repository.Sql.Options.GetOptions(optionCheckedListBoxNames[i]);
+                this.chbxOptions[i].AllDataSource = Repository.Sql.Options.GetOptions(optionCheckedListBoxNames[i], this.Product.ArticleLanguage);
 
                 this.chbxOptions[i].AddAction = Repository.Sql.ProductOptions.Insert;
                 this.chbxOptions[i].RemoveAction = Repository.Sql.ProductOptions.Remove;
             }
+
+            CreateProductCategories(i);
+
 
             this.splitMain.Panel2.Controls.AddRange(this.chbxOptions);
             this.splitMain.Panel2.Controls.AddRange(this.lblOptions);
@@ -153,6 +158,29 @@ namespace DataAdministration
             // WARNING: THIS FUNCTION USES NAMES DEFINED IN optionCheckedListBoxNames 
             // TO ASSOSIATE INDEX TO AN OPTION MEMBER VARIABLE OF A PRODUCT
             BindProductOptions();
+        }
+
+
+
+        private void CreateProductCategories(int i)
+        {
+            Point ptLocation = GetChbxLocation(i);
+            
+            this.lblCategories = new Label();
+            this.lblCategories.Location = ptLocation; this.lblCategories.Top -= 15;
+            this.lblCategories.Text = "Products Categories";
+
+            this.chbxCategories = new ProductCategoriesCheckedListBox(this.Product);
+            this.chbxCategories.TabIndex = i + 7;
+            this.chbxCategories.Name = "chbxProductsCategories";
+            this.chbxCategories.Location = ptLocation;
+            this.chbxCategories.AllDataSource = Repository.Sql.ProductCategories.GetAll(this.Product.ArticleLanguage);
+
+            this.chbxCategories.AddAction = Repository.Sql.ProductCategories.Insert;
+            this.chbxCategories.RemoveAction = Repository.Sql.ProductCategories.Remove;
+
+            this.splitMain.Panel2.Controls.Add(this.chbxCategories);
+            this.splitMain.Panel2.Controls.Add(this.lblCategories);
         }
 
 
@@ -173,7 +201,22 @@ namespace DataAdministration
 
             Repository.Sql.Product.Insert(this.Product);
 
-            EnableControls();
+            if (this.Product.ProductId > 0)
+            {
+                using (FrmProductCatalog frm = new FrmProductCatalog(this.Product))
+                {
+                    frm.ShowDialog();
+                }
+
+                Repository.Sql.Product.InsertCatalaog(this.Product);
+
+                // Create resource directories
+                System.IO.Directory.CreateDirectory(DataAdministration.Properties.Settings.Default.ProductResDirBase + this.Product.Catalog.UrlName);
+                System.IO.Directory.CreateDirectory(DataAdministration.Properties.Settings.Default.ProductResDirBase + this.Product.Catalog.UrlName + DataAdministration.Properties.Settings.Default.ScreenshotDirName);
+                System.IO.Directory.CreateDirectory(DataAdministration.Properties.Settings.Default.ProductResDirBase + this.Product.Catalog.UrlName + DataAdministration.Properties.Settings.Default.ScreenshotDirName + Properties.Settings.Default.ThumbnailDirName);
+
+                EnableControls();
+            }
         }
 
 
@@ -199,18 +242,6 @@ namespace DataAdministration
 
 
 
-        private void btnProductResourceDirBrowse_Click(object sender, EventArgs e)
-        {
-            using (FolderBrowserDialog dlg = new FolderBrowserDialog())
-            {
-                if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    this.tbxProductResourceDir.Text = dlg.SelectedPath;
-                }
-            }
-        }
-
-
 
         private void btnHardwareRequirements_Click(object sender, EventArgs e)
         {
@@ -230,5 +261,100 @@ namespace DataAdministration
             }
         }
 
+
+
+        private void btnCatalog_Click(object sender, EventArgs e)
+        {
+            using (FrmProductCatalog frm = new FrmProductCatalog(this.Product))
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Repository.Sql.Product.UpdateCatalog(this.Product);
+                }
+            }
+        }
+
+
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            using (FrmProductDetails frm = new FrmProductDetails(this.Product))
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Repository.Sql.Product.UpdateDetails(this.Product);
+                }
+            }
+        }
+
+
+        private void btnSupportNewLanguage_Click(object sender, EventArgs e)
+        {
+            int languageId = 1;
+            using (FrmLanguageSelector frm = new FrmLanguageSelector())
+            {
+                frm.ShowDialog();
+                languageId = frm.SelectedLanguage;
+
+                if (Repository.Sql.Product.LanguageExists(this.Product.ProductId.Value, languageId))
+                {
+                    MessageBox.Show("Language already exists. Nothing added.");
+                    return;
+                }
+            }
+
+            using (FrmProductDetails frm = new FrmProductDetails(null))
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Repository.Sql.Product.InsertDetail(
+                        this.Product,
+                        languageId,
+                        frm.ProductName,
+                        frm.ProductDescription,
+                        frm.PriceDetails,
+                        frm.GuarantyDetails);
+
+                    if (this.Product.ArticleLanguage <= 0)
+                    {
+                        this.Product.ArticleLanguage = languageId;
+                        this.Product.ProductName = frm.ProductName;
+                        this.Product.BriefDescription = frm.ProductDescription;
+                        this.Product.PriceDetails = frm.PriceDetails;
+                        this.Product.GuarantyDetails = frm.GuarantyDetails;
+                    }
+                }
+            }
+        }
+
+
+
+        private void btnArticle_Click(object sender, EventArgs e)
+        {
+            using (FrmProductArticle frm = new FrmProductArticle(this.Product))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+
+
+        private void btnScreenshots_Click(object sender, EventArgs e)
+        {
+            using (FrmProductScreenshots frm = new FrmProductScreenshots(this.Product))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+
+
+        private void btnOwners_Click(object sender, EventArgs e)
+        {
+            using (FrmProductScreenshots frm = new FrmProductScreenshots(this.Product))
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

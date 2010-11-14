@@ -9,5 +9,6 @@ namespace WebUi.ViewModels
     {
         public static string HighlightedProductCategoryMenuItem = "HighlightedCategory";
         public static string ListPagingDetails = "PagingInf";
+        public static string LastException = "LastException";
     }
 }

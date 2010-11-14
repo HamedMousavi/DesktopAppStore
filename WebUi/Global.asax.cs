@@ -20,19 +20,45 @@ namespace WebUi
             routes.MapRoute(
                 null,
                 "Culture",
-                new { controller = "Culture", action = "Index" }
+                new 
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.CultureController,
+                    action = WebUi.ViewModels.NavigationKeys.IndexAction,
+                }
             );
 
-            // /Products/Yaas/Home
+            // /Products/Yaas
             routes.MapRoute(null,
-                "Products/{productName}/Home", // Matches ~/Football or ~/AnythingWithNoSlash
-                new { controller = "Products", action = "Details", productName = (string)null }
+                "Products/{productName}",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.ProductController,
+                    action = WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
+                    productName = (string)null
+                }
             );
 
-            // /Products/Yaas/Catalog
+            // /Products/Yaas/Screenshots
             routes.MapRoute(null,
-                "Products/{productName}/Catalog", // Matches ~/Football or ~/AnythingWithNoSlash
-                new { controller = "Products", action = "Details", productName = (string)null }
+                "Products/{productName}/Screenshots/{imageIndex}",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.ProductController,
+                    action = WebUi.ViewModels.NavigationKeys.ProductScreenshotsAction,
+                    productName = (string)null,
+                    imageIndex = 1
+                }
+            );
+
+            // /Products/Yaas/Screenshots
+            routes.MapRoute(null,
+                "Products/{productName}/Awards",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.ProductController,
+                    action = WebUi.ViewModels.NavigationKeys.ProductAwardsAction,
+                    productName = (string)null
+                }
             );
 
 
@@ -40,8 +66,12 @@ namespace WebUi
             // /Products/Medical
             // /Products
             routes.MapRoute(null,
-                "Products/{category}/{subcategory}", // Matches ~/Football or ~/AnythingWithNoSlash
-                new { controller = "Products", action = "List", category = (string)null, subcategory = (string)null, page=1 }
+                "Products/List/{category}/{subcategory}", // Matches ~/Football or ~/AnythingWithNoSlash
+                new 
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.ProductController,
+                    action = WebUi.ViewModels.NavigationKeys.ProductListAction,
+                    category = (string)null, subcategory = (string)null, page=1 }
             );
 
             // /Homde
@@ -102,7 +132,7 @@ namespace WebUi
             }
             catch (Exception ex)
             {
-                // UNDONE: DAMN EXCEPTION IN HERE? NOW WHAT?!
+                DomainModel.Errors.Handler.HandleException(ex);
             }
         }
 

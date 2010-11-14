@@ -7,7 +7,7 @@
     font-family: Tahoma, Verdana, Arial, Serif;
     font-size: 12px;
     
-    background-color: #101600;
+    background-color: #000000;
     color: Black;
     
     width:100%;
@@ -17,74 +17,96 @@
     text-decoration: none;
 }
 
+h1, h2, h3, h4
+{
+    margin:0;
+    padding:0;
+}
 
+h1, h2, h3
+{
+    color: #FFA000;
+    font-family: B Nazanin, Arabic Transparent, Tahoma;
+}
+
+h1
+{
+    font-size: 32pt;
+    font-weight: bold;
+}
+
+h4
+{
+    padding: 0px 10px 0px 10px;
+}
+
+p
+{
+    padding: 0px 20px 0px 20px;
+}
  /*-------------------------------------------------------------------------------------+
  |									Page Layout: 3Columns								|
  +-------------------------------------------------------------------------------------*/
-.colmask 
-{
-	margin: 0px;
-	position:relative;		/* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
-    clear:both;
-    float:left;
-    width:100%;				/* width of whole page */
+.colmask {
+	position:relative;	/* This fixes the IE7 overflow hidden bug */
+	clear:both;
+	float:left;
+	width:100%;			/* width of whole page */
 	overflow:hidden;		/* This chops off any overhanging divs */
 }
-/* holy grail 3 column settings */
-.holygrail 
-{
-}
-
-.holygrail .colmid 
-{
-    float:left;
-    width:200%;
-    margin-left:-206px; 	/* Width of right column */
-    position:relative;
-    right:100%;
-}
-.holygrail .colleft 
-{
-    float:left;
-    width:100%;
-    margin-left:-50%;
-    position:relative;
-    left:412px;         	/* Left column width + right column width */
-}
-.holygrail .col1wrap 
-{
-    float:left;
-    width:50%;
-    position:relative;
-    right:206px;        	/* Width of left column */
-    padding-bottom:1em; 	/* Centre column bottom padding. Leave it out if it's zero */
-}
-
-.holygrail .centercol
-{
-	margin:0 206px;     	/* Centre column side padding:
-                    		Left padding = left column width + centre column left padding width
-                    		Right padding = right column width + centre column right padding width */
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+	float:left;
+	width:100%;			/* width of page */
 	position:relative;
-	left:200%;
+}
+.col_center,
+.ltr_col_left,
+.ltr_col_right,
+.rtl_col_left,
+.rtl_col_right
+ {
+	float:left;
+	position:relative;
+	/*padding:0 0 1em 0;	 no left and right padding on columns, we just make them narrower instead 
+					only padding top and bottom is included here, make it whatever value you need */
 	overflow:hidden;
 }
-
-.holygrail .leftcol
+/* 3 Column settings */
+.threecol 
 {
-    float:right;			/* This overrides the float:left above */
-    width:200px;        	/* Width of left column content (left column width minus left and right padding) */
-    position:relative;
-    right: 3px;         	/* Width of the left-had side padding on the left column */
+    background-color:white;
 }
-
-.holygrail .rightcol
+.threecol .colmid {
+	right: 15%;			/* width of the right column */
+}
+.threecol .colleft {
+	right: 70%;			/* width of the middle column */
+}
+.threecol .col_center 
 {
-    float:right;			/* This overrides the float:left above */
-    width:200px;        	/* Width of right column content (right column width minus left and right padding) */
-    margin-right: 9px;  	/* Width of right column right-hand padding + left column left and right padding */
-    position:relative;
-    left:50%;
+	width: 70%;			/* width of center column content (column width minus padding on either side) */
+	left: 100%;			/* 100% plus left padding of center column */
+}
+.threecol .rtl_col_left {
+	width: 15%;			/* Width of left column content (column width minus padding on either side) */
+	left: 100%;			/* 15width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .rtl_col_right {
+	width: 15%;			/* Width of right column content (column width minus padding on either side) */
+	left: 0;			/*85 Please make note of the brackets here:
+					    (100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+.threecol .ltr_col_left {
+	width: 15%;			/* Width of left column content (column width minus padding on either side) */
+	left: 15%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .ltr_col_right {
+	width: 15%;			/* Width of right column content (column width minus padding on either side) */
+	left: 85%;			/* Please make note of the brackets here:
+					    (100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
 }
 
 
@@ -162,17 +184,19 @@ legend, fieldset legend
 
 input[type='submit']
 {
-    padding: 2px 2px;
+    /*padding: 2px 2px;*/
     
     color: White;
-    background: green;
+    background-color: #506090;
     
     border-width: 1px;
     border-style: solid;
-    border-color: #80a070 #607050 #607050 #80a070;
+    border-color: #8090b0 #605070 #605070 #8090b0;
 
     font-family: Tahoma;
+    font-size: 10pt;
     font-weight: bold;
+    line-height: 1.3em;
     
     vertical-align:middle;
     cursor: pointer;
@@ -182,34 +206,39 @@ a
 {
     text-decoration: none;
     cursor: pointer;
+    border: 0 none black;
+}
+
+a img
+{
+    border: 0 none white;
 }
 
 
 a:hover
 {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #FFA000;
 }
 
 
 #header
 {
-    width:100%;
-    height: 129px;
+    width: 100%;
+    height: 91px;
     margin: 0px;
     padding: 0px;
-    background-color:#0e2f0e;
-    background-image: url('images/head_bk.gif');
+    background-color: #142e4f;
 }
 
 
 #logo
 {
+    display: block;
     padding: 0px;
     margin: 0px;
     float: left;
-    width: 321px;
-    height: 129px;
-    background-image: url('/Content/Images/logo.gif');
+    z-index: 1000;
 }
 
 
@@ -223,9 +252,8 @@ a:hover
 
 #product_categories
 {
-    padding: 4px;
-    border: 1px solid #000000;
-    background-color: #303030;
+    padding: 2px;
+    margin: 0;
 }
 
 
@@ -244,7 +272,6 @@ a:hover
 
 .button_link a:hover
 {
-    background-color: #90af90;
 }
 
 
@@ -256,8 +283,9 @@ a:hover
 
 .button_link a.selected
 {
-    color: Yellow;
-    background-color: #90af90;
+    background-color: #000000;
+    border-bottom: 1px dotted Gold;
+    color: Gold;
 }
 
 
@@ -268,50 +296,53 @@ a:hover
 
 .accordion_list_title
 {
-    cursor:pointer;
-    padding: 3px 3px;
-    border: 1px solid black;
-    background-color: #508040;
     font-weight: bold;
+    border-top: 1px solid #AFDA4B;
 }
+
 
 .accordion_list_title a, .accordion_list_title a:hover, .accordion_list_title a:visited
 {
     display: block;
     color: White;
-    background-color: #508040;
-    padding: 4px 4px;
-    text-decoration: none;
+    background-color: #8FBA2B;
+    padding: 8px;
 }
 
 
 .accordion_dropdown
 {
-    padding: 0 1px 0 1px;
 }
 
 
 .accordion_list_item, .accordion_list_item_selected
 {
     cursor:pointer;
-    padding: 4px 4px;
-    background-color: #b0d0a0;
+    padding: 4px;
+    background-color: #F7FCDE;
     vertical-align:middle;
 }
 
+.product_categories_caption
+{
+    padding: 8px;
+    font-weight: bold;
+    vertical-align: middle;
+    background-color: #000000;
+    color: #FFFFFF;
+}
 
 .accordion_list_item_selected
 {
-    border: 1px dotted black;
 }
 
 
 .accordion_list_item_selected a
 {
     display:block;
-    padding: 4px 4px;
+    padding: 4px 10px;
     color: #202010;
-    background-color: #efffa0;
+    background-color: #FFE090;
 }
 
 .accordion_list_item_selected a:hover 
@@ -324,12 +355,12 @@ a:hover
 {
     display:block;
     color: #202010;
-    padding: 4px 4px;
+    padding: 4px 10px;
 }
 
 .accordion_list_item a:hover
 {
-    background-color: #efffa0;
+    background-color: #FFE090;
     color: #000000;
     text-decoration: none;
 }
@@ -338,7 +369,7 @@ a:hover
 #logon_viewer
 {
     float: right;
-    padding: 4px;
+    padding: 8px;
     text-align: right;
 }
 
@@ -347,28 +378,22 @@ a:hover
 {
     float: right;
     display: inline;
-    padding: 4px;
+    padding: 10px 4px;
     text-align: right;
-    margin-top: 30px;
 }
 
 
 .search_results
 {
-    padding: 8px;
-    
-    background-color: White;
-    
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    padding: 2px;
 }
 
 
 .search_results_item
 {
-    border-bottom: 1px dashed gray;
-    background-color:#FAFAF3;
+    border-bottom: 1px dotted #909090;
     padding: 10px 30px;
+    margin: 3px;
     line-height: 1.8em;
 }
 
@@ -415,21 +440,14 @@ a:hover
 
 .list_pager
 {
-    margin: 5px 0px 0px 0px;
     padding: 10px;
-    
-    background-color: White;
-    border: 1px solid black;
-    
-    -moz-border-radius: 5px;
-    border-radius: 5px;
 }
 
 
 .pager_inf_separator
 {
     padding: 8px;
-    color: Orange;
+    color: #FFA000;
     font-weight: bold;
 }
 
@@ -441,17 +459,17 @@ a:hover
 
 #quick_access 
 {
-    background-color: #1B4220;
-    color: #a0d080;
+    /*background-color: #1B4220;*/
+    color: #A0C0F0;
     
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: 10px;
+    top: 10px;
     
     width:300px;
     padding: 6px;
 
-    border: 1px solid #102B00;
+    /*border: 1px solid #102B00;*/
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
@@ -459,5 +477,429 @@ a:hover
 #menu_bar
 {
     background-color: #000000;
-    height: 25px;
+    vertical-align: middle;
 }
+
+#catalog
+{
+    background-color: White;
+    padding: 0px 8px 0px 8px;
+}
+
+.title
+{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.clean
+{
+    color: #505050;
+}
+
+
+.text
+{
+    padding: 0;
+}
+
+
+#showcase
+{
+    border-top: 2px solid #FFA000;
+    margin: 4px 0px 4px 0px;
+    padding: 10px 0px 0px 0px;
+    height: 310px;
+}
+
+
+#product_awards
+{
+    height: 40%;
+}
+
+
+#product_rating
+{
+    height: 10%;
+}
+
+
+#screenshot
+{
+    padding: 10px;
+}
+
+
+#screenshot img
+{
+    border: 0;
+}
+
+
+#article
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    float:none;
+}
+
+
+#overview
+{
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 0;
+    white-space: nowrap;
+    vertical-align: bottom;
+    height: 100%;
+}
+
+#product_overview
+{
+    line-height: 1.6em;
+    margin: 0;
+    padding: 0;
+    width: 280px;
+    border: 0;
+}
+
+#product_overview dl
+{
+    list-style-image:none;
+    list-style-type:none;
+    list-style-position: inside;
+}
+
+
+#product_overview dl dt
+{
+}
+
+
+#product_overview dl dd
+{
+}
+
+
+#contacts
+{
+    width: 400px;
+    border: 2px solid #F0F3F9;
+    padding: 2px;
+    text-indent: 0.5em;
+}
+
+#contacts tr
+{
+    line-height: 2em;
+}
+
+#conrtacts tr th
+{
+    background:none repeat scroll 0 0 #F4F7FD;
+}
+
+.contacts_colored_row
+{
+    background:none repeat scroll 0 0 #F4F7FD;
+}
+
+.overview_head
+{
+    color: #909090;
+}
+
+.overview_item
+{
+    color: #000000;
+}
+
+#article dl dt
+{
+    font-weight: bold;
+    padding: 0px 15px 2px 0px;
+}
+
+#article dl dd
+{
+    padding: 0px 5px 20px 0px;
+    color: #000000;
+    display: inline-block;
+}
+
+#article dl
+{
+	list-style-image: none;
+	list-style-type: none;
+    padding: 0;
+	margin:0;
+}
+
+#article ul
+{
+	list-style-image: none;
+	list-style-type: none;
+    padding: 0;
+	margin:0;
+}
+
+#article ul li
+{
+    background-image:url('/Content/Images/tickmark.jpg');
+    background-repeat:no-repeat;
+    display:inline-block;
+}
+
+.article_li_left
+{
+    background-position:right center;
+    margin-right:10px;
+    padding-right:15px;
+}
+
+.article_li_right
+{
+    background-position:left center;
+    margin-left:10px;
+    padding-left:15px;
+}
+
+
+.product_inf_separator
+{
+    font-family: Courier New;
+    color: black;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+#screenshots
+{
+    padding: 8px;
+}
+
+
+.screenshot_holder
+{
+    height: 600px;
+    text-align: center;
+    overflow:hidden;
+    vertical-align: middle;
+    display: block;
+    padding: 2px;
+}
+
+
+.selected_screenshot
+{
+}
+
+
+.screenshot_description
+{
+    padding: 0;
+    line-height: 2em;
+    vertical-align: middle;
+}
+
+
+.screenshot_description .title
+{
+    font-size: 13pt;
+    font-weight: bold;
+    line-height: 2em;
+}
+
+
+.screenshot_description .text
+{
+    font-size: 11pt;
+    font-weight: normal;
+    line-height: 2em;
+}
+
+
+#thumbs_holder
+{
+    padding: 4px;
+}
+
+
+#thumbs_holder ul
+{
+	list-style-image: none;
+	list-style-type: none;
+	
+    padding: 0;
+	margin:0;
+}
+
+
+#thumbs_holder ul li
+{
+    text-align: center;
+}
+
+
+#thumbs_holder ul a img
+{
+    border: 1px solid #A0A0A0;
+    padding: 0px;
+    margin: 0px;
+    opacity: 0.8;
+}
+
+
+#thumbs_holder ul a:hover img
+{
+    opacity: 1;
+}
+
+
+#thumbs_list a
+{
+}
+
+.thumb_title
+{
+    height: 20px;
+    display: block;
+    margin: 0 0 5px 0;
+}
+
+.thumb_title a
+{
+    padding: 0;
+    color: #D0D0D0;
+    font-weight: bold;
+    font-size: 8pt;
+    line-height: 2em;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+
+#thumbs_list li
+{
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    margin-bottom: 5px;
+    margin-right: 5px;
+
+    padding: 5px;
+    position: relative;
+    float: left;
+    
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#thumbs_list .normal
+{
+    background-color:#212121;
+}
+
+
+#thumbs_list .selected
+{
+    background-color:#94B0F0;
+}
+
+
+#thumbs_list .selected a
+{
+    color: White;
+}
+
+
+#navigation_helper
+{
+    line-height: 2em;
+    padding: 6px;
+    margin-bottom:4px;
+    
+    background-color: #FEF9E9;
+    border: 1px solid #FFD050;
+    
+    font-size: 9pt;
+    font-weight: bold;
+
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+#error_message
+{
+    line-height: 2em;
+    padding: 6px;
+    background-color: #FFE0E0;
+    border: 1px solid #FFA020;
+    
+    font-size: 9pt;
+    font-weight: bold;
+
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+input#search_term
+{
+    background-color:#001743;
+    border:1px solid #385783;
+    color: White;
+}
+
+
+#footer
+{
+    background-color: #000000;
+    height: 200px;
+}
+
+
+#best_products .title, #software_school .title
+{
+    color: #FFA020;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #FFA020;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+
+#featured_products
+{
+    float: left;
+    width: 48%;
+    margin: 6px;
+}
+
+
+#popular_products
+{
+    float: left;
+    width: 48%;
+    margin: 6px;
+}
+
+
+#software_school
+{
+    clear: both;
+}
+/*<!--     
+    background: url("/Content/Images/screenshot_desc_bg.png") repeat scroll 0 0 transparent;
+
+    background-color: White;
+    
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+-->*/

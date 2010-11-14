@@ -14,8 +14,8 @@ namespace DataAdministration.Repository.Sql
             product.Brands.Clear();
 
             string query = string.Format(
-                "SELECT BrandId, BrandName, ResourceUrl " +
-                "FROM dbo.ListBrands " +
+                "SELECT BrandId, BrandName, OwnerId " +
+                "FROM dbo.ListBrands, dbo.BrandDetails " +
                 "WHERE BrandId IN (SELECT BrandId FROM dbo.ProductBrands WHERE ProductId = {0})", 
                 product.ProductId);
 
@@ -36,7 +36,6 @@ namespace DataAdministration.Repository.Sql
 
                                 brand.BrandId = Repository.Utils.Convert.ToInt32(reader[0]);
                                 brand.BrandName = Repository.Utils.Convert.ToString(reader[1]);
-                                brand.ResourceUrl = Repository.Utils.Convert.ToString(reader[2]);
 
                                 product.Brands.Add(brand);
                             }
@@ -74,7 +73,6 @@ namespace DataAdministration.Repository.Sql
                     cmd.CommandType = CommandType.Text;
 
                     cmd.Parameters.Add(new SqlParameter("@BrandName", brand.BrandName));
-                    cmd.Parameters.Add(new SqlParameter("@ResourceUrl", brand.ResourceUrl));
                     foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
 
                     try
@@ -155,7 +153,6 @@ namespace DataAdministration.Repository.Sql
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.Add(new SqlParameter("@BrandId", brand.BrandId));
                     cmd.Parameters.Add(new SqlParameter("@BrandName", brand.BrandName));
-                    cmd.Parameters.Add(new SqlParameter("@ResourceUrl", brand.ResourceUrl));
                     foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
 
                     cnn.Open();

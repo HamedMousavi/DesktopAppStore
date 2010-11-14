@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" />Best persian softwares</title>
-    <link href="/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/Site.css" rel="stylesheet" type="text/css" media="screen" />
     <script type="text/javascript" language="Javascript">//<![CDATA[
         function ToggleAccordionList(itemName) {
             var elm = document.getElementById(itemName);
@@ -24,21 +24,10 @@
 
 <body>
 
-    <!--[if lt IE 7]>
-    <style media="screen" type="text/css" rel="stylesheet">
-    .holygrail .colleft
-    {
-	    margin-left:-100%;
-	};
-
-    </style>
-    <![endif]-->
-
-
     <div class="page" dir="<%: UiResources.UiTexts.page_direction %>">
 
         <div id="header">
-            <div id="logo"></div>
+            <div id="logo"><a href="/"><img alt="logo" src="/Content/Images/logo.gif" /></a></div>
             <div id="quick_access">
                 <div id="culture_selector" class="button_link">
                     <% Html.RenderPartial("CultureSelector"); %>
@@ -60,47 +49,48 @@
 
         </div>
   
-        <div class="colmask holygrail">
-        <div class="colmid">
-        <div class="colleft" runat="server">
+        <div class="colmask threecol">
+	        <div class="colmid">
+		        <div class="colleft">
+			        
+                    <div class="col_center">
+                        <asp:ContentPlaceHolder ID="CenterContent" runat="server">
+                        <%
+                            Exception ex = TempData[WebUi.ViewModels.ViewDataKeys.LastException] as Exception;
+                            if (ex != null)
+                            {
+                                // UNDONE: MAYBE REDIRECT TO ERROR PAGE
+                        %>
+                                <div id="error_message"><%:"AN ERROR OCCURED."%></div>
+                        <%
+                            }
+                        %>
+                        </asp:ContentPlaceHolder>
+                    </div>
 
+                    <div class="<%:UiResources.UiTexts.page_direction%>_col_left">
+                        <div id="product_categories">
+                            <div class="product_categories_caption"><%:UiResources.UiTexts.software_categories%></div>
+                            <% Html.RenderAction("ProductCategories", "Navigation"); %>
+                        </div>
+                        <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
 
-            <div class="col1wrap">
-                <div class="centercol">
-                    <asp:ContentPlaceHolder ID="CenterContent" runat="server">
-                    </asp:ContentPlaceHolder>
+                    <div class="<%:UiResources.UiTexts.page_direction%>_col_right">
+                        <asp:ContentPlaceHolder ID="RightContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+
                 </div>
-            </div>        
-        
-
-            <div class="leftcol">
-                <div id="product_categories">
-                    <% Html.RenderAction("ProductCategories", "Navigation"); %>
-                </div>
-                <asp:ContentPlaceHolder ID="LeftContent" runat="server">
-                </asp:ContentPlaceHolder>
             </div>
-            
-
-            <div class="rightcol">
-                <asp:ContentPlaceHolder ID="RightContent" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-
-
         </div>
-        </div>
-        </div>
-
 
         <div id="footer" style="clear:both;">
             <p> <%: UiResources.UiTexts.welcome %> </p>
         </div>
 
-
     </div>
-
-   
 
 </body>
 </html>

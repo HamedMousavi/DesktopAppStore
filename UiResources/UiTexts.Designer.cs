@@ -70,11 +70,74 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Best Persian Softwares.
+        /// </summary>
+        public static string app_title {
+            get {
+                return ResourceManager.GetString("app_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Become a member.
         /// </summary>
         public static string become_a_member {
             get {
                 return ResourceManager.GetString("become_a_member", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ,.
+        /// </summary>
+        public static string comma {
+            get {
+                return ResourceManager.GetString("comma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device.
+        /// </summary>
+        public static string contact_media {
+            get {
+                return ResourceManager.GetString("contact_media", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string contact_name {
+            get {
+                return ResourceManager.GetString("contact_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string contact_title {
+            get {
+                return ResourceManager.GetString("contact_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number.
+        /// </summary>
+        public static string contact_value {
+            get {
+                return ResourceManager.GetString("contact_value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discuss.
+        /// </summary>
+        public static string discuss {
+            get {
+                return ResourceManager.GetString("discuss", resourceCulture);
             }
         }
         
@@ -142,6 +205,42 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extra services.
+        /// </summary>
+        public static string extra_services {
+            get {
+                return ResourceManager.GetString("extra_services", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Featured Products.
+        /// </summary>
+        public static string featured_products {
+            get {
+                return ResourceManager.GetString("featured_products", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to left.
+        /// </summary>
+        public static string float_left {
+            get {
+                return ResourceManager.GetString("float_left", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to right.
+        /// </summary>
+        public static string float_right {
+            get {
+                return ResourceManager.GetString("float_right", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forgot your password.
         /// </summary>
         public static string forgot_your_password {
@@ -169,6 +268,24 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click here to return to {0} product catalog.
+        /// </summary>
+        public static string inf_return_to_catalog {
+            get {
+                return ResourceManager.GetString("inf_return_to_catalog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To see more screenshots thumbnails scroll down. To enlarge a thumbnail click on it..
+        /// </summary>
+        public static string inf_screenshot_thumbs {
+            get {
+                return ResourceManager.GetString("inf_screenshot_thumbs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Found &lt;b&gt;{0}&lt;/b&gt; softwares in this category.
         /// </summary>
         public static string items_found {
@@ -187,6 +304,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Legal details.
+        /// </summary>
+        public static string legal_details {
+            get {
+                return ResourceManager.GetString("legal_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log Off.
         /// </summary>
         public static string log_off {
@@ -201,6 +327,33 @@ namespace UiResources {
         public static string log_on {
             get {
                 return ResourceManager.GetString("log_on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Megabytes.
+        /// </summary>
+        public static string megabytes {
+            get {
+                return ResourceManager.GetString("megabytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not defined.
+        /// </summary>
+        public static string not_defined {
+            get {
+                return ResourceManager.GetString("not_defined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nothing special.
+        /// </summary>
+        public static string nothing_special {
+            get {
+                return ResourceManager.GetString("nothing_special", resourceCulture);
             }
         }
         
@@ -259,11 +412,191 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Popular Products.
+        /// </summary>
+        public static string popular_products {
+            get {
+                return ResourceManager.GetString("popular_products", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print.
+        /// </summary>
+        public static string print {
+            get {
+                return ResourceManager.GetString("print", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Producer comments.
+        /// </summary>
+        public static string producer_comments {
+            get {
+                return ResourceManager.GetString("producer_comments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to access.
+        /// </summary>
+        public static string product_access {
+            get {
+                return ResourceManager.GetString("product_access", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        public static string product_backup {
+            get {
+                return ResourceManager.GetString("product_backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Introduction.
+        /// </summary>
+        public static string product_brief_description {
+            get {
+                return ResourceManager.GetString("product_brief_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string product_contacts {
+            get {
+                return ResourceManager.GetString("product_contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customization.
+        /// </summary>
+        public static string product_customization {
+            get {
+                return ResourceManager.GetString("product_customization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Demo.
+        /// </summary>
+        public static string product_demo {
+            get {
+                return ResourceManager.GetString("product_demo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Environment.
+        /// </summary>
+        public static string product_environment {
+            get {
+                return ResourceManager.GetString("product_environment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extendability.
+        /// </summary>
+        public static string product_extendabilities {
+            get {
+                return ResourceManager.GetString("product_extendabilities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guaranty.
+        /// </summary>
+        public static string product_guaranty {
+            get {
+                return ResourceManager.GetString("product_guaranty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hardware requirements.
+        /// </summary>
+        public static string product_hardware_requirements {
+            get {
+                return ResourceManager.GetString("product_hardware_requirements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Installation.
+        /// </summary>
+        public static string product_installation {
+            get {
+                return ResourceManager.GetString("product_installation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string product_language {
+            get {
+                return ResourceManager.GetString("product_language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language extendability.
+        /// </summary>
+        public static string product_language_extendable {
+            get {
+                return ResourceManager.GetString("product_language_extendable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supported languages.
+        /// </summary>
+        public static string product_languages {
+            get {
+                return ResourceManager.GetString("product_languages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ability to add new language.
+        /// </summary>
+        public static string product_languages_extendablity {
+            get {
+                return ResourceManager.GetString("product_languages_extendablity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product Name.
         /// </summary>
         public static string product_name {
             get {
                 return ResourceManager.GetString("product_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Network capabilities.
+        /// </summary>
+        public static string product_network {
+            get {
+                return ResourceManager.GetString("product_network", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment.
+        /// </summary>
+        public static string product_payment {
+            get {
+                return ResourceManager.GetString("product_payment", resourceCulture);
             }
         }
         
@@ -277,6 +610,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Price details.
+        /// </summary>
+        public static string product_price_details {
+            get {
+                return ResourceManager.GetString("product_price_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Releaseed at.
         /// </summary>
         public static string product_release_date {
@@ -286,11 +628,83 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Supported operating systems.
+        /// </summary>
+        public static string product_software_platform {
+            get {
+                return ResourceManager.GetString("product_software_platform", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Software requirements.
+        /// </summary>
+        public static string product_software_requirements {
+            get {
+                return ResourceManager.GetString("product_software_requirements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source code.
+        /// </summary>
+        public static string product_source {
+            get {
+                return ResourceManager.GetString("product_source", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support.
+        /// </summary>
+        public static string product_support {
+            get {
+                return ResourceManager.GetString("product_support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support methods.
+        /// </summary>
+        public static string product_support_access {
+            get {
+                return ResourceManager.GetString("product_support_access", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Training.
+        /// </summary>
+        public static string product_training {
+            get {
+                return ResourceManager.GetString("product_training", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string product_update {
+            get {
+                return ResourceManager.GetString("product_update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version.
         /// </summary>
         public static string product_version {
             get {
                 return ResourceManager.GetString("product_version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volume size.
+        /// </summary>
+        public static string product_volume_size {
+            get {
+                return ResourceManager.GetString("product_volume_size", resourceCulture);
             }
         }
         
@@ -322,11 +736,29 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Related Tags.
+        /// </summary>
+        public static string related_tags {
+            get {
+                return ResourceManager.GetString("related_tags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RememberMe.
         /// </summary>
         public static string remember_me {
             get {
                 return ResourceManager.GetString("remember_me", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Screenshots.
+        /// </summary>
+        public static string screenshots {
+            get {
+                return ResourceManager.GetString("screenshots", resourceCulture);
             }
         }
         
@@ -340,11 +772,92 @@ namespace UiResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Support multiple languages.
+        ///   Looks up a localized string similar to Software Categories.
+        /// </summary>
+        public static string software_categories {
+            get {
+                return ResourceManager.GetString("software_categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weekly Intro.
+        /// </summary>
+        public static string software_school {
+            get {
+                return ResourceManager.GetString("software_school", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support for multiple languages.
         /// </summary>
         public static string support_multiple_languages {
             get {
                 return ResourceManager.GetString("support_multiple_languages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Technical details.
+        /// </summary>
+        public static string technical_details {
+            get {
+                return ResourceManager.GetString("technical_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Catalog.
+        /// </summary>
+        public static string title_catalog {
+            get {
+                return ResourceManager.GetString("title_catalog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string title_error {
+            get {
+                return ResourceManager.GetString("title_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string title_index {
+            get {
+                return ResourceManager.GetString("title_index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List of products.
+        /// </summary>
+        public static string title_list {
+            get {
+                return ResourceManager.GetString("title_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page Not Found.
+        /// </summary>
+        public static string title_not_found {
+            get {
+                return ResourceManager.GetString("title_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product screenshots.
+        /// </summary>
+        public static string title_screenshots {
+            get {
+                return ResourceManager.GetString("title_screenshots", resourceCulture);
             }
         }
         
@@ -354,6 +867,33 @@ namespace UiResources {
         public static string user_name {
             get {
                 return ResourceManager.GetString("user_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version Number.
+        /// </summary>
+        public static string version_number {
+            get {
+                return ResourceManager.GetString("version_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Views.
+        /// </summary>
+        public static string views {
+            get {
+                return ResourceManager.GetString("views", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website.
+        /// </summary>
+        public static string website {
+            get {
+                return ResourceManager.GetString("website", resourceCulture);
             }
         }
         

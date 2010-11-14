@@ -18,8 +18,8 @@ foreach (DomainModel.Entities.ProductLanguage item in DomainModel.Repository.Mem
     <%:
     Html.ActionLink(
         item.Name, 
-        "Index", 
-        "Culture", 
+        WebUi.ViewModels.NavigationKeys.IndexAction, 
+        WebUi.ViewModels.NavigationKeys.CultureController, 
         new { SelectedCulture = item.CultureId, ReturnUrl = Request.Url.AbsoluteUri },
         htmlAttribs)
     %>

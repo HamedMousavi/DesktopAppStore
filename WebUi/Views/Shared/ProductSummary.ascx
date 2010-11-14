@@ -7,8 +7,8 @@
             <%: 
                 Html.ActionLink(
                     title, 
-                    "Details", 
-                    "Products", 
+                    WebUi.ViewModels.NavigationKeys.ProductCatalogAction, 
+                    WebUi.ViewModels.NavigationKeys.ProductController, 
                     new { productName = Model.Catalog.UrlName }, 
                     null)
              %> 

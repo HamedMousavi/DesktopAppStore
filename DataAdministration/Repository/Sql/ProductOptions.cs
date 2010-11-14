@@ -86,32 +86,39 @@ namespace DataAdministration.Repository.Sql
 
         internal static void Reload(ApplicationProduct product)
         {
-            Reload(product.SupportedPlatforms, typeof(SoftwarePlatform), "ListSoftwarePlatforms", product.ProductId);
-            Reload(product.BackupOptions, typeof(ProductDataBackupOption), "ListDataBackupOptions", product.ProductId);
-            Reload(product.CustomizationOptions, typeof(ProductCustomizationOption),"ListCustomizationOptions", product.ProductId);
-            Reload(product.DemoOptions, typeof(ProductDemoOption), "ListDemoOptions", product.ProductId);
-            Reload(product.EnvironmentOptions, typeof(ProductEnvironmentOption), "ListEnvironmentOptions", product.ProductId);
-            Reload(product.ExtensionOptions, typeof(ProductExtensionOptions), "ListExtensionOptions", product.ProductId);
-            Reload(product.GuarantyOptions, typeof(ProductGuarantyOption), "ListGuarantyOptions", product.ProductId);
-            Reload(product.InstallationOptions, typeof(ProductInstallationOption), "ListInstallationOptions", product.ProductId);
-            Reload(product.PaymentOptions, typeof(ProductPaymentOption), "ListPaymentOptions", product.ProductId);
-            Reload(product.PublishOptions, typeof(ProductPublishOption), "ListPublishOptions", product.ProductId);
-            Reload(product.SourceOptions, typeof(ProductSourceOption), "ListSourceOptions", product.ProductId);
-            Reload(product.SupportOptions, typeof(ProductSupportOption), "ListSupportOptions", product.ProductId);
-            Reload(product.TrainingOptions, typeof(ProductTrainingOption), "ListTrainingOptions", product.ProductId);
-            Reload(product.UpdateOptions, typeof(ProductUpdateOption), "ListUpdateOptions", product.ProductId);
-            Reload(product.SupportTypes, typeof(ProductSupportType), "ListSupportTypes", product.ProductId);
-            Reload(product.SupportedLanguages, typeof(ProductLanguage), "ListLanguages", product.ProductId);
-            Reload(product.ProductTechnologies, typeof(ProductTechnology), "ListProductTechnologies", product.ProductId);
-            Reload(product.Tags, typeof(ProductTag), "ListTags", product.ProductId);
+            Reload(product.SupportedPlatforms, typeof(SoftwarePlatform), "ListSoftwarePlatforms", product.ProductId, product.ArticleLanguage);
+            Reload(product.BackupOptions, typeof(ProductDataBackupOption), "ListDataBackupOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.CustomizationOptions, typeof(ProductCustomizationOption),"ListCustomizationOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.DemoOptions, typeof(ProductDemoOption), "ListDemoOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.EnvironmentOptions, typeof(ProductEnvironmentOption), "ListEnvironmentOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.ExtensionOptions, typeof(ProductExtensionOptions), "ListExtensionOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.GuarantyOptions, typeof(ProductGuarantyOption), "ListGuarantyOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.InstallationOptions, typeof(ProductInstallationOption), "ListInstallationOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.PaymentOptions, typeof(ProductPaymentOption), "ListPaymentOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.PublishOptions, typeof(ProductPublishOption), "ListPublishOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.SourceOptions, typeof(ProductSourceOption), "ListSourceOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.SupportOptions, typeof(ProductSupportOption), "ListSupportOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.TrainingOptions, typeof(ProductTrainingOption), "ListTrainingOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.UpdateOptions, typeof(ProductUpdateOption), "ListUpdateOptions", product.ProductId, product.ArticleLanguage);
+            Reload(product.SupportTypes, typeof(ProductSupportType), "ListSupportTypes", product.ProductId, product.ArticleLanguage);
+            Reload(product.SupportedLanguages, typeof(ProductLanguage), "ListLanguages", product.ProductId, -1);
+            Reload(product.ProductTechnologies, typeof(ProductTechnology), "ListProductTechnologies", product.ProductId, product.ArticleLanguage);
+            Reload(product.Tags, typeof(ProductTag), "ListTags", product.ProductId, product.ArticleLanguage);
         }
 
 
-        private static void Reload(IList list, Type type, string listTable, Int64? productId)
+        private static void Reload(IList list, Type type, string listTable, Int64? productId, int languageId)
         {
-            string query = string.Format(
+            string query;
+            query = string.Format(
                 "SELECT {0}.OptionId, {0}.OptionName FROM {0}, {1} WHERE " +
-                "{0}.OptionId = {1}.OptionId AND ProductId = {2}", listTable, tables[listTable], productId);
+                "{0}.OptionId = {1}.OptionId AND ProductId = {2}",
+                listTable, tables[listTable], productId);
+
+            if (languageId>0)
+            {
+                query += string.Format(" AND {0}.LanguageId={1}", listTable, languageId);
+            }
 
             using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.PersianSoftwareConnectionString))
             {

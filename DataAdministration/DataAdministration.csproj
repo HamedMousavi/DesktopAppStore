@@ -79,11 +79,29 @@
     <Compile Include="FrmHardwareRequirements.Designer.cs">
       <DependentUpon>FrmHardwareRequirements.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLanguageSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLanguageSelector.Designer.cs">
+      <DependentUpon>FrmLanguageSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductArticle.Designer.cs">
+      <DependentUpon>FrmProductArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductCatalog.Designer.cs">
+      <DependentUpon>FrmProductCatalog.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProductContacts.cs">
       <SubType>Form</SubType>
@@ -91,11 +109,23 @@
     <Compile Include="FrmProductContacts.Designer.cs">
       <DependentUpon>FrmProductContacts.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProductDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductDetails.Designer.cs">
+      <DependentUpon>FrmProductDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProductEditor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProductEditor.Designer.cs">
       <DependentUpon>FrmProductEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductScreenshots.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductScreenshots.Designer.cs">
+      <DependentUpon>FrmProductScreenshots.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSearchContact.cs">
       <SubType>Form</SubType>
@@ -113,14 +143,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PersianSoftwareDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProductCategoriesCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Sql\Options.cs" />
     <Compile Include="Repository\Sql\Product.cs" />
     <Compile Include="Repository\Sql\ProductBrands.cs" />
+    <Compile Include="Repository\Sql\ProductCategories.cs" />
     <Compile Include="Repository\Sql\ProductContacts.cs" />
     <Compile Include="Repository\Sql\ProductOptions.cs" />
     <Compile Include="Repository\Utils\Convert.cs" />
+    <Compile Include="Repository\Utils\ImageHelpers.cs" />
     <EmbeddedResource Include="FrmBrands.resx">
       <DependentUpon>FrmBrands.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,14 +171,29 @@
     <EmbeddedResource Include="FrmHardwareRequirements.resx">
       <DependentUpon>FrmHardwareRequirements.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLanguageSelector.resx">
+      <DependentUpon>FrmLanguageSelector.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductArticle.resx">
+      <DependentUpon>FrmProductArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductCatalog.resx">
+      <DependentUpon>FrmProductCatalog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProductContacts.resx">
       <DependentUpon>FrmProductContacts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductDetails.resx">
+      <DependentUpon>FrmProductDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProductEditor.resx">
       <DependentUpon>FrmProductEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductScreenshots.resx">
+      <DependentUpon>FrmProductScreenshots.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSearchContact.resx">
       <DependentUpon>FrmSearchContact.cs</DependentUpon>

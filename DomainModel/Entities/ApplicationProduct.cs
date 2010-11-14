@@ -35,11 +35,14 @@ namespace DomainModel.Entities
             this.SourceOptions = new List<ProductSourceOption>();
             this.EnvironmentOptions = new List<ProductEnvironmentOption>();
             this.BackupOptions = new List<ProductDataBackupOption>();
+            this.Screenshots = new List<ProductImage>();
+            this.Categories = new CategoryCollection();
         }
 
         public float?                           MinimumVolumeSize { get; set; } // MB
         public bool                             MultiUser { get; set; }
         public bool                             LanguageExtendable { get; set; }
+        public string                           GuarantyDetails { get; set; }
 
         public List<string>                     HardwareRequirements { get; set; }
         public List<ProductBrand>               Brands { get; set; }
@@ -60,5 +63,7 @@ namespace DomainModel.Entities
         public List<ProductSourceOption>        SourceOptions { get; set; }
         public List<ProductEnvironmentOption>   EnvironmentOptions { get; set; }
         public List<ProductDataBackupOption>    BackupOptions { get; set; }
+        public List<ProductImage>               Screenshots { get; set; }
+        public CategoryCollection               Categories { get; set; }
     }
 }

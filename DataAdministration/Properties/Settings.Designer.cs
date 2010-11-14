@@ -33,5 +33,65 @@ namespace DataAdministration.Properties {
                 return ((string)(this["PersianSoftwareConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Temp\\Web\\Content\\Products\\Repository\\")]
+        public string ProductResDirBase {
+            get {
+                return ((string)(this["ProductResDirBase"]));
+            }
+            set {
+                this["ProductResDirBase"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("800, 600")]
+        public global::System.Drawing.Size MaxScreenshotSize {
+            get {
+                return ((global::System.Drawing.Size)(this["MaxScreenshotSize"]));
+            }
+            set {
+                this["MaxScreenshotSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("120, 80")]
+        public global::System.Drawing.Size MaxThumbnailSize {
+            get {
+                return ((global::System.Drawing.Size)(this["MaxThumbnailSize"]));
+            }
+            set {
+                this["MaxThumbnailSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\Screenshots\\")]
+        public string ScreenshotDirName {
+            get {
+                return ((string)(this["ScreenshotDirName"]));
+            }
+            set {
+                this["ScreenshotDirName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Thumbnails\\")]
+        public string ThumbnailDirName {
+            get {
+                return ((string)(this["ThumbnailDirName"]));
+            }
+            set {
+                this["ThumbnailDirName"] = value;
+            }
+        }
     }
 }

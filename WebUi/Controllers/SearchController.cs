@@ -20,6 +20,13 @@ namespace WebUi.Controllers
         // Search from home page
         public ActionResult Basic(string search_term)
         {
+            if (!DomainModel.Security.InputController.IsValid(search_term))
+            {
+                return RedirectToAction(
+                    WebUi.ViewModels.NavigationKeys.SecurityBadInputAction,
+                    WebUi.ViewModels.NavigationKeys.SecurityController);
+            }
+
             ViewData["term"] = search_term;
             return View();
         }
@@ -30,5 +37,12 @@ namespace WebUi.Controllers
         {
             return View();
         }
+
+
+        public ActionResult Tags(UInt64 tagId)
+        {
+            return View();
+        }
+
     }
 }

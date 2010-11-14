@@ -25,7 +25,7 @@ namespace DataAdministration
 
                 for (int i = 0; i < value.Count; i++)
                 {
-                    ProductOptionBase item = (ProductOptionBase)value[i];
+                    ProductOptionBase item = value[i] as ProductOptionBase;
                     this.selectedItems.Add(item);
                 }
             }

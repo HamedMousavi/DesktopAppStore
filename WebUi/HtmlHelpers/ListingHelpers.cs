@@ -13,29 +13,21 @@ namespace WebUi.HtmlHelpers
     {
         public static MvcHtmlString AccordionList(this HtmlHelper html, IEnumerable items, WebUi.ViewModels.CurrentListItem current)
         {
-            int selected = 0;
-
+            bool selected;
+            bool subSelected;
             StringBuilder ret = new StringBuilder();
 
             foreach (DomainModel.Entities.Category category in items)
             {
-                if (category.UrlName == current.Category) selected = 1;
-                ret.Append(BeginTitleTag(category, selected == 1));
+                selected = category.UrlName == current.Category;
+                ret.Append(BeginTitleTag(category, selected));
 
                 foreach(DomainModel.Entities.Category sub in category.SubCategories)
                 {
-                    if (selected == 1)
-                    {
-                        if (sub.UrlName == current.Subcategory)
-                        {
-                            selected = 2;
-                        }
-                    }
-
-                    ret.Append(GetSubcategoryTag(html, category, sub, selected == 2));
+                    subSelected = selected & (sub.UrlName == current.Subcategory);
+                    ret.Append(GetSubcategoryTag(html, category, sub, subSelected));
                 }
 
-                selected = 0;
                 ret.Append(EndTitleTag());
             }
 
@@ -54,7 +46,7 @@ namespace WebUi.HtmlHelpers
         private static string BeginTitleTag(DomainModel.Entities.Category category, bool selected)
         {
             string titleUrl = string.Format(
-                "<a onclick=\"return ToggleAccordionList('{0}');\"  href=\"/Products/{1}\">{2}</a>",
+                "<a onclick=\"return ToggleAccordionList('{0}');\"  href=\"/Products/List/{1}\">{2}</a>",
                 category.CategoryId,
                 category.UrlName,
                 category.CategoryName);
@@ -66,7 +58,7 @@ namespace WebUi.HtmlHelpers
                     "<div id=\"{1}\" class=\"accordion_dropdown\" style=\"display: {2};\">",
                 titleUrl,
                 category.CategoryId,
-                selected?"block":"none");
+                selected ? "block" : "none");
         }
 
 
@@ -76,8 +68,8 @@ namespace WebUi.HtmlHelpers
             MvcHtmlString url = System.Web.Mvc.Html.LinkExtensions.ActionLink(
                        html,
                        sub.CategoryName,
-                       "List",
-                       "Products",
+                       WebUi.ViewModels.NavigationKeys.ProductListAction,
+                       WebUi.ViewModels.NavigationKeys.ProductController,
                        new { category = category.UrlName, subcategory = sub.UrlName }, null);
 
             return string.Format(

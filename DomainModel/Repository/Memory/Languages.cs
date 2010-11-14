@@ -10,8 +10,8 @@ namespace DomainModel.Repository.Memory
     {
         public ProductLanguageCollection Items { get; set; }
 
-        protected static Languages instance;
-        protected static object instLock = new object();
+        private static Languages instance;
+        private static object instLock = new object();
 
 
         public static Languages Instance
@@ -41,16 +41,9 @@ namespace DomainModel.Repository.Memory
         {
             bool ret = false;
 
-            try
-            {
-                Repository.Sql.Languages.Load(this.Items);
+            Repository.Sql.Languages.Load(this.Items);
 
-                ret = true;
-            }
-            catch (Exception ex)
-            {
-                // UNDONE:
-            }
+            ret = true;
 
             return ret;
         }

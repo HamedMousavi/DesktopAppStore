@@ -13,6 +13,12 @@ namespace WebUi.Controllers
         // Parameters are provided by routing mechanism if an item is selected from left menu
         public ViewResult ProductCategories(string category, string subcategory)
         {
+            if (!DomainModel.Security.InputController.IsValid(category) ||
+                !DomainModel.Security.InputController.IsValid(subcategory))
+            {
+                // UNDONE: UNSECURE INPUT DETECTED
+            }
+
             WebUi.ViewModels.CurrentListItem current = new ViewModels.CurrentListItem();
             current.Category = category;
             current.Subcategory = subcategory;

@@ -18,5 +18,10 @@ namespace DataAdministration
 
 
         public ProductContact SelectedContact { get; set; }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

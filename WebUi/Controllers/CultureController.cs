@@ -14,7 +14,9 @@ namespace WebUi.Controllers
             if (!DomainModel.Security.InputController.IsValid(SelectedCulture) ||
                 !DomainModel.Security.InputController.IsValid(ReturnUrl))
             {
-                return RedirectToAction("BadInput", "Security");
+                return RedirectToAction(
+                    WebUi.ViewModels.NavigationKeys.SecurityBadInputAction, 
+                    WebUi.ViewModels.NavigationKeys.SecurityController);
             }
 
             // Save culture

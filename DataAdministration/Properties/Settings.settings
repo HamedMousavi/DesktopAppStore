@@ -10,5 +10,20 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(local)\SQLExpress;Initial Catalog=PersianSoftware;Persist Security Info=True;User ID=PersianSoftwareWebSite;Password=1aXz%VwO*cG~H_P^n</Value>
     </Setting>
+    <Setting Name="ProductResDirBase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Temp\Web\Content\Products\Repository\</Value>
+    </Setting>
+    <Setting Name="MaxScreenshotSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">800, 600</Value>
+    </Setting>
+    <Setting Name="MaxThumbnailSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">120, 80</Value>
+    </Setting>
+    <Setting Name="ScreenshotDirName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\Screenshots\</Value>
+    </Setting>
+    <Setting Name="ThumbnailDirName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Thumbnails\</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

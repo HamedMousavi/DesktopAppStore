@@ -40,6 +40,11 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft ASP.NET\ASP.NET MVC 2\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICrypt.cs" />
@@ -54,7 +59,11 @@
     <Compile Include="Entities\ContactMediaType.cs" />
     <Compile Include="Entities\ContactUnit.cs" />
     <Compile Include="Entities\GeneralDatabaseList.cs" />
+    <Compile Include="Entities\ImageThumbnail.cs" />
+    <Compile Include="Entities\Picture.cs" />
+    <Compile Include="Entities\ProductArticle.cs" />
     <Compile Include="Entities\ProductBrand.cs" />
+    <Compile Include="Entities\ProductImage.cs" />
     <Compile Include="Entities\ProductLanguageCollection.cs" />
     <Compile Include="Entities\ProductCatalog.cs" />
     <Compile Include="Entities\ProductTag.cs" />
@@ -80,11 +89,18 @@
     <Compile Include="Entities\ProductUpdateOption.cs" />
     <Compile Include="Entities\SoftwarePlatform.cs" />
     <Compile Include="Entities\WebsiteProduct.cs" />
+    <Compile Include="Errors\Handler.cs" />
+    <Compile Include="Errors\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Disk\Catalog.cs" />
+    <Compile Include="Repository\Disk\Configurations.cs" />
+    <Compile Include="Repository\Disk\Errors.cs" />
     <Compile Include="Repository\Memory\Categories.cs" />
     <Compile Include="Repository\Memory\Languages.cs" />
+    <Compile Include="Repository\Sql\Catalog.cs" />
     <Compile Include="Repository\Sql\Categories.cs" />
     <Compile Include="Repository\Sql\Configurations.cs" />
+    <Compile Include="Repository\Sql\Errors.cs" />
     <Compile Include="Repository\Sql\Languages.cs" />
     <Compile Include="Repository\Sql\Products.cs" />
     <Compile Include="Repository\Sql\Users.cs" />
@@ -96,6 +112,7 @@
     <Compile Include="Security\UserMembershipProvider.cs" />
     <Compile Include="Tools\Currencies.cs" />
     <Compile Include="Tools\DateTime\Convert.cs" />
+    <Compile Include="Tools\DateTime\JalaliCalendar.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

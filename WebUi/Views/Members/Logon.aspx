@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<WebUi.ViewModels.LoginInfo>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Persian Softwares - Membership
+	Membership - <%:UiResources.UiTexts.app_title %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
     <div class = "form">
         <h2><%: UiTexts.log_on %></h2>
-        <% using (Html.BeginForm("Logon", "Members"/*, FormMethod.Post, new { @class = "form" }*/))
+        <% using (Html.BeginForm(WebUi.ViewModels.NavigationKeys.MemberLogonAction, WebUi.ViewModels.NavigationKeys.MemberController/*, FormMethod.Post, new { @class = "form" }*/))
            { %>
             <%: Html.ValidationSummary(true, "Login was NOT successful. Please correct the errors and try again.") %>
                 <fieldset>
@@ -43,11 +43,11 @@
     </div>
     <div class = "form">
         <h2><%: UiTexts.become_a_member %></h2>
-            <%: Html.ActionLink(UiTexts.become_a_member, "Register", "Members") %>
+            <%: Html.ActionLink(UiTexts.become_a_member, WebUi.ViewModels.NavigationKeys.MemberRegisterAction , WebUi.ViewModels.NavigationKeys.MemberController) %>
     </div>
     <div class = "form">
         <h2><%: UiTexts.forgot_your_password %></h2>
-        <%: Html.ActionLink(UiTexts.password_recovery_wizard, "ResetPassword", "Members") %>
+        <%: Html.ActionLink(UiTexts.password_recovery_wizard, WebUi.ViewModels.NavigationKeys.MemberResetPasswordAction, WebUi.ViewModels.NavigationKeys.MemberController) %>
     </div>
 
 

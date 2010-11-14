@@ -8,6 +8,16 @@ namespace DomainModel.Entities
     {
         public Int64 BrandId { get; set; }
         public string BrandName { get; set; }
-        public string ResourceUrl { get; set; } // Images, Intro videos, etc.
+
+        public ProductBrand(Int64 BrandId, string BrandName, string ResourceUrl)
+        {
+            this.BrandId = BrandId;
+            this.BrandName = BrandName;
+        }
+
+
+        public ProductBrand()
+        {
+        }
     }
 }

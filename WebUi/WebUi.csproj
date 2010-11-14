@@ -64,10 +64,13 @@
   <ItemGroup>
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CultureController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="HtmlHelpers\CatalogHelpers.cs" />
     <Compile Include="HtmlHelpers\ListingHelpers.cs" />
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Models\ChromeAgentConst.cs" />
@@ -81,7 +84,9 @@
     <Compile Include="Models\SessionKeys.cs" />
     <Compile Include="Models\Sessions.cs" />
     <Compile Include="Models\AppCulture.cs" />
+    <Compile Include="ViewModels\NavigationKeys.cs" />
     <Compile Include="ViewModels\PagingInfo.cs" />
+    <Compile Include="ViewModels\ScreenshotInfo.cs" />
     <Compile Include="ViewModels\ViewDataKeys.cs" />
     <Compile Include="ViewPages\BaseViewPage.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -89,22 +94,34 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\screenshot_desc_bg.png" />
     <Content Include="Content\Images\logo.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Images\tickmark.jpg" />
+    <Content Include="Content\Images\seal_early_adapters.gif" />
+    <Content Include="Content\SoftwareSchool\TrueCrypt\Screenshots\TrueCrypt.png" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Errors\Exception.aspx" />
+    <Content Include="Views\Errors\NotFound.aspx" />
     <Content Include="Views\Members\Logon.aspx" />
     <Content Include="Views\Members\Register.aspx" />
     <Content Include="Views\Members\Welcome.aspx" />
     <Content Include="Views\Navigation\ProductCategories.ascx" />
+    <Content Include="Views\Products\Catalog.aspx" />
     <Content Include="Views\Products\List.aspx" />
+    <Content Include="Views\Products\Screenshots.aspx" />
     <Content Include="Views\Search\Advanced.aspx" />
     <Content Include="Views\Search\Basic.aspx" />
+    <Content Include="Views\Security\BadInput.aspx" />
     <Content Include="Views\Shared\CultureSelector.ascx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\FeaturedProducts.ascx" />
     <Content Include="Views\Shared\LogonViewer.ascx" />
+    <Content Include="Views\Shared\PopularProducts.ascx" />
     <Content Include="Views\Shared\ProductSummary.ascx" />
     <Content Include="Views\Shared\SearchBox.ascx" />
+    <Content Include="Views\Shared\SoftwareSchool.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -130,7 +147,9 @@
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Products\Repository\Yaas\Screenshots\Thumbnails\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DomainModel\DomainModel.csproj">
       <Project>{1B479C80-B78C-4F26-BFDD-3EFEA8678F3F}</Project>
@@ -156,7 +175,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1473</DevelopmentServerPort>
+          <DevelopmentServerPort>2018</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

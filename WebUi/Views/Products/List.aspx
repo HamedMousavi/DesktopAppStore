@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<List<DomainModel.Entities.ProductBase>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	List
+	<%:UiResources.UiTexts.title_list %> - <%:UiResources.UiTexts.app_title %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">

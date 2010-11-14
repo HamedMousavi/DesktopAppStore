@@ -43,21 +43,14 @@ namespace DomainModel.Repository.Memory
         {
             bool ret = false;
 
-            try
-            {
-                CategoryParent cat = new CategoryParent();
-                cat.Language.CultureId = culture;
+            CategoryParent cat = new CategoryParent();
+            cat.Language.CultureId = culture;
 
-                Repository.Sql.Categories.Load(culture, cat);
+            Repository.Sql.Categories.Load(culture, cat);
 
-                this.Items.Add(cat);
+            this.Items.Add(cat);
 
-                ret = true;
-            }
-            catch (Exception ex)
-            {
-                // UNDONE:
-            }
+            ret = true;
 
             return ret;
         }

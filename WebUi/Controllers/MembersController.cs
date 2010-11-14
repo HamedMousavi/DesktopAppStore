@@ -52,56 +52,62 @@ namespace WebUi.Controllers
 
         public ActionResult LogOff()
         {
-            this.MembershipService.SignOut();
-            return RedirectToAction("Index", "Home");
+            try
+            {
+                this.MembershipService.SignOut();
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex)
+            {
+                DomainModel.Errors.Handler.HandleException(
+                    this,
+                    HttpContext,
+                    Models.AppCulture.CurrentCulture.CultureId,
+                    ex);
+
+                return RedirectToAction(
+                            WebUi.ViewModels.NavigationKeys.ErrorsExceptionAction,
+                            WebUi.ViewModels.NavigationKeys.ErrorsController);
+            }
         }
 
 
         [HttpPost]
         public ActionResult Logon(WebUi.ViewModels.LoginInfo model, string returnUrl)
         {
-            try
+            // Validate input
+            if (!DomainModel.Security.InputController.IsValid(returnUrl) ||
+                !DomainModel.Security.InputController.IsValid(model.UserName) ||
+                !DomainModel.Security.InputController.IsValid(model.Password))
             {
-                // Validate input
-                if (!DomainModel.Security.InputController.IsValid(returnUrl) ||
-                    !DomainModel.Security.InputController.IsValid(model.UserName) ||
-                    !DomainModel.Security.InputController.IsValid(model.Password))
-                {
-                    // UNDONE: Report error?
-                    ModelState.AddModelError("", UiResources.UiTexts.error_security);
-                }
+                return RedirectToAction(
+                    WebUi.ViewModels.NavigationKeys.SecurityBadInputAction,
+                    WebUi.ViewModels.NavigationKeys.SecurityController);
+            }
 
-                // Validate model data
-                if (ModelState.IsValid)
+            // Validate model data
+            if (ModelState.IsValid)
+            {
+                // Authenticate user
+                if (this.MembershipService.ValidateUser(model.Email, model.Password))
                 {
-                    // Authenticate user
-                    if (this.MembershipService.ValidateUser(model.Email, model.Password))
+                    this.MembershipService.SignIn(model.Email, model.RememberMe);
+
+                    // Redirect to return url or homepage
+                    if (!String.IsNullOrEmpty(returnUrl))
                     {
-                        this.MembershipService.SignIn(model.Email, model.RememberMe);
-
-                        // Redirect to return url or homepage
-                        if (!String.IsNullOrEmpty(returnUrl))
-                        {
-                            return Redirect(returnUrl);
-                        }
-                        else
-                        {
-                            return RedirectToAction("Index", "Home");
-                        }
+                        return Redirect(returnUrl);
                     }
                     else
                     {
-                        ModelState.AddModelError("", UiResources.UiTexts.error_authentication_failed);
+                        return RedirectToAction("Index", "Home");
                     }
                 }
+                else
+                {
+                    ModelState.AddModelError("", UiResources.UiTexts.error_authentication_failed);
+                }
             }
-            catch (Exception ex)
-            {
-                // UNDONE: Report error?
-                ModelState.AddModelError("", ex.ToString());
-            }
-
-            // Authorize user ?
 
             return View(model);
         }
@@ -110,44 +116,38 @@ namespace WebUi.Controllers
         [HttpPost]
         public ActionResult Register(string Email)
         {
-            try
+            // Validate input
+            if (!DomainModel.Security.InputController.IsValid(Email))
             {
-                // Validate input
-                if (!DomainModel.Security.InputController.IsValid(Email))
-                {
-                    ModelState.AddModelError("email", UiResources.UiTexts.error_security);
-                }
-
-                if (!DomainModel.Security.InputController.IsValidEmail(Email))
-                {
-                    ModelState.AddModelError("email", UiResources.UiTexts.error_email);
-                }
-
-                // Ensure user is new
-                if (this.MembershipService.Exists(Email))
-                {
-                    ModelState.AddModelError("email", string.Format(UiResources.UiTexts.error_already_a_user));
-                }
-
-                if (ModelState.IsValid)
-                {
-                    // Send an activation email async.
-                    if (this.MembershipService.CreateUser(Email))
-                    {
-                        // UNDONE : SEND AN EMAIL CONTAINING USER CREDENTIALS
-                        return RedirectToAction("Welcome", "Members");
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", string.Format(UiResources.UiTexts.error_internal));
-                    }
-                }
-
+                ModelState.AddModelError("email", UiResources.UiTexts.error_security);
+                return RedirectToAction(
+                    WebUi.ViewModels.NavigationKeys.SecurityBadInputAction,
+                    WebUi.ViewModels.NavigationKeys.SecurityController);
             }
-            catch (Exception ex)
+
+            if (!DomainModel.Security.InputController.IsValidEmail(Email))
             {
-                // UNDONE: Report error?
-               // ModelState.AddModelError("", ex.ToString());
+                ModelState.AddModelError("email", UiResources.UiTexts.error_email);
+            }
+
+            // Ensure user is new
+            if (this.MembershipService.Exists(Email))
+            {
+                ModelState.AddModelError("email", string.Format(UiResources.UiTexts.error_already_a_user));
+            }
+
+            if (ModelState.IsValid)
+            {
+                // Send an activation email async.
+                if (this.MembershipService.CreateUser(Email))
+                {
+                    // UNDONE : SEND AN EMAIL CONTAINING USER CREDENTIALS
+                    return RedirectToAction("Welcome", "Members");
+                }
+                else
+                {
+                    ModelState.AddModelError("", string.Format(UiResources.UiTexts.error_internal));
+                }
             }
 
 
