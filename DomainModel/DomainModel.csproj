@@ -88,6 +88,9 @@
     <Compile Include="Entities\ProductTrainingOption.cs" />
     <Compile Include="Entities\ProductUpdateOption.cs" />
     <Compile Include="Entities\SoftwarePlatform.cs" />
+    <Compile Include="Entities\WeblogEntry.cs" />
+    <Compile Include="Entities\WeblogEntryCollection.cs" />
+    <Compile Include="Entities\WeblogEntryCollectionList.cs" />
     <Compile Include="Entities\WebsiteProduct.cs" />
     <Compile Include="Errors\Handler.cs" />
     <Compile Include="Errors\Logger.cs" />
@@ -96,7 +99,9 @@
     <Compile Include="Repository\Disk\Configurations.cs" />
     <Compile Include="Repository\Disk\Errors.cs" />
     <Compile Include="Repository\Memory\Categories.cs" />
+    <Compile Include="Repository\Memory\Configurations.cs" />
     <Compile Include="Repository\Memory\Languages.cs" />
+    <Compile Include="Repository\Memory\Weblog.cs" />
     <Compile Include="Repository\Sql\Catalog.cs" />
     <Compile Include="Repository\Sql\Categories.cs" />
     <Compile Include="Repository\Sql\Configurations.cs" />
@@ -104,6 +109,7 @@
     <Compile Include="Repository\Sql\Languages.cs" />
     <Compile Include="Repository\Sql\Products.cs" />
     <Compile Include="Repository\Sql\Users.cs" />
+    <Compile Include="Repository\Sql\Weblog.cs" />
     <Compile Include="Repository\Utils\Convert.cs" />
     <Compile Include="Security\InputController.cs" />
     <Compile Include="Security\MembershipService.cs" />

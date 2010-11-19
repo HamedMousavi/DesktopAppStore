@@ -88,6 +88,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Best Softwares.
+        /// </summary>
+        public static string best_softwares {
+            get {
+                return ResourceManager.GetString("best_softwares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ,.
         /// </summary>
         public static string comma {
@@ -210,6 +219,15 @@ namespace UiResources {
         public static string extra_services {
             get {
                 return ResourceManager.GetString("extra_services", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest blog entries.
+        /// </summary>
+        public static string featured_blog_entries {
+            get {
+                return ResourceManager.GetString("featured_blog_entries", resourceCulture);
             }
         }
         
@@ -705,6 +723,15 @@ namespace UiResources {
         public static string product_volume_size {
             get {
                 return ResourceManager.GetString("product_volume_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to read more about this.
+        /// </summary>
+        public static string read_more {
+            get {
+                return ResourceManager.GetString("read_more", resourceCulture);
             }
         }
         

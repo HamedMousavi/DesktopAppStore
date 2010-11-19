@@ -6,7 +6,7 @@ using System.Web.Mvc;
 namespace WebUi.ViewPages
 {
     public class BaseViewPage<T> : ViewPage<T> where T : class
-    {
+    {/*
         protected override void InitializeCulture()
         {
             base.InitializeCulture();
@@ -15,7 +15,7 @@ namespace WebUi.ViewPages
             
             this.Culture = cuture;
             this.UICulture = cuture;
-
         }
+        */
     }
 }

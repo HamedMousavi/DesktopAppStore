@@ -391,12 +391,21 @@
     <value>تصاویر نرم افزار</value>
   </data>
   <data name="featured_products" xml:space="preserve">
-    <value>محصولات ممتاز</value>
+    <value>نرم افزارهای برتر</value>
   </data>
   <data name="popular_products" xml:space="preserve">
-    <value>به انتخاب شما</value>
+    <value>نرم افزارهای پر بازدید</value>
   </data>
   <data name="software_school" xml:space="preserve">
     <value>نرم افزار کاربردی هفته</value>
+  </data>
+  <data name="best_softwares" xml:space="preserve">
+    <value>بهترین نرم افزارها</value>
+  </data>
+  <data name="read_more" xml:space="preserve">
+    <value>ادامه این نوشتار</value>
+  </data>
+  <data name="featured_blog_entries" xml:space="preserve">
+    <value>آخرین پستهای وبلاگ</value>
   </data>
 </root>

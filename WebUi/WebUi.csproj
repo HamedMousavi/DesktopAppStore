@@ -70,6 +70,7 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="Controllers\WeblogController.cs" />
     <Compile Include="HtmlHelpers\CatalogHelpers.cs" />
     <Compile Include="HtmlHelpers\ListingHelpers.cs" />
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
@@ -100,6 +101,8 @@
     </Content>
     <Content Include="Content\Images\tickmark.jpg" />
     <Content Include="Content\Images\seal_early_adapters.gif" />
+    <Content Include="Content\Messages\Intro\Images\discs.jpg" />
+    <Content Include="Content\Messages\Intro\Images\program.jpg" />
     <Content Include="Content\SoftwareSchool\TrueCrypt\Screenshots\TrueCrypt.png" />
     <Content Include="Global.asax" />
     <Content Include="Views\Errors\Exception.aspx" />
@@ -118,10 +121,12 @@
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\FeaturedProducts.ascx" />
     <Content Include="Views\Shared\LogonViewer.ascx" />
+    <Content Include="Views\Shared\Messages.ascx" />
     <Content Include="Views\Shared\PopularProducts.ascx" />
     <Content Include="Views\Shared\ProductSummary.ascx" />
     <Content Include="Views\Shared\SearchBox.ascx" />
     <Content Include="Views\Shared\SoftwareSchool.ascx" />
+    <Content Include="Views\Weblog\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

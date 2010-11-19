@@ -66,12 +66,24 @@ namespace WebUi
             // /Products/Medical
             // /Products
             routes.MapRoute(null,
-                "Products/List/{category}/{subcategory}", // Matches ~/Football or ~/AnythingWithNoSlash
+                "Products/List/{category}/{subcategory}",
                 new 
                 {
                     controller = WebUi.ViewModels.NavigationKeys.ProductController,
                     action = WebUi.ViewModels.NavigationKeys.ProductListAction,
                     category = (string)null, subcategory = (string)null, page=1 }
+            );
+
+
+            // /Messages/...
+            routes.MapRoute(null,
+                "Weblog/{url}",
+                new 
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.WeblogController,
+                    action = WebUi.ViewModels.NavigationKeys.IndexAction,
+                    url = (string)null
+                }
             );
 
             // /Homde
@@ -128,6 +140,7 @@ namespace WebUi
                 foreach (DomainModel.Entities.ProductLanguage lang in DomainModel.Repository.Memory.Languages.Instance.Items)
                 {
                     DomainModel.Repository.Memory.Categories.Instance.Load(lang.CultureId);
+                    DomainModel.Repository.Memory.Weblog.Instance.Reload(lang.CultureId);
                 }
             }
             catch (Exception ex)

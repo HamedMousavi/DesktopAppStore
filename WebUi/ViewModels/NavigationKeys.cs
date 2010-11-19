@@ -33,5 +33,7 @@ namespace WebUi.ViewModels
         public static string ErrorsController = "Errors";
         public static string ErrorsExceptionAction = "Exception";
         public static string Errors404Action = "NotFound";
+
+        public static string WeblogController = "Weblog";
     }
 }

@@ -70,7 +70,7 @@
 
                     <div class="<%:UiResources.UiTexts.page_direction%>_col_left">
                         <div id="product_categories">
-                            <div class="product_categories_caption"><%:UiResources.UiTexts.software_categories%></div>
+                            <div class="section_title"><%:UiResources.UiTexts.software_categories%></div>
                             <% Html.RenderAction("ProductCategories", "Navigation"); %>
                         </div>
                         <asp:ContentPlaceHolder ID="LeftContent" runat="server">
@@ -78,6 +78,11 @@
                     </div>
 
                     <div class="<%:UiResources.UiTexts.page_direction%>_col_right">
+                        <div id="featured_blog_entries">
+                            <div class="section_title"><%:UiResources.UiTexts.featured_blog_entries%></div>
+                        </div>
+                        <div id="members_toolbox">
+                        </div>
                         <asp:ContentPlaceHolder ID="RightContent" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>

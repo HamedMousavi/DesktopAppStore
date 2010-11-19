@@ -25,7 +25,7 @@ h1, h2, h3, h4
 
 h1, h2, h3
 {
-    color: #FFA000;
+    color: #E06000;
     font-family: B Nazanin, Arabic Transparent, Tahoma;
 }
 
@@ -40,10 +40,6 @@ h4
     padding: 0px 10px 0px 10px;
 }
 
-p
-{
-    padding: 0px 20px 0px 20px;
-}
  /*-------------------------------------------------------------------------------------+
  |									Page Layout: 3Columns								|
  +-------------------------------------------------------------------------------------*/
@@ -225,11 +221,23 @@ a:hover
 #header
 {
     width: 100%;
-    height: 91px;
+    height: 89px;
     margin: 0px;
     padding: 0px;
     background-color: #142e4f;
 }
+
+
+.section_title
+{
+    color:#FFFFFF;
+    background-color: #204060;
+    font-weight:bold;
+    padding:8px;
+    vertical-align:middle;
+    margin: 2px 0px 2px 0px;
+}
+
 
 
 #logo
@@ -252,7 +260,7 @@ a:hover
 
 #product_categories
 {
-    padding: 2px;
+    padding: 0px 2px 0px 2px;
     margin: 0;
 }
 
@@ -328,7 +336,7 @@ a:hover
     padding: 8px;
     font-weight: bold;
     vertical-align: middle;
-    background-color: #000000;
+    background-color: #204060;
     color: #FFFFFF;
 }
 
@@ -476,7 +484,8 @@ a:hover
 
 #menu_bar
 {
-    background-color: #000000;
+    height: 30px;
+    background-color: #204060;
     vertical-align: middle;
 }
 
@@ -545,6 +554,12 @@ a:hover
     padding: 0;
     clear: both;
     float:none;
+}
+
+
+#article p
+{
+    padding: 0px 20px 0px 20px;
 }
 
 
@@ -865,13 +880,36 @@ input#search_term
 }
 
 
+#messages
+{
+    clear: both;
+    margin: 2px;
+}
+
+
+
+.message_content
+{
+    font-size: 11pt;
+}
+
+
+.message_image
+{
+    margin: 0 0 0 8px;
+}
+
+
+#best_products
+{
+    clear: both;
+}
+
+
 #best_products .title, #software_school .title
 {
-    color: #FFA020;
     padding-bottom: 4px;
     border-bottom: 2px solid #FFA020;
-    font-size: 12pt;
-    font-weight: bold;
 }
 
 
@@ -895,6 +933,27 @@ input#search_term
 {
     clear: both;
 }
+
+
+.message_item
+{
+    clear: both;
+}
+
+#featured_blog_entries
+{
+    padding: 0px 2px 0px 2px;
+}
+
+
+
+
+
+
+
+
+
+
 /*<!--     
     background: url("/Content/Images/screenshot_desc_bg.png") repeat scroll 0 0 transparent;
 

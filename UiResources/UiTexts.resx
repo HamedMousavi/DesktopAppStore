@@ -399,4 +399,13 @@
   <data name="software_school" xml:space="preserve">
     <value>Weekly Intro</value>
   </data>
+  <data name="best_softwares" xml:space="preserve">
+    <value>Best Softwares</value>
+  </data>
+  <data name="read_more" xml:space="preserve">
+    <value>Click to read more about this</value>
+  </data>
+  <data name="featured_blog_entries" xml:space="preserve">
+    <value>Latest blog entries</value>
+  </data>
 </root>
