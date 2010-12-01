@@ -5,6 +5,7 @@ namespace DomainModel.Entities
 {
     public class CategoryParentCollection : List<CategoryParent>
     {
+        public DateTime? LastLoad { get; set; }
 
 
         public CategoryParent this[string culture]

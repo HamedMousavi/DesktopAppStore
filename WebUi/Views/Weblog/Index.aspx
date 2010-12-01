@@ -11,14 +11,12 @@
  %>
 
     <div class="message_item">
-        <h2><%:message.Title%></h2>
-        <div class="text clean">
-            <span><%: DomainModel.Tools.DateTime.Convert.ToCulture(
+        <div class="section_title"><%:message.Title%></div>
+        <div class="info_bar">
+            <%: DomainModel.Tools.DateTime.Convert.ToCulture(
                                         message.UploadDate,
                       WebUi.Models.AppCulture.CurrentCulture)%>
-            </span>
         </div>
-        <hr />
         <%=message.Content%>
     </div>
 <%

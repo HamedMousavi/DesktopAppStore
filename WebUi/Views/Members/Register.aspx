@@ -6,30 +6,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
-    <div class = "form">
-        <h2><%: UiTexts.registeration_form %></h2>
-        <% using (Html.BeginForm(WebUi.ViewModels.NavigationKeys.MemberRegisterAction, WebUi.ViewModels.NavigationKeys.MemberController/*, FormMethod.Post, new { @class="form" }*/))
-           { %>
-            <%: Html.ValidationSummary()%>
-    
-            <fieldset>
-                <legend><%: UiTexts.registration_information%></legend>
-
-                <div class="editor-label">
-                    <%: Html.Label(UiTexts.email_address)%>
-                </div>
-
-                <div class="editor-field">
-                    <%: Html.TextBox("Email")%>
-                    <%: Html.ValidationMessage("Email")%>
-                </div>
-
-                <p>
-                    <input type="submit" value="<%: UiTexts.register %>" />
-                </p>
-
-            </fieldset>
-        <% } %>
+    <div class="section_title"><%: UiTexts.registeration_form %></div>
+    <div style="line-height: 1.5em;">
+        <%Html.RenderPartial("RegistrationForm");%>
     </div>
 
 </asp:Content>

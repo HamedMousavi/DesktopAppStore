@@ -15,5 +15,7 @@ namespace DomainModel.Entities
         public DateTime? UploadDate { get; set; }
         public DateTime? ExpirationDate { get; set; }
         public Decimal? Score { get; set; }
+        public bool? IsAnnouncement { get; set; }
+        public Int64? EntryId { get; set; }
     }
 }

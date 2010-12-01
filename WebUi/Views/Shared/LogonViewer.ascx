@@ -9,8 +9,10 @@
     }
     else {
 %> 
-        <%: Html.ActionLink(UiResources.UiTexts.log_on, WebUi.ViewModels.NavigationKeys.MemberLogonAction, WebUi.ViewModels.NavigationKeys.MemberController)%>
-        <%: Html.ActionLink(UiResources.UiTexts.become_a_member, WebUi.ViewModels.NavigationKeys.MemberRegisterAction, WebUi.ViewModels.NavigationKeys.MemberController)%>
+    <ul>
+        <li><%: Html.ActionLink(UiResources.UiTexts.log_on, WebUi.ViewModels.NavigationKeys.MemberLogonAction, WebUi.ViewModels.NavigationKeys.MemberController)%></li>
+        <li><%: Html.ActionLink(UiResources.UiTexts.become_a_member, WebUi.ViewModels.NavigationKeys.MemberRegisterAction, WebUi.ViewModels.NavigationKeys.MemberController)%></li>
+    </ul>
 <%
     }
 %>

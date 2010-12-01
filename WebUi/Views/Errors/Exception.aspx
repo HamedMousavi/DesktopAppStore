@@ -6,7 +6,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
-    <h2>Exception</h2>
+    <h2><%:UiResources.UiTexts.unknown_error%></h2>
+
+    <p><%:UiResources.UiTexts.unknown_error_content%></p>
 
 </asp:Content>
 

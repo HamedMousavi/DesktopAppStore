@@ -17,7 +17,7 @@ namespace WebUi.Controllers
         }
 
 
-        public ActionResult List(string category, string subcategory, int? page)
+        public ActionResult List(string category, string subcategory, int? page, int? sort)
         {
             if (!DomainModel.Security.InputController.IsValid(category) ||
                 !DomainModel.Security.InputController.IsValid(subcategory))
@@ -28,6 +28,7 @@ namespace WebUi.Controllers
             }
 
             if (page == null) page = 1;
+            if (sort == null) sort = 1;
 
             CategoryParent parent =
                 DomainModel.Repository.Memory.Categories.Instance.Items
@@ -35,29 +36,54 @@ namespace WebUi.Controllers
 
             int? categoryId = null;
             int? parentId = null;
+            string listTitle = string.Empty;
+            Category cat = null;
 
             if (!string.IsNullOrWhiteSpace(category))
             {
-                parentId = parent[category].CategoryId;
+                cat = parent[category];
+
+                if (cat != null)
+                {
+                    parentId = cat.CategoryId;
+                    listTitle = cat.CategoryName;
+                }
             }
 
-            if (!string.IsNullOrWhiteSpace(subcategory))
+            if (!string.IsNullOrWhiteSpace(subcategory) && cat != null)
             {
-                categoryId = parent[category].SubCategories[subcategory].CategoryId;
+                cat = cat.SubCategories[subcategory];
+
+                if (cat != null)
+                {
+                    categoryId = cat.CategoryId;
+
+                    if (!string.IsNullOrWhiteSpace(listTitle)) listTitle += " - ";
+                    listTitle += cat.CategoryName;
+                }
             }
+
+            WebUi.ViewModels.PagingInfo pagingInf = new ViewModels.PagingInfo();
+            int startRow = (page.Value - 1) * pagingInf.ItemsPerPage + 1;
 
             GeneralDatabaseList list =
                 DomainModel.Repository.Sql.Products.GetByCategory(
-                    WebUi.Models.AppCulture.CurrentCulture.CultureId, categoryId, parentId, 1, 5);
-
-            WebUi.ViewModels.PagingInfo pagingInf = new ViewModels.PagingInfo();
+                    WebUi.Models.AppCulture.CurrentCulture.CultureId, 
+                    categoryId, 
+                    parentId, 
+                    startRow, 
+                    startRow + pagingInf.ItemsPerPage - 1,
+                    sort.Value);
+            pagingInf.CurrentSortOption = sort.Value;
             pagingInf.CurrentPage = page.Value;
             pagingInf.TotalItems = list.TotalCount;
+            pagingInf.listTitle = listTitle;
 
             ViewData[ViewModels.ViewDataKeys.ListPagingDetails] = pagingInf;
 
             return View(list.List);
         }
+
 
 
         public ActionResult Catalog(string productName)
@@ -69,12 +95,20 @@ namespace WebUi.Controllers
                     WebUi.ViewModels.NavigationKeys.SecurityController);
             }
 
+
             // productName is in fact products' urlName
             ApplicationProduct product = new ApplicationProduct();
 
-            if (DomainModel.Repository.Sql.Catalog.Load(productName, WebUi.Models.AppCulture.CurrentCulture.CultureId, product))
+            if (DomainModel.Repository.Sql.Catalog.Load(
+                productName, 
+                WebUi.Models.AppCulture.CurrentCulture.CultureId, 
+                product,
+                Models.Security.UserId))
             {
-                DomainModel.Repository.Disk.Catalog.LoadScreenshots(product, WebUi.Models.AppCulture.CurrentCulture.CultureId, false);
+                DomainModel.Repository.Disk.Catalog.LoadScreenshots(
+                    product, 
+                    WebUi.Models.AppCulture.CurrentCulture.CultureId, 
+                    false);
 
                 return View(product);
             }
@@ -106,6 +140,51 @@ namespace WebUi.Controllers
                 productName);
 
             return View(info);
+        }
+
+
+
+        public ActionResult Tags(Int32? tagId, int? page, int? sort)
+        {
+            if (tagId == null ||
+                !tagId.HasValue)
+            {
+                return RedirectToAction(
+                    WebUi.ViewModels.NavigationKeys.SecurityBadInputAction,
+                    WebUi.ViewModels.NavigationKeys.SecurityController);
+            }
+
+            if (sort == null || !sort.HasValue) sort = 1;
+
+            string listTitle = UiResources.UiTexts.related_tags;
+            ProductTag tag = DomainModel.Repository.Sql.Tags.GetById(
+                tagId.Value,
+                WebUi.Models.AppCulture.CurrentCulture.Id);
+            
+            if (tag != null)
+            {
+                listTitle += " - " +tag.Name;
+            }
+
+            WebUi.ViewModels.PagingInfo pagingInf = new ViewModels.PagingInfo();
+            int startRow = (page.Value - 1) * pagingInf.ItemsPerPage + 1;
+
+            GeneralDatabaseList list =
+                DomainModel.Repository.Sql.Products.GetByTagId(
+                    WebUi.Models.AppCulture.CurrentCulture.Id, 
+                    tagId.Value, 
+                    startRow, 
+                    startRow + pagingInf.ItemsPerPage - 1,
+                    sort.Value);
+
+            pagingInf.CurrentSortOption = sort.Value;
+            pagingInf.CurrentPage = page.Value;
+            pagingInf.TotalItems = list.TotalCount;
+            pagingInf.listTitle = listTitle;
+
+            ViewData[ViewModels.ViewDataKeys.ListPagingDetails] = pagingInf;
+
+            return View("List", list.List);
         }
     }
 }

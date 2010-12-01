@@ -123,7 +123,7 @@ namespace DomainModel.Repository.Sql
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.Add(new SqlParameter("@UserName", Email));
                     cmd.Parameters.Add(new SqlParameter("@EmailAddress", Email));
-                    cmd.Parameters.Add(new SqlParameter("@MembershipDate", DateTime.Now));
+                    cmd.Parameters.Add(new SqlParameter("@MembershipDate", DateTime.UtcNow));
                     cmd.Parameters.Add(new SqlParameter("@Password", Password));
                     foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
                     
@@ -147,7 +147,7 @@ namespace DomainModel.Repository.Sql
         {
             string userName = string.Empty;
             string query =
-                " SELECT UserName" +
+                " SELECT UserId" +
                 " FROM Users" +
                 " WHERE (EmailAddress = @Email)";
 

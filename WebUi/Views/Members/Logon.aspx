@@ -6,50 +6,19 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
-    <div class = "form">
-        <h2><%: UiTexts.log_on %></h2>
-        <% using (Html.BeginForm(WebUi.ViewModels.NavigationKeys.MemberLogonAction, WebUi.ViewModels.NavigationKeys.MemberController/*, FormMethod.Post, new { @class = "form" }*/))
-           { %>
-            <%: Html.ValidationSummary(true, "Login was NOT successful. Please correct the errors and try again.") %>
-                <fieldset>
-                    <legend><%: UiTexts.account_information %></legend>
-                
-                    <div class="editor-label">
-                        <%: Html.Label(UiTexts.email_address) %>
-                    </div>
-                    <div class="editor-field">
-                        <%: Html.TextBox("Email") %>
-                        <%: Html.ValidationMessage("Email")%>
-                    </div>
-                
-                    <div class="editor-label">
-                        <%: Html.Label(UiTexts.password) %>
-                    </div>
-                    <div class="editor-field">
-                        <%: Html.Password("Password") %>
-                        <%: Html.ValidationMessage("Password") %>
-                    </div>
-                
-                    <div class="editor-label">
-                        <%: Html.CheckBox("RememberMe") %>
-                        <%: Html.Label(UiTexts.remember_me)%>
-                    </div>
-                
-                    <p>
-                        <input type="submit" value="<%: UiTexts.enter %>" />
-                    </p>
-                </fieldset>
-        <% } %>
-    </div>
-    <div class = "form">
-        <h2><%: UiTexts.become_a_member %></h2>
-            <%: Html.ActionLink(UiTexts.become_a_member, WebUi.ViewModels.NavigationKeys.MemberRegisterAction , WebUi.ViewModels.NavigationKeys.MemberController) %>
-    </div>
-    <div class = "form">
-        <h2><%: UiTexts.forgot_your_password %></h2>
-        <%: Html.ActionLink(UiTexts.password_recovery_wizard, WebUi.ViewModels.NavigationKeys.MemberResetPasswordAction, WebUi.ViewModels.NavigationKeys.MemberController) %>
-    </div>
+    <div class="section_title"><%:UiTexts.log_on%></div>
+    <%Html.RenderPartial("LogonForm");%>
 
+    <div style="margin-top: 10px;">
+        <div class="button_link" style="float:right; width: 49%; line-height:1.5em;">
+            <div class="section_title"><%:UiTexts.become_a_member%></div>
+            <%Html.RenderPartial("RegistrationForm");%>
+        </div>
+        <div class="button_link" style="float:left; width: 50%; line-height:1.5em;">
+            <div class="section_title"><%: UiTexts.forgot_your_password %></div>
+            <%: Html.ActionLink(UiTexts.password_recovery_wizard, WebUi.ViewModels.NavigationKeys.MemberResetPasswordAction, WebUi.ViewModels.NavigationKeys.MemberController) %>
+        </div>
+    </div>
 
 </asp:Content>
 

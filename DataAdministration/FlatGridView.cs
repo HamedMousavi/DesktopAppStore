@@ -189,9 +189,5 @@ namespace PresentationUtil
         }
 
         #endregion
-
-
-
-        // UNDONE : SAVE COLUMN SIZEZ
     }
 }

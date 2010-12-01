@@ -51,6 +51,7 @@
     <Compile Include="Abstract\IMembership.cs" />
     <Compile Include="Abstract\IPasswordGenerator.cs" />
     <Compile Include="Abstract\IUsersRepository.cs" />
+    <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\ApplicationProduct.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\CategoryCollection.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Entities\ContactUnit.cs" />
     <Compile Include="Entities\GeneralDatabaseList.cs" />
     <Compile Include="Entities\ImageThumbnail.cs" />
+    <Compile Include="Entities\OwnerBranch.cs" />
     <Compile Include="Entities\Picture.cs" />
     <Compile Include="Entities\ProductArticle.cs" />
     <Compile Include="Entities\ProductBrand.cs" />
@@ -101,13 +103,17 @@
     <Compile Include="Repository\Memory\Categories.cs" />
     <Compile Include="Repository\Memory\Configurations.cs" />
     <Compile Include="Repository\Memory\Languages.cs" />
+    <Compile Include="Repository\Memory\Owners.cs" />
+    <Compile Include="Repository\Memory\ProductList.cs" />
     <Compile Include="Repository\Memory\Weblog.cs" />
     <Compile Include="Repository\Sql\Catalog.cs" />
     <Compile Include="Repository\Sql\Categories.cs" />
     <Compile Include="Repository\Sql\Configurations.cs" />
     <Compile Include="Repository\Sql\Errors.cs" />
     <Compile Include="Repository\Sql\Languages.cs" />
+    <Compile Include="Repository\Sql\ProductRatings.cs" />
     <Compile Include="Repository\Sql\Products.cs" />
+    <Compile Include="Repository\Sql\Tags.cs" />
     <Compile Include="Repository\Sql\Users.cs" />
     <Compile Include="Repository\Sql\Weblog.cs" />
     <Compile Include="Repository\Utils\Convert.cs" />

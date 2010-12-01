@@ -4,7 +4,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" />Best persian softwares</title>
+
     <link href="/Content/Site.css" rel="stylesheet" type="text/css" media="screen" />
+    <link type="image/ico" href="/Content/Images/favicon.ico" rel="icon"/>
+    <link type="image/ico" href="/Content/Images/favicon.ico" rel="shortcut icon"/>
+
     <script type="text/javascript" language="Javascript">//<![CDATA[
         function ToggleAccordionList(itemName) {
             var elm = document.getElementById(itemName);
@@ -28,26 +32,25 @@
 
         <div id="header">
             <div id="logo"><a href="/"><img alt="logo" src="/Content/Images/logo.gif" /></a></div>
-            <div id="quick_access">
-                <div id="culture_selector" class="button_link">
-                    <% Html.RenderPartial("CultureSelector"); %>
+            <div id="right_widgets">
+                <div id="quick_access">
+                    <div id="culture_selector" class="button_link">
+                        <% Html.RenderPartial("CultureSelector"); %>
+                    </div>
+                    <div id="search_box" class="button_link">
+                        <!--/*<% Html.RenderPartial("SearchBox"); %>*/-->
+                    </div>
                 </div>
-                <div id="search_box" class="button_link">
-                    <% Html.RenderPartial("SearchBox"); %>
+
+                <div id="menu_bar">
+                    <div id="nav_menu">
+                    </div>
                 </div>
+
+
             </div>
         </div>
 
-        <div id="menu_bar">
-
-            <div id="nav_menu">
-            </div>
-
-            <div id="logon_viewer" class="button_link">
-                <% Html.RenderPartial("LogonViewer"); %>
-            </div>
-
-        </div>
   
         <div class="colmask threecol">
 	        <div class="colmid">
@@ -55,16 +58,6 @@
 			        
                     <div class="col_center">
                         <asp:ContentPlaceHolder ID="CenterContent" runat="server">
-                        <%
-                            Exception ex = TempData[WebUi.ViewModels.ViewDataKeys.LastException] as Exception;
-                            if (ex != null)
-                            {
-                                // UNDONE: MAYBE REDIRECT TO ERROR PAGE
-                        %>
-                                <div id="error_message"><%:"AN ERROR OCCURED."%></div>
-                        <%
-                            }
-                        %>
                         </asp:ContentPlaceHolder>
                     </div>
 
@@ -78,11 +71,9 @@
                     </div>
 
                     <div class="<%:UiResources.UiTexts.page_direction%>_col_right">
-                        <div id="featured_blog_entries">
-                            <div class="section_title"><%:UiResources.UiTexts.featured_blog_entries%></div>
-                        </div>
-                        <div id="members_toolbox">
-                        </div>
+                        <% Html.RenderPartial("Announcements"); %>
+                        <% Html.RenderPartial("FeaturedBlogEntries"); %>
+                        <% Html.RenderPartial("MemberToolbox"); %>
                         <asp:ContentPlaceHolder ID="RightContent" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>

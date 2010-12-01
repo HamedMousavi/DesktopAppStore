@@ -62,16 +62,48 @@ namespace WebUi
             );
 
 
+            // /Products/Medical/EMR/page1/sort1
+            routes.MapRoute(null,
+                "Products/List/{category}/{subcategory}/Page{page}/Sort{sort}",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.ProductController,
+                    action = WebUi.ViewModels.NavigationKeys.ProductListAction,
+                    category = (string)null,
+                    subcategory = (string)null,
+                    page = 1,
+                    sort = 1
+                }
+            );
+
+
             // /Products/Medical/EMR
             // /Products/Medical
             // /Products
             routes.MapRoute(null,
-                "Products/List/{category}/{subcategory}",
-                new 
+                "Products/List/{category}/Page{page}/Sort{sort}",
+                new
                 {
                     controller = WebUi.ViewModels.NavigationKeys.ProductController,
                     action = WebUi.ViewModels.NavigationKeys.ProductListAction,
-                    category = (string)null, subcategory = (string)null, page=1 }
+                    category = (string)null,
+                    subcategory = (string)null,
+                    page = 1,
+                    sort = 1
+                }
+            );
+
+
+            routes.MapRoute(null,
+                "Products/Tags/{tagId}/Page{page}/Sort{sort}",
+                new 
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.ProductController,
+                    action = WebUi.ViewModels.NavigationKeys.SearchTagAction,
+                    tagId = (Int32?)null,
+                    page = 1,
+                    sort = 1
+                }
             );
 
 
@@ -137,7 +169,10 @@ namespace WebUi
 
                 // Load application product categories
                 // DomainModel.Repository.Memory.Categories.Instance.Load(WebUi.Models.AppCulture.CurrentCulture.CultureId);
-                foreach (DomainModel.Entities.ProductLanguage lang in DomainModel.Repository.Memory.Languages.Instance.Items)
+                DomainModel.Repository.Memory.Categories.Instance.ReloadAll();
+
+                foreach (DomainModel.Entities.ProductLanguage lang in 
+                    DomainModel.Repository.Memory.Languages.Instance.Items)
                 {
                     DomainModel.Repository.Memory.Categories.Instance.Load(lang.CultureId);
                     DomainModel.Repository.Memory.Weblog.Instance.Reload(lang.CultureId);

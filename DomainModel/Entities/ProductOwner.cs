@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
+
 
 namespace DomainModel.Entities
 {
     public class ProductOwner
     {
-        public enum OwnerTypes
-        {
-            Individual, 
-            Company
-        }
-
-
         public int OwnerId { get; set; }
-        public OwnerTypes OwnerType { get; set; }
-        public string OwnermName { get; set; }   // Name of the owner
-        public string ResourceUrl { get; set; }
+        public DomainModel.Repository.Memory.Owners.Types OwnerType { get; set; }
+
+        public List<OwnerBranch> Branches { get; set; }
+
+
+        public ProductOwner()
+        {
+            this.Branches = new List<OwnerBranch>();
+            this.OwnerType = Repository.Memory.Owners.Types.Unknown;
+        }
     }
 }

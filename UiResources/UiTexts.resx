@@ -408,4 +408,94 @@
   <data name="featured_blog_entries" xml:space="preserve">
     <value>Latest blog entries</value>
   </data>
+  <data name="announcements" xml:space="preserve">
+    <value>Announcement</value>
+  </data>
+  <data name="members" xml:space="preserve">
+    <value>Members</value>
+  </data>
+  <data name="page_not_found" xml:space="preserve">
+    <value>Page doesn't exists</value>
+  </data>
+  <data name="page_not_found_content" xml:space="preserve">
+    <value>Unfortunately the page you are looking for does not exist on our website. Either entered URL is incorrect or the page had been removed.</value>
+  </data>
+  <data name="error_bad_input" xml:space="preserve">
+    <value>Dangerous input detected</value>
+  </data>
+  <data name="security_error" xml:space="preserve">
+    <value>Security restriction</value>
+  </data>
+  <data name="security_error_content" xml:space="preserve">
+    <value>Action terminated. What you wanted to do is restricted by security administrators. If there's a problem please inform us about it. Thank you.</value>
+  </data>
+  <data name="unknown_error" xml:space="preserve">
+    <value>An unknown error occured</value>
+  </data>
+  <data name="unknown_error_content" xml:space="preserve">
+    <value>An unknown error prevented website to function properly. We are sorry for the inconvenience. Please try again later.</value>
+  </data>
+  <data name="product_list_editor_rating" xml:space="preserve">
+    <value>Editors rating</value>
+  </data>
+  <data name="product_list_sort_features" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="product_list_sort_name" xml:space="preserve">
+    <value>Name(A-Z)</value>
+  </data>
+  <data name="product_list_sort_name_desc" xml:space="preserve">
+    <value>Name(Z-A)</value>
+  </data>
+  <data name="product_list_sort_popularity" xml:space="preserve">
+    <value>Popularity</value>
+  </data>
+  <data name="product_list_sort_price" xml:space="preserve">
+    <value>Price(Lower first)</value>
+  </data>
+  <data name="product_list_sort_price_desc" xml:space="preserve">
+    <value>Price(Higher first)</value>
+  </data>
+  <data name="product_list_sort_release" xml:space="preserve">
+    <value>ReleaseDate(Older first)</value>
+  </data>
+  <data name="product_list_sort_release_desc" xml:space="preserve">
+    <value>ReleaseDate(Younger first)</value>
+  </data>
+  <data name="product_list_user_rating" xml:space="preserve">
+    <value>Users ratings</value>
+  </data>
+  <data name="product_list_sort_order_caption" xml:space="preserve">
+    <value>Order(sort) list by:</value>
+  </data>
+  <data name="more_details" xml:space="preserve">
+    <value>See more details of this product</value>
+  </data>
+  <data name="more_images" xml:space="preserve">
+    <value>Click here to see more screenshots</value>
+  </data>
+  <data name="votes" xml:space="preserve">
+    <value>Votes</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>Of</value>
+  </data>
+  <data name="overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="login_to_vote" xml:space="preserve">
+    <value>In order to vote for this product you need to be logged in to the system</value>
+  </data>
+  <data name="vote" xml:space="preserve">
+    <value>Vote</value>
+  </data>
+  <data name="excellent_product" xml:space="preserve">
+    <value>Excellent</value>
+  </data>
+  <data name="poor_product" xml:space="preserve">
+    <value>Bad</value>
+  </data>
+  <data name="your_vote" xml:space="preserve">
+    <value>You already voted {0} out of 5 for this product</value>
+  </data>
 </root>

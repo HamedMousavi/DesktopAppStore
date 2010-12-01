@@ -11,7 +11,7 @@ namespace WebUi.HtmlHelpers
 {
     public static class ListingHelpers
     {
-        public static MvcHtmlString AccordionList(this HtmlHelper html, IEnumerable items, WebUi.ViewModels.CurrentListItem current)
+        public static MvcHtmlString AccordionList(this HtmlHelper html, IEnumerable items, WebUi.ViewModels.ListingInfo inf)
         {
             bool selected;
             bool subSelected;
@@ -19,13 +19,13 @@ namespace WebUi.HtmlHelpers
 
             foreach (DomainModel.Entities.Category category in items)
             {
-                selected = category.UrlName == current.Category;
-                ret.Append(BeginTitleTag(category, selected));
+                selected = category.UrlName == inf.CurrentItem.Category;
+                ret.Append(BeginTitleTag(category, selected, inf));
 
                 foreach(DomainModel.Entities.Category sub in category.SubCategories)
                 {
-                    subSelected = selected & (sub.UrlName == current.Subcategory);
-                    ret.Append(GetSubcategoryTag(html, category, sub, subSelected));
+                    subSelected = selected & (sub.UrlName == inf.CurrentItem.Subcategory);
+                    ret.Append(GetSubcategoryTag(html, category, sub, subSelected, inf));
                 }
 
                 ret.Append(EndTitleTag());
@@ -43,12 +43,14 @@ namespace WebUi.HtmlHelpers
 
 
 
-        private static string BeginTitleTag(DomainModel.Entities.Category category, bool selected)
+        private static string BeginTitleTag(DomainModel.Entities.Category category, bool selected, WebUi.ViewModels.ListingInfo inf)
         {
             string titleUrl = string.Format(
-                "<a onclick=\"return ToggleAccordionList('{0}');\"  href=\"/Products/List/{1}\">{2}</a>",
+                "<a onclick=\"return ToggleAccordionList('{0}');\"  href=\"/Products/List/{1}/page{2}/sort{3}\">{4}</a>",
                 category.CategoryId,
                 category.UrlName,
+                1,
+                inf.CurrentSortOption,
                 category.CategoryName);
 
             return string.Format(
@@ -63,14 +65,21 @@ namespace WebUi.HtmlHelpers
 
 
 
-        private static string GetSubcategoryTag(HtmlHelper html, DomainModel.Entities.Category category, DomainModel.Entities.Category sub, bool selected)
+        private static string GetSubcategoryTag(HtmlHelper html, DomainModel.Entities.Category category, DomainModel.Entities.Category sub, bool selected, WebUi.ViewModels.ListingInfo inf)
         {
             MvcHtmlString url = System.Web.Mvc.Html.LinkExtensions.ActionLink(
                        html,
                        sub.CategoryName,
                        WebUi.ViewModels.NavigationKeys.ProductListAction,
                        WebUi.ViewModels.NavigationKeys.ProductController,
-                       new { category = category.UrlName, subcategory = sub.UrlName }, null);
+                       new
+                       {
+                           category = category.UrlName,
+                           subcategory = sub.UrlName,
+                           page = selected ? inf.CurrentPage : 1,
+                           sort = inf.CurrentSortOption
+                       },
+                       null);
 
             return string.Format(
                 "<div class=\"accordion_list_item{0}\">" +

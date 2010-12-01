@@ -31,6 +31,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <PublishDatabases>true</PublishDatabases>
+    <DeployIisAppPath>SarvSoft/PersianSoftware</DeployIisAppPath>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -79,7 +87,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DynamicResources.cs" />
+    <Compile Include="Models\Security.cs" />
     <Compile Include="ViewModels\CurrentListItem.cs" />
+    <Compile Include="ViewModels\ListingInfo.cs" />
     <Compile Include="ViewModels\LoginInfo.cs" />
     <Compile Include="Models\Profiles.cs" />
     <Compile Include="Models\SessionKeys.cs" />
@@ -89,21 +100,20 @@
     <Compile Include="ViewModels\PagingInfo.cs" />
     <Compile Include="ViewModels\ScreenshotInfo.cs" />
     <Compile Include="ViewModels\ViewDataKeys.cs" />
+    <Compile Include="ViewModels\VotingInfo.cs" />
     <Compile Include="ViewPages\BaseViewPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Images\screenshot_desc_bg.png" />
-    <Content Include="Content\Images\logo.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Content\Images\awards_logo.png" />
+    <Content Include="Content\Images\Stars\000.png" />
+    <Content Include="Content\Images\Stars\025.png" />
+    <Content Include="Content\Images\Stars\050.png" />
+    <Content Include="Content\Images\Stars\075.png" />
+    <Content Include="Content\Images\Stars\100.png" />
     <Content Include="Content\Images\tickmark.jpg" />
-    <Content Include="Content\Images\seal_early_adapters.gif" />
-    <Content Include="Content\Messages\Intro\Images\discs.jpg" />
-    <Content Include="Content\Messages\Intro\Images\program.jpg" />
-    <Content Include="Content\SoftwareSchool\TrueCrypt\Screenshots\TrueCrypt.png" />
     <Content Include="Global.asax" />
     <Content Include="Views\Errors\Exception.aspx" />
     <Content Include="Views\Errors\NotFound.aspx" />
@@ -113,19 +123,26 @@
     <Content Include="Views\Navigation\ProductCategories.ascx" />
     <Content Include="Views\Products\Catalog.aspx" />
     <Content Include="Views\Products\List.aspx" />
+    <Content Include="Views\Products\ProductRating.ascx" />
+    <Content Include="Views\Products\ProductVotingBar.ascx" />
     <Content Include="Views\Products\Screenshots.aspx" />
     <Content Include="Views\Search\Advanced.aspx" />
     <Content Include="Views\Search\Basic.aspx" />
     <Content Include="Views\Security\BadInput.aspx" />
+    <Content Include="Views\Shared\Announcements.ascx" />
     <Content Include="Views\Shared\CultureSelector.ascx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\FeaturedBlogEntries.ascx" />
     <Content Include="Views\Shared\FeaturedProducts.ascx" />
+    <Content Include="Views\Shared\LogonForm.ascx" />
     <Content Include="Views\Shared\LogonViewer.ascx" />
-    <Content Include="Views\Shared\Messages.ascx" />
+    <Content Include="Views\Shared\MemberToolbox.ascx" />
     <Content Include="Views\Shared\PopularProducts.ascx" />
     <Content Include="Views\Shared\ProductSummary.ascx" />
+    <Content Include="Views\Shared\RegistrationForm.ascx" />
     <Content Include="Views\Shared\SearchBox.ascx" />
     <Content Include="Views\Shared\SoftwareSchool.ascx" />
+    <Content Include="Views\Shared\WeblogSummary.ascx" />
     <Content Include="Views\Weblog\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -153,7 +170,12 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\Owners\" />
+    <Folder Include="Content\Products\Common\" />
     <Folder Include="Content\Products\Repository\Yaas\Screenshots\Thumbnails\" />
+    <Folder Include="Content\SoftwareSchool\TrueCrypt\Screenshots\" />
+    <Folder Include="Content\Weblog\Intro\Images\" />
+    <Folder Include="Content\Weblog\Registration\Images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DomainModel\DomainModel.csproj">

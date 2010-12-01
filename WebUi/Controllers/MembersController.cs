@@ -73,10 +73,10 @@ namespace WebUi.Controllers
 
 
         [HttpPost]
-        public ActionResult Logon(WebUi.ViewModels.LoginInfo model, string returnUrl)
+        public ActionResult Logon(WebUi.ViewModels.LoginInfo model)
         {
             // Validate input
-            if (!DomainModel.Security.InputController.IsValid(returnUrl) ||
+            if (!DomainModel.Security.InputController.IsValid(model.ReturnUrl) ||
                 !DomainModel.Security.InputController.IsValid(model.UserName) ||
                 !DomainModel.Security.InputController.IsValid(model.Password))
             {
@@ -94,9 +94,9 @@ namespace WebUi.Controllers
                     this.MembershipService.SignIn(model.Email, model.RememberMe);
 
                     // Redirect to return url or homepage
-                    if (!String.IsNullOrEmpty(returnUrl))
+                    if (!String.IsNullOrWhiteSpace(model.ReturnUrl))
                     {
-                        return Redirect(returnUrl);
+                        return Redirect(model.ReturnUrl);
                     }
                     else
                     {
@@ -153,6 +153,42 @@ namespace WebUi.Controllers
 
             return View("Register");
         }
+
+
+
+        [HttpPost]
+        public ActionResult VoteProduct(WebUi.ViewModels.VotingInfo votingInf)
+        {
+            if (!DomainModel.Security.InputController.IsValid(votingInf.ReturnUrl) ||
+                !DomainModel.Security.InputController.IsValid(votingInf.VoteValue))
+            {
+                return RedirectToAction(
+                    WebUi.ViewModels.NavigationKeys.SecurityBadInputAction,
+                    WebUi.ViewModels.NavigationKeys.SecurityController);
+            }
+
+            if (votingInf == null ||
+                votingInf.UserName == null ||
+                !votingInf.UserName.HasValue ||
+                votingInf.ProductId == null ||
+                !votingInf.ProductId.HasValue ||
+                string.IsNullOrWhiteSpace(votingInf.VoteValue))
+            {
+                return RedirectToAction(
+                    WebUi.ViewModels.NavigationKeys.SecurityBadInputAction,
+                    WebUi.ViewModels.NavigationKeys.SecurityController);
+            }
+
+            Int16 voteVal = Convert.ToInt16(votingInf.VoteValue);
+
+            DomainModel.Repository.Sql.ProductRatings.Insert(
+                votingInf.UserName,
+                votingInf.ProductId,
+                voteVal
+                );
+
+            return Redirect(votingInf.ReturnUrl);
+        }
     }
 }
 
@@ -161,7 +197,7 @@ namespace WebUi.Controllers
 
 /*
                 var message = new StringBuilder(); 
-                    message.AppendFormat("Date: {0:yyyy-MM-dd hh:mm}\n", DateTime.Now); 
+                    message.AppendFormat("Date: {0:yyyy-MM-dd hh:mm}\n", DateTime.UtcNow); 
                     message.AppendFormat("RSVP from: {0}\n", Name); 
                     message.AppendFormat("Email: {0}\n", Email); 
                     message.AppendFormat("Phone: {0}\n", Phone); 

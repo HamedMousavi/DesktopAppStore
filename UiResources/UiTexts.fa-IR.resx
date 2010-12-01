@@ -154,7 +154,7 @@
     <value>left</value>
   </data>
   <data name="forgot_your_password" xml:space="preserve">
-    <value>اطلاعات حساب خود را گم کرده اید؟</value>
+    <value>کلمه عبور را گم کرده‌ام</value>
   </data>
   <data name="has" xml:space="preserve">
     <value>دارد</value>
@@ -235,7 +235,7 @@
     <value>اطلاعات ثبت نام</value>
   </data>
   <data name="remember_me" xml:space="preserve">
-    <value>در بازدیدهای بعدی با این کامپیوتر، دیگر از من نام کاربری و رمز عبور نپرس</value>
+    <value>در بازدیدهای بعدی با این کامپیوتر، از من نام کاربری و رمز عبور نپرس</value>
   </data>
   <data name="search" xml:space="preserve">
     <value>جستجو</value>
@@ -406,6 +406,96 @@
     <value>ادامه این نوشتار</value>
   </data>
   <data name="featured_blog_entries" xml:space="preserve">
-    <value>آخرین پستهای وبلاگ</value>
+    <value>آخرین نوشتارهای وبلاگ</value>
+  </data>
+  <data name="announcements" xml:space="preserve">
+    <value>اعلانات</value>
+  </data>
+  <data name="members" xml:space="preserve">
+    <value>اعضا</value>
+  </data>
+  <data name="page_not_found" xml:space="preserve">
+    <value>صفحه مورد نظر وجود ندارد</value>
+  </data>
+  <data name="page_not_found_content" xml:space="preserve">
+    <value>متاسفانه صفحه‌ای که به دنبال آن هستید در این وب سایت موجود نیست. یا آدرس اشتباه وارد شده است و یا آن صفحه از وب سایت حذف شده است. در صورتیکه آدرس مربوط به نرم افزار خاصی است، ممکن است تولید کننده مربوطه دیگر تمایلی به ادامه نمایش نرم افزار در سایت نداشته است و بنابراین دیگر اطلاعاتش در وب سایت موجود نیست. در صورتیکه از صفحه به این صفحه منتقل شده اید لطفا مسئول سایت را از این اشکال مطلع نمایید. متشکرم.</value>
+  </data>
+  <data name="error_bad_input" xml:space="preserve">
+    <value>ورودی خطرناک</value>
+  </data>
+  <data name="security_error" xml:space="preserve">
+    <value>محدودیت امنیتی</value>
+  </data>
+  <data name="security_error_content" xml:space="preserve">
+    <value>متاسفانه عملیات شما با محدودیت امنیتی مواجه شده، از ادامه آن صرفنظر شد. در صورتی که به نظر شما مشکلی در این خصوص وجود دارد لطفا به ما اطلاع دهید. متشکرم.</value>
+  </data>
+  <data name="unknown_error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="unknown_error_content" xml:space="preserve">
+    <value>متاسفانه در حین اجرای دستور شما خطایی مانع از ادامه کار شد. لطفا بعدا مجددا تلاش نمایید.</value>
+  </data>
+  <data name="product_list_editor_rating" xml:space="preserve">
+    <value>امتیاز کارشناس</value>
+  </data>
+  <data name="product_list_sort_features" xml:space="preserve">
+    <value>ابتدا کاملترینها</value>
+  </data>
+  <data name="product_list_sort_name" xml:space="preserve">
+    <value>ابتدا الف</value>
+  </data>
+  <data name="product_list_sort_name_desc" xml:space="preserve">
+    <value>ابتدا ی</value>
+  </data>
+  <data name="product_list_sort_popularity" xml:space="preserve">
+    <value>ابتدا محبوبترها</value>
+  </data>
+  <data name="product_list_sort_price" xml:space="preserve">
+    <value>ابتدا ارزانترها</value>
+  </data>
+  <data name="product_list_sort_price_desc" xml:space="preserve">
+    <value>ابتدا گرانترها</value>
+  </data>
+  <data name="product_list_sort_release" xml:space="preserve">
+    <value>ابتدا قدیمیها</value>
+  </data>
+  <data name="product_list_sort_release_desc" xml:space="preserve">
+    <value>ابتدا جدیدترینها</value>
+  </data>
+  <data name="product_list_user_rating" xml:space="preserve">
+    <value>امتیاز کاربران</value>
+  </data>
+  <data name="product_list_sort_order_caption" xml:space="preserve">
+    <value>ترتیب لیست:</value>
+  </data>
+  <data name="more_details" xml:space="preserve">
+    <value>مشخصات کامل این نرم افزار</value>
+  </data>
+  <data name="more_images" xml:space="preserve">
+    <value>برای دیدن تصاویر بیشتر اینجا کلیک کنید</value>
+  </data>
+  <data name="votes" xml:space="preserve">
+    <value>تعداد آرا</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>از</value>
+  </data>
+  <data name="overview" xml:space="preserve">
+    <value>در یک نگاه</value>
+  </data>
+  <data name="login_to_vote" xml:space="preserve">
+    <value>جهت امتیاز دادن به این نرم افزار باید عضو وب سایت شده، سپس وارد سیستم شوید</value>
+  </data>
+  <data name="vote" xml:space="preserve">
+    <value>ثبت امتیاز من</value>
+  </data>
+  <data name="excellent_product" xml:space="preserve">
+    <value>عالی</value>
+  </data>
+  <data name="poor_product" xml:space="preserve">
+    <value>بد</value>
+  </data>
+  <data name="your_vote" xml:space="preserve">
+    <value>شما قبلا به این محصول امتیاز {0} از 5 داده اید.</value>
   </data>
 </root>

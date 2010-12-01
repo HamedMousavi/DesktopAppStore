@@ -15,7 +15,7 @@ namespace DomainModel.Repository.Sql
             bool res = false;
             string userName = string.Empty;
 
-            messages.LastLoad = DateTime.Now;
+            messages.LastLoad = DateTime.UtcNow;
 
 
             string query = "WeblogLoadByTime";
@@ -105,6 +105,116 @@ namespace DomainModel.Repository.Sql
                             messages.Add(message);
                         }
                         res = true;
+                    }
+                }
+            }
+
+            return res;
+        }
+
+
+        internal static bool LoadFeatured(WeblogEntryCollection messages, DateTime messageTime, string cultureId)
+        {
+            bool res = false;
+            string userName = string.Empty;
+
+            messages.LastLoad = DateTime.UtcNow;
+
+
+            string query = "WeblogLoadFeatured";
+
+            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@CultureId", cultureId));
+                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+
+                    cnn.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader != null && reader.HasRows)
+                    {
+                        // Read first table: SoftwareProduct
+                        while (reader.Read())
+                        {
+                            WeblogEntry msg = new WeblogEntry();
+                            msg.CultureId = cultureId;
+                            msg.Url = Utils.Convert.ToString(reader["EntryUrl"]);
+                            //msg.UploadDate = Utils.Convert.ToDateTime(reader["EntryOnlineFrom"]);
+                            //msg.ExpirationDate = Utils.Convert.ToDateTime(reader["EntryOnlineTo"]);
+                            msg.Title = Utils.Convert.ToString(reader["EntryTitle"]);
+                            //msg.Brief = Utils.Convert.ToString(reader["EntryBrief"]);
+                            //msg.Content = Utils.Convert.ToString(reader["EntryContent"]);
+                            //msg.Score = Utils.Convert.ToDecimal(reader["EntryScorePoints"]);
+
+                            messages.Add(msg);
+
+                            // Set minimum exp date as exp date of all messages in this cullture
+                            // this causes the list to be updated at most after first exp datetime.
+                            if (msg.ExpirationDate < messages.ExpirationDate)
+                            {
+                                messages.ExpirationDate = msg.ExpirationDate;
+                            }
+
+                            res = true;
+                        }
+                    }
+                }
+            }
+
+            return res;
+        }
+
+
+        public static bool LoadAnnouncements(WeblogEntryCollection messages, DateTime messageTime, string cultureId)
+        {
+            bool res = false;
+            string userName = string.Empty;
+
+            messages.LastLoad = DateTime.UtcNow;
+
+
+            string query = "WeblogLoadAnnouncement";
+
+            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@CultureId", cultureId));
+                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+
+                    cnn.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader != null && reader.HasRows)
+                    {
+                        // Read first table: SoftwareProduct
+                        while (reader.Read())
+                        {
+                            WeblogEntry msg = new WeblogEntry();
+                            msg.CultureId = cultureId;
+                            msg.Url = Utils.Convert.ToString(reader["EntryUrl"]);
+                            //msg.UploadDate = Utils.Convert.ToDateTime(reader["EntryOnlineFrom"]);
+                            //msg.ExpirationDate = Utils.Convert.ToDateTime(reader["EntryOnlineTo"]);
+                            msg.Title = Utils.Convert.ToString(reader["EntryTitle"]);
+                            //msg.Brief = Utils.Convert.ToString(reader["EntryBrief"]);
+                            //msg.Content = Utils.Convert.ToString(reader["EntryContent"]);
+                            //msg.Score = Utils.Convert.ToDecimal(reader["EntryScorePoints"]);
+
+                            messages.Add(msg);
+
+                            // Set minimum exp date as exp date of all messages in this cullture
+                            // this causes the list to be updated at most after first exp datetime.
+                            if (msg.ExpirationDate < messages.ExpirationDate)
+                            {
+                                messages.ExpirationDate = msg.ExpirationDate;
+                            }
+
+                            res = true;
+                        }
                     }
                 }
             }

@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
-    <h2><%: UiResources.UiTexts.welcome %></h2>
+    <div class="section_title"><%: UiResources.UiTexts.welcome %></div>
 
 </asp:Content>
 

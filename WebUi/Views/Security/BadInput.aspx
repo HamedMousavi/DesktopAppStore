@@ -1,12 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	BadInput - <%:UiResources.UiTexts.app_title %>
+	<%:UiResources.UiTexts.error_bad_input%> - <%:UiResources.UiTexts.app_title %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
-    <h2>BadInput</h2>
+    <h2><%:UiResources.UiTexts.security_error%></h2>
+
+    <p><%:UiResources.UiTexts.security_error_content%></p>
 
 </asp:Content>
 

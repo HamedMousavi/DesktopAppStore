@@ -53,7 +53,9 @@ namespace DomainModel.Repository.Memory
         {
             get
             {
-                return this.Items["Persian"];
+                string defaultLang =
+                    System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultWebsiteLanguage"];
+                return this.Items[defaultLang];
             }
         }
     }

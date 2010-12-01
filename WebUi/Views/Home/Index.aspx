@@ -5,22 +5,26 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
+<!--/*    
     <div class="section_title"><%:UiResources.UiTexts.best_softwares%></div>
+*/-->
+    <div class="section_title"><%:UiResources.UiTexts.popular_products%></div>
 
     <div id="best_products">
+<!--/*
         <div id="featured_products">
             <div class="title"><h2><%:UiResources.UiTexts.featured_products %></h2></div>
             <% Html.RenderPartial("FeaturedProducts"); %>
         </div>
-
+*/-->
         <div id="popular_products">
-            <div class="title"><h2><%:UiResources.UiTexts.popular_products%></h2></div>
+            <!--/*<div class="title"><h2><%:UiResources.UiTexts.popular_products%></h2></div>*/-->
             <% Html.RenderPartial("PopularProducts"); %>
         </div>
     </div>
 
     <div id="messages">
-        <% Html.RenderPartial("Messages"); %>
+        <% Html.RenderPartial("WeblogSummary"); %>
     </div>
 <!--/*
     <div id="software_school">

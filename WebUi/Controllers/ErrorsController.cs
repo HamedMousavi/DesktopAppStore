@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebUi.Controllers
 {
-    public class ErrorsController : Controller
+    public class ErrorsController : BaseController
     {
         //
         // GET: /Errors/

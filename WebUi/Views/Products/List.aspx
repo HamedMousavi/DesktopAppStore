@@ -6,6 +6,12 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
+    <% WebUi.ViewModels.PagingInfo pagingData = (WebUi.ViewModels.PagingInfo)ViewData[WebUi.ViewModels.ViewDataKeys.ListPagingDetails]; %>
+
+    <div class="section_title"><%: pagingData.listTitle%></div>
+
+   <%: Html.SoftwareListSortOptions(Url, pagingData)%>
+
     <div class="search_results">
         
         <%
@@ -17,11 +23,9 @@
 
     </div>
 
-    <div class="list_pager button_link">
-        <% WebUi.ViewModels.PagingInfo pagingData = (WebUi.ViewModels.PagingInfo)ViewData[WebUi.ViewModels.ViewDataKeys.ListPagingDetails]; %>
-        
+    <div class="list_pager">
         <%: Html.ListDetail(pagingData) %>
-
+        
         <%: Html.PageLinks(Url, pagingData) %>
     </div>
 

@@ -9,11 +9,12 @@
 
     <div id="catalog">
 
-        <div class="title">
-            <h1><%: Model.ProductName %></h1>
+        <div class="title" style="float:<%:UiResources.UiTexts.float_left%>;">
+            <%: Model.ProductName%>
         </div>
+        <span style="float:<%:UiResources.UiTexts.float_right%>; margin: 20px 4px 0px 4px;"><%Html.RenderPartial("ProductRating");%></span>
         
-        <div class="text clean">
+        <div class="info_bar" style="clear:<%:UiResources.UiTexts.float_left%>;">
             <span><%: DomainModel.Tools.DateTime.Convert.ToCulture(Model.Catalog.UpdateDate, WebUi.Models.AppCulture.CurrentCulture)%></span>
             <span class="pager_inf_separator">|</span>
             <span><%: UiResources.UiTexts.views %></span>:
@@ -29,21 +30,11 @@
                 <%: Html.SoftwareScreenshot(Model, Request.Url.AbsoluteUri)%>
             </div>
 
-            <div id="overview" style="float:<%:UiResources.UiTexts.float_left%>;">
-                <div id="product_rating">
-                   <!--  Rating stars -->
-                </div>
-
-                <div id="product_awards">
-                    <%:Html.SoftwareAwards(
-                        Model, 
-                        Url.Action(
-                            WebUi.ViewModels.NavigationKeys.ProductAwardsAction, 
-                            WebUi.ViewModels.NavigationKeys.ProductController,
-                            new { productName = Model.Catalog.UrlName }))%>
-                </div>
+            <div id="overview" style="margin-<%:UiResources.UiTexts.float_left%>:20px;">
+                <% Html.RenderPartial("ProductVotingBar"); %>
 
                 <div id="product_overview">
+                    <div class="overview_title"><%:UiResources.UiTexts.overview %></div>
                     <dl>
                         <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_version%></dt>
                         <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%:Model.ProductVersion %></dd>
@@ -62,6 +53,17 @@
                     </dl>
                 </div>
 
+
+                <!--/*
+                <div id="product_awards">
+                    <img style="margin: 4px;" alt="Product awards" src="/Content/Images/awards_logo.png" />
+                    <%:Html.SoftwareAwards(
+                        Model, 
+                        Url.Action(
+                            WebUi.ViewModels.NavigationKeys.ProductAwardsAction, 
+                            WebUi.ViewModels.NavigationKeys.ProductController,
+                            new { productName = Model.Catalog.UrlName }))%>
+                </div>*/-->
             </div>
             
         </div>
@@ -152,7 +154,7 @@
             <br />
 
             <h2><%:UiResources.UiTexts.producer_comments %></h2>
-
+            <%= Model.Article.Content %>
         </div>
     </div>
 
@@ -165,8 +167,12 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
-    <h2><%:UiResources.UiTexts.related_tags%></h2>
-    <ul>
-        <%:Html.SoftwareTags(Model.Tags)%>
-    </ul>
+
+    <div id="related_tags">
+        <div class="section_title"><%:UiResources.UiTexts.related_tags%></div>
+        <ul>
+            <%:Html.SoftwareTags(Model.Tags)%>
+        </ul>
+    </div>
+
 </asp:Content>

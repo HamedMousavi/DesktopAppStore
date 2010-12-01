@@ -10,11 +10,10 @@ namespace DomainModel.Repository.Sql
 {
     public class Catalog
     {
-        public static bool Load(string productUrlName, string cultureId, ApplicationProduct product)
+        public static bool Load(string productUrlName, string cultureId, ApplicationProduct product, Int64? userId)
         {
             bool res = false;
 
-            string userName = string.Empty;
             string query = "CatalogLoad";
 
             using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
@@ -24,6 +23,7 @@ namespace DomainModel.Repository.Sql
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@UrlName", productUrlName));
                     cmd.Parameters.Add(new SqlParameter("@CultureId", cultureId));
+                    cmd.Parameters.Add(new SqlParameter("@UserId", userId));
 
                     foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
 
@@ -300,6 +300,28 @@ namespace DomainModel.Repository.Sql
                             update.Name = Repository.Utils.Convert.ToString(reader[1]);
                             product.UpdateOptions.Add(update);
                         }
+
+                        // Read next table: Update
+                        reader.NextResult();
+                        if (reader.Read())
+                        {
+                            product.Article.Content = Repository.Utils.Convert.ToString(reader[0]);
+                        }
+
+                        // Read next table: VoteCounts
+                        reader.NextResult();
+                        if (reader.Read())
+                        {
+                            product.Catalog.VoteCounts = Repository.Utils.Convert.ToInt32(reader[0]);
+                        }
+
+                        // Read next table: User vote
+                        reader.NextResult();
+                        if (reader.Read())
+                        {
+                            product.Catalog.CurrentUserRating = Repository.Utils.Convert.ToInt32(reader[0]);
+                        }
+
 
                         res = true;
                     }

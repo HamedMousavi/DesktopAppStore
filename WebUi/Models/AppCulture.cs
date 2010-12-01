@@ -37,7 +37,7 @@ namespace WebUi.Models
                     WebUi.Models.Sessions.Culture = value;
                     if (WebUi.Models.Sessions.Errors.Count > 0)
                     {
-                        // UNDONE: UNABLE TO SAVE CULTURE
+                        DomainModel.Errors.Handler.HandleError("UNABLE TO SAVE CULTURE");
                     }
                 }
             }

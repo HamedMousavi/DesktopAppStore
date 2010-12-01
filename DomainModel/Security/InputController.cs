@@ -26,10 +26,5 @@ namespace DomainModel.Security
 
             return true;
         }
-
-        public static object SafeText(object p)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

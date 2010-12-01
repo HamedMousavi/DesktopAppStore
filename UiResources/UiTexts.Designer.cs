@@ -70,6 +70,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Announcement.
+        /// </summary>
+        public static string announcements {
+            get {
+                return ResourceManager.GetString("announcements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Best Persian Softwares.
         /// </summary>
         public static string app_title {
@@ -187,6 +196,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dangerous input detected.
+        /// </summary>
+        public static string error_bad_input {
+            get {
+                return ResourceManager.GetString("error_bad_input", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mistype? Email address is incorrect. Please review it and then retry..
         /// </summary>
         public static string error_email {
@@ -210,6 +228,15 @@ namespace UiResources {
         public static string error_security {
             get {
                 return ResourceManager.GetString("error_security", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excellent.
+        /// </summary>
+        public static string excellent_product {
+            get {
+                return ResourceManager.GetString("excellent_product", resourceCulture);
             }
         }
         
@@ -349,11 +376,47 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to In order to vote for this product you need to be logged in to the system.
+        /// </summary>
+        public static string login_to_vote {
+            get {
+                return ResourceManager.GetString("login_to_vote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Megabytes.
         /// </summary>
         public static string megabytes {
             get {
                 return ResourceManager.GetString("megabytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Members.
+        /// </summary>
+        public static string members {
+            get {
+                return ResourceManager.GetString("members", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See more details of this product.
+        /// </summary>
+        public static string more_details {
+            get {
+                return ResourceManager.GetString("more_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click here to see more screenshots.
+        /// </summary>
+        public static string more_images {
+            get {
+                return ResourceManager.GetString("more_images", resourceCulture);
             }
         }
         
@@ -376,6 +439,24 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Of.
+        /// </summary>
+        public static string of {
+            get {
+                return ResourceManager.GetString("of", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        public static string overview {
+            get {
+                return ResourceManager.GetString("overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorted in &lt;b&gt;{0}&lt;/b&gt; pages.
         /// </summary>
         public static string page_count {
@@ -390,6 +471,24 @@ namespace UiResources {
         public static string page_direction {
             get {
                 return ResourceManager.GetString("page_direction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page doesn&apos;t exists.
+        /// </summary>
+        public static string page_not_found {
+            get {
+                return ResourceManager.GetString("page_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unfortunately the page you are looking for does not exist on our website. Either entered URL is incorrect or the page had been removed..
+        /// </summary>
+        public static string page_not_found_content {
+            get {
+                return ResourceManager.GetString("page_not_found_content", resourceCulture);
             }
         }
         
@@ -426,6 +525,15 @@ namespace UiResources {
         public static string persian {
             get {
                 return ResourceManager.GetString("persian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bad.
+        /// </summary>
+        public static string poor_product {
+            get {
+                return ResourceManager.GetString("poor_product", resourceCulture);
             }
         }
         
@@ -588,6 +696,105 @@ namespace UiResources {
         public static string product_languages_extendablity {
             get {
                 return ResourceManager.GetString("product_languages_extendablity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editors rating.
+        /// </summary>
+        public static string product_list_editor_rating {
+            get {
+                return ResourceManager.GetString("product_list_editor_rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Features.
+        /// </summary>
+        public static string product_list_sort_features {
+            get {
+                return ResourceManager.GetString("product_list_sort_features", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name(A-Z).
+        /// </summary>
+        public static string product_list_sort_name {
+            get {
+                return ResourceManager.GetString("product_list_sort_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name(Z-A).
+        /// </summary>
+        public static string product_list_sort_name_desc {
+            get {
+                return ResourceManager.GetString("product_list_sort_name_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order(sort) list by:.
+        /// </summary>
+        public static string product_list_sort_order_caption {
+            get {
+                return ResourceManager.GetString("product_list_sort_order_caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Popularity.
+        /// </summary>
+        public static string product_list_sort_popularity {
+            get {
+                return ResourceManager.GetString("product_list_sort_popularity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price(Lower first).
+        /// </summary>
+        public static string product_list_sort_price {
+            get {
+                return ResourceManager.GetString("product_list_sort_price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price(Higher first).
+        /// </summary>
+        public static string product_list_sort_price_desc {
+            get {
+                return ResourceManager.GetString("product_list_sort_price_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReleaseDate(Older first).
+        /// </summary>
+        public static string product_list_sort_release {
+            get {
+                return ResourceManager.GetString("product_list_sort_release", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReleaseDate(Younger first).
+        /// </summary>
+        public static string product_list_sort_release_desc {
+            get {
+                return ResourceManager.GetString("product_list_sort_release_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users ratings.
+        /// </summary>
+        public static string product_list_user_rating {
+            get {
+                return ResourceManager.GetString("product_list_user_rating", resourceCulture);
             }
         }
         
@@ -799,6 +1006,24 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Security restriction.
+        /// </summary>
+        public static string security_error {
+            get {
+                return ResourceManager.GetString("security_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Action terminated. What you wanted to do is restricted by security administrators. If there&apos;s a problem please inform us about it. Thank you..
+        /// </summary>
+        public static string security_error_content {
+            get {
+                return ResourceManager.GetString("security_error_content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Software Categories.
         /// </summary>
         public static string software_categories {
@@ -889,6 +1114,24 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An unknown error occured.
+        /// </summary>
+        public static string unknown_error {
+            get {
+                return ResourceManager.GetString("unknown_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unknown error prevented website to function properly. We are sorry for the inconvenience. Please try again later..
+        /// </summary>
+        public static string unknown_error_content {
+            get {
+                return ResourceManager.GetString("unknown_error_content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UserName.
         /// </summary>
         public static string user_name {
@@ -916,6 +1159,24 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vote.
+        /// </summary>
+        public static string vote {
+            get {
+                return ResourceManager.GetString("vote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Votes.
+        /// </summary>
+        public static string votes {
+            get {
+                return ResourceManager.GetString("votes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Website.
         /// </summary>
         public static string website {
@@ -930,6 +1191,15 @@ namespace UiResources {
         public static string welcome {
             get {
                 return ResourceManager.GetString("welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You already voted {0} out of 5 for this product.
+        /// </summary>
+        public static string your_vote {
+            get {
+                return ResourceManager.GetString("your_vote", resourceCulture);
             }
         }
     }

@@ -133,6 +133,12 @@
     <Compile Include="FrmSearchContact.Designer.cs">
       <DependentUpon>FrmSearchContact.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmWeblogEntryEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWeblogEntryEditor.Designer.cs">
+      <DependentUpon>FrmWeblogEntryEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListContactMedia.cs" />
     <Compile Include="ListContactUnits.cs" />
     <Compile Include="OptionCheckedListBox.cs">
@@ -148,12 +154,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Sql\Languages.cs" />
     <Compile Include="Repository\Sql\Options.cs" />
     <Compile Include="Repository\Sql\Product.cs" />
     <Compile Include="Repository\Sql\ProductBrands.cs" />
     <Compile Include="Repository\Sql\ProductCategories.cs" />
     <Compile Include="Repository\Sql\ProductContacts.cs" />
     <Compile Include="Repository\Sql\ProductOptions.cs" />
+    <Compile Include="Repository\Sql\WebLog.cs" />
     <Compile Include="Repository\Utils\Convert.cs" />
     <Compile Include="Repository\Utils\ImageHelpers.cs" />
     <EmbeddedResource Include="FrmBrands.resx">
@@ -197,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSearchContact.resx">
       <DependentUpon>FrmSearchContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWeblogEntryEditor.resx">
+      <DependentUpon>FrmWeblogEntryEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

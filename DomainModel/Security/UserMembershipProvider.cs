@@ -50,8 +50,8 @@ namespace DomainModel.Security
 
                 return new MembershipUser(
                     "UserMembershipProvider",
-                    "", null, username, "", "", false, false, DateTime.Now, 
-                    DateTime.Now, DateTime.Now, DateTime.Now, DateTime.Now);
+                    "", null, username, "", "", false, false, DateTime.UtcNow, 
+                    DateTime.UtcNow, DateTime.UtcNow, DateTime.UtcNow, DateTime.UtcNow);
             }
 
             status = MembershipCreateStatus.ProviderError;

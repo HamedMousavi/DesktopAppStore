@@ -14,7 +14,7 @@ namespace DomainModel.Repository.Sql
         {
             string query =
                 " SELECT OptionId, OptionName, LocalName, CultureId" +
-                " FROM dbo.ListLanguages";
+                " FROM ListLanguages WHERE WebsiteSupport = 1";
 
             using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
             {

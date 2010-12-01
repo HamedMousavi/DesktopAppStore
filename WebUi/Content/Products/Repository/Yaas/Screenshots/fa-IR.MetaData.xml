@@ -2,20 +2,22 @@
 <screenshots>
   <image>
     <filename>001.jpg</filename>
-    <description>1</description>
-    <width>799</width>
-    <height>499</height>
+    <description>
+    </description>
+    <width>622</width>
+    <height>491</height>
     <thumbnail>
       <filename>001.jpg</filename>
-      <title>1</title>
+      <title>
+      </title>
     </thumbnail>
   </image>
   <image>
     <filename>002.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>719</width>
+    <height>556</height>
     <thumbnail>
       <filename>002.jpg</filename>
       <title>
@@ -24,22 +26,20 @@
   </image>
   <image>
     <filename>003.jpg</filename>
-    <description>
-    </description>
-    <width>799</width>
-    <height>499</height>
+    <description>در این بخش میتوانید مشخصات فردی بیمار را ویرایش کنید.</description>
+    <width>639</width>
+    <height>479</height>
     <thumbnail>
       <filename>003.jpg</filename>
-      <title>
-      </title>
+      <title>مشخصات بیمار</title>
     </thumbnail>
   </image>
   <image>
     <filename>004.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>217</width>
+    <height>190</height>
     <thumbnail>
       <filename>004.jpg</filename>
       <title>
@@ -50,8 +50,8 @@
     <filename>005.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>199</width>
+    <height>100</height>
     <thumbnail>
       <filename>005.jpg</filename>
       <title>
@@ -62,8 +62,8 @@
     <filename>006.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>153</width>
+    <height>207</height>
     <thumbnail>
       <filename>006.jpg</filename>
       <title>
@@ -74,8 +74,8 @@
     <filename>007.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>500</width>
+    <height>522</height>
     <thumbnail>
       <filename>007.jpg</filename>
       <title>
@@ -86,8 +86,8 @@
     <filename>008.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>259</width>
+    <height>138</height>
     <thumbnail>
       <filename>008.jpg</filename>
       <title>
@@ -98,8 +98,8 @@
     <filename>009.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>237</width>
+    <height>146</height>
     <thumbnail>
       <filename>009.jpg</filename>
       <title>
@@ -110,8 +110,8 @@
     <filename>010.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>292</width>
+    <height>205</height>
     <thumbnail>
       <filename>010.jpg</filename>
       <title>
@@ -122,8 +122,8 @@
     <filename>011.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>400</width>
+    <height>297</height>
     <thumbnail>
       <filename>011.jpg</filename>
       <title>
@@ -134,8 +134,8 @@
     <filename>012.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>472</width>
+    <height>347</height>
     <thumbnail>
       <filename>012.jpg</filename>
       <title>
@@ -146,8 +146,8 @@
     <filename>013.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>600</width>
+    <height>450</height>
     <thumbnail>
       <filename>013.jpg</filename>
       <title>
@@ -158,8 +158,8 @@
     <filename>014.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>622</width>
+    <height>491</height>
     <thumbnail>
       <filename>014.jpg</filename>
       <title>
@@ -170,8 +170,8 @@
     <filename>015.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>700</width>
+    <height>491</height>
     <thumbnail>
       <filename>015.jpg</filename>
       <title>
@@ -182,8 +182,8 @@
     <filename>016.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>700</width>
+    <height>201</height>
     <thumbnail>
       <filename>016.jpg</filename>
       <title>
@@ -194,8 +194,8 @@
     <filename>017.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>700</width>
+    <height>109</height>
     <thumbnail>
       <filename>017.jpg</filename>
       <title>
@@ -206,8 +206,8 @@
     <filename>018.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>700</width>
+    <height>78</height>
     <thumbnail>
       <filename>018.jpg</filename>
       <title>
@@ -218,8 +218,8 @@
     <filename>019.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>700</width>
+    <height>160</height>
     <thumbnail>
       <filename>019.jpg</filename>
       <title>
@@ -230,8 +230,8 @@
     <filename>020.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>624</width>
+    <height>491</height>
     <thumbnail>
       <filename>020.jpg</filename>
       <title>
@@ -242,8 +242,8 @@
     <filename>021.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>622</width>
+    <height>491</height>
     <thumbnail>
       <filename>021.jpg</filename>
       <title>
@@ -254,8 +254,8 @@
     <filename>022.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>700</width>
+    <height>228</height>
     <thumbnail>
       <filename>022.jpg</filename>
       <title>
@@ -266,8 +266,8 @@
     <filename>023.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>651</width>
+    <height>491</height>
     <thumbnail>
       <filename>023.jpg</filename>
       <title>
@@ -278,8 +278,8 @@
     <filename>024.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>624</width>
+    <height>57</height>
     <thumbnail>
       <filename>024.jpg</filename>
       <title>
@@ -290,8 +290,8 @@
     <filename>025.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>624</width>
+    <height>469</height>
     <thumbnail>
       <filename>025.jpg</filename>
       <title>
@@ -302,8 +302,8 @@
     <filename>026.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>624</width>
+    <height>188</height>
     <thumbnail>
       <filename>026.jpg</filename>
       <title>
@@ -314,8 +314,8 @@
     <filename>027.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>624</width>
+    <height>469</height>
     <thumbnail>
       <filename>027.jpg</filename>
       <title>
@@ -326,8 +326,8 @@
     <filename>028.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>624</width>
+    <height>469</height>
     <thumbnail>
       <filename>028.jpg</filename>
       <title>
@@ -338,8 +338,8 @@
     <filename>029.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>624</width>
+    <height>469</height>
     <thumbnail>
       <filename>029.jpg</filename>
       <title>
@@ -350,8 +350,8 @@
     <filename>030.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>624</width>
+    <height>469</height>
     <thumbnail>
       <filename>030.jpg</filename>
       <title>
@@ -362,8 +362,8 @@
     <filename>031.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>600</width>
+    <height>79</height>
     <thumbnail>
       <filename>031.jpg</filename>
       <title>
@@ -374,106 +374,12 @@
     <filename>032.jpg</filename>
     <description>
     </description>
-    <width>799</width>
-    <height>499</height>
+    <width>640</width>
+    <height>480</height>
     <thumbnail>
       <filename>032.jpg</filename>
       <title>
       </title>
-    </thumbnail>
-  </image>
-  <image>
-    <filename>033.jpg</filename>
-    <description>
-    </description>
-    <width>799</width>
-    <height>499</height>
-    <thumbnail>
-      <filename>033.jpg</filename>
-      <title>
-      </title>
-    </thumbnail>
-  </image>
-  <image>
-    <filename>034.jpg</filename>
-    <description>
-    </description>
-    <width>799</width>
-    <height>499</height>
-    <thumbnail>
-      <filename>034.jpg</filename>
-      <title>
-      </title>
-    </thumbnail>
-  </image>
-  <image>
-    <filename>035.jpg</filename>
-    <description>
-    </description>
-    <width>799</width>
-    <height>499</height>
-    <thumbnail>
-      <filename>035.jpg</filename>
-      <title>
-      </title>
-    </thumbnail>
-  </image>
-  <image>
-    <filename>036.jpg</filename>
-    <description>
-    </description>
-    <width>799</width>
-    <height>499</height>
-    <thumbnail>
-      <filename>036.jpg</filename>
-      <title>
-      </title>
-    </thumbnail>
-  </image>
-  <image>
-    <filename>037.jpg</filename>
-    <description>
-    </description>
-    <width>799</width>
-    <height>499</height>
-    <thumbnail>
-      <filename>037.jpg</filename>
-      <title>
-      </title>
-    </thumbnail>
-  </image>
-  <image>
-    <filename>038.jpg</filename>
-    <description>
-    </description>
-    <width>799</width>
-    <height>499</height>
-    <thumbnail>
-      <filename>038.jpg</filename>
-      <title>
-      </title>
-    </thumbnail>
-  </image>
-  <image>
-    <filename>039.jpg</filename>
-    <description>
-    </description>
-    <width>799</width>
-    <height>499</height>
-    <thumbnail>
-      <filename>039.jpg</filename>
-      <title>
-      </title>
-    </thumbnail>
-  </image>
-  <image>
-    <filename>040.jpg</filename>
-    <description>40</description>
-    <width>799</width>
-    <height>499</height>
-    <thumbnail>
-      <filename>040.jpg</filename>
-      <title>40</title>
     </thumbnail>
   </image>
 </screenshots>

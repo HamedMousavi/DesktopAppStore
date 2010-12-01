@@ -8,7 +8,33 @@ namespace DomainModel.Repository.Memory
 {
     public class Categories
     {
-        public CategoryParentCollection Items { get; set; }
+        protected CategoryParentCollection items;
+        public CategoryParentCollection Items 
+        { 
+            get
+            {
+                if (this.items != null && this.items.LastLoad != null)
+                {
+                    if ((DateTime.UtcNow - this.items.LastLoad.Value).Minutes >=
+                        Configurations.MinCategoryFetchInterval)
+                    {
+                        ReloadAll();
+                    }
+                }
+
+                return this.items;
+            }
+        }
+
+
+        public void ReloadAll()
+        {
+            this.items.Clear();
+            foreach (Entities.ProductLanguage lang in Languages.Instance.Items)
+            {
+                Load(lang.CultureId);
+            }
+        }
         
         protected static Categories instance;
         protected static object instLock = new object();
@@ -35,7 +61,7 @@ namespace DomainModel.Repository.Memory
 
         public Categories()
         {
-            this.Items = new CategoryParentCollection();
+            this.items = new CategoryParentCollection();
         }
 
 
@@ -49,14 +75,11 @@ namespace DomainModel.Repository.Memory
             Repository.Sql.Categories.Load(culture, cat);
 
             this.Items.Add(cat);
+            this.items.LastLoad = DateTime.UtcNow;
 
             ret = true;
 
             return ret;
         }
-
-
-
-
     }
 }

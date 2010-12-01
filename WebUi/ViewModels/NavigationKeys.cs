@@ -17,6 +17,7 @@ namespace WebUi.ViewModels
 
         public static string MemberController = "Members";
         public static string MemberRegisterAction = "Register";
+        public static string MemberVoteProductAction = "VoteProduct";
         public static string MemberLogonAction = "Logon";
         public static string MemberLogoffAction = "LogOff";
         public static string MemberResetPasswordAction = "ResetPassword";

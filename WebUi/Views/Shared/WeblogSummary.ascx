@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
 
+
 <%
     int index = 0;
     DomainModel.Entities.WeblogEntryCollection messages =

@@ -15,7 +15,6 @@ namespace DomainModel.Entities
             }
         }
 
-        // UNDONE:
         public WeblogEntryCollection this[string culture, string url]
         {
             get
@@ -54,5 +53,46 @@ namespace DomainModel.Entities
 
             return null;
         }
+
+        public delegate bool LoadEntries(WeblogEntryCollection messages, DateTime time, string culture);
+        public LoadEntries LoadEntriesAction { get; set; }
+
+
+        public void Remove(string culture)
+        {
+            WeblogEntryCollection messages;
+
+            if (this.Count > 0)
+            {
+                messages = this[culture];
+                if (messages != null)
+                {
+                    lock (this)
+                    {
+                        this.Remove(messages);
+                    }
+                }
+            }
+        }
+
+
+        public void ReloadEntries(string culture)
+        {
+            // Remove old message
+            Remove(culture);
+
+            WeblogEntryCollection messages = new WeblogEntryCollection();
+            messages.CultureId = culture;
+
+            // Reload new item
+            LoadEntriesAction(messages, DateTime.UtcNow, culture);
+
+            // Add newly created messages to item list
+            lock (this)
+            {
+                Add(messages);
+            }
+        }
+
     }
 }

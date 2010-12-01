@@ -39,10 +39,5 @@ namespace WebUi.Controllers
         }
 
 
-        public ActionResult Tags(UInt64 tagId)
-        {
-            return View();
-        }
-
     }
 }

@@ -44,6 +44,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tpgUsers = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.unitTitleIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -166,12 +167,18 @@
             this.listProductTechnologiesTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListProductTechnologiesTableAdapter();
             this.listSourceOptionsTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListSourceOptionsTableAdapter();
             this.listSoftwarePlatformsTableAdapter = new DataAdministration.PersianSoftwareDataSetTableAdapters.ListSoftwarePlatformsTableAdapter();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAddWeblogEntry = new System.Windows.Forms.Button();
             this.tabControlMain.SuspendLayout();
             this.tpgArticle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listLanguagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.persianSoftwareDataSet)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listContactUnitTitlesBindingSource)).BeginInit();
@@ -212,10 +219,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.listUpdateOptionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBackup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDataBackupOptionsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -232,21 +237,14 @@
             // 
             // tpgArticle
             // 
-            this.tpgArticle.Controls.Add(this.cbxLanguageList);
-            this.tpgArticle.Controls.Add(this.label5);
-            this.tpgArticle.Controls.Add(this.label4);
-            this.tpgArticle.Controls.Add(this.label1);
-            this.tpgArticle.Controls.Add(this.tbxUrlName);
-            this.tpgArticle.Controls.Add(this.tbxProductId);
-            this.tpgArticle.Controls.Add(this.btnRemove);
-            this.tpgArticle.Controls.Add(this.btnEdit);
-            this.tpgArticle.Controls.Add(this.btnAdd);
+            this.tpgArticle.Controls.Add(this.groupBox2);
+            this.tpgArticle.Controls.Add(this.groupBox1);
             this.tpgArticle.Location = new System.Drawing.Point(4, 22);
             this.tpgArticle.Name = "tpgArticle";
             this.tpgArticle.Padding = new System.Windows.Forms.Padding(3);
             this.tpgArticle.Size = new System.Drawing.Size(666, 595);
             this.tpgArticle.TabIndex = 0;
-            this.tpgArticle.Text = "Products";
+            this.tpgArticle.Text = "Home";
             this.tpgArticle.UseVisualStyleBackColor = true;
             // 
             // cbxLanguageList
@@ -254,7 +252,7 @@
             this.cbxLanguageList.DataSource = this.listLanguagesBindingSource;
             this.cbxLanguageList.DisplayMember = "OptionName";
             this.cbxLanguageList.FormattingEnabled = true;
-            this.cbxLanguageList.Location = new System.Drawing.Point(90, 90);
+            this.cbxLanguageList.Location = new System.Drawing.Point(85, 93);
             this.cbxLanguageList.Name = "cbxLanguageList";
             this.cbxLanguageList.Size = new System.Drawing.Size(152, 21);
             this.cbxLanguageList.TabIndex = 6;
@@ -273,7 +271,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 94);
+            this.label5.Location = new System.Drawing.Point(3, 97);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 5;
@@ -282,7 +280,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(126, 62);
+            this.label4.Location = new System.Drawing.Point(121, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 5;
@@ -291,7 +289,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 62);
+            this.label1.Location = new System.Drawing.Point(3, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 5;
@@ -299,21 +297,21 @@
             // 
             // tbxUrlName
             // 
-            this.tbxUrlName.Location = new System.Drawing.Point(192, 59);
+            this.tbxUrlName.Location = new System.Drawing.Point(187, 62);
             this.tbxUrlName.Name = "tbxUrlName";
             this.tbxUrlName.Size = new System.Drawing.Size(50, 20);
             this.tbxUrlName.TabIndex = 4;
             // 
             // tbxProductId
             // 
-            this.tbxProductId.Location = new System.Drawing.Point(70, 59);
+            this.tbxProductId.Location = new System.Drawing.Point(65, 62);
             this.tbxProductId.Name = "tbxProductId";
             this.tbxProductId.Size = new System.Drawing.Size(50, 20);
             this.tbxProductId.TabIndex = 4;
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(248, 59);
+            this.btnRemove.Location = new System.Drawing.Point(243, 62);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 3;
@@ -322,7 +320,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(248, 88);
+            this.btnEdit.Location = new System.Drawing.Point(243, 91);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
@@ -332,7 +330,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(11, 16);
+            this.btnAdd.Location = new System.Drawing.Point(6, 19);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 23);
             this.btnAdd.TabIndex = 3;
@@ -360,6 +358,25 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Primary details";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnSave);
+            this.splitContainer1.Size = new System.Drawing.Size(660, 589);
+            this.splitContainer1.SplitterDistance = 553;
+            this.splitContainer1.TabIndex = 53;
             // 
             // tableLayoutPanel1
             // 
@@ -1274,24 +1291,43 @@
             // 
             this.listSoftwarePlatformsTableAdapter.ClearBeforeFill = true;
             // 
-            // splitContainer1
+            // groupBox1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.cbxLanguageList);
+            this.groupBox1.Controls.Add(this.btnEdit);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.btnRemove);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.tbxProductId);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.tbxUrlName);
+            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(650, 180);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Products";
             // 
-            // splitContainer1.Panel1
+            // groupBox2
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox2.Controls.Add(this.btnAddWeblogEntry);
+            this.groupBox2.Location = new System.Drawing.Point(3, 192);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(655, 153);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Weblog";
             // 
-            // splitContainer1.Panel2
+            // btnAddWeblogEntry
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnSave);
-            this.splitContainer1.Size = new System.Drawing.Size(660, 589);
-            this.splitContainer1.SplitterDistance = 553;
-            this.splitContainer1.TabIndex = 53;
+            this.btnAddWeblogEntry.Location = new System.Drawing.Point(11, 20);
+            this.btnAddWeblogEntry.Name = "btnAddWeblogEntry";
+            this.btnAddWeblogEntry.Size = new System.Drawing.Size(154, 23);
+            this.btnAddWeblogEntry.TabIndex = 0;
+            this.btnAddWeblogEntry.Text = "Add New Weblog Entry";
+            this.btnAddWeblogEntry.UseVisualStyleBackColor = true;
+            this.btnAddWeblogEntry.Click += new System.EventHandler(this.btnAddWeblogEntry_Click);
             // 
             // FrmMain
             // 
@@ -1305,10 +1341,13 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.tabControlMain.ResumeLayout(false);
             this.tpgArticle.ResumeLayout(false);
-            this.tpgArticle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listLanguagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.persianSoftwareDataSet)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listContactUnitTitlesBindingSource)).EndInit();
@@ -1349,10 +1388,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.listUpdateOptionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBackup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listDataBackupOptionsBindingSource)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1497,5 +1535,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbxUrlName;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnAddWeblogEntry;
     }
 }

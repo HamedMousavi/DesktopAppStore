@@ -58,5 +58,10 @@ namespace DomainModel.Errors
                 // No more error handling
             }
         }
+
+        public static void HandleError(string p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -139,8 +139,18 @@ namespace DataAdministration
                 {
                     if (editor.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        // UNDONE : INSERT PRODUCT
                     }
+                }
+            }
+        }
+
+
+        private void btnAddWeblogEntry_Click(object sender, EventArgs e)
+        {
+            using (FrmWeblogEntryEditor editor = new FrmWeblogEntryEditor())
+            {
+                if (editor.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
                 }
             }
         }

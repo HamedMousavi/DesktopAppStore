@@ -7,8 +7,10 @@ namespace WebUi.ViewModels
 {
     public class PagingInfo
     {
+        public string listTitle { get; set; }
         public int TotalItems { get; set; }
         public int CurrentPage { get; set; }
+        public int CurrentSortOption { get; set; }
 
         public int TotalPages
         {
@@ -19,8 +21,8 @@ namespace WebUi.ViewModels
         {
             get
             {
-                // UNDONE: CONFIGURATION
-                return 10;
+                return Convert.ToInt32(
+                System.Web.Configuration.WebConfigurationManager.AppSettings["ListItemsPerPage"]);
             }
         }
     }

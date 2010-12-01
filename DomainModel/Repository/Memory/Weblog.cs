@@ -13,11 +13,14 @@ namespace DomainModel.Repository.Memory
         protected static object instLock = new object();
 
         protected WeblogEntryCollectionList items;
+        protected WeblogEntryCollectionList featured;
+        protected WeblogEntryCollectionList announcements;
+
+
 
         protected readonly int MinDatabaseFetchInterval = 
             Convert.ToInt32(Configurations.MinMessageFetchInterval);
-
-
+        
 
         public static Weblog Instance
         {
@@ -39,33 +42,40 @@ namespace DomainModel.Repository.Memory
         public Weblog()
         {
             this.items = new WeblogEntryCollectionList();
+            this.items.LoadEntriesAction = Repository.Sql.Weblog.Load;
+
+            this.featured = new WeblogEntryCollectionList();
+            this.featured.LoadEntriesAction = Repository.Sql.Weblog.LoadFeatured;
+
+            this.announcements = new WeblogEntryCollectionList();
+            this.announcements.LoadEntriesAction = Repository.Sql.Weblog.LoadAnnouncements;
         }
 
 
-        public WeblogEntryCollection GetMessages(string cultureId)
+        public WeblogEntryCollection GetEntries(WeblogEntryCollectionList list, string cultureId)
         {
-            WeblogEntryCollection messages = this.items[cultureId];
+            WeblogEntryCollection messages = list[cultureId];
 
             if (messages == null)
             {
-                Reload(cultureId);
-                messages = this.items[cultureId];
+                list.ReloadEntries(cultureId);
+                messages = list[cultureId];
             }
             else if (
-                messages.ExpirationDate > DateTime.Now ||
+                messages.ExpirationDate > DateTime.UtcNow ||
                 messages.Count <= 0)
             {
                 if (messages.LastLoad != null)
                 {
-                    if ((DateTime.Now - messages.LastLoad.Value).Minutes < 
+                    if ((DateTime.UtcNow - messages.LastLoad.Value).Minutes <
                         MinDatabaseFetchInterval)
                     {
                         return messages;
                     }
                 }
 
-                Reload(cultureId);
-                messages = this.items[cultureId];
+                list.ReloadEntries(cultureId);
+                messages = list[cultureId];
             }
 
             return messages;
@@ -74,44 +84,14 @@ namespace DomainModel.Repository.Memory
 
         public void Reload(string cultureId)
         {
-            WeblogEntryCollection messages = CreateMessageList(cultureId);
-
-            // Reload new item
-            lock (messages)
-            {
-                Repository.Sql.Weblog.Load(messages, DateTime.Now, cultureId);
-            }
-
-            // Add newly created messages to item list
-            lock (this.items)
-            {
-                this.items.Add(messages);
-            }
+            // Remove old message
+            this.items.ReloadEntries(cultureId);
         }
 
 
-        private WeblogEntryCollection CreateMessageList(string cultureId)
+        public WeblogEntryCollection GetMessages(string cultureId)
         {
-            WeblogEntryCollection messages;
-
-            // Remove old message
-            if (this.items.Count > 0)
-            {
-                messages = this.items[cultureId];
-                if (messages != null)
-                {
-                    lock (this.items)
-                    {
-                        this.items.Remove(messages);
-                    }
-                }
-            }            
-
-            // Create a new message collection
-            messages = new WeblogEntryCollection();
-            messages.CultureId = cultureId;
-
-            return messages;
+            return GetEntries(this.items, cultureId);
         }
 
 
@@ -127,6 +107,18 @@ namespace DomainModel.Repository.Memory
             }
 
             return messages;
+        }
+
+
+        public WeblogEntryCollection GetFeatured(string cultureId)
+        {
+            return GetEntries(this.featured, cultureId);
+        }
+
+
+        public WeblogEntryCollection GetAnnouncements(string cultureId)
+        {
+            return GetEntries(this.announcements, cultureId);
         }
     }
 }

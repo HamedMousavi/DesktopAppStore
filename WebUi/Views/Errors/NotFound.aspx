@@ -6,7 +6,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
-    <h2>NotFound</h2>
+    <h2><%:UiResources.UiTexts.page_not_found%></h2>
+
+    <p style="line-height:1.5em;"><%:UiResources.UiTexts.page_not_found_content%></p>
 
 </asp:Content>
 
