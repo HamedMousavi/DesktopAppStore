@@ -25,48 +25,42 @@
             <span><a href="<%: Request.Url.AbsoluteUri %>?print=1"><%: UiResources.UiTexts.print%></a> </span>
         </div>
 
-        <div id="showcase">
-            <div id="screenshot" style="float:<%:UiResources.UiTexts.float_left%>;">
-                <%: Html.SoftwareScreenshot(Model, Request.Url.AbsoluteUri)%>
-            </div>
+        <table width="100%">
+            <tbody>
+            <tr>
+                <td>
+                    <div id="screenshot">
+                        <%: Html.SoftwareScreenshot(Model, Request.Url.AbsoluteUri)%>
+                    </div>
+                </td>
+                <td style="width:100%; vertical-align:top;">
+                    <div id="overview">
+                        <% Html.RenderPartial("ProductVotingBar"); %>
 
-            <div id="overview" style="margin-<%:UiResources.UiTexts.float_left%>:20px;">
-                <% Html.RenderPartial("ProductVotingBar"); %>
-
-                <div id="product_overview">
-                    <div class="overview_title"><%:UiResources.UiTexts.overview %></div>
-                    <dl>
-                        <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_version%></dt>
-                        <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%:Model.ProductVersion %></dd>
-                        <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_price%></dt>
-                        <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%: DomainModel.Tools.Currencies.Format(Model.Price, WebUi.Models.AppCulture.CurrentCulture) %></dd>
-                        <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_release_date%></dt>
-                        <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%: DomainModel.Tools.DateTime.Convert.ToCulture(Model.ProductReleaseDate, WebUi.Models.AppCulture.CurrentCulture) %></dd>
-                        <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_languages%></dt>
-                        <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%: Html.LanguageOverview(Model, Request.Url.AbsoluteUri) %></dd>
-                        <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_language_extendable%></dt>
-                        <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%:Model.LanguageExtendable?UiResources.UiTexts.has:UiResources.UiTexts.has_not %></dd>
-                        <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_volume_size%></dt>
-                        <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%:Model.MinimumVolumeSize%>  <%: UiResources.UiTexts.megabytes %></dd>
-                        <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.website%></dt>
-                        <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><a href="<%:Model.ProductWebsite%>"><%:Model.ProductWebsite.Replace("https://", "").Replace("http://", "") %></a></dd>
-                    </dl>
-                </div>
-
-
-                <!--/*
-                <div id="product_awards">
-                    <img style="margin: 4px;" alt="Product awards" src="/Content/Images/awards_logo.png" />
-                    <%:Html.SoftwareAwards(
-                        Model, 
-                        Url.Action(
-                            WebUi.ViewModels.NavigationKeys.ProductAwardsAction, 
-                            WebUi.ViewModels.NavigationKeys.ProductController,
-                            new { productName = Model.Catalog.UrlName }))%>
-                </div>*/-->
-            </div>
-            
-        </div>
+                        <div id="product_overview">
+                            <div class="overview_title"><%:UiResources.UiTexts.overview %></div>
+                            <dl>
+                                <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_version%></dt>
+                                <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%:Model.ProductVersion %></dd>
+                                <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_price%></dt>
+                                <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%: DomainModel.Tools.Currencies.Format(Model.Price, WebUi.Models.AppCulture.CurrentCulture) %></dd>
+                                <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_release_date%></dt>
+                                <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%: DomainModel.Tools.DateTime.Convert.ToCulture(Model.ProductReleaseDate, WebUi.Models.AppCulture.CurrentCulture) %></dd>
+                                <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_languages%></dt>
+                                <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%: Html.LanguageOverview(Model, Request.Url.AbsoluteUri) %></dd>
+                                <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_language_extendable%></dt>
+                                <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%:Model.LanguageExtendable?UiResources.UiTexts.has:UiResources.UiTexts.has_not %></dd>
+                                <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.product_volume_size%></dt>
+                                <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><%:Model.MinimumVolumeSize%>  <%: UiResources.UiTexts.megabytes %></dd>
+                                <dt class="overview_head" style="float:<%:UiResources.UiTexts.float_left%>;"><%:UiResources.UiTexts.website%></dt>
+                                <dd class="overview_item" style="text-align:<%:UiResources.UiTexts.float_right%>;"><a href="<%:Model.ProductWebsite%>"><%:Model.ProductWebsite.Replace("https://", "").Replace("http://", "") %></a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
         <div id="article">
             <h2><%:UiResources.UiTexts.product_brief_description %></h2>

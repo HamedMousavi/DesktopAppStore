@@ -608,18 +608,13 @@ a:hover
 
 #overview
 {
-    font-size: 10pt;
-    font-weight: bold;
-    white-space: normal;
+    width: 100%;
 }
 
 #product_overview
 {
-    line-height: 1.5em;
-    margin: 2px 0px 20px 0px;
-    padding: 2px;
-    border: 0;
-    white-space: nowrap;
+    font-size: 10pt;
+    font-weight: bold;
 }
 
 #product_overview dl
@@ -743,7 +738,7 @@ a:hover
 {
     height: 600px;
     text-align: center;
-    overflow:hidden;
+    overflow: visible;
     vertical-align: middle;
     display: block;
     padding: 2px;
