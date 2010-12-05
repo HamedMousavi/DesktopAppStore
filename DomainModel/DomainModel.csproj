@@ -62,6 +62,7 @@
     <Compile Include="Entities\Discussion.cs" />
     <Compile Include="Entities\DiscussionMessage.cs" />
     <Compile Include="Entities\Forum.cs" />
+    <Compile Include="Entities\GeneralDatabaseList.cs" />
     <Compile Include="Entities\ImageThumbnail.cs" />
     <Compile Include="Entities\OwnerBranch.cs" />
     <Compile Include="Entities\Picture.cs" />

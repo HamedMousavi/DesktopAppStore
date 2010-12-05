@@ -177,9 +177,6 @@ namespace WebUi
                     DomainModel.Repository.Memory.Categories.Instance.Load(lang.CultureId);
                     DomainModel.Repository.Memory.Weblog.Instance.Reload(lang.CultureId);
                 }
-
-                // This prepares discussions for all forums to insertcorrectly
-                DomainModel.Repository.Sql.Discussions.Init();
             }
             catch (Exception ex)
             {

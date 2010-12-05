@@ -114,6 +114,10 @@ namespace WebUi.Controllers
                     product,
                     WebUi.Models.AppCulture.CurrentCulture.CultureId);
 
+                // UNDONE: ADD MESSAGE DATA TO PRODUCT CONTROLLER
+                DomainModel.Repository.Sql.Discussions.LoadProductDiscussions
+                    (product, 0, 1000);
+
                 return View(product);
             }
 

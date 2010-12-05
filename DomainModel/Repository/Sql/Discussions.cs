@@ -9,66 +9,9 @@ namespace DomainModel.Repository.Sql
 {
     public class Discussions
     {
-        private static int discussionId = 0;
-
-
-        protected static int NewDiscussionId
-        {
-            get
-            {
-                return System.Threading.Interlocked.Increment(ref discussionId);
-            }
-        }
-
-
-        public static void Init()
-        {
-            // DiscussionId is used to sort database and retrieve
-            // all messages of a given forum with just one query.
-            // But it must be unique for every new message group in
-            // database. We load last one from inserted items here
-            // and during lifetime of the application we increment
-            // it for each insert.
-            LoadLastDiscussionId();
-        }
-
-
-        private static void LoadLastDiscussionId()
-        {
-            discussionId = 0;
-            
-            string query = "SELECT MAX(DiscussionId) AS DiscussionId FROM Discussions";
-
-            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand(query, cnn))
-                {
-                    cmd.CommandType = CommandType.Text;
-
-                    cnn.Open();
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader != null && reader.HasRows)
-                    {
-                        if (reader.Read())
-                        {
-                            discussionId = Repository.Utils.Convert.ToInt32(reader["DiscussionId"]);
-                        }
-                    }
-
-                    cnn.Close();
-                }
-            }
-        }
-
-
         public static bool Insert(Forum forum, Discussion discussion, DiscussionMessage message)
         {
             bool res = false;
-            if (message.IsParent && discussion == null)
-            {
-                discussion.DiscussionId = NewDiscussionId;
-            }
 
             try
             {
@@ -82,8 +25,8 @@ namespace DomainModel.Repository.Sql
 
                         cmd.Parameters.Add(new SqlParameter("@ForumId", forum.ForumId));
                         cmd.Parameters.Add(new SqlParameter("@PageId", forum.PageId));
-                        cmd.Parameters.Add(new SqlParameter("@DiscussionId", discussion.DiscussionId));
-		                cmd.Parameters.Add(new SqlParameter("@ParentId", message.Parent.MessageId ));
+                        cmd.Parameters.Add(new SqlParameter("@DiscussionId", discussion == null ? 0 : discussion.Id));
+                        cmd.Parameters.Add(new SqlParameter("@ParentId", message.Parent == null ? 0 : message.Parent.Id));
 		                cmd.Parameters.Add(new SqlParameter("@InsertTime", DateTime.UtcNow ));
 		                cmd.Parameters.Add(new SqlParameter("@UserId", message.UserId ));
 		                cmd.Parameters.Add(new SqlParameter("@UserIp", message.UserIp ));
@@ -100,8 +43,8 @@ namespace DomainModel.Repository.Sql
                         {
                             if (reader.Read())
                             {
-                                message.MessageId = Repository.Utils.Convert.ToInt32(reader["MessageId"]);
-                                if (message.MessageId > 0)
+                                message.Id = Repository.Utils.Convert.ToInt32(reader["MessageId"]);
+                                if (message.Id > 0)
                                 {
                                     res = true;
                                 }
@@ -121,7 +64,7 @@ namespace DomainModel.Repository.Sql
         }
 
 
-        public static bool GetProductDiscussions(ProductBase product, int startRow, int endRow)
+        public static bool LoadProductDiscussions(ProductBase product, int startRow, int endRow)
         {
             bool res = false;
 
@@ -135,12 +78,18 @@ namespace DomainModel.Repository.Sql
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add(new SqlParameter("@ForumId", 0));
+                        cmd.Parameters.Add(new SqlParameter("@ForumId", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Default, 0));
                         cmd.Parameters.Add(new SqlParameter("@ProductUrl", product.Catalog.UrlName));
                         cmd.Parameters.Add(new SqlParameter("@StartRow", startRow));
                         cmd.Parameters.Add(new SqlParameter("@EndRow", endRow));
 
-                        foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+                        foreach (SqlParameter Parameter in cmd.Parameters) 
+                        { 
+                            if (Parameter.Value == null) 
+                            { 
+                                Parameter.Value = DBNull.Value; 
+                            }
+                        }
 
                         cnn.Open();
 
@@ -161,6 +110,7 @@ namespace DomainModel.Repository.Sql
 
                             Int32 parentId = 0;
                             Int32 discussionId = 0;
+                            Int32 messageId = 0;
 
                             while (reader.Read())
                             {
@@ -168,19 +118,48 @@ namespace DomainModel.Repository.Sql
 
                                 discussionId = Repository.Utils.Convert.ToInt32(reader["DiscussionId"]);
                                 parentId = Repository.Utils.Convert.ToInt32(reader["ParentId"]);
+                                messageId = Repository.Utils.Convert.ToInt32(reader["MessageId"]);
 
-                                // Change current discussion
-                                if (discussionId != discussion.DiscussionId)
+                                // Update current discussion
+                                if (discussion != null)
                                 {
-                                    discussion = Forum.FindDiscussion(discussionId);
+                                    // This message is in current discussion
+                                    if (discussionId == discussion.Id)
+                                    {
+                                        // Do nothing. Current discussion is OK!
+                                    }
+                                    else if (discussionId <= 0)
+                                    {
+                                        // Discussion records don't have a DiscussionId
+                                        // This is a new discussion
+                                        // Let's find this discussion by it's id
+                                        discussion = product.Forum.FindDiscussion(messageId);
+                                    }
+                                    else if (discussionId > 0)
+                                    {
+                                        // This is a message inside a discussion
+                                        // Let's find it's discussion by it's id 
+                                        discussion = product.Forum.FindDiscussion(discussionId);
+                                    }
                                 }
 
-                                // If discussion with this id does not exists create and add it
+                                // If discussion not found, create and add it
                                 if (discussion == null)
                                 {
-                                    discussion = new Discussion(discussionId);
+                                    // If this record is a discussion message
+                                    if (discussionId <= 0)
+                                    {
+                                        discussion = new Discussion(messageId);
+                                        message = discussion;
+                                    }
+                                    else if (parentId == discussionId)
+                                    {
+                                        // This is a message inside a discussion that does not exist?!
+                                        discussion = new Discussion(discussionId);
+                                        // Let next step handle message related stuff
+                                    }
+
                                     product.Forum.Add(discussion);
-                                    message = discussion;
                                 }
 
                                 // This is a message with an unknown parent inside a known discussion
@@ -211,8 +190,23 @@ namespace DomainModel.Repository.Sql
                                 // Try load it's data.
 
                                 // load message
+                                message.Id = messageId;
+                                message.Visibility = Repository.Utils.Convert.ToInt16(reader["Visibility"]);
+                                message.IsAbuse = Repository.Utils.Convert.ToInt16(reader["IsAbuse"]);
+                                message.InsertTime = Repository.Utils.Convert.ToDateTime(reader["InsertTime"]);
+                                message.UpdateTime = Repository.Utils.Convert.ToDateTime(reader["UpdateTime"]);
+                                message.UserId = Repository.Utils.Convert.ToInt64(reader["UserId"]);
+                                message.UserName = Repository.Utils.Convert.ToString(reader["UserName"]);
+                                message.UserIp = Repository.Utils.Convert.ToString(reader["UserIp"]);
+                                message.Subject = Repository.Utils.Convert.ToString(reader["MessageSubject"]);
+                                message.Body = Repository.Utils.Convert.ToString(reader["MessageBody"]);
+                            }
 
-                                //MessageId, ParentId, UpdateTime, ForumMessages.UserId, UserName, UserIp, MessageSubject, MessageBody
+                            reader.NextResult();
+                            if (reader.Read())
+                            {
+                                product.Forum.TotalMessageCount = 
+                                    Repository.Utils.Convert.ToInt32(reader["TotalRows"]);
                             }
                         }
 

@@ -144,5 +144,25 @@ namespace DomainModel.Repository.Utils
 
             return ret;
         }
+
+
+
+        internal static short ToInt16(object source)
+        {
+            Int16 ret = -1;
+
+            try
+            {
+                if (source != null && source != DBNull.Value)
+                {
+                    ret = System.Convert.ToInt16(source);
+                }
+            }
+            catch (Exception)
+            {
+            }
+
+            return ret;
+        }
     }
 }

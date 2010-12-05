@@ -7,14 +7,24 @@ namespace DomainModel.Entities
 {
     public class Forum: List<Discussion>
     {
+        public Int32 TotalMessageCount { get; set; }
+
         public Int16 ForumId { get; set; }
         public Int64 PageId { get; set; }
         public object UrlName { get; set; } // WHEN ForumId is NULL and forum is actually a discussion under an article
 
 
-        internal static Discussion FindDiscussion(int discussionId)
+        internal Discussion FindDiscussion(int discussionId)
         {
-            throw new NotImplementedException();
+            foreach (Discussion discussion in this)
+            {
+                if (discussion.Id == discussionId)
+                {
+                    return discussion;
+                }
+            }
+
+            return null;
         }
     }
 }
