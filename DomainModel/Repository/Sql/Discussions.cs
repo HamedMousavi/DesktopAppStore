@@ -128,17 +128,11 @@ namespace DomainModel.Repository.Sql
                                     {
                                         // Do nothing. Current discussion is OK!
                                     }
-                                    else if (discussionId <= 0)
-                                    {
-                                        // Discussion records don't have a DiscussionId
-                                        // This is a new discussion
-                                        // Let's find this discussion by it's id
-                                        discussion = product.Forum.FindDiscussion(messageId);
-                                    }
-                                    else if (discussionId > 0)
+                                    else
                                     {
                                         // This is a message inside a discussion
-                                        // Let's find it's discussion by it's id 
+                                        // Or a root (a discussion) record so
+                                        // Let's find discussion by it's id 
                                         discussion = product.Forum.FindDiscussion(discussionId);
                                     }
                                 }
@@ -146,20 +140,20 @@ namespace DomainModel.Repository.Sql
                                 // If discussion not found, create and add it
                                 if (discussion == null)
                                 {
-                                    // If this record is a discussion message
-                                    if (discussionId <= 0)
+                                    discussion = new Discussion(discussionId);
+                                    product.Forum.Add(discussion);
+
+                                    if (messageId == discussionId)
                                     {
-                                        discussion = new Discussion(messageId);
+                                        // If this record is a discussion message
                                         message = discussion;
                                     }
-                                    else if (parentId == discussionId)
+                                    else
                                     {
                                         // This is a message inside a discussion that does not exist?!
-                                        discussion = new Discussion(discussionId);
+                                        // An empty discussion created. Maybe filled later on
                                         // Let next step handle message related stuff
                                     }
-
-                                    product.Forum.Add(discussion);
                                 }
 
                                 // This is a message with an unknown parent inside a known discussion
