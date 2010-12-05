@@ -498,4 +498,19 @@
   <data name="your_vote" xml:space="preserve">
     <value>You already voted {0} out of 5 for this product</value>
   </data>
+  <data name="download_common_demo" xml:space="preserve">
+    <value>Download demo(All Available languages)</value>
+  </data>
+  <data name="download_local_demo" xml:space="preserve">
+    <value>Download demo (Selected language)</value>
+  </data>
+  <data name="login_to_download_demo" xml:space="preserve">
+    <value>You need to be a member of the site and log in to site to download demos</value>
+  </data>
+  <data name="no_demo_available" xml:space="preserve">
+    <value>This product does not have a demo available to download</value>
+  </data>
+  <data name="file_size" xml:space="preserve">
+    <value>File size: </value>
+  </data>
 </root>

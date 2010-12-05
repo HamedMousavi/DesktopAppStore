@@ -32,10 +32,12 @@ namespace DomainModel.Tools
                 currencySymbol = "Toomans";
             }
 
+            // Can't use "c" format string. Prices are entered by Iran REAL currency i.e. Toomans
             return string.Format("{0} {1}",
                 money.Value.ToString("N", cult),
                 currencySymbol);
-            
+
+
             /*RegionInfo reg = new RegionInfo(cult.LCID);
             
             return string.Format("{0} {1}",  

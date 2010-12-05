@@ -106,9 +106,13 @@ namespace WebUi.Controllers
                 Models.Security.UserId))
             {
                 DomainModel.Repository.Disk.Catalog.LoadScreenshots(
-                    product, 
-                    WebUi.Models.AppCulture.CurrentCulture.CultureId, 
+                    product,
+                    WebUi.Models.AppCulture.CurrentCulture.CultureId,
                     false);
+
+                DomainModel.Repository.Disk.Catalog.LoadDemoVersions(
+                    product,
+                    WebUi.Models.AppCulture.CurrentCulture.CultureId);
 
                 return View(product);
             }

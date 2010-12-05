@@ -18,6 +18,8 @@ namespace DomainModel.Entities
             this.ProductTechnologies = new List<ProductTechnology>();
             this.Catalog = new ProductCatalog();
             this.Article = new ProductArticle();
+            this.Demo = new ProductDemoCollection();
+            this.Forum = new Forum();
         }
 
 
@@ -38,5 +40,7 @@ namespace DomainModel.Entities
         public ProductCatalog           Catalog { get; private set; }
         public int                      ArticleLanguage { get; set; }
         public ProductArticle           Article { get; set; }
+        public ProductDemoCollection    Demo { get; set; }
+        public Forum                    Forum { get; set; }
     }
 }

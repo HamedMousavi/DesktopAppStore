@@ -38,8 +38,8 @@ namespace DomainModel.Repository.Memory
             this.SortOptions.Add(3, "product_list_sort_release");
             this.SortOptions.Add(4, "product_list_sort_release_desc");
             this.SortOptions.Add(5, "product_list_sort_popularity");
-            this.SortOptions.Add(6, "product_list_sort_features");
-            this.SortOptions.Add(7, "product_list_editor_rating");
+            //this.SortOptions.Add(6, "product_list_sort_features");
+            //this.SortOptions.Add(7, "product_list_editor_rating");
             this.SortOptions.Add(8, "product_list_user_rating");
         }
     }

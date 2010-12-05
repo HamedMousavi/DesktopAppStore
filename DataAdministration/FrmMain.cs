@@ -11,8 +11,27 @@ namespace DataAdministration
 {
     public partial class FrmMain : Form
     {
+        private static System.Diagnostics.Stopwatch perfTimer = new System.Diagnostics.Stopwatch();
+        private static Int64 startTime = DateTime.UtcNow.Ticks - new DateTime(2010, 01, 01).Ticks;
+
         public FrmMain()
         {
+            /*
+            //Int64 userId = 123;
+            //byte[] uid = BitConverter.GetBytes(userId);
+
+            perfTimer.Start();
+
+            //long t = DateTime.UtcNow.Ticks - new DateTime(1900, 01, 01).Ticks;
+            //byte[] uid = BitConverter.GetBytes(t);
+            //System.Diagnostics.Debug.WriteLine(BitConverter.ToString(uid));
+
+            for (int i = 0; i < 50; i++)
+            {
+                byte[] binDate = BitConverter.GetBytes(startTime + perfTimer.ElapsedTicks);
+
+                System.Diagnostics.Debug.WriteLine(BitConverter.ToString(binDate));
+            }*/
             InitializeComponent();
         }
 

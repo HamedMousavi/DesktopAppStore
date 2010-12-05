@@ -108,13 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\awards_logo.png" />
-    <Content Include="Content\Images\Stars\000.png" />
-    <Content Include="Content\Images\Stars\025.png" />
-    <Content Include="Content\Images\Stars\050.png" />
-    <Content Include="Content\Images\Stars\075.png" />
-    <Content Include="Content\Images\Stars\100.png" />
+    <Content Include="Content\Images\download.gif" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\logo.gif" />
     <Content Include="Content\Images\tickmark.jpg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\SarvSoft.js" />
     <Content Include="Views\Errors\Exception.aspx" />
     <Content Include="Views\Errors\NotFound.aspx" />
     <Content Include="Views\Members\Logon.aspx" />
@@ -123,6 +122,7 @@
     <Content Include="Views\Navigation\ProductCategories.ascx" />
     <Content Include="Views\Products\Catalog.aspx" />
     <Content Include="Views\Products\List.aspx" />
+    <Content Include="Views\Products\ProductDemoBar.ascx" />
     <Content Include="Views\Products\ProductRating.ascx" />
     <Content Include="Views\Products\ProductVotingBar.ascx" />
     <Content Include="Views\Products\Screenshots.aspx" />
@@ -154,24 +154,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\Images\Stars\ltr\" />
+    <Folder Include="Content\Images\Stars\rtl\" />
     <Folder Include="Content\Owners\" />
     <Folder Include="Content\Products\Common\" />
+    <Folder Include="Content\Products\Repository\Yaas\DemoVersions\common\" />
+    <Folder Include="Content\Products\Repository\Yaas\DemoVersions\fa-IR\" />
     <Folder Include="Content\Products\Repository\Yaas\Screenshots\Thumbnails\" />
     <Folder Include="Content\SoftwareSchool\TrueCrypt\Screenshots\" />
     <Folder Include="Content\Weblog\Intro\Images\" />

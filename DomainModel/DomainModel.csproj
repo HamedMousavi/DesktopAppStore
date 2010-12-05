@@ -59,12 +59,16 @@
     <Compile Include="Entities\CategoryParentCollection.cs" />
     <Compile Include="Entities\ContactMediaType.cs" />
     <Compile Include="Entities\ContactUnit.cs" />
-    <Compile Include="Entities\GeneralDatabaseList.cs" />
+    <Compile Include="Entities\Discussion.cs" />
+    <Compile Include="Entities\DiscussionMessage.cs" />
+    <Compile Include="Entities\Forum.cs" />
     <Compile Include="Entities\ImageThumbnail.cs" />
     <Compile Include="Entities\OwnerBranch.cs" />
     <Compile Include="Entities\Picture.cs" />
     <Compile Include="Entities\ProductArticle.cs" />
     <Compile Include="Entities\ProductBrand.cs" />
+    <Compile Include="Entities\ProductDemo.cs" />
+    <Compile Include="Entities\ProductDemoCollection.cs" />
     <Compile Include="Entities\ProductImage.cs" />
     <Compile Include="Entities\ProductLanguageCollection.cs" />
     <Compile Include="Entities\ProductCatalog.cs" />
@@ -97,6 +101,7 @@
     <Compile Include="Errors\Handler.cs" />
     <Compile Include="Errors\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Disk\ByDateFileComparer.cs" />
     <Compile Include="Repository\Disk\Catalog.cs" />
     <Compile Include="Repository\Disk\Configurations.cs" />
     <Compile Include="Repository\Disk\Errors.cs" />
@@ -109,6 +114,7 @@
     <Compile Include="Repository\Sql\Catalog.cs" />
     <Compile Include="Repository\Sql\Categories.cs" />
     <Compile Include="Repository\Sql\Configurations.cs" />
+    <Compile Include="Repository\Sql\Discussions.cs" />
     <Compile Include="Repository\Sql\Errors.cs" />
     <Compile Include="Repository\Sql\Languages.cs" />
     <Compile Include="Repository\Sql\ProductRatings.cs" />

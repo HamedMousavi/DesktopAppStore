@@ -331,6 +331,7 @@ a:hover
 
 .accordion_dropdown
 {
+    border: 1px solid #8FBA2B;
 }
 
 
@@ -619,7 +620,8 @@ a:hover
 
 #product_overview dl
 {
-    margin: 4px 0px 0px 0px;
+    margin: 0;
+    padding: 0px 4px 0px 4px;
     list-style-image:none;
     list-style-type:none;
     list-style-position: inside;
@@ -1117,8 +1119,21 @@ input#search_term
     background-color: #FFF6E0;
     border: 1px solid #FFD000;
     padding: 4px;
-    margin: 2px 2px 8px 2px;
+    margin: 0px 0px 10px 0px;
 }
+
+
+.product_demo
+{
+    margin: 0px 0px 10px 0px;
+}
+
+
+.product_demo p
+{
+    margin: 0px 4px 2px 4px;
+}
+
 /*<!--     
 #CC6600
 

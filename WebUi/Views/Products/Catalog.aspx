@@ -25,7 +25,7 @@
             <span><a href="<%: Request.Url.AbsoluteUri %>?print=1"><%: UiResources.UiTexts.print%></a> </span>
         </div>
 
-        <table width="100%">
+        <table width="100%" cellpadding="4px" cellspacing="0px" border="0">
             <tbody>
             <tr>
                 <td>
@@ -36,6 +36,7 @@
                 <td style="width:100%; vertical-align:top;">
                     <div id="overview">
                         <% Html.RenderPartial("ProductVotingBar"); %>
+                        <% Html.RenderPartial("ProductDemoBar"); %>
 
                         <div id="product_overview">
                             <div class="overview_title"><%:UiResources.UiTexts.overview %></div>

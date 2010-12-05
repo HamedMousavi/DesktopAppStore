@@ -214,10 +214,10 @@
     <value>نام محصول</value>
   </data>
   <data name="product_price" xml:space="preserve">
-    <value>قیمت نرم افزار</value>
+    <value>قیمت</value>
   </data>
   <data name="product_release_date" xml:space="preserve">
-    <value>تاریخ عرضه نرم افزار</value>
+    <value>تاریخ عرضه</value>
   </data>
   <data name="product_version" xml:space="preserve">
     <value>نسخه</value>
@@ -448,7 +448,7 @@
     <value>ابتدا ی</value>
   </data>
   <data name="product_list_sort_popularity" xml:space="preserve">
-    <value>ابتدا محبوبترها</value>
+    <value>ابتدا پربیننده‌ ترها</value>
   </data>
   <data name="product_list_sort_price" xml:space="preserve">
     <value>ابتدا ارزانترها</value>
@@ -460,7 +460,7 @@
     <value>ابتدا قدیمیها</value>
   </data>
   <data name="product_list_sort_release_desc" xml:space="preserve">
-    <value>ابتدا جدیدترینها</value>
+    <value>ابتدا جدیدترها</value>
   </data>
   <data name="product_list_user_rating" xml:space="preserve">
     <value>امتیاز کاربران</value>
@@ -484,7 +484,7 @@
     <value>در یک نگاه</value>
   </data>
   <data name="login_to_vote" xml:space="preserve">
-    <value>جهت امتیاز دادن به این نرم افزار باید عضو وب سایت شده، سپس وارد سیستم شوید</value>
+    <value>جهت امتیاز دادن به این نرم افزار باید عضو وب سایت بوده، سپس وارد سیستم شوید. بخش ورود اعضا در ستون سمت چپ سایت قرار دارد.</value>
   </data>
   <data name="vote" xml:space="preserve">
     <value>ثبت امتیاز من</value>
@@ -497,5 +497,20 @@
   </data>
   <data name="your_vote" xml:space="preserve">
     <value>شما قبلا به این محصول امتیاز {0} از 5 داده اید.</value>
+  </data>
+  <data name="download_common_demo" xml:space="preserve">
+    <value>دریافت نسخه نمایشی (برای کلیه زبانها)</value>
+  </data>
+  <data name="download_local_demo" xml:space="preserve">
+    <value>دریافت نسخه نمایشی (زبان {0})</value>
+  </data>
+  <data name="login_to_download_demo" xml:space="preserve">
+    <value>برای دریافت نسخه نمایشی این نرم افزار باید عضو سایت بوده، سپس وارد سیستم شوید. بخش ورود اعضا در ستون سمت چپ سایت قرار دارد.</value>
+  </data>
+  <data name="no_demo_available" xml:space="preserve">
+    <value>این نرم افزار نسخه نمایشی به سروسافت ارائه نداده است.</value>
+  </data>
+  <data name="file_size" xml:space="preserve">
+    <value>حجم فایل</value>
   </data>
 </root>

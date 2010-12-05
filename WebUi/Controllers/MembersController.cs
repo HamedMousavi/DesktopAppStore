@@ -184,7 +184,8 @@ namespace WebUi.Controllers
             DomainModel.Repository.Sql.ProductRatings.Insert(
                 votingInf.UserName,
                 votingInf.ProductId,
-                voteVal
+                voteVal,
+                Models.Security.UserIp
                 );
 
             return Redirect(votingInf.ReturnUrl);

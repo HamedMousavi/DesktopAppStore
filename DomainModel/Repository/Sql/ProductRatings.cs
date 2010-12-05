@@ -9,7 +9,7 @@ namespace DomainModel.Repository.Sql
     public class ProductRatings
     {
 
-        public static bool Insert(long? UserName, long? ProductId, short? VoteValue)
+        public static bool Insert(long? UserName, long? ProductId, short? VoteValue, string userIp)
         {
             bool res = false;
 
@@ -24,6 +24,7 @@ namespace DomainModel.Repository.Sql
                     cmd.Parameters.Add(new SqlParameter("@UserId", UserName.Value));
                     cmd.Parameters.Add(new SqlParameter("@Rating", VoteValue.Value));
                     cmd.Parameters.Add(new SqlParameter("@InsertTime", DateTime.UtcNow));
+                    cmd.Parameters.Add(new SqlParameter("@UserIp", userIp));
 
                     foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
 

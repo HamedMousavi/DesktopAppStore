@@ -160,6 +160,24 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download demo(All Available languages).
+        /// </summary>
+        public static string download_common_demo {
+            get {
+                return ResourceManager.GetString("download_common_demo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download demo (Selected language).
+        /// </summary>
+        public static string download_local_demo {
+            get {
+                return ResourceManager.GetString("download_local_demo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email address.
         /// </summary>
         public static string email_address {
@@ -264,6 +282,15 @@ namespace UiResources {
         public static string featured_products {
             get {
                 return ResourceManager.GetString("featured_products", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File size: .
+        /// </summary>
+        public static string file_size {
+            get {
+                return ResourceManager.GetString("file_size", resourceCulture);
             }
         }
         
@@ -376,6 +403,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You need to be a member of the site and log in to site to download demos.
+        /// </summary>
+        public static string login_to_download_demo {
+            get {
+                return ResourceManager.GetString("login_to_download_demo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In order to vote for this product you need to be logged in to the system.
         /// </summary>
         public static string login_to_vote {
@@ -417,6 +453,15 @@ namespace UiResources {
         public static string more_images {
             get {
                 return ResourceManager.GetString("more_images", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This product does not have a demo available to download.
+        /// </summary>
+        public static string no_demo_available {
+            get {
+                return ResourceManager.GetString("no_demo_available", resourceCulture);
             }
         }
         
