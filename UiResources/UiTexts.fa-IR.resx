@@ -513,4 +513,19 @@
   <data name="file_size" xml:space="preserve">
     <value>حجم فایل</value>
   </data>
+  <data name="login_to_manage_comments" xml:space="preserve">
+    <value>جهت ارسال پیام یا پاسخ به پیامهای دیگران، باید عضو سایت بوده، سپس وارد سیستم شوید. بخش ورود اعضا در ستون سمت چپ سایت قرار دارد.</value>
+  </data>
+  <data name="reply" xml:space="preserve">
+    <value>پاسخ دادن</value>
+  </data>
+  <data name="edit_message" xml:space="preserve">
+    <value>ویرایش پیام</value>
+  </data>
+  <data name="report_abuse" xml:space="preserve">
+    <value>پیام نامناسب است</value>
+  </data>
+  <data name="delete_message" xml:space="preserve">
+    <value>حذف پیام</value>
+  </data>
 </root>

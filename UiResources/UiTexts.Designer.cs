@@ -151,6 +151,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete message.
+        /// </summary>
+        public static string delete_message {
+            get {
+                return ResourceManager.GetString("delete_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discuss.
         /// </summary>
         public static string discuss {
@@ -174,6 +183,15 @@ namespace UiResources {
         public static string download_local_demo {
             get {
                 return ResourceManager.GetString("download_local_demo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string edit_message {
+            get {
+                return ResourceManager.GetString("edit_message", resourceCulture);
             }
         }
         
@@ -408,6 +426,15 @@ namespace UiResources {
         public static string login_to_download_demo {
             get {
                 return ResourceManager.GetString("login_to_download_demo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to be a member of the site and log in to site to post a message or edit your messages..
+        /// </summary>
+        public static string login_to_manage_comments {
+            get {
+                return ResourceManager.GetString("login_to_manage_comments", resourceCulture);
             }
         }
         
@@ -1029,6 +1056,24 @@ namespace UiResources {
         public static string remember_me {
             get {
                 return ResourceManager.GetString("remember_me", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reply.
+        /// </summary>
+        public static string reply {
+            get {
+                return ResourceManager.GetString("reply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report to remove this mesage.
+        /// </summary>
+        public static string report_abuse {
+            get {
+                return ResourceManager.GetString("report_abuse", resourceCulture);
             }
         }
         

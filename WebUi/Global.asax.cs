@@ -27,14 +27,16 @@ namespace WebUi
                 }
             );
 
-            // /Products/Yaas
+            // /Products/Sarv/Discussions/1/1
             routes.MapRoute(null,
-                "Products/{productName}",
+                "Products/{productName}/Discussions/{action}/{discussion}/{message}",
                 new
                 {
-                    controller = WebUi.ViewModels.NavigationKeys.ProductController,
-                    action = WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
-                    productName = (string)null
+                    controller = WebUi.ViewModels.NavigationKeys.DiscussionsController,
+                    action = WebUi.ViewModels.NavigationKeys.IndexAction,
+                    productName = (string)null,
+                    discussion = (Int32?)null,
+                    message = (Int32?)null
                 }
             );
 
@@ -57,6 +59,17 @@ namespace WebUi
                 {
                     controller = WebUi.ViewModels.NavigationKeys.ProductController,
                     action = WebUi.ViewModels.NavigationKeys.ProductAwardsAction,
+                    productName = (string)null
+                }
+            );
+
+            // /Products/Yaas
+            routes.MapRoute(null,
+                "Products/{productName}",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.ProductController,
+                    action = WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
                     productName = (string)null
                 }
             );

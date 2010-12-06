@@ -70,7 +70,8 @@
         </div>
 
         <div id="footer" style="clear:both;">
-            <p> <%: UiResources.UiTexts.welcome %> </p>
+            <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
 
     </div>

@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CultureController.cs" />
+    <Compile Include="Controllers\DiscussionsController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\WeblogController.cs" />
     <Compile Include="HtmlHelpers\CatalogHelpers.cs" />
+    <Compile Include="HtmlHelpers\ForumHelpers.cs" />
     <Compile Include="HtmlHelpers\ListingHelpers.cs" />
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Models\ChromeAgentConst.cs" />
@@ -114,6 +116,7 @@
     <Content Include="Content\Images\tickmark.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\SarvSoft.js" />
+    <Content Include="Views\Discussions\Index.aspx" />
     <Content Include="Views\Errors\Exception.aspx" />
     <Content Include="Views\Errors\NotFound.aspx" />
     <Content Include="Views\Members\Logon.aspx" />
@@ -134,6 +137,7 @@
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\FeaturedBlogEntries.ascx" />
     <Content Include="Views\Shared\FeaturedProducts.ascx" />
+    <Content Include="Views\Shared\Forum.ascx" />
     <Content Include="Views\Shared\LogonForm.ascx" />
     <Content Include="Views\Shared\LogonViewer.ascx" />
     <Content Include="Views\Shared\MemberToolbox.ascx" />
@@ -158,6 +162,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\Forums\Images\" />
     <Folder Include="Content\Images\Stars\ltr\" />
     <Folder Include="Content\Images\Stars\rtl\" />
     <Folder Include="Content\Owners\" />

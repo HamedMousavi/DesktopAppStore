@@ -133,7 +133,7 @@ legend, fieldset legend
 .form
 {
     line-height:1.9em;
-    background-color:#FAFAF3;
+    background-color:#FAFBFF;
     
     border: 2px dotted #BFBAB0;
     
@@ -1134,7 +1134,148 @@ input#search_term
     margin: 0px 4px 2px 4px;
 }
 
-/*<!--     
+
+.forum
+{
+    line-height: 1.5em;
+    background-color: #FFFEF8;
+    border: 1px solid #6090C0;
+    padding: 0;
+    margin: 10px;
+    clear: both;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+.forum_title
+{
+    color: #FFFFFF;
+    background-color: #6090C0;
+    font-weight: bold;
+    padding: 6px;
+}
+
+
+.forum_body
+{
+}
+
+
+.forum_discussion
+{
+    border-top: 1px solid #6090C0;
+    padding: 2px;
+    clear: both;
+}
+
+
+.forum_message
+{
+    padding-top: 2px;
+    clear: both;
+}
+
+
+.forum_message_subject_normal
+{
+    background-color: #FCF9E8;
+    border-bottom: 1px dotted #E0A000;
+    
+    font-weight: bold;
+    padding: 3px;
+   
+    display: block;
+    cursor: pointer;
+}
+
+
+.forum_message_subject_selected
+{
+    background-color: #95C0F0;
+    border-bottom: 1px solid #80B0E0;
+    
+    font-weight: bold;
+    padding: 3px;
+   
+    display: block;
+    cursor: pointer;
+}
+
+
+.forum_message_body
+{
+    /*background-color: #FFFAF0;*/
+    background-color: #F9FAFF;
+    padding: 2px 14px 2px 14px;
+}
+
+
+.forum_message_time
+{
+    width:280px; 
+    overflow:hidden;
+    font-weight: normal;
+}
+
+
+.forum_message_caption
+{
+    width: 48%; 
+    overflow:hidden;
+}
+
+
+.forum_message_user
+{
+    width:100px; 
+    overflow:hidden;
+}
+
+
+.message_control_panel
+{
+    border-top: 1px dashed #80B0E0;
+    margin: 20px 0px 0px 0px;
+    padding-bottom: 10px;
+}
+
+
+.message_control_panel ul
+{
+	list-style-image: none;
+	list-style-type: none;
+    padding: 2px;
+	margin:0;
+}
+
+
+.message_control_panel ul li
+{
+    display: inline-block;
+    margin: 10px 4px 0px 4px;
+    padding: 1px 4px 1px 4px;
+    border: 1px solid #FFA000;
+    background-color: #FFF0D0;
+}
+
+/*<!-- 
+
+    
+    background-color: #E5EFFA;
+    border-bottom: 1px solid #E0E8FA;
+    background-color: #F9FAFF;
+
+.forum_message_inf_separator 
+{
+    padding: 0px 15px 0px 15px;
+    margin: 0;
+    color: #FFA000;
+    font-weight: bold;
+}
+
 #CC6600
 
     white-space: nowrap;

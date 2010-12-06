@@ -153,9 +153,7 @@
         </div>
     </div>
 
-
     <!-- Owner data & logo-->
-    <!-- Discussions -->
 
 </asp:Content>
 
@@ -171,4 +169,11 @@
         </ul>
     </div>
 
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="FooterContent" runat="server">
+<div style="background-color: #FFFFFF;">
+    <!-- Discussions -->
+    <%Html.RenderPartial("Forum", Model.Forum); %>
+</div>
 </asp:Content>

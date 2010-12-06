@@ -32,10 +32,11 @@ namespace DomainModel.Tools.DateTime
                     " " +
                     calendar.PersianMonth +
                     " " +
-                    calendar.PersianYear;
+                    calendar.PersianYear +
+                    time.Value.ToString("  h:mm:tt");
             }
 
-            return time.Value.ToString("D", new CultureInfo(destinationCultureId));
+            return time.Value.ToString("dddd, dd MMMM yyyy 	h:mm tt", new CultureInfo(destinationCultureId));
         }
     }
 }

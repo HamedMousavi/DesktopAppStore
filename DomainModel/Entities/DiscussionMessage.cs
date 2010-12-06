@@ -10,6 +10,7 @@ namespace DomainModel.Entities
         public Int32? Id { get; set; }
         public Int16? Visibility { get; set; }
         public Int16? IsAbuse { get; set; }
+        public DomainModel.Repository.Memory.Forums.MessageTypes Type { get; set; }
         public DateTime? InsertTime { get; set; }
         public DateTime? UpdateTime { get; set; }
 
@@ -22,6 +23,7 @@ namespace DomainModel.Entities
         public bool IsParent { get; set; }
 
         public DiscussionMessage Parent { get; set; }
+        public Discussion   Discussion { get; set; }
         public List<DiscussionMessage> Replies { get; set; }
 
 

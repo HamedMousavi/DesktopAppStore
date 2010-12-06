@@ -33,6 +33,7 @@ namespace DomainModel.Repository.Sql
 		                cmd.Parameters.Add(new SqlParameter("@MessageSubject", message.Subject ));
 		                cmd.Parameters.Add(new SqlParameter("@MessageBody", message.Body ));
                         cmd.Parameters.Add(new SqlParameter("@UrlName", forum.UrlName));
+                        cmd.Parameters.Add(new SqlParameter("@MessageType", message.Type));
 
                         foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
 
@@ -140,7 +141,7 @@ namespace DomainModel.Repository.Sql
                                 // If discussion not found, create and add it
                                 if (discussion == null)
                                 {
-                                    discussion = new Discussion(discussionId);
+                                    discussion = new Discussion(discussionId, product.Forum);
                                     product.Forum.Add(discussion);
 
                                     if (messageId == discussionId)
@@ -163,6 +164,7 @@ namespace DomainModel.Repository.Sql
                                     message = new DiscussionMessage();
 
                                     discussion.Replies.Add(message);
+                                    message.Parent = discussion;
                                 }
                                 else if (parentId > 0)// A new message
                                 {
@@ -178,8 +180,10 @@ namespace DomainModel.Repository.Sql
                                     if (parent == null) parent = discussion;
 
                                     parent.Replies.Add(message);
+                                    message.Parent = parent;
                                 }
 
+                                message.Discussion = discussion;
                                 // At this point message must be at the right position
                                 // Try load it's data.
 
@@ -187,6 +191,7 @@ namespace DomainModel.Repository.Sql
                                 message.Id = messageId;
                                 message.Visibility = Repository.Utils.Convert.ToInt16(reader["Visibility"]);
                                 message.IsAbuse = Repository.Utils.Convert.ToInt16(reader["IsAbuse"]);
+                                message.Type = (Repository.Memory.Forums.MessageTypes)Repository.Utils.Convert.ToInt16(reader["MessageType"]);
                                 message.InsertTime = Repository.Utils.Convert.ToDateTime(reader["InsertTime"]);
                                 message.UpdateTime = Repository.Utils.Convert.ToDateTime(reader["UpdateTime"]);
                                 message.UserId = Repository.Utils.Convert.ToInt64(reader["UserId"]);

@@ -94,6 +94,9 @@ namespace DomainModel.Repository.Sql
         public bool CreateUser(string Email, string Password)
         {
             bool bRes = false;
+
+            string username = Email.Substring(0, Email.IndexOf("@"));
+
             string query =
                 "DECLARE @UserId BIGINT " +
                 "DECLARE @RES BIT " +
@@ -121,7 +124,7 @@ namespace DomainModel.Repository.Sql
                 using (SqlCommand cmd = new SqlCommand(query, cnn))
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.Add(new SqlParameter("@UserName", Email));
+                    cmd.Parameters.Add(new SqlParameter("@UserName", username));
                     cmd.Parameters.Add(new SqlParameter("@EmailAddress", Email));
                     cmd.Parameters.Add(new SqlParameter("@MembershipDate", DateTime.UtcNow));
                     cmd.Parameters.Add(new SqlParameter("@Password", Password));

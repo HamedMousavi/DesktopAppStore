@@ -7,10 +7,13 @@ namespace DomainModel.Entities
 {
     public class Discussion : DiscussionMessage
     {
-        public Discussion(Int32 discussionId)
+        public Forum forum { get; set; }
+
+        public Discussion(int discussionId, Forum forum)
         {
             this.IsParent = true;
             this.Id = discussionId;
+            this.forum = forum;
         }
     }
 }

@@ -513,4 +513,19 @@
   <data name="file_size" xml:space="preserve">
     <value>File size: </value>
   </data>
+  <data name="login_to_manage_comments" xml:space="preserve">
+    <value>You need to be a member of the site and log in to site to post a message or edit your messages.</value>
+  </data>
+  <data name="reply" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+  <data name="edit_message" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="report_abuse" xml:space="preserve">
+    <value>Report to remove this mesage</value>
+  </data>
+  <data name="delete_message" xml:space="preserve">
+    <value>Delete message</value>
+  </data>
 </root>
