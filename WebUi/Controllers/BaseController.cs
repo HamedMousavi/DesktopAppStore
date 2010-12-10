@@ -63,9 +63,10 @@ namespace WebUi.Controllers
                     "",
                     filterContext.Exception);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // UNDONE:
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
         }
 

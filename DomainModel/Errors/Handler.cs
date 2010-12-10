@@ -32,9 +32,10 @@ namespace DomainModel.Errors
                     );
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // No more error handling
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
 
             lock (instLock)
@@ -53,9 +54,10 @@ namespace DomainModel.Errors
                 // Most probably a critical error
                 DomainModel.Errors.Logger.LogException(ex);
             }
-            catch (Exception)
+            catch (Exception ex2)
             {
                 // No more error handling
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex2));
             }
         }
 

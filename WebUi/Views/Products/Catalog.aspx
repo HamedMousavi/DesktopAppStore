@@ -20,9 +20,11 @@
             <span><%: UiResources.UiTexts.views %></span>:
             <span><b><%: (Model.Catalog.ViewsCount == null) ? "0" : Model.Catalog.ViewsCount.Value.ToString() %></b></span>
             <span class="pager_inf_separator">|</span>
-            <span><a href="<%: Request.Url.AbsoluteUri %>#discuss"><%: UiResources.UiTexts.discuss%></a> </span>
+            <span><a href="<%: Request.Url.AbsoluteUri %>#discuss"><%: UiResources.UiTexts.discuss%><%:string.Format("({0})", Model.Forum.TotalMessageCount)%></a> </span>
+            <!-- /*
             <span class="pager_inf_separator">|</span>
             <span><a href="<%: Request.Url.AbsoluteUri %>?print=1"><%: UiResources.UiTexts.print%></a> </span>
+            */-->
         </div>
 
         <table width="100%" cellpadding="4px" cellspacing="0px" border="0">

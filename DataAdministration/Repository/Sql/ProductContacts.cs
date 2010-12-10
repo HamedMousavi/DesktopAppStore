@@ -61,9 +61,10 @@ namespace DataAdministration.Repository.Sql
                         if (ok) transaction.Commit();
                         else transaction.Rollback();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         transaction.Rollback();
+                        System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
                     }
 
                     cnn.Close();
@@ -177,9 +178,10 @@ namespace DataAdministration.Repository.Sql
                         if (ok) transaction.Commit();
                         else transaction.Rollback();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         transaction.Rollback();
+                        System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
                     }
 
                     cnn.Close();

@@ -106,6 +106,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You cannot edit a message that you didn&apos;t create.
+        /// </summary>
+        public static string cant_edit_somone_else_message {
+            get {
+                return ResourceManager.GetString("cant_edit_somone_else_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ,.
         /// </summary>
         public static string comma {
@@ -466,6 +475,87 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Body.
+        /// </summary>
+        public static string message_body {
+            get {
+                return ResourceManager.GetString("message_body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message Details.
+        /// </summary>
+        public static string message_details {
+            get {
+                return ResourceManager.GetString("message_details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In response to this message: .
+        /// </summary>
+        public static string message_original {
+            get {
+                return ResourceManager.GetString("message_original", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send message.
+        /// </summary>
+        public static string message_send {
+            get {
+                return ResourceManager.GetString("message_send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subject.
+        /// </summary>
+        public static string message_subject {
+            get {
+                return ResourceManager.GetString("message_subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Answer.
+        /// </summary>
+        public static string message_type_answer {
+            get {
+                return ResourceManager.GetString("message_type_answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string message_type_general {
+            get {
+                return ResourceManager.GetString("message_type_general", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Joke.
+        /// </summary>
+        public static string message_type_joke {
+            get {
+                return ResourceManager.GetString("message_type_joke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string message_type_question {
+            get {
+                return ResourceManager.GetString("message_type_question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to See more details of this product.
         /// </summary>
         public static string more_details {
@@ -480,6 +570,15 @@ namespace UiResources {
         public static string more_images {
             get {
                 return ResourceManager.GetString("more_images", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discuss this product.
+        /// </summary>
+        public static string new_discussion {
+            get {
+                return ResourceManager.GetString("new_discussion", resourceCulture);
             }
         }
         
@@ -1155,6 +1254,15 @@ namespace UiResources {
         public static string title_catalog {
             get {
                 return ResourceManager.GetString("title_catalog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit message.
+        /// </summary>
+        public static string title_discussion_edit {
+            get {
+                return ResourceManager.GetString("title_discussion_edit", resourceCulture);
             }
         }
         

@@ -27,9 +27,10 @@ namespace DomainModel.Errors
                     Repository.Disk.Errors.Insert(userName, culture, remoteIp, url, exception.ToString());
                     Repository.Disk.Errors.Insert(userName, culture, remoteIp, url, ex.ToString());
                 }
-                catch (Exception)
+                catch (Exception ex2)
                 {
                     // WHAT NOW?
+                    System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex2));
                 }
             }
         }

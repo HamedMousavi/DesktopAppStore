@@ -30,6 +30,7 @@ namespace DomainModel.Entities
         public DiscussionMessage()
         {
             this.Parent = null;
+            this.Discussion = null;
             this.Replies = new List<DiscussionMessage>();
         }
 

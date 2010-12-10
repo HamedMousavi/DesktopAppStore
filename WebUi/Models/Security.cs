@@ -15,14 +15,16 @@ namespace WebUi.Models
 
                 try
                 {
-                    if (HttpContext.Current.Request.IsAuthenticated &&
-                        !string.IsNullOrWhiteSpace(HttpContext.Current.User.Identity.Name))
+                    if (HttpContext.Current.Request.IsAuthenticated)
                     {
-                        userId = Convert.ToInt64(HttpContext.Current.User.Identity.Name);
+                        DomainModel.Security.SarvsoftUser user =
+                            HttpContext.Current.User as DomainModel.Security.SarvsoftUser;
+                        if (user != null && user.Id > 0) userId = user.Id;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
                 }
 
                 return userId;
@@ -46,7 +48,10 @@ namespace WebUi.Models
                     {
                         _ip = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
                     }
-                    catch (Exception) { }
+                    catch (Exception ex) 
+                    {
+                        System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
+                    }
 
                     // If there is no proxy, get the standard remote address
                     try
@@ -55,15 +60,19 @@ namespace WebUi.Models
                         _ip.ToLower() == "unknown")
                         _ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
                     }
-                    catch (Exception) { }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
+                    }
 
                     // Ask .net depareately
                     if (string.IsNullOrWhiteSpace(_ip) || 
                         _ip.ToLower() == "unknown")
                         _ip = HttpContext.Current.Request.UserHostAddress;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
                 }
 
                 if (_ip.Length > 255)

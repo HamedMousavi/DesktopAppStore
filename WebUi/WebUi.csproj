@@ -92,6 +92,7 @@
     <Compile Include="Models\DynamicResources.cs" />
     <Compile Include="Models\Security.cs" />
     <Compile Include="ViewModels\CurrentListItem.cs" />
+    <Compile Include="ViewModels\DiscussionInfo.cs" />
     <Compile Include="ViewModels\ListingInfo.cs" />
     <Compile Include="ViewModels\LoginInfo.cs" />
     <Compile Include="Models\Profiles.cs" />
@@ -116,6 +117,7 @@
     <Content Include="Content\Images\tickmark.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\SarvSoft.js" />
+    <Content Include="Views\Discussions\Edit.aspx" />
     <Content Include="Views\Discussions\Index.aspx" />
     <Content Include="Views\Errors\Exception.aspx" />
     <Content Include="Views\Errors\NotFound.aspx" />

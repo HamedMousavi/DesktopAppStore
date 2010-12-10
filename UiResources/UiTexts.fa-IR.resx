@@ -528,4 +528,40 @@
   <data name="delete_message" xml:space="preserve">
     <value>حذف پیام</value>
   </data>
+  <data name="new_discussion" xml:space="preserve">
+    <value>ارسال پیام (در مورد این نرم افزار)</value>
+  </data>
+  <data name="message_body" xml:space="preserve">
+    <value>متن پیام</value>
+  </data>
+  <data name="message_send" xml:space="preserve">
+    <value>ارسال پیام</value>
+  </data>
+  <data name="message_subject" xml:space="preserve">
+    <value>عنوان پیام</value>
+  </data>
+  <data name="message_details" xml:space="preserve">
+    <value>جزئیات پیام</value>
+  </data>
+  <data name="title_discussion_edit" xml:space="preserve">
+    <value>ویرایش پیام</value>
+  </data>
+  <data name="message_original" xml:space="preserve">
+    <value>در پاسخ به این پیام</value>
+  </data>
+  <data name="cant_edit_somone_else_message" xml:space="preserve">
+    <value>شما مجاز به تغییر پیامی که شما ننوشته اید نیستید. </value>
+  </data>
+  <data name="message_type_answer" xml:space="preserve">
+    <value>پاسخ</value>
+  </data>
+  <data name="message_type_general" xml:space="preserve">
+    <value>عادی</value>
+  </data>
+  <data name="message_type_joke" xml:space="preserve">
+    <value>طنز</value>
+  </data>
+  <data name="message_type_question" xml:space="preserve">
+    <value>سئوال</value>
+  </data>
 </root>

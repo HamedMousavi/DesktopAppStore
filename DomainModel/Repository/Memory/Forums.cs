@@ -10,7 +10,8 @@ namespace DomainModel.Repository.Memory
         {
             General = 0,
             Question = 1,
-            Answer = 2
+            Answer = 2,
+            Joke = 3
         }
     }
 }

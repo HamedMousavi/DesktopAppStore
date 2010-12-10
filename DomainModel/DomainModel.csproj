@@ -127,6 +127,8 @@
     <Compile Include="Repository\Utils\Convert.cs" />
     <Compile Include="Security\InputController.cs" />
     <Compile Include="Security\MembershipService.cs" />
+    <Compile Include="Security\SarvsoftUser.cs" />
+    <Compile Include="Security\SarvsoftUserIdentity.cs" />
     <Compile Include="Security\SimpleCrypt.cs" />
     <Compile Include="Security\SimplePasswordGenerator.cs" />
     <Compile Include="Security\UserMembershipProvider.cs" />

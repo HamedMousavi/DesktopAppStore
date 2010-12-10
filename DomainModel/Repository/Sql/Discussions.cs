@@ -9,70 +9,20 @@ namespace DomainModel.Repository.Sql
 {
     public class Discussions
     {
-        public static bool Insert(Forum forum, Discussion discussion, DiscussionMessage message)
-        {
-            bool res = false;
-
-            try
-            {
-                string query = "MessageInsert";
-
-                using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
-                {
-                    using (SqlCommand cmd = new SqlCommand(query, cnn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        cmd.Parameters.Add(new SqlParameter("@ForumId", forum.ForumId));
-                        cmd.Parameters.Add(new SqlParameter("@PageId", forum.PageId));
-                        cmd.Parameters.Add(new SqlParameter("@DiscussionId", discussion == null ? 0 : discussion.Id));
-                        cmd.Parameters.Add(new SqlParameter("@ParentId", message.Parent == null ? 0 : message.Parent.Id));
-		                cmd.Parameters.Add(new SqlParameter("@InsertTime", DateTime.UtcNow ));
-		                cmd.Parameters.Add(new SqlParameter("@UserId", message.UserId ));
-		                cmd.Parameters.Add(new SqlParameter("@UserIp", message.UserIp ));
-		                cmd.Parameters.Add(new SqlParameter("@MessageSubject", message.Subject ));
-		                cmd.Parameters.Add(new SqlParameter("@MessageBody", message.Body ));
-                        cmd.Parameters.Add(new SqlParameter("@UrlName", forum.UrlName));
-                        cmd.Parameters.Add(new SqlParameter("@MessageType", message.Type));
-
-                        foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
-
-                        cnn.Open();
-
-                        SqlDataReader reader = cmd.ExecuteReader();
-                        if (reader != null && reader.HasRows)
-                        {
-                            if (reader.Read())
-                            {
-                                message.Id = Repository.Utils.Convert.ToInt32(reader["MessageId"]);
-                                if (message.Id > 0)
-                                {
-                                    res = true;
-                                }
-                                // If MessageId <= 0 ERROR
-                            }
-                        }
-
-                        cnn.Close();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-            }
-
-            return res;
-        }
-
-
         public static bool LoadProductDiscussions(ProductBase product, int startRow, int endRow)
         {
             bool res = false;
 
             try
             {
-                string query = "MessagesList";
+                // Initiate product forum
+                // For all products discussions ForumId = 0
+                product.Forum.ForumId = 0;
+                product.Forum.UrlName = product.Catalog.UrlName;
+                if (product.ProductId != null && product.ProductId.HasValue)
+                    product.Forum.PageId = product.ProductId.Value;
 
+                string query = "MessagesList";
                 using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand(query, cnn))
@@ -97,13 +47,6 @@ namespace DomainModel.Repository.Sql
                         SqlDataReader reader = cmd.ExecuteReader();
                         if (reader != null && reader.HasRows)
                         {
-                            // Initiate product forum
-                            // For all products discussions ForumId = 0
-                            product.Forum.ForumId = 0;
-                            product.Forum.UrlName = product.Catalog.UrlName;
-                            if (product.ProductId != null && product.ProductId.HasValue)
-                                product.Forum.PageId = product.ProductId.Value;
-
                             // Every message belongs to a discussion in a forum
                             Discussion discussion = null;
                             DiscussionMessage message = null;
@@ -215,6 +158,238 @@ namespace DomainModel.Repository.Sql
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
+            }
+
+            return res;
+        }
+
+
+        public static bool LoadMessageById(DiscussionMessage message)
+        {
+            bool res = false;
+
+            try
+            {
+                string query = "MessageGetById";
+                using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@MessageId", message.Id));
+
+                        cnn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader != null && reader.HasRows)
+                        {
+                            if (reader.Read())
+                            {
+                                // load message
+                                message.Visibility = Repository.Utils.Convert.ToInt16(reader["Visibility"]);
+                                message.IsAbuse = Repository.Utils.Convert.ToInt16(reader["IsAbuse"]);
+                                message.Type = (Repository.Memory.Forums.MessageTypes)Repository.Utils.Convert.ToInt16(reader["MessageType"]);
+                                message.InsertTime = Repository.Utils.Convert.ToDateTime(reader["InsertTime"]);
+                                message.UpdateTime = Repository.Utils.Convert.ToDateTime(reader["UpdateTime"]);
+                                message.UserId = Repository.Utils.Convert.ToInt64(reader["UserId"]);
+                                //message.UserName = Repository.Utils.Convert.ToString(reader["UserName"]);
+                                message.UserIp = Repository.Utils.Convert.ToString(reader["UserIp"]);
+                                message.Subject = Repository.Utils.Convert.ToString(reader["MessageSubject"]);
+                                message.Body = Repository.Utils.Convert.ToString(reader["MessageBody"]);
+                                
+                                message.Discussion.Id = Repository.Utils.Convert.ToInt32(reader["DiscussionId"]);
+                                message.Parent.Id = Repository.Utils.Convert.ToInt32(reader["ParentId"]);
+
+                                message.IsParent = (message.Discussion.Id == message.Id);
+                            }
+                        }
+
+                        cnn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
+            }
+
+            return res;
+        }
+
+
+        public static bool LoadMessageAndParent(DiscussionMessage message, DiscussionMessage parent)
+        {
+            bool res = false;
+
+            try
+            {
+                string query = "MessageGetWithParentById";
+                using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@MessageId", message.Id));
+
+                        cnn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader != null && reader.HasRows)
+                        {
+                            DiscussionMessage msg = message;
+                            while (reader.Read())
+                            {
+                                // load message
+                                msg.Visibility = Repository.Utils.Convert.ToInt16(reader["Visibility"]);
+                                msg.IsAbuse = Repository.Utils.Convert.ToInt16(reader["IsAbuse"]);
+                                msg.Type = (Repository.Memory.Forums.MessageTypes)Repository.Utils.Convert.ToInt16(reader["MessageType"]);
+                                msg.InsertTime = Repository.Utils.Convert.ToDateTime(reader["InsertTime"]);
+                                msg.UpdateTime = Repository.Utils.Convert.ToDateTime(reader["UpdateTime"]);
+                                msg.UserId = Repository.Utils.Convert.ToInt64(reader["UserId"]);
+                                //msg.UserName = Repository.Utils.Convert.ToString(reader["UserName"]);
+                                msg.UserIp = Repository.Utils.Convert.ToString(reader["UserIp"]);
+                                msg.Subject = Repository.Utils.Convert.ToString(reader["MessageSubject"]);
+                                msg.Body = Repository.Utils.Convert.ToString(reader["MessageBody"]);
+
+                                msg.Discussion.Id = Repository.Utils.Convert.ToInt32(reader["DiscussionId"]);
+                                msg.Parent.Id = Repository.Utils.Convert.ToInt32(reader["ParentId"]);
+
+                                msg.IsParent = (msg.Discussion.Id == msg.Id);
+
+                                // If message has parent, switch to load parent otherwise break
+                                if (msg == message)
+                                {
+                                    if (msg.IsParent) break;
+                                    else
+                                    {
+                                        msg = parent;
+                                        reader.NextResult();
+                                    }
+                                }
+                                else break;
+                            }
+                        }
+
+                        cnn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
+            }
+
+            return res;
+        }
+
+
+        public static bool Update(DiscussionMessage message)
+        {
+            bool res = false;
+
+            try
+            {
+                string query = "MessageUpdateById";
+
+                using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@MessageId", message.Id));
+                        cmd.Parameters.Add(new SqlParameter("@MessageType", message.Type));
+                        cmd.Parameters.Add(new SqlParameter("@UpdateTime", DateTime.UtcNow));
+                        cmd.Parameters.Add(new SqlParameter("@UserId", message.UserId));
+                        cmd.Parameters.Add(new SqlParameter("@UserIp", message.UserIp));
+                        cmd.Parameters.Add(new SqlParameter("@MessageSubject", message.Subject));
+                        cmd.Parameters.Add(new SqlParameter("@MessageBody", message.Body));
+
+                        foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+
+                        cnn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader != null && reader.HasRows)
+                        {
+                            if (reader.Read())
+                            {
+                                message.Id = Repository.Utils.Convert.ToInt32(reader["MessageId"]);
+                                if (message.Id > 0)
+                                {
+                                    res = true;
+                                }
+                                // If MessageId <= 0 ERROR
+                            }
+                        }
+
+                        cnn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
+            }
+
+            return res;
+        }
+
+
+        public static bool Insert(DiscussionMessage message)
+        {
+            bool res = false;
+
+            try
+            {
+                string query = "MessageInsert";
+
+                using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@ForumId", message.Discussion.Forum.ForumId));
+                        cmd.Parameters.Add(new SqlParameter("@PageId", message.Discussion.Forum.PageId));
+                        cmd.Parameters.Add(new SqlParameter("@DiscussionId", message.Discussion.Id));
+                        cmd.Parameters.Add(new SqlParameter("@ParentId", message.Parent.Id));
+                        cmd.Parameters.Add(new SqlParameter("@InsertTime", DateTime.UtcNow));
+                        cmd.Parameters.Add(new SqlParameter("@UserId", message.UserId));
+                        cmd.Parameters.Add(new SqlParameter("@UserIp", message.UserIp));
+                        cmd.Parameters.Add(new SqlParameter("@MessageSubject", message.Subject));
+                        cmd.Parameters.Add(new SqlParameter("@MessageBody", message.Body));
+                        cmd.Parameters.Add(new SqlParameter("@UrlName", message.Discussion.Forum.UrlName));
+                        cmd.Parameters.Add(new SqlParameter("@MessageType", message.Type));
+
+                        foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+
+                        cnn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader != null && reader.HasRows)
+                        {
+                            if (reader.Read())
+                            {
+                                message.Id = Repository.Utils.Convert.ToInt32(reader["MessageId"]);
+                                if (message.Id > 0)
+                                {
+                                    res = true;
+                                }
+                                // If MessageId <= 0 ERROR
+                            }
+                        }
+
+                        cnn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
             }
 
             return res;

@@ -11,7 +11,7 @@ namespace DomainModel.Entities
 
         public Int16 ForumId { get; set; }
         public Int64 PageId { get; set; }
-        public object UrlName { get; set; } // WHEN ForumId is NULL and forum is actually a discussion under an article
+        public string UrlName { get; set; } // WHEN ForumId is NULL and forum is actually a discussion under an article
 
 
         internal Discussion FindDiscussion(int discussionId)

@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-    line-height: 0;
+    line-height: normal;
     
     font-family: Tahoma, Verdana, Arial, Serif;
     font-size: 12px;
@@ -21,7 +21,6 @@
 
 h1, h2, h3, h4
 {
-    line-height: 1.5em;
     margin:0;
     padding:0;
 }
@@ -132,12 +131,9 @@ legend, fieldset legend
 
 .form
 {
-    line-height:1.9em;
     background-color:#FAFBFF;
     
     border: 2px dotted #BFBAB0;
-    
-    line-height:1.9em;
     
     margin: 0;
     padding: 8px 8px 8px 8px;
@@ -156,7 +152,7 @@ legend, fieldset legend
 
 
 
-.form a, input[type='submit']
+.form a, .forum_title a, input[type='submit']
 {
     color: White;
     background-color: #506090;
@@ -172,9 +168,8 @@ legend, fieldset legend
     cursor: pointer;
     vertical-align: middle;
     
-    line-height: normal;
-    padding: 4px 0px;
-    display: inline-block;
+    padding: 4px 4px;
+    display: block;
     white-space: nowrap;
 }
 
@@ -210,12 +205,13 @@ a:hover
     
     background-color: #123157;
     color: White;
+
+    line-height: 0;
 }
 
 
 .section_title
 {
-    line-height: 1em;
     color:#FFFFFF;
     background-color: #6090C0;
     font-weight:bold;
@@ -235,8 +231,6 @@ a:hover
     padding: 0px;
     margin: 0px;
     
-    line-height: 1em;
-    
     float: left;
 }
 
@@ -244,7 +238,6 @@ a:hover
 #culture_selector
 {
     float: right;
-    line-height: 1em;
     padding: 0;
     margin: 0;
     text-align: right;
@@ -253,7 +246,6 @@ a:hover
 
 #product_categories
 {
-    line-height: 1em;
     padding: 0px 2px 0px 2px;
     margin: 0;
 }
@@ -314,7 +306,6 @@ a:hover
 
 .accordion_list_title
 {
-    line-height: 1em;
     font-weight: bold;
     border-top: 1px solid #AFDA4B;
 }
@@ -392,7 +383,6 @@ a:hover
     margin: 0px;
     float: right;
     text-align: right;
-    line-height: 1.5em;
 }
 
 
@@ -404,7 +394,6 @@ a:hover
     margin-top: 10px;
     padding: 0;
 
-    line-height: 1em;
     text-align: right;
 }
 
@@ -417,11 +406,11 @@ a:hover
 
 .search_results_item
 {
+    line-height: 1.8em;
     display: block;
     border-bottom: 1px dotted #909090;
     padding: 10px 30px;
     margin: 0px;
-    line-height: 1.8em;
 }
 
 
@@ -473,7 +462,6 @@ a:hover
 
 .list_pager
 {
-    line-height: 1em;
     margin: 10px;
 }
 
@@ -501,6 +489,7 @@ a:hover
 
 #quick_access 
 {
+    line-height: normal;
     height: 75%;
 
     /*background-color: #1B4220;*/
@@ -522,21 +511,18 @@ a:hover
 
 #nav_menu
 {
-    line-height: 0;
     float: right;
 }
 
 
 #catalog
 {
-    line-height: 1.5em;
     background-color: White;
     padding: 0px 8px 0px 8px;
 }
 
 .title
 {
-    line-height: 1.5em;
     color: #E06000;
     font-family: B Nazanin, Arabic Transparent, Tahoma;
     font-size: 32pt;
@@ -625,6 +611,7 @@ a:hover
     list-style-image:none;
     list-style-type:none;
     list-style-position: inside;
+    line-height: 1.5em;
 }
 
 
@@ -648,7 +635,6 @@ a:hover
 
 #contacts tr
 {
-    line-height: 2em;
 }
 
 #conrtacts tr th
@@ -755,7 +741,6 @@ a:hover
 .screenshot_description
 {
     padding: 0;
-    line-height: 2em;
     vertical-align: middle;
 }
 
@@ -764,7 +749,6 @@ a:hover
 {
     font-size: 13pt;
     font-weight: bold;
-    line-height: 2em;
 }
 
 
@@ -772,7 +756,6 @@ a:hover
 {
     font-size: 11pt;
     font-weight: normal;
-    line-height: 2em;
 }
 
 
@@ -830,7 +813,6 @@ a:hover
     color: #D0D0D0;
     font-weight: bold;
     font-size: 8pt;
-    line-height: 2em;
     overflow: hidden;
     white-space: nowrap;
     vertical-align: middle;
@@ -873,7 +855,6 @@ a:hover
 
 #navigation_helper
 {
-    line-height: 2em;
     padding: 6px;
     margin-bottom:4px;
     
@@ -890,7 +871,6 @@ a:hover
 
 #error_message
 {
-    line-height: 2em;
     padding: 6px;
     background-color: #FFE0E0;
     border: 1px solid #FFA020;
@@ -920,7 +900,6 @@ input#search_term
 
 #messages
 {
-    line-height: 1.5em;
     clear: both;
     margin: 2px;
 }
@@ -966,13 +945,11 @@ input#search_term
 .message_item
 {
     clear: both;
-    line-height: 1.5em;
 }
 
 
 #featured_blog_entries
 {
-    line-height: 1.2em;
     padding: 0px 2px 0px 2px;
 }
 
@@ -1001,7 +978,6 @@ input#search_term
 
 #announcements
 {
-    line-height: 1em;
     padding: 0 2px;
     font-weight: bold;
 }
@@ -1032,12 +1008,11 @@ input#search_term
 #members_toolbox
 {
     padding: 0 2px;
-    line-height: 1.5em;
 }
 
 #members_toolbox a, #members_toolbox input[type='submit']
 {
-    width: 100%;
+    display: block;
     margin: 1px;
 }
 
@@ -1063,7 +1038,6 @@ input#search_term
 {
     background-color: #FFFAE0;
     padding: 4px 0px 6px 0px;
-    line-height: 1.5em;
     border-bottom:2px solid #FFA000;
     
     display: list-item;
@@ -1102,7 +1076,6 @@ input#search_term
 #related_tags
 {
     padding: 0 2px;
-    line-height: 1.5em;
 }
 
 
@@ -1137,7 +1110,6 @@ input#search_term
 
 .forum
 {
-    line-height: 1.5em;
     background-color: #FFFEF8;
     border: 1px solid #6090C0;
     padding: 0;
@@ -1257,10 +1229,96 @@ input#search_term
     display: inline-block;
     margin: 10px 4px 0px 4px;
     padding: 1px 4px 1px 4px;
-    border: 1px solid #FFA000;
-    background-color: #FFF0D0;
+    border: 1px solid #A0B0F0;
+    background-color: #E0F0FF;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
 
+
+.discussion_control_panel
+{
+    background-color: #F8FAFF;
+    padding: 4px;
+}
+
+.discussion_control_panel a
+{
+    display: inline-block;
+    margin: 0;
+    padding: 1px 4px 1px 4px;
+    border: 1px solid #A0B0F0;
+    background-color: #E0F0FF;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+.form input[type='text'], .form input[type='password'], .form textarea
+{
+    border: 1px solid #DFDFDF;
+    padding: 5px 3px;
+    display: block;
+    width: 95%;
+}
+
+
+.form label
+{
+    display: block;
+    padding: 2px 0px 2px 0px;
+    margin: 2px;
+}
+
+
+.discussion_message_editor
+{
+    margin: 2px;
+    padding: 4px;
+}
+
+
+.checkbox
+{
+    display: block;
+}
+
+
+.checkbox label
+{
+    display: inline;
+}
+
+
+
+.discussion_message_original
+{
+    border-top: 1px dashed #C0C0C0;
+    padding: 10px 15px 15px 15px;
+    margin-bottom: 4px;
+}
+
+
+.discussion_message_type label
+{
+    display: inline;
+}
+
+.discussion_message_type input
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.hor_sep
+{
+    margin: 0px 10px 0px 10px;
+}
 /*<!-- 
 
     

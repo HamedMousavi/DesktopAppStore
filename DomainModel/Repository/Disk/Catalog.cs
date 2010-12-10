@@ -79,8 +79,9 @@ namespace DomainModel.Repository.Disk
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
         }
 
@@ -130,8 +131,9 @@ namespace DomainModel.Repository.Disk
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
         }
 

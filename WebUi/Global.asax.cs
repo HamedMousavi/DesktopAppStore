@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.Security;
 
 namespace WebUi
 {
@@ -197,5 +198,46 @@ namespace WebUi
             }
         }
 
+        // Have you noticed how beautiful is "Jessica Jane Clement"?
+        protected void Application_AuthenticateRequest(Object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("-- Application_AuthenticateRequest -----------------------------------------------");
+            try
+            {
+                if(string.IsNullOrWhiteSpace(FormsAuthentication.FormsCookieName)) return;
+                if(Context.Request.Cookies.Count <= 0) return;
+                if (Request.IsAuthenticated)
+                {
+                    System.Diagnostics.Debug.WriteLine("***************");/*
+                    DomainModel.Security.SarvsoftUser user = 
+                        Context.User as DomainModel.Security.SarvsoftUser;
+                    if (user != null && user.Id > 0)*/ return;
+                }
+
+                HttpCookie authCookie = Context.Request.Cookies[FormsAuthentication.FormsCookieName];
+                if (authCookie == null || string.IsNullOrWhiteSpace(authCookie.Value)) return;
+
+                FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+                if (authTicket == null) return;
+
+                DomainModel.Security.SarvsoftUser principal = new DomainModel.Security.SarvsoftUser();
+                ((DomainModel.Security.SarvsoftUserIdentity)principal.Identity).Ticket = authTicket;
+
+                if (!string.IsNullOrWhiteSpace(authTicket.UserData))
+                {
+                    principal.Id = Convert.ToInt64(authTicket.UserData);
+                    principal.EmailAddress = principal.Identity.Name;
+                }
+
+                // Attach the new principal object to the current HttpContext object
+                Context.User = principal;
+                System.Threading.Thread.CurrentPrincipal = principal;
+                System.Diagnostics.Debug.WriteLine("--> User loaded: -----------------------------------------------");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
+            }
+        }
     }
 }

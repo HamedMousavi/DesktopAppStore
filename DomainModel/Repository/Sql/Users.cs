@@ -177,5 +177,46 @@ namespace DomainModel.Repository.Sql
             return userName;
         }
 
+
+        internal static void AuthenticateAndLoad(Security.SarvsoftUser user)
+        {
+            string query = "UserAuthenticateAndLoad";
+
+            try
+            {
+                using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@Email", user.EmailAddress));
+                        cmd.Parameters.Add(new SqlParameter("@Password", user.Password));
+                        foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+
+                        cnn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader != null && reader.HasRows)
+                        {
+                            // Read first table: SoftwareProduct
+                            if (reader.Read())
+                            {
+                                user.Id = Utils.Convert.ToInt64(reader["UserId"]).Value;
+                                //user.Name = Utils.Convert.ToString(reader["UserName"]);
+                                //user. = Utils.Convert.ToDateTime(reader["MembershipDate"]);
+                                //user. = Utils.Convert.ToBool(reader["IsApproved"]);
+                                //user. = Utils.Convert.ToBool(reader["IsLocked"]);
+                            }
+                        }
+
+                        cnn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
+            }
+        }
     }
 }

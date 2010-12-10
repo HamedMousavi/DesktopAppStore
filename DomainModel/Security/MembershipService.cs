@@ -1,6 +1,7 @@
 ﻿using System;
 using DomainModel.Abstract;
 using System.Web.Security;
+using System.Web;
 
 
 
@@ -8,6 +9,41 @@ namespace DomainModel.Security
 {
     public class MembershipService : IMembership
     {
+        protected SarvsoftUser user;
+
+        
+        public MembershipService()
+        {
+            this.user = new SarvsoftUser();
+        }
+
+
+        private void SetFormsCookie(bool IsCookiePersistent)
+        {
+            // Create the authentication ticket
+            FormsAuthenticationTicket authTicket = new 
+                FormsAuthenticationTicket(1,
+                                            user.Name,  // Currently = email address
+                                            DateTime.UtcNow,
+                                            DateTime.UtcNow.AddYears(1), //UNDONE: HOW LONG SHALL THIS BE VALID?
+                                            IsCookiePersistent,
+                                            this.user.Id.ToString());
+
+            // Now encrypt the ticket.
+            string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
+
+            // Create a cookie and add the encrypted ticket to the 
+            // cookie as data.
+            HttpCookie authCookie =
+                        new HttpCookie(FormsAuthentication.FormsCookieName,
+                                        encryptedTicket);
+							  
+
+            // Add the cookie to the outgoing cookies collection. 
+            HttpContext.Current.Response.Cookies.Add(authCookie);
+        }
+
+
         #region IMembership Members
 
         public bool ValidateUser(string Email, string Password)
@@ -25,8 +61,14 @@ namespace DomainModel.Security
             Email = crypt.Encrypt(Email);
             Password = crypt.Encrypt(Password);
 
+            this.user.EmailAddress = Email;
+            this.user.Password = Password;
+
+            // Retrieve user from persist
+            DomainModel.Repository.Sql.Users.AuthenticateAndLoad(this.user);
+
             // Verify user existance
-            return Membership.ValidateUser(Email, Password);
+            return (this.user.Id > 0);
         }
 
 
@@ -34,28 +76,16 @@ namespace DomainModel.Security
         {
             if (String.IsNullOrWhiteSpace(Email)) throw new ArgumentException("Value cannot be null or empty.", "userName");
 
-            string username = GetUserName(Email);
-
-            FormsAuthentication.SetAuthCookie(username, CreatePersistentCookie);
+            if (string.Compare(this.user.EmailAddress, Email) == 0 && this.user.Id > 0)
+            {
+                SetFormsCookie(CreatePersistentCookie);
+            }
         }
 
 
         public void SignOut()
         {
             FormsAuthentication.SignOut();
-        }
-
-
-        private string GetUserName(string Email)
-        {
-            // Cleanup input
-            Email = Email.Trim();
-
-            // Encrypt email
-            ICrypt crypt = new SimpleCrypt();
-            Email = crypt.Encrypt(Email);
-            
-            return Membership.GetUserNameByEmail(Email);
         }
 
 

@@ -27,6 +27,7 @@ namespace WebUi.HtmlHelpers
                 message.IsParent ? 2 : 20);
 
             ret.AppendFormat(
+                "<a name=\"{0}\"></a>" +
                 "<div class=\"forum_message_subject_normal\" id=\"msg_hd_{0}\" " +
                 "onclick=\"return ToggleForumMessage('msg_bd_{0}');\" " +
                 ">" +
@@ -59,7 +60,7 @@ namespace WebUi.HtmlHelpers
                 ret.AppendFormat("<ul>");
 
                 ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Reply/{1}/{2}\">{3}</a></li>",
-                    message.Discussion.forum.UrlName,
+                    message.Discussion.Forum.UrlName,
                     message.Discussion.Id,
                     message.Id,
                     UiResources.UiTexts.reply);
@@ -67,13 +68,13 @@ namespace WebUi.HtmlHelpers
                 if (Models.Security.UserId.Value == message.UserId)
                 {
                     ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Edit/{1}/{2}\">{3}</a></li>",
-                        message.Discussion.forum.UrlName,
+                        message.Discussion.Forum.UrlName,
                         message.Discussion.Id,
                         message.Id,
                         UiResources.UiTexts.edit_message);
 
                     ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Delete/{1}/{2}\">{3}</a></li>",
-                        message.Discussion.forum.UrlName,
+                        message.Discussion.Forum.UrlName,
                         message.Discussion.Id,
                         message.Id,
                         UiResources.UiTexts.delete_message);
@@ -81,7 +82,7 @@ namespace WebUi.HtmlHelpers
                 else
                 {
                     ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Report/{1}/{2}\" onclick=\"return ConfirmMessageReport();\">{3}</a></li>",
-                        message.Discussion.forum.UrlName,
+                        message.Discussion.Forum.UrlName,
                         message.Discussion.Id,
                         message.Id,
                         UiResources.UiTexts.report_abuse);

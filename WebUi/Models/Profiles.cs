@@ -27,18 +27,19 @@ namespace WebUi.Models
                 {
                     try
                     {
-                        if (HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture] != null)
+                        if (HttpContext.Current.Profile != null)
                         {
-                            return (ProductLanguage)HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture];
+                            if (HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture] != null)
+                            {
+                                return (ProductLanguage)HttpContext.Current.Profile[WebUi.Models.SessionKeys.Culture];
+                            }
                         }
-                        else
-                        {
-                            Errors.Add(1);
-                        }
+                        Errors.Add(1);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         Errors.Add(1);
+                        System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
                     }
                 }
                 else
@@ -66,9 +67,10 @@ namespace WebUi.Models
                             Errors.Add(1);
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         Errors.Add(1);
+                        System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
                     }
                 }
                 else

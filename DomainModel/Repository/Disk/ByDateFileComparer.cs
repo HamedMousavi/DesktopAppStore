@@ -20,8 +20,9 @@ namespace DomainModel.Repository.Disk
 
                 return DateTime.Compare(cty, ctx);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
                 return 0;
             }
         }

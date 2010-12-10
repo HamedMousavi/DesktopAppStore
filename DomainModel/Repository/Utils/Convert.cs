@@ -18,8 +18,9 @@ namespace DomainModel.Repository.Utils
                     ret = System.Convert.ToString(source).Trim();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
 
             return ret;
@@ -38,8 +39,9 @@ namespace DomainModel.Repository.Utils
                     ret = System.Convert.ToBoolean(source);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
 
             return ret;
@@ -58,8 +60,9 @@ namespace DomainModel.Repository.Utils
                     ret = System.Convert.ToDecimal(source);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
 
             return ret;
@@ -78,8 +81,9 @@ namespace DomainModel.Repository.Utils
                     ret = System.Convert.ToDateTime(source);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
 
             return ret;
@@ -98,8 +102,9 @@ namespace DomainModel.Repository.Utils
                     ret = System.Convert.ToSingle(source);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
 
             return ret;
@@ -118,8 +123,9 @@ namespace DomainModel.Repository.Utils
                     ret = System.Convert.ToInt32(source);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
 
             return ret;
@@ -138,8 +144,9 @@ namespace DomainModel.Repository.Utils
                     ret = System.Convert.ToInt64(source);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
 
             return ret;
@@ -158,8 +165,9 @@ namespace DomainModel.Repository.Utils
                     ret = System.Convert.ToInt16(source);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
 
             return ret;
