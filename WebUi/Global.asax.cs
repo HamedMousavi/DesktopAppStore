@@ -208,10 +208,10 @@ namespace WebUi
                 if(Context.Request.Cookies.Count <= 0) return;
                 if (Request.IsAuthenticated)
                 {
-                    System.Diagnostics.Debug.WriteLine("***************");/*
+                    System.Diagnostics.Debug.WriteLine("***************");
                     DomainModel.Security.SarvsoftUser user = 
                         Context.User as DomainModel.Security.SarvsoftUser;
-                    if (user != null && user.Id > 0)*/ return;
+                    if (user != null && user.Id > 0) return;
                 }
 
                 HttpCookie authCookie = Context.Request.Cookies[FormsAuthentication.FormsCookieName];
