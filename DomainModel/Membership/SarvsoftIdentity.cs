@@ -1,20 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Security.Principal;
 using System.Web.Security;
 
 
 
-namespace DomainModel.Security
+namespace DomainModel.Membership
 {
-    public class SarvsoftUserIdentity : IIdentity
+    public class SarvsoftIdentity : IIdentity
     {
         public FormsAuthenticationTicket Ticket { get; set; }
 
-        public SarvsoftUserIdentity()
-		{
+        public SarvsoftIdentity(FormsAuthenticationTicket ticket)
+        {
+            this.Ticket = ticket;
         }
-        
+
         #region IIdentity Members
 
         public string AuthenticationType
@@ -33,6 +33,5 @@ namespace DomainModel.Security
         }
 
         #endregion
-
     }
 }

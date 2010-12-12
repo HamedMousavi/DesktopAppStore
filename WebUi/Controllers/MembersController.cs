@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using DomainModel.Membership;
 
 
 
@@ -11,20 +11,6 @@ namespace WebUi.Controllers
 {
     public class MembersController : BaseController
     {
-
-        public DomainModel.Abstract.IMembership MembershipService { get; set; }
-
-
-        protected override void Initialize(RequestContext requestContext)
-        {
-            if (MembershipService == null) 
-            { 
-                MembershipService = new DomainModel.Security.MembershipService(); 
-            }
-
-            base.Initialize(requestContext);
-        }
-
 
         public ActionResult Index()
         {
@@ -54,7 +40,7 @@ namespace WebUi.Controllers
         {
             try
             {
-                this.MembershipService.SignOut();
+                MembershipService.SignOut();
                 return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
@@ -89,9 +75,10 @@ namespace WebUi.Controllers
             if (ModelState.IsValid)
             {
                 // Authenticate user
-                if (this.MembershipService.ValidateUser(model.Email, model.Password))
+                DomainModel.Membership.User user = MembershipService.ValidateUser(model.Email, model.Password);
+                if (user != null)
                 {
-                    this.MembershipService.SignIn(model.Email, model.RememberMe);
+                    MembershipService.SignIn(user, model.RememberMe);
 
                     // Redirect to return url or homepage
                     if (!String.IsNullOrWhiteSpace(model.ReturnUrl))
@@ -131,7 +118,7 @@ namespace WebUi.Controllers
             }
 
             // Ensure user is new
-            if (this.MembershipService.Exists(Email))
+            if (MembershipService.Exists(Email))
             {
                 ModelState.AddModelError("email", string.Format(UiResources.UiTexts.error_already_a_user));
             }
@@ -139,7 +126,7 @@ namespace WebUi.Controllers
             if (ModelState.IsValid)
             {
                 // Send an activation email async.
-                if (this.MembershipService.CreateUser(Email))
+                if (MembershipService.CreateUser(Email, WebUi.Models.AppCulture.CurrentCulture.CultureId))
                 {
                     // UNDONE : SEND AN EMAIL CONTAINING USER CREDENTIALS
                     return RedirectToAction("Welcome", "Members");

@@ -29,7 +29,7 @@ namespace DomainModel.Entities
 
                     foreach(WeblogEntry entry in all)
                     {
-                        if (string.Compare(entry.Url, url) == 0)
+                        if (entry.Url.Equals(url, StringComparison.Ordinal))
                         {
                             res.Add(entry);
                         }
@@ -45,7 +45,7 @@ namespace DomainModel.Entities
         {
             foreach (WeblogEntryCollection msgs in this)
             {
-                if (msgs.CultureId == culture)
+                if (msgs.CultureId.Equals(culture, StringComparison.Ordinal))
                 {
                     return msgs;
                 }

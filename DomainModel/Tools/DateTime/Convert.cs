@@ -22,7 +22,7 @@ namespace DomainModel.Tools.DateTime
             if (time == null) return "Unknown";
             else if (!time.HasValue) return "Unknown";
 
-            if (destinationCultureId.CompareTo("fa-IR") == 0)
+            if (destinationCultureId.Equals("fa-IR", StringComparison.Ordinal))
             {
                 JalaliCalendar calendar = new JalaliCalendar();
                 calendar.Current = time.Value;

@@ -7,6 +7,14 @@ namespace WebUi.Models
 {
     public class Security
     {
+        public static DomainModel.Abstract.IUser CurrentUser
+        {
+            get
+            {
+                return HttpContext.Current.User as DomainModel.Abstract.IUser;
+            }
+        }
+
         public static Int64? UserId
         {
             get
@@ -17,8 +25,9 @@ namespace WebUi.Models
                 {
                     if (HttpContext.Current.Request.IsAuthenticated)
                     {
-                        DomainModel.Security.SarvsoftUser user =
-                            HttpContext.Current.User as DomainModel.Security.SarvsoftUser;
+                        DomainModel.Abstract.IUser user =
+                            ((DomainModel.Membership.SarvsoftPrincipal)HttpContext.Current.User).Owner;
+
                         if (user != null && user.Id > 0) userId = user.Id;
                     }
                 }

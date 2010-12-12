@@ -19,12 +19,12 @@ namespace WebUi.HtmlHelpers
 
             foreach (DomainModel.Entities.Category category in items)
             {
-                selected = category.UrlName == inf.CurrentItem.Category;
+                selected = category.UrlName.Equals(inf.CurrentItem.Category, StringComparison.Ordinal);
                 ret.Append(BeginTitleTag(category, selected, inf));
 
                 foreach(DomainModel.Entities.Category sub in category.SubCategories)
                 {
-                    subSelected = selected & (sub.UrlName == inf.CurrentItem.Subcategory);
+                    subSelected = selected & (sub.UrlName.Equals(inf.CurrentItem.Subcategory, StringComparison.Ordinal));
                     ret.Append(GetSubcategoryTag(html, category, sub, subSelected, inf));
                 }
 

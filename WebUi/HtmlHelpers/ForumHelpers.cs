@@ -65,7 +65,7 @@ namespace WebUi.HtmlHelpers
                     message.Id,
                     UiResources.UiTexts.reply);
 
-                if (Models.Security.UserId.Value == message.UserId)
+                if (Models.Security.UserId.Value == message.UserId.Value)
                 {
                     ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Edit/{1}/{2}\">{3}</a></li>",
                         message.Discussion.Forum.UrlName,

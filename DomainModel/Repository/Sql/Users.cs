@@ -7,72 +7,21 @@ using DomainModel.Abstract;
 
 namespace DomainModel.Repository.Sql
 {
-    public class Users : IUsersRepository
+    public class Users
     {
-        public Users()
-        {
-        }
+        // UNDONE: MOST FUNCTIONS HERE NEED TO BE REWRITTEN
 
-
-        public bool Authenticate(string username, string password)
-        {
-            bool userIsValid = false;
-            string query =
-                "DECLARE @UserId BIGINT" +
-                " SET @UserId = -1" +
-                " SELECT @UserId = UserId" +
-                " FROM Users" +
-                " WHERE (UserName = @UserName OR EmailAddress = @UserName)" +
-                " IF (@@ERROR = 0 AND @UserId > 0) " +
-                " BEGIN" +
-                "   IF ( EXISTS (SELECT IsApproved FROM UsersCredentials WHERE UserId = @UserId AND Password = @Password) ) " +
-                "   BEGIN" +
-                "       SELECT 1" +
-                "   END" +
-                " END" +
-                " SELECT 0";
-
-            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand(query, cnn))
-                {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.Add(new SqlParameter("@UserName", username));
-                    cmd.Parameters.Add(new SqlParameter("@Password", password));
-                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
-
-                    cnn.Open();
-
-                    object queryRes = cmd.ExecuteScalar();
-                    if (queryRes != null)
-                    {
-                        if (Convert.ToInt32(queryRes) == 1) userIsValid = true;
-                    }
-
-                    cnn.Close();
-                }
-            }
-
-            return userIsValid;
-        }
-
-
-        public bool Exists(string Email)
+        public static bool Exists(string email)
         {
             bool exists = false;
-            string query =
-                "IF ( EXISTS (SELECT UserId FROM Users WHERE EmailAddress = @Email) ) " +
-                " BEGIN" +
-                "   SELECT 1" +
-                " END" +
-                "   SELECT 0";
+            string query = "UserEmailExists";
 
             using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, cnn))
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.Add(new SqlParameter("@Email", Email));
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@EmailAddress", email));
                     foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
                     
                     cnn.Open();
@@ -80,7 +29,7 @@ namespace DomainModel.Repository.Sql
                     object queryRes = cmd.ExecuteScalar();
                     if (queryRes != null)
                     {
-                        if (Convert.ToInt32(queryRes) == 1) exists = true;
+                        if (Utils.Convert.ToInt32(queryRes) == 1) exists = true;
                     }
 
                     cnn.Close();
@@ -91,96 +40,10 @@ namespace DomainModel.Repository.Sql
         }
 
 
-        public bool CreateUser(string Email, string Password)
+        internal static Membership.User GetUser(string email, string password)
         {
-            bool bRes = false;
-
-            string username = Email.Substring(0, Email.IndexOf("@"));
-
-            string query =
-                "DECLARE @UserId BIGINT " +
-                "DECLARE @RES BIT " +
-                "SET @UserId = -1 " +
-                "SET @RES = 0 " +
-                "INSERT INTO Users " +
-                "(UserName, EmailAddress, MembershipDate) " +
-                "VALUES (@UserName, @EmailAddress, @MembershipDate); " +
-                "SELECT @UserId = SCOPE_IDENTITY(); " +
-                "IF (@@ERROR = 0 AND @UserId > 0)  " +
-                "	BEGIN " +
-                "		INSERT INTO UsersCredentials " +
-                "		(UserId, [Password], IsApproved, IsLocked, CredentialMailCount) " +
-                "		VALUES (@UserId, @Password, 0, 0, 0); " +
-                "		IF (@@ERROR = 0) " +
-                "		BEGIN " +
-                "			SET @RES = 1;" +
-                "		END " +
-                "	END " +
-                "SELECT @RES; ";
-
-
-            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand(query, cnn))
-                {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.Add(new SqlParameter("@UserName", username));
-                    cmd.Parameters.Add(new SqlParameter("@EmailAddress", Email));
-                    cmd.Parameters.Add(new SqlParameter("@MembershipDate", DateTime.UtcNow));
-                    cmd.Parameters.Add(new SqlParameter("@Password", Password));
-                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
-                    
-                    cnn.Open();
-
-                    object queryRes = cmd.ExecuteScalar();
-                    if (queryRes != null)
-                    {
-                        if (Convert.ToInt32(queryRes) == 1) bRes = true;
-                    }
-
-                    cnn.Close();
-                }
-            }
-
-            return bRes;
-        }
-
-
-        public string GetUserName(string Email)
-        {
-            string userName = string.Empty;
-            string query =
-                " SELECT UserId" +
-                " FROM Users" +
-                " WHERE (EmailAddress = @Email)";
-
-            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand(query, cnn))
-                {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.Add(new SqlParameter("@Email", Email));
-                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
-                    
-                    cnn.Open();
-
-                    object queryRes = cmd.ExecuteScalar();
-                    if (queryRes != null)
-                    {
-                        userName = Convert.ToString(queryRes);
-                    }
-
-                    cnn.Close();
-                }
-            }
-
-            return userName;
-        }
-
-
-        internal static void AuthenticateAndLoad(Security.SarvsoftUser user)
-        {
-            string query = "UserAuthenticateAndLoad";
+            Membership.User user = null;
+            string query = "UserLogIn";
 
             try
             {
@@ -189,8 +52,8 @@ namespace DomainModel.Repository.Sql
                     using (SqlCommand cmd = new SqlCommand(query, cnn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add(new SqlParameter("@Email", user.EmailAddress));
-                        cmd.Parameters.Add(new SqlParameter("@Password", user.Password));
+                        cmd.Parameters.Add(new SqlParameter("@EmailAddress", email));
+                        cmd.Parameters.Add(new SqlParameter("@Password", password));
                         foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
 
                         cnn.Open();
@@ -201,7 +64,18 @@ namespace DomainModel.Repository.Sql
                             // Read first table: SoftwareProduct
                             if (reader.Read())
                             {
+                                user = new Membership.User();
+                                //Users.UserId, MembershipDate, IsApproved, IsLocked, Points, AppCulture, DisplayName
+                                user.EmailAddress = email;
+                                user.Password = password;
                                 user.Id = Utils.Convert.ToInt64(reader["UserId"]).Value;
+                                user.MembershipDate = Utils.Convert.ToDateTime(reader["MembershipDate"]).Value;
+                                
+                                user.Profile = new Membership.UserProfile();
+                                user.Profile.DislayName = Utils.Convert.ToString(reader["DisplayName"]);
+                                user.Profile.Culture = Repository.Memory.Languages.Instance.Items[
+                                    Utils.Convert.ToString(reader["AppCulture"])];
+
                                 //user.Name = Utils.Convert.ToString(reader["UserName"]);
                                 //user. = Utils.Convert.ToDateTime(reader["MembershipDate"]);
                                 //user. = Utils.Convert.ToBool(reader["IsApproved"]);
@@ -217,6 +91,43 @@ namespace DomainModel.Repository.Sql
             {
                 System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex));
             }
+
+            return user;
+        }
+
+
+        internal static bool Create(string email, string password, string culture)
+        {
+            bool bRes = false;
+
+            string username = email.Substring(0, email.IndexOf("@"));
+
+            string query = "UserCreate";
+
+            using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, cnn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@EmailAddress", email));
+                    cmd.Parameters.Add(new SqlParameter("@Password", password));
+                    cmd.Parameters.Add(new SqlParameter("@MembershipDate", DateTime.UtcNow));
+                    cmd.Parameters.Add(new SqlParameter("@AppCulture", culture));
+                    foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
+
+                    cnn.Open();
+
+                    object queryRes = cmd.ExecuteScalar();
+                    if (queryRes != null)
+                    {
+                        if (Convert.ToInt32(queryRes) == 0) bRes = true;
+                    }
+
+                    cnn.Close();
+                }
+            }
+
+            return bRes;
         }
     }
 }
