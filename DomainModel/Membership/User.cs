@@ -1,11 +1,12 @@
 ﻿using System;
 using DomainModel.Abstract;
+using System.Security.Principal;
 
 
 
 namespace DomainModel.Membership
 {
-    public class User : IUser
+    public class User : IUser, IPrincipal
     {
         public Int64 Id { get; set; }
         public string EmailAddress { get; set; }
@@ -16,6 +17,29 @@ namespace DomainModel.Membership
 
         // These will be used by website security service
         public Int32 Index { get; set; }
-        public SarvsoftPrincipal Principal { get; set; }
+
+
+        public User()
+        {
+            this.identity = new SarvsoftIdentity(null);
+        }
+
+        #region IPrincipal Members
+
+        public SarvsoftIdentity Identitiy { get { return this.identity; } }
+
+        protected SarvsoftIdentity identity;
+
+        public IIdentity Identity
+        {
+            get { return this.identity; }
+        }
+
+        public bool IsInRole(string role)
+        {
+            return false;
+        }
+
+        #endregion
     }
 }

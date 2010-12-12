@@ -102,7 +102,6 @@
     <Compile Include="Errors\Logger.cs" />
     <Compile Include="Membership\MembershipService.cs" />
     <Compile Include="Membership\SarvsoftIdentity.cs" />
-    <Compile Include="Membership\SarvsoftPrincipal.cs" />
     <Compile Include="Membership\SarvsoftUsers.cs" />
     <Compile Include="Membership\User.cs" />
     <Compile Include="Membership\UserProfile.cs" />

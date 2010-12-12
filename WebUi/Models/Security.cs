@@ -26,7 +26,7 @@ namespace WebUi.Models
                     if (HttpContext.Current.Request.IsAuthenticated)
                     {
                         DomainModel.Abstract.IUser user =
-                            ((DomainModel.Membership.SarvsoftPrincipal)HttpContext.Current.User).Owner;
+                            HttpContext.Current.User as DomainModel.Abstract.IUser;
 
                         if (user != null && user.Id > 0) userId = user.Id;
                     }

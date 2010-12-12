@@ -125,17 +125,10 @@ namespace DomainModel.Membership
                         Membership.User user = Repository.Memory.Users.Instance.GetUser(index);
                         if (user != null && user.Id > 0 && Convert.ToInt32(userInfo[1]) == user.Id)
                         {
-                            if (user.Principal == null)
-                            {
-                                user.Principal = new SarvsoftPrincipal(authTicket, user);
-                            }
-                            else
-                            {
-                                user.Principal.SetTicket(authTicket);
-                            }
+                            user.Identitiy.Ticket = authTicket;
 
-                            context.User = user.Principal;
-                            System.Threading.Thread.CurrentPrincipal = user.Principal;
+                            context.User = user;
+                            System.Threading.Thread.CurrentPrincipal = user;
                         }
                     }
                 }
