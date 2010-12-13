@@ -102,7 +102,7 @@ namespace WebUi.Controllers
             message.Id = (Message != null && Message.HasValue) ? Message.Value : 0;
             message.InsertTime = null;
             message.UpdateTime = null;
-            message.UserId = Models.Security.UserId;
+            message.UserId = Models.Security.CurrentUser.Id;
             message.UserIp = Models.Security.UserIp;
             message.Body = Body;
             message.Subject = Subject;

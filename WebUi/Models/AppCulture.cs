@@ -14,7 +14,12 @@ namespace WebUi.Models
         {
             get
             {
-                ProductLanguage culture = WebUi.Models.Profiles.Culture;
+                ProductLanguage culture = null;
+                if (Security.CurrentUser != null && 
+                    Security.CurrentUser.Profile != null)
+                {
+                    culture = Security.CurrentUser.Profile.Culture;
+                }
 
                 if (culture == null)
                 {
@@ -31,8 +36,13 @@ namespace WebUi.Models
 
             set
             {
-                WebUi.Models.Profiles.Culture = value;
-                if (WebUi.Models.Profiles.Errors.Count > 0)
+                if (Security.CurrentUser != null && 
+                    Security.CurrentUser.Profile != null)
+                {
+                    Security.CurrentUser.Profile.Culture = value;
+                    DomainModel.Repository.Sql.Profiles.Update(Security.CurrentUser);
+                }
+                else
                 {
                     WebUi.Models.Sessions.Culture = value;
                     if (WebUi.Models.Sessions.Errors.Count > 0)

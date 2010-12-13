@@ -16,6 +16,9 @@ namespace DataAdministration
 
         public FrmMain()
         {
+            bool res = String.Equals("١", "1", StringComparison.OrdinalIgnoreCase);
+            res = String.Equals("١", "1", StringComparison.CurrentCultureIgnoreCase);
+            res = String.Equals("١", "1", StringComparison.InvariantCultureIgnoreCase);
             /*
             //Int64 userId = 123;
             //byte[] uid = BitConverter.GetBytes(userId);

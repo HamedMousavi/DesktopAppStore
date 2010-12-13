@@ -11,6 +11,7 @@
                    WebUi.ViewModels.NavigationKeys.MemberVoteProductAction,
                    WebUi.ViewModels.NavigationKeys.MemberController))
             {
+                
      %>
                 <% if (product != null && product.Catalog != null && product.Catalog.CurrentUserRating > 0) 
                    {%>
@@ -31,7 +32,7 @@
                 </div>
                 <input type="hidden" name="ReturnUrl" value="<%:Request.Url.AbsoluteUri%>" />
                 <input type="hidden" name="ProductId" value="<%:Model.ProductId%>" />
-                <input type="hidden" name="UserName" value="<%:HttpContext.Current.User.Identity.Name%>" />
+                <input type="hidden" name="UserName" value="<%:WebUi.Models.Security.CurrentUser==null? -1: WebUi.Models.Security.CurrentUser.Id%>" />
     <%
             }
         }

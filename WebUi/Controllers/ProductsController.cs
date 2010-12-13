@@ -103,7 +103,7 @@ namespace WebUi.Controllers
                 productName, 
                 WebUi.Models.AppCulture.CurrentCulture.CultureId, 
                 product,
-                Models.Security.UserId))
+                Models.Security.CurrentUser == null ? -1 : Models.Security.CurrentUser.Id))
             {
                 DomainModel.Repository.Disk.Catalog.LoadScreenshots(
                     product,

@@ -49,9 +49,8 @@ namespace WebUi.HtmlHelpers
             ret.AppendFormat("<span>{0}</span>", message.Body);
 
             ret.AppendFormat("  <div class=\"message_control_panel\">");
-            if(Models.Security.UserId == null || 
-                !Models.Security.UserId.HasValue ||
-                Models.Security.UserId.Value <= 0)
+            if(Models.Security.CurrentUser == null ||
+                Models.Security.CurrentUser.Id <= 0)
             {
                 ret.AppendFormat("<span>{0}</span>", UiResources.UiTexts.login_to_manage_comments);
             }
@@ -65,7 +64,7 @@ namespace WebUi.HtmlHelpers
                     message.Id,
                     UiResources.UiTexts.reply);
 
-                if (Models.Security.UserId.Value == message.UserId.Value)
+                if (Models.Security.CurrentUser.Id == message.UserId.Value)
                 {
                     ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Edit/{1}/{2}\">{3}</a></li>",
                         message.Discussion.Forum.UrlName,

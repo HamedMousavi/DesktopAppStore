@@ -95,7 +95,6 @@
     <Compile Include="ViewModels\DiscussionInfo.cs" />
     <Compile Include="ViewModels\ListingInfo.cs" />
     <Compile Include="ViewModels\LoginInfo.cs" />
-    <Compile Include="Models\Profiles.cs" />
     <Compile Include="Models\SessionKeys.cs" />
     <Compile Include="Models\Sessions.cs" />
     <Compile Include="Models\AppCulture.cs" />

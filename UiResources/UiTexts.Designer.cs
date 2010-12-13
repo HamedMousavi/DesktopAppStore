@@ -79,6 +79,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Anonymous.
+        /// </summary>
+        public static string anonymous {
+            get {
+                return ResourceManager.GetString("anonymous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Best Persian Softwares.
         /// </summary>
         public static string app_title {

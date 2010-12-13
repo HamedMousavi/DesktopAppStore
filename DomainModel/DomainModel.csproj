@@ -127,6 +127,7 @@
     <Compile Include="Repository\Sql\Languages.cs" />
     <Compile Include="Repository\Sql\ProductRatings.cs" />
     <Compile Include="Repository\Sql\Products.cs" />
+    <Compile Include="Repository\Sql\Profiles.cs" />
     <Compile Include="Repository\Sql\Tags.cs" />
     <Compile Include="Repository\Sql\Users.cs" />
     <Compile Include="Repository\Sql\Weblog.cs" />

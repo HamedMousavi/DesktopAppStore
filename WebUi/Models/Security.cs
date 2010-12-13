@@ -14,7 +14,7 @@ namespace WebUi.Models
                 return HttpContext.Current.User as DomainModel.Abstract.IUser;
             }
         }
-
+/*
         public static Int64? UserId
         {
             get
@@ -39,6 +39,8 @@ namespace WebUi.Models
                 return userId;
             }
         }
+    
+    */
 
 
         public static string UserIp

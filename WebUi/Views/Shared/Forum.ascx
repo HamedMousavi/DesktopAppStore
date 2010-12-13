@@ -13,7 +13,7 @@
                   if (DomainModel.Security.InputController.IsValid(Model.UrlName))
                   {
             %>
-                <a href="<%:string.Format("/Products/{0}/Discussions/{1}", Model.UrlName, WebUi.ViewModels.NavigationKeys.DiscussionsNewAction) %>"><%:UiResources.UiTexts.new_discussion%></a>
+                        <a href="<%:string.Format("/Products/{0}/Discussions/{1}", Model.UrlName, WebUi.ViewModels.NavigationKeys.DiscussionsNewAction) %>"><%:UiResources.UiTexts.new_discussion%></a>
             <%  
                   }   
               }

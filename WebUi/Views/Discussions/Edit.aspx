@@ -11,7 +11,7 @@
 <%
     if (Request.IsAuthenticated)
     {
-        if (WebUi.Models.Security.UserId == Model.MessageToEdit.UserId ||
+        if (WebUi.Models.Security.CurrentUser.Id == Model.MessageToEdit.UserId ||
             Model.MessageToEdit.Id <= 0)
         {
             if (Model.MessageToReply != null)

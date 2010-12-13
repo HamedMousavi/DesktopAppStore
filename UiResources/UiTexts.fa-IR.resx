@@ -564,4 +564,7 @@
   <data name="message_type_question" xml:space="preserve">
     <value>سئوال</value>
   </data>
+  <data name="anonymous" xml:space="preserve">
+    <value>بی‌نام</value>
+  </data>
 </root>
