@@ -1,4 +1,69 @@
-﻿body
+﻿
+
+/*<!-- 
+
+    
+    background-color: #E5EFFA;
+    border-bottom: 1px solid #E0E8FA;
+    background-color: #F9FAFF;
+
+.forum_message_inf_separator 
+{
+    padding: 0px 15px 0px 15px;
+    margin: 0;
+    color: #FFA000;
+    font-weight: bold;
+}
+
+#CC6600
+
+    white-space: nowrap;
+    overflow: hidden;
+    background: url("/Content/Images/screenshot_desc_bg.png") repeat scroll 0 0 transparent;
+
+    background-color: White;
+    
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+
+
+
+#featured_products
+{
+    float: left;
+    width: 48%;
+    margin: 6px;
+}
+
+
+#popular_products
+{
+    float: left;
+    width: 100%;
+    margin: 6px;
+}
+
+
+.form a
+{
+    padding: 6px;
+    
+    color: White;
+    background: #70A040;
+    
+    border: 1px solid #80a070;
+
+    font-family: Tahoma;
+    font-weight: bold;
+    
+    vertical-align:middle;
+    cursor: pointer;
+}
+
+-->*/
+
+body
 {
     margin: 0;
     padding: 0;
@@ -157,19 +222,29 @@ legend, fieldset legend
     color: White;
     background-color: #506090;
     
+    border: 0 none transparent;
+    
+    outline: #506090 solid 2px;
+/*    
     border-width: 1px;
     border-style: solid;
     border-color: #8090b0 #605070 #605070 #8090b0;
-
+*/
     font-family: Tahoma;
     font-size: 9pt;
     font-weight: bold;
     
     cursor: pointer;
+    
     vertical-align: middle;
     
-    padding: 4px 4px;
-    display: block;
+    padding: 0;
+    margin: 3px;
+    
+    width: 140px;
+    height: 20px;
+    
+    display:inline-block;
     white-space: nowrap;
 }
 
@@ -1010,11 +1085,6 @@ input#search_term
     padding: 0 2px;
 }
 
-#members_toolbox a, #members_toolbox input[type='submit']
-{
-    display: block;
-    margin: 1px;
-}
 
 .info_bar
 {
@@ -1036,8 +1106,7 @@ input#search_term
 
 .sort_options
 {
-    background-color: #FFFAE0;
-    padding: 4px 0px 6px 0px;
+    padding: 6px 0px 6px 0px;
     border-bottom:2px solid #FFA000;
     
     display: list-item;
@@ -1051,13 +1120,13 @@ input#search_term
 
 .sort_options .selected
 {
-    background-color: #FFE090;
-    color: #000000;
+    background-color: #FFA000;
     font-weight: bold;
+    padding: 6px;
 
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
 }
 
 
@@ -1158,9 +1227,11 @@ input#search_term
     
     font-weight: bold;
     padding: 3px;
+    height: 18px;
    
     display: block;
     cursor: pointer;
+    clear: both;
 }
 
 
@@ -1171,6 +1242,7 @@ input#search_term
     
     font-weight: bold;
     padding: 3px;
+    height: 18px;
    
     display: block;
     cursor: pointer;
@@ -1185,18 +1257,19 @@ input#search_term
 }
 
 
+.forum_message_caption
+{
+    overflow:hidden;
+    display: inline;
+}
+
+
 .forum_message_time
 {
     width:280px; 
     overflow:hidden;
     font-weight: normal;
-}
-
-
-.forum_message_caption
-{
-    width: 48%; 
-    overflow:hidden;
+    display: inline;
 }
 
 
@@ -1204,8 +1277,20 @@ input#search_term
 {
     width:100px; 
     overflow:hidden;
+    display: inline;
 }
 
+
+.hidden
+{
+    height:0px; 
+    width:0px; 
+    line-height:0em; 
+    margin: 0; 
+    padding: 0;
+    border: 0 none transparent;
+    visibility: hidden;
+}
 
 .message_control_panel
 {
@@ -1319,65 +1404,62 @@ input#search_term
 {
     margin: 0px 10px 0px 10px;
 }
-/*<!-- 
 
-    
-    background-color: #E5EFFA;
-    border-bottom: 1px solid #E0E8FA;
-    background-color: #F9FAFF;
 
-.forum_message_inf_separator 
+#members_toolbox ul
 {
-    padding: 0px 15px 0px 15px;
-    margin: 0;
-    color: #FFA000;
-    font-weight: bold;
-}
-
-#CC6600
-
-    white-space: nowrap;
-    overflow: hidden;
-    background: url("/Content/Images/screenshot_desc_bg.png") repeat scroll 0 0 transparent;
-
-    background-color: White;
-    
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-
-
-
-
-#featured_products
-{
-    float: left;
-    width: 48%;
-    margin: 6px;
+	list-style-image: none;
+	list-style-type: none;
+    padding: 0;
+	margin:0;
 }
 
 
-#popular_products
+#members_toolbox ul li
 {
-    float: left;
-    width: 100%;
-    margin: 6px;
-}
-
-
-.form a
-{
-    padding: 6px;
-    
-    color: White;
-    background: #70A040;
-    
-    border: 1px solid #80a070;
-
-    font-family: Tahoma;
-    font-weight: bold;
-    
-    vertical-align:middle;
     cursor: pointer;
+    margin: 0px 8px 0px 8px;
+    padding: 4px;
+    vertical-align: middle;
 }
 
--->*/
+
+#members_toolbox ul li a
+{
+    color: Black;
+    display: block;
+}
+
+
+#members_toolbox ul li:hover
+{
+    background-color: #FFF0B0;
+}
+
+
+#members_toolbox ul li.selected
+{
+    background-color: #FFEA9A;
+    border: 1px solid #F0A060;
+}
+
+/*
+
+#article ul
+{
+}
+
+#article ul li
+{
+    background-image:url('/Content/Images/tickmark.jpg');
+    background-repeat:no-repeat;
+    display:inline-block;
+}
+
+.article_li_left
+{
+    background-position:right center;
+    margin-right:10px;
+    padding-right:15px;
+}
+*/

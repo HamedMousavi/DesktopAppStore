@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Models\DynamicResources.cs" />
     <Compile Include="Models\Security.cs" />
+    <Compile Include="ViewModels\AlertInfo.cs" />
     <Compile Include="ViewModels\CurrentListItem.cs" />
     <Compile Include="ViewModels\DiscussionInfo.cs" />
     <Compile Include="ViewModels\ListingInfo.cs" />
@@ -116,12 +117,15 @@
     <Content Include="Content\Images\tickmark.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\SarvSoft.js" />
+    <Content Include="Views\Discussions\Confirm.aspx" />
     <Content Include="Views\Discussions\Edit.aspx" />
     <Content Include="Views\Discussions\Index.aspx" />
     <Content Include="Views\Errors\Exception.aspx" />
     <Content Include="Views\Errors\NotFound.aspx" />
     <Content Include="Views\Members\Logon.aspx" />
+    <Content Include="Views\Members\Profile.aspx" />
     <Content Include="Views\Members\Register.aspx" />
+    <Content Include="Views\Members\Settings.aspx" />
     <Content Include="Views\Members\Welcome.aspx" />
     <Content Include="Views\Navigation\ProductCategories.ascx" />
     <Content Include="Views\Products\Catalog.aspx" />
@@ -164,14 +168,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Forums\Images\" />
+    <Folder Include="Content\Images\Members\" />
     <Folder Include="Content\Images\Stars\ltr\" />
     <Folder Include="Content\Images\Stars\rtl\" />
-    <Folder Include="Content\Owners\" />
     <Folder Include="Content\Products\Common\" />
     <Folder Include="Content\Products\Repository\Yaas\DemoVersions\common\" />
     <Folder Include="Content\Products\Repository\Yaas\DemoVersions\fa-IR\" />
     <Folder Include="Content\Products\Repository\Yaas\Screenshots\Thumbnails\" />
-    <Folder Include="Content\SoftwareSchool\TrueCrypt\Screenshots\" />
+    <Folder Include="Content\Users\" />
     <Folder Include="Content\Weblog\Intro\Images\" />
     <Folder Include="Content\Weblog\Registration\Images\" />
   </ItemGroup>

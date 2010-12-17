@@ -88,14 +88,23 @@ function EnsureVisible(itemId) {
     if (!msgBody || !msgHeader) return;
 
     var scrollContainer = document.documentElement;
-    var top = msgHeader.offsetTop;
-    var bottom = msgBody.offsetTop + msgBody.offsetHeight;
+    var top = GetTop(msgHeader);
+    var bottom = GetTop(msgBody) + msgBody.offsetHeight;
 
     var scrollTop = webkitWeird ? scrollTop = document.body.scrollTop : document.documentElement.scrollTop;
-    if (scrollTop > top && !bShowTop) scrollTop = top - scrollContainer.clientHeight / 10;
     if (scrollTop + scrollContainer.clientHeight < bottom) scrollTop = bottom - scrollContainer.clientHeight;
-    if (scrollTop > top && bShowTop) scrollTop = top - scrollContainer.clientHeight / 10;
+    if (scrollTop > top) scrollTop = top - scrollContainer.clientHeight / 10;
     if (webkitWeird) document.body.scrollTop = scrollTop; else scrollContainer.scrollTop = scrollTop;
+}
+
+
+function GetTop(item) {
+    itemTop = 0;
+    while (item != null) {
+        itemTop += item['offsetTop'];
+        item = item.offsetParent;
+    }
+    return itemTop;
 }
 
 

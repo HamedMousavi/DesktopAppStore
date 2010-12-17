@@ -47,7 +47,7 @@ namespace DomainModel.Repository.Memory
             // insertions
             int index = -1;
             int count = this.items.Count;
-            for (int i = count - 1; i > 0; i--)
+            for (int i = count - 1; i >= 0; i--)
             {
                 if (this.items[i] == user)
                 {
@@ -90,6 +90,20 @@ namespace DomainModel.Repository.Memory
             if (index >= this.items.Count) return null;
 
             return this.items[index];
+        }
+
+
+        public DomainModel.Abstract.IUser GetUser(Int64 userId)
+        {
+            foreach (DomainModel.Abstract.IUser user in this.items)
+            {
+                if (user.Id == userId)
+                {
+                    return user;
+                }
+            }
+
+            return null;
         }
     }
 }

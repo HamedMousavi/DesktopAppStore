@@ -76,7 +76,7 @@ namespace WebUi.Controllers
 
             di.MessageToDelete = message.Value;
 
-            return View("Delete", di);
+            return View("Confirm", di);
         }
 
 
@@ -87,7 +87,7 @@ namespace WebUi.Controllers
                 ViewModels.DiscussionInfo.EditorTypes.Report, productName);
 
             di.MessageToReport = message.Value;
-            return View("Report", di);
+            return View("Confirm", di);
         }
 
 
@@ -138,5 +138,42 @@ namespace WebUi.Controllers
                 WebUi.ViewModels.NavigationKeys.ProductController,
                 new { productName = Product});
         }
+
+
+
+        [HttpPost]
+        public ActionResult DeleteDiscussion(string Product, Int32? Message)
+        {
+            // UNDONE: AUTHORIZATION
+            // UNDONE: SECURITY
+            DomainModel.Repository.Sql.Discussions.Delete(
+                Message.Value,
+                WebUi.Models.Security.CurrentUser.Id,
+                WebUi.Models.Security.UserIp);
+
+            return RedirectToAction(
+                WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
+                WebUi.ViewModels.NavigationKeys.ProductController,
+                new { productName = Product});
+        }
+
+
+
+        [HttpPost]
+        public ActionResult ReportDiscussion(string Product, Int32? Message)
+        {
+            // UNDONE: AUTHORIZATION
+            // UNDONE: SECURITY
+            DomainModel.Repository.Sql.Discussions.Report(
+                Message.Value,
+                WebUi.Models.Security.CurrentUser.Id,
+                WebUi.Models.Security.UserIp);
+
+            return RedirectToAction(
+                WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
+                WebUi.ViewModels.NavigationKeys.ProductController,
+                new { productName = Product});
+        }
+
     }
 }

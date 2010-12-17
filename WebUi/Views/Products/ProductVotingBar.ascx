@@ -2,7 +2,7 @@
 
 <div class="voting_bar">
     <% 
-        if (Request.IsAuthenticated)
+        if (WebUi.Models.Security.CurrentUser != null)
         {
             DomainModel.Entities.ProductBase product =
                 Model as DomainModel.Entities.ProductBase;

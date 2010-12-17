@@ -88,7 +88,8 @@
         
             <h2><%:UiResources.UiTexts.technical_details%></h2>
             <dl>
-                <dt><%:UiResources.UiTexts.product_languages %></dt>
+                
+                <dt><a name="languages" class="hidden"></a><%:UiResources.UiTexts.product_languages %></dt>
                 <dd><%:Html.SoftwareOptions(Model.SupportedLanguages)%></dd>
 
                 <dt><%:UiResources.UiTexts.product_languages_extendablity %></dt>

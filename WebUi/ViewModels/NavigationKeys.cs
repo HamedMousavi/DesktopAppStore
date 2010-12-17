@@ -20,13 +20,18 @@ namespace WebUi.ViewModels
         public static string MemberVoteProductAction = "VoteProduct";
         public static string MemberLogonAction = "Logon";
         public static string MemberLogoffAction = "LogOff";
+        public static string MemberContactAdminAction = "ContactAdmin";
         public static string MemberResetPasswordAction = "ResetPassword";
+        public static string MemberProfileAction = "Profile";
+        public static string MemberSettingsAction = "Settings";
 
         public static string CultureController = "Culture";
 
         public static string DiscussionsController = "Discussions";
         public static string DiscussionsNewAction = "CreateDiscussion";
         public static string DiscussionsSaveAction = "SaveDiscussion";
+        public static string DiscussionsDeleteAction = "DeleteDiscussion";
+        public static string DiscussionsReportAction = "ReportDiscussion";
 
         public static string SearchController = "Search";
         public static string SearchBasicAction = "Basic";

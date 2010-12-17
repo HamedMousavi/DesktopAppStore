@@ -18,7 +18,8 @@ namespace WebUi.Models
                 if (Security.CurrentUser != null && 
                     Security.CurrentUser.Profile != null)
                 {
-                    culture = Security.CurrentUser.Profile.Culture;
+                    culture = DomainModel.Repository.Memory.Languages.Instance.Items[
+                        Security.CurrentUser.Profile.Culture];
                 }
 
                 if (culture == null)
@@ -39,7 +40,7 @@ namespace WebUi.Models
                 if (Security.CurrentUser != null && 
                     Security.CurrentUser.Profile != null)
                 {
-                    Security.CurrentUser.Profile.Culture = value;
+                    Security.CurrentUser.Profile.Culture = value.CultureId;
                     DomainModel.Repository.Sql.Profiles.Update(Security.CurrentUser);
                 }
                 else

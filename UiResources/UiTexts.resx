@@ -565,6 +565,51 @@
     <value>Question</value>
   </data>
   <data name="anonymous" xml:space="preserve">
-    <value>Anonymous</value>
+    <value>Guest</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>Confirm operation</value>
+  </data>
+  <data name="confirm_discussion_delete" xml:space="preserve">
+    <value>You are about to delete a discussion message. If message has replies attached to it, only content will be removed. Are you sure you want to remove this message?</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="confirm_discussion_report" xml:space="preserve">
+    <value>You are about to report this message as inappropriate or abuse. If a message is reported as abuse multiple times by users then it will be deleted automatically. Yet moderators will check such messages as soon as they can. Are you sure you want to report this message as inappropriate?</value>
+  </data>
+  <data name="my_profile" xml:space="preserve">
+    <value>My profile</value>
+  </data>
+  <data name="my_settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="title_settings" xml:space="preserve">
+    <value>My Settings</value>
+  </data>
+  <data name="app_culture" xml:space="preserve">
+    <value>Website language</value>
+  </data>
+  <data name="display_name" xml:space="preserve">
+    <value>Your name/alias (Will be visible by all users)</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="settings_brief" xml:space="preserve">
+    <value>Settings help you modify the page the way you like it. When you made changes please press save button otherwise your changes will be lost.</value>
+  </data>
+  <data name="alert_save_ok" xml:space="preserve">
+    <value>Changes saved successfully.</value>
+  </data>
+  <data name="alert_save_failed" xml:space="preserve">
+    <value>Unfortunately it was not possible to save changes. Please try again later.</value>
+  </data>
+  <data name="title_profile" xml:space="preserve">
+    <value>User profile</value>
+  </data>
+  <data name="contact_admin" xml:space="preserve">
+    <value>Contact site admin</value>
   </data>
 </root>

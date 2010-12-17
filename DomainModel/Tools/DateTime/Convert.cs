@@ -22,11 +22,14 @@ namespace DomainModel.Tools.DateTime
             if (time == null) return "Unknown";
             else if (!time.HasValue) return "Unknown";
 
+            CultureInfo culture = new CultureInfo(destinationCultureId);
+            string res;
+
             if (destinationCultureId.Equals("fa-IR", StringComparison.Ordinal))
             {
                 JalaliCalendar calendar = new JalaliCalendar();
                 calendar.Current = time.Value;
-                return calendar.PersianDayOfWeek +
+                res = calendar.PersianDayOfWeek +
                     " " +
                     calendar.PersianDay +
                     " " +
@@ -35,8 +38,13 @@ namespace DomainModel.Tools.DateTime
                     calendar.PersianYear +
                     time.Value.ToString("  h:mm:tt");
             }
+            else
+            {
+                res = Tools.NativeNumbers.Format(
+                    time.Value.ToString("dddd, dd MMMM yyyy 	h:mm tt", culture), culture);
+            }
 
-            return time.Value.ToString("dddd, dd MMMM yyyy 	h:mm tt", new CultureInfo(destinationCultureId));
+            return Tools.NativeNumbers.Format(res, culture);
         }
     }
 }

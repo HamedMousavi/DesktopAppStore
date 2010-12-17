@@ -72,6 +72,8 @@
     <Compile Include="Entities\ProductImage.cs" />
     <Compile Include="Entities\ProductLanguageCollection.cs" />
     <Compile Include="Entities\ProductCatalog.cs" />
+    <Compile Include="Entities\ProductOwnerDetails.cs" />
+    <Compile Include="Entities\ProductOwnerDetailsCollection.cs" />
     <Compile Include="Entities\ProductTag.cs" />
     <Compile Include="Entities\ProductContact.cs" />
     <Compile Include="Entities\ProductCustomizationOption.cs" />
@@ -100,6 +102,8 @@
     <Compile Include="Entities\WebsiteProduct.cs" />
     <Compile Include="Errors\Handler.cs" />
     <Compile Include="Errors\Logger.cs" />
+    <Compile Include="Membership\AnonymousIdentity.cs" />
+    <Compile Include="Membership\AnonymousUser.cs" />
     <Compile Include="Membership\MembershipService.cs" />
     <Compile Include="Membership\SarvsoftIdentity.cs" />
     <Compile Include="Membership\SarvsoftUsers.cs" />
@@ -110,11 +114,11 @@
     <Compile Include="Repository\Disk\Catalog.cs" />
     <Compile Include="Repository\Disk\Configurations.cs" />
     <Compile Include="Repository\Disk\Errors.cs" />
+    <Compile Include="Repository\Disk\UserProfiles.cs" />
     <Compile Include="Repository\Memory\Categories.cs" />
     <Compile Include="Repository\Memory\Configurations.cs" />
     <Compile Include="Repository\Memory\Forums.cs" />
     <Compile Include="Repository\Memory\Languages.cs" />
-    <Compile Include="Repository\Memory\Owners.cs" />
     <Compile Include="Repository\Memory\ProductList.cs" />
     <Compile Include="Repository\Memory\Statistics.cs" />
     <Compile Include="Repository\Memory\Users.cs" />
@@ -138,6 +142,7 @@
     <Compile Include="Tools\Currencies.cs" />
     <Compile Include="Tools\DateTime\Convert.cs" />
     <Compile Include="Tools\DateTime\JalaliCalendar.cs" />
+    <Compile Include="Tools\NativeNumbers.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

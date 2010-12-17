@@ -14,7 +14,7 @@
         }
         else
         {
-            if (Request.IsAuthenticated)
+            if (WebUi.Models.Security.CurrentUser != null)
             {
                 if (common != null && !string.IsNullOrWhiteSpace(common.Url))
                 {

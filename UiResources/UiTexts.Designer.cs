@@ -70,6 +70,24 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unfortunately it was not possible to save changes. Please try again later..
+        /// </summary>
+        public static string alert_save_failed {
+            get {
+                return ResourceManager.GetString("alert_save_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changes saved successfully..
+        /// </summary>
+        public static string alert_save_ok {
+            get {
+                return ResourceManager.GetString("alert_save_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Announcement.
         /// </summary>
         public static string announcements {
@@ -79,11 +97,20 @@ namespace UiResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Anonymous.
+        ///   Looks up a localized string similar to Guest.
         /// </summary>
         public static string anonymous {
             get {
                 return ResourceManager.GetString("anonymous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website language.
+        /// </summary>
+        public static string app_culture {
+            get {
+                return ResourceManager.GetString("app_culture", resourceCulture);
             }
         }
         
@@ -115,6 +142,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string cancel {
+            get {
+                return ResourceManager.GetString("cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You cannot edit a message that you didn&apos;t create.
         /// </summary>
         public static string cant_edit_somone_else_message {
@@ -129,6 +165,42 @@ namespace UiResources {
         public static string comma {
             get {
                 return ResourceManager.GetString("comma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm operation.
+        /// </summary>
+        public static string confirm {
+            get {
+                return ResourceManager.GetString("confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are about to delete a discussion message. If message has replies attached to it, only content will be removed. Are you sure you want to remove this message?.
+        /// </summary>
+        public static string confirm_discussion_delete {
+            get {
+                return ResourceManager.GetString("confirm_discussion_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are about to report this message as inappropriate or abuse. If a message is reported as abuse multiple times by users then it will be deleted automatically. Yet moderators will check such messages as soon as they can. Are you sure you want to report this message as inappropriate?.
+        /// </summary>
+        public static string confirm_discussion_report {
+            get {
+                return ResourceManager.GetString("confirm_discussion_report", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact site admin.
+        /// </summary>
+        public static string contact_admin {
+            get {
+                return ResourceManager.GetString("contact_admin", resourceCulture);
             }
         }
         
@@ -183,6 +255,15 @@ namespace UiResources {
         public static string discuss {
             get {
                 return ResourceManager.GetString("discuss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your name/alias (Will be visible by all users).
+        /// </summary>
+        public static string display_name {
+            get {
+                return ResourceManager.GetString("display_name", resourceCulture);
             }
         }
         
@@ -579,6 +660,24 @@ namespace UiResources {
         public static string more_images {
             get {
                 return ResourceManager.GetString("more_images", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My profile.
+        /// </summary>
+        public static string my_profile {
+            get {
+                return ResourceManager.GetString("my_profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string my_settings {
+            get {
+                return ResourceManager.GetString("my_settings", resourceCulture);
             }
         }
         
@@ -1186,6 +1285,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string save {
+            get {
+                return ResourceManager.GetString("save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Screenshots.
         /// </summary>
         public static string screenshots {
@@ -1218,6 +1326,15 @@ namespace UiResources {
         public static string security_error_content {
             get {
                 return ResourceManager.GetString("security_error_content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings help you modify the page the way you like it. When you made changes please press save button otherwise your changes will be lost..
+        /// </summary>
+        public static string settings_brief {
+            get {
+                return ResourceManager.GetString("settings_brief", resourceCulture);
             }
         }
         
@@ -1312,11 +1429,29 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User profile.
+        /// </summary>
+        public static string title_profile {
+            get {
+                return ResourceManager.GetString("title_profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product screenshots.
         /// </summary>
         public static string title_screenshots {
             get {
                 return ResourceManager.GetString("title_screenshots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Settings.
+        /// </summary>
+        public static string title_settings {
+            get {
+                return ResourceManager.GetString("title_settings", resourceCulture);
             }
         }
         

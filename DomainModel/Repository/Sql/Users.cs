@@ -39,7 +39,8 @@ namespace DomainModel.Repository.Sql
             return exists;
         }
 
-
+        // Also loads a very minimum profile info that is required by
+        // application to function properly
         internal static Membership.User GetUser(string email, string password)
         {
             Membership.User user = null;
@@ -73,8 +74,7 @@ namespace DomainModel.Repository.Sql
                                 
                                 user.Profile = new Membership.UserProfile();
                                 user.Profile.DislayName = Utils.Convert.ToString(reader["DisplayName"]);
-                                user.Profile.Culture = Repository.Memory.Languages.Instance.Items[
-                                    Utils.Convert.ToString(reader["AppCulture"])];
+                                user.Profile.Culture = Utils.Convert.ToString(reader["AppCulture"]);
 
                                 //user.Name = Utils.Convert.ToString(reader["UserName"]);
                                 //user. = Utils.Convert.ToDateTime(reader["MembershipDate"]);

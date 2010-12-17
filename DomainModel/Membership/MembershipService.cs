@@ -99,6 +99,7 @@ namespace DomainModel.Membership
                                 System.Web.Security.FormsAuthentication.FormsCookieName,
                                 encryptedTicket);
 
+            authCookie.Expires = DateTime.UtcNow.AddYears(1);
 
             // Add the cookie to the outgoing cookies collection. 
             System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
@@ -130,6 +131,17 @@ namespace DomainModel.Membership
                             context.User = user;
                             System.Threading.Thread.CurrentPrincipal = user;
                         }
+                        else
+                        {
+                            // Cookie sucks
+                            authCookie.Expires = DateTime.UtcNow.AddYears(-1);
+                            context.Request.Cookies.Add(authCookie);
+                            context.Response.Cookies.Add(authCookie);
+                            SignOut();
+
+                            context.User = new DomainModel.Membership.AnonymousUser();
+                            System.Threading.Thread.CurrentPrincipal = context.User;
+                       }
                     }
                 }
             }

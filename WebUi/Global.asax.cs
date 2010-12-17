@@ -110,13 +110,24 @@ namespace WebUi
 
             routes.MapRoute(null,
                 "Products/Tags/{tagId}/Page{page}/Sort{sort}",
-                new 
+                new
                 {
                     controller = WebUi.ViewModels.NavigationKeys.ProductController,
                     action = WebUi.ViewModels.NavigationKeys.SearchTagAction,
                     tagId = (Int32?)null,
                     page = 1,
                     sort = 1
+                }
+            );
+
+
+            routes.MapRoute(null,
+                "Members/Profile/{user}",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.MemberController,
+                    action = WebUi.ViewModels.NavigationKeys.MemberProfileAction,
+                    user = (Int64?)null
                 }
             );
 

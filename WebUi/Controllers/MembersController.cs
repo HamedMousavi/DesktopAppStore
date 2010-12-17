@@ -177,6 +177,93 @@ namespace WebUi.Controllers
 
             return Redirect(votingInf.ReturnUrl);
         }
+
+
+        public ActionResult Profile(Int32? user)
+        {
+            ViewData[ViewModels.ViewDataKeys.HighlightedMemberMenuItem] = 0;
+            
+            DomainModel.Abstract.IUser sarvUser = null;
+            DomainModel.Membership.UserProfile profile = null;
+
+            // Check to see if user is already loaded in memory
+            if (user == null || !user.HasValue || user.Value <= 0 || 
+                user.Value == WebUi.Models.Security.CurrentUser.Id)
+            {
+                sarvUser = WebUi.Models.Security.CurrentUser;
+            }
+            else
+            {
+                sarvUser = DomainModel.Repository.Memory.Users.Instance.GetUser(user.Value);
+            }
+
+            // If user exists attach her profile
+            if (sarvUser != null)
+            {
+                profile = sarvUser.Profile;
+            }
+            else
+            {
+                profile = new UserProfile();
+            }
+
+            // If profile is loaded and doesn't need a reload use it, otherwise load profile
+            if (profile.Ownership.Details[WebUi.Models.AppCulture.CurrentCulture.CultureId].LastLoaded == null || 
+                (DateTime.UtcNow - profile.Ownership.Details[WebUi.Models.AppCulture.CurrentCulture.CultureId].LastLoaded.Value).Hours 
+                < 12)
+            {
+                DomainModel.Repository.Sql.Profiles.LoadAll(
+                    WebUi.Models.Security.CurrentUser.Id,
+                    WebUi.Models.Security.CurrentUser.Profile,
+                    WebUi.Models.AppCulture.CurrentCulture.CultureId);
+            }
+            else
+            {
+                profile = WebUi.Models.Security.CurrentUser.Profile;
+            }
+
+            // Return loaded profile
+            return View(profile);
+        }
+
+
+        public ActionResult Settings()
+        {
+            ViewData[ViewModels.ViewDataKeys.HighlightedMemberMenuItem] = 1;
+
+            return View(WebUi.Models.Security.CurrentUser.Profile);
+        }
+
+
+        [HttpPost]
+        public ActionResult Settings(UserProfile profile)
+        {
+            // UNDONE: SECURITY
+            ViewData[ViewModels.ViewDataKeys.HighlightedMemberMenuItem] = 1;
+
+            WebUi.Models.Security.CurrentUser.Profile.Update(profile);
+            if (WebUi.Models.Security.CurrentUser.Profile.HasUnsavedChanges)
+            {
+                if (DomainModel.Repository.Sql.Profiles.Update(
+                    WebUi.Models.Security.CurrentUser))
+                {
+                    TempData[WebUi.ViewModels.ViewDataKeys.Alert] =
+                        new WebUi.ViewModels.AlertInfo(
+                            ViewModels.AlertInfo.AlertTypes.OK,
+                            UiResources.UiTexts.alert_save_ok);
+                }
+                else
+                {
+                    TempData[WebUi.ViewModels.ViewDataKeys.Alert] = 
+                        new WebUi.ViewModels.AlertInfo(
+                            ViewModels.AlertInfo.AlertTypes.Error,
+                            UiResources.UiTexts.alert_save_failed);
+                }
+            }
+
+
+            return View(WebUi.Models.Security.CurrentUser.Profile);
+        }
     }
 }
 

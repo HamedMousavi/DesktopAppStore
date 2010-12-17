@@ -565,6 +565,51 @@
     <value>سئوال</value>
   </data>
   <data name="anonymous" xml:space="preserve">
-    <value>بی‌نام</value>
+    <value>میهمان</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>تایید عملیات</value>
+  </data>
+  <data name="confirm_discussion_delete" xml:space="preserve">
+    <value>شما در حال حذف پیام هستید. در صورتیکه پیام پاسخی داشته باشد، فقط محتوای آن حذف میگردد. آیا از حذف این پیام اطمینان دارید؟</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="confirm_discussion_report" xml:space="preserve">
+    <value>شما در حال گزارش این پیام به عنوان نامناسب هستید. پیامهایی که توسط تعدادی از کاربران برچسب نامناسب دریافت کنند، به طور خودکار حذف میشوند. اصلاح کنندگان انجمنها نیز به طور پیوسته پیامهایی که برچسب دارند را کنترل نموده و در صورت لزوم، اقدام به حذف پیام می‌کنند. آیا اطمینان دارید که این پیام نامناسب است؟</value>
+  </data>
+  <data name="my_profile" xml:space="preserve">
+    <value>صفحه من</value>
+  </data>
+  <data name="my_settings" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="title_settings" xml:space="preserve">
+    <value>تنظیمات من</value>
+  </data>
+  <data name="app_culture" xml:space="preserve">
+    <value>زبان سایت</value>
+  </data>
+  <data name="display_name" xml:space="preserve">
+    <value>نام شما (کاربران سایت این نام را خواهند دید)</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>ثبت تغییرات</value>
+  </data>
+  <data name="settings_brief" xml:space="preserve">
+    <value>تنظیمات به شما کمک میکند تا وب سایت را به شکل مورد علاقه خود ببینید. پس از تغییر تنطیمات لطفا دکمه ثبت را انتخاب کنید، در غیر اینصورت تغییراتی که داده اید از دست میروند.</value>
+  </data>
+  <data name="alert_save_failed" xml:space="preserve">
+    <value>متاسفانه امکان ثبت تغییرات در حال حاضر موجود نیست</value>
+  </data>
+  <data name="alert_save_ok" xml:space="preserve">
+    <value>تغییرات ذخیره شدند</value>
+  </data>
+  <data name="title_profile" xml:space="preserve">
+    <value>صفحه کاربر</value>
+  </data>
+  <data name="contact_admin" xml:space="preserve">
+    <value>تماس با مدیر سایت</value>
   </data>
 </root>

@@ -27,14 +27,14 @@ namespace WebUi.HtmlHelpers
                 message.IsParent ? 2 : 20);
 
             ret.AppendFormat(
-                "<a name=\"{0}\"></a>" +
+                "<a name=\"{0}\" class=\"hidden\"></a>" +
                 "<div class=\"forum_message_subject_normal\" id=\"msg_hd_{0}\" " +
                 "onclick=\"return ToggleForumMessage('msg_bd_{0}');\" " +
                 ">" +
-                    "<img alt=\"{5} message\" src=\"/Content/Forums/Images/{5}.gif\"></img> " +
-                    "<span class=\"forum_message_caption\">{1}</span>" +
-                    "<span class=\"forum_message_time\" style=\"float:{2}; text-align:{2}\">{3}</span>" +
-                    "<span class=\"forum_message_user\" style=\"float:{2}; text-align:{2}\">{4}</span>" +
+                    "<img alt=\"{5} message\" src=\"/Content/Forums/Images/{5}.gif\" style=\"float:{6};\" /> " +
+                    "<span class=\"forum_message_caption\" style=\"float:{6};\">{1}</span>" +
+                    "<span class=\"forum_message_time\" style=\"float:{2}; text-align:{2};\">{3}</span>" +
+                    "<span class=\"forum_message_user\" style=\"float:{2}; text-align:{2};\">{4}</span>" +
                 "</div>", 
                 message.Id,
                 message.Subject,
@@ -43,7 +43,8 @@ namespace WebUi.HtmlHelpers
                     message.UpdateTime, 
                     WebUi.Models.AppCulture.CurrentCulture),
                 message.UserName,
-                message.Type.ToString()
+                message.Type.ToString(),
+                UiResources.UiTexts.float_left
                 );
             ret.AppendFormat("<div class=\"forum_message_body\" style=\"display: none;\" id=\"msg_bd_{0}\">", message.Id);
             ret.AppendFormat("<span>{0}</span>", message.Body);

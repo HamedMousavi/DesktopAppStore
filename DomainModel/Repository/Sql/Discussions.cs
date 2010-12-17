@@ -9,6 +9,13 @@ namespace DomainModel.Repository.Sql
 {
     public class Discussions
     {
+
+        public enum DiscussionFlags
+        {
+            Delete = 0,
+            Abuse = 1
+        }
+
         public static bool LoadProductDiscussions(ProductBase product, int startRow, int endRow)
         {
             bool res = false;
@@ -132,7 +139,7 @@ namespace DomainModel.Repository.Sql
 
                                 // load message
                                 message.Id = messageId;
-                                message.Visibility = Repository.Utils.Convert.ToInt16(reader["Visibility"]);
+                                message.IsVisible = Repository.Utils.Convert.ToBool(reader["IsVisible"]);
                                 message.IsAbuse = Repository.Utils.Convert.ToInt16(reader["IsAbuse"]);
                                 message.Type = (Repository.Memory.Forums.MessageTypes)Repository.Utils.Convert.ToInt16(reader["MessageType"]);
                                 message.InsertTime = Repository.Utils.Convert.ToDateTime(reader["InsertTime"]);
@@ -188,7 +195,7 @@ namespace DomainModel.Repository.Sql
                             if (reader.Read())
                             {
                                 // load message
-                                message.Visibility = Repository.Utils.Convert.ToInt16(reader["Visibility"]);
+                                message.IsVisible = Repository.Utils.Convert.ToBool(reader["IsVisible"]);
                                 message.IsAbuse = Repository.Utils.Convert.ToInt16(reader["IsAbuse"]);
                                 message.Type = (Repository.Memory.Forums.MessageTypes)Repository.Utils.Convert.ToInt16(reader["MessageType"]);
                                 message.InsertTime = Repository.Utils.Convert.ToDateTime(reader["InsertTime"]);
@@ -243,7 +250,7 @@ namespace DomainModel.Repository.Sql
                             while (reader.Read())
                             {
                                 // load message
-                                msg.Visibility = Repository.Utils.Convert.ToInt16(reader["Visibility"]);
+                                msg.IsVisible = Repository.Utils.Convert.ToBool(reader["IsVisible"]);
                                 msg.IsAbuse = Repository.Utils.Convert.ToInt16(reader["IsAbuse"]);
                                 msg.Type = (Repository.Memory.Forums.MessageTypes)Repository.Utils.Convert.ToInt16(reader["MessageType"]);
                                 msg.InsertTime = Repository.Utils.Convert.ToDateTime(reader["InsertTime"]);
@@ -381,6 +388,105 @@ namespace DomainModel.Repository.Sql
                                 }
                                 // If MessageId <= 0 ERROR
                             }
+                        }
+
+                        cnn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
+            }
+
+            return res;
+        }
+
+
+        public static bool Delete(Int32 messageId, Int64 userId, string userIp)
+        {
+            bool res = false;
+
+            try
+            {
+                string query = "DiscussionFlag";
+                using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@MessageId", messageId));
+                        cmd.Parameters.Add(new SqlParameter("@UserId", userId));
+                        cmd.Parameters.Add(new SqlParameter("@FlagId", SqlDbType.TinyInt, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Default, 
+                            DiscussionFlags.Delete));
+                        cmd.Parameters.Add(new SqlParameter("@FlagDate", DateTime.UtcNow));
+                        cmd.Parameters.Add(new SqlParameter("@UserIp", userIp));
+
+                        foreach (SqlParameter Parameter in cmd.Parameters)
+                        {
+                            if (Parameter.Value == null)
+                            {
+                                Parameter.Value = DBNull.Value;
+                            }
+                        }
+
+                        cnn.Open();
+
+                        int affected = cmd.ExecuteNonQuery();
+                        if (affected != 0)
+                        {
+                            res = true;
+                        }
+
+                        cnn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
+            }
+
+            return res;
+        }
+
+
+        public static bool Report(Int32 messageId, Int64 userId, string userIp)
+        {
+            bool res = false;
+
+            try
+            {
+                string query = "DiscussionFlag";
+                using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, cnn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add(new SqlParameter("@MessageId", messageId));
+                        cmd.Parameters.Add(new SqlParameter("@UserId", userId));
+                        cmd.Parameters.Add(new SqlParameter("@FlagId", SqlDbType.TinyInt, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Default,
+                            DiscussionFlags.Abuse));
+                        cmd.Parameters.Add(new SqlParameter("@FlagDate", DateTime.UtcNow));
+                        cmd.Parameters.Add(new SqlParameter("@UserIp", userIp));
+
+                        foreach (SqlParameter Parameter in cmd.Parameters)
+                        {
+                            if (Parameter.Value == null)
+                            {
+                                Parameter.Value = DBNull.Value;
+                            }
+                        }
+
+
+                        cnn.Open();
+
+                        int affected = cmd.ExecuteNonQuery();
+                        if (affected != 0)
+                        {
+                            res = true;
                         }
 
                         cnn.Close();

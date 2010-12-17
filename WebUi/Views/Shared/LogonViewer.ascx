@@ -1,7 +1,8 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
 
 <%
-    if (Request.IsAuthenticated) {
+    if (WebUi.Models.Security.CurrentUser != null)
+    {
 %>
         <%: UiResources.UiTexts.welcome %> 
             <% if (WebUi.Models.Security.CurrentUser == null || WebUi.Models.Security.CurrentUser.Profile == null) 

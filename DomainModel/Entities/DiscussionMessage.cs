@@ -8,7 +8,7 @@ namespace DomainModel.Entities
     public class DiscussionMessage
     {
         public Int32? Id { get; set; }
-        public Int16? Visibility { get; set; }
+        public bool? IsVisible { get; set; }
         public Int16? IsAbuse { get; set; }
         public DomainModel.Repository.Memory.Forums.MessageTypes Type { get; set; }
         public DateTime? InsertTime { get; set; }

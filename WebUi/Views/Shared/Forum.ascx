@@ -8,7 +8,7 @@
         <div class="forum_body">
         
         <div class="discussion_control_panel">
-            <%if (Request.IsAuthenticated)
+            <%if (WebUi.Models.Security.CurrentUser != null)
               {
                   if (DomainModel.Security.InputController.IsValid(Model.UrlName))
                   {

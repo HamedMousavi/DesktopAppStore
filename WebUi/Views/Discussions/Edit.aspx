@@ -9,7 +9,7 @@
 <div class="section_title"><%:UiResources.UiTexts.message_details%></div>
 <div class="discussion_message_editor">
 <%
-    if (Request.IsAuthenticated)
+    if (WebUi.Models.Security.CurrentUser != null)
     {
         if (WebUi.Models.Security.CurrentUser.Id == Model.MessageToEdit.UserId ||
             Model.MessageToEdit.Id <= 0)

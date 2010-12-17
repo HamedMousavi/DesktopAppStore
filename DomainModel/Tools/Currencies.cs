@@ -21,6 +21,7 @@ namespace DomainModel.Tools
             else if (!money.HasValue) return "0";
 
             CultureInfo cult = new CultureInfo(cultureId);
+
             string currencySymbol;
 
             if (cultureId.Contains("fa-IR"))
@@ -32,17 +33,12 @@ namespace DomainModel.Tools
                 currencySymbol = "Toomans";
             }
 
+
             // Can't use "c" format string. Prices are entered by Iran REAL currency i.e. Toomans
-            return string.Format("{0} {1}",
-                money.Value.ToString("N", cult),
-                currencySymbol);
-
-
-            /*RegionInfo reg = new RegionInfo(cult.LCID);
-            
-            return string.Format("{0} {1}",  
-                money.Value.ToString("N", cult), 
-                reg.CurrencySymbol);*/
+            return Tools.NativeNumbers.Format(
+                string.Format("{0} {1}",
+                money.Value.ToString("#,#", cult),
+                currencySymbol), cult);
         }
     }
 }
