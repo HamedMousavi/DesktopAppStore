@@ -19,12 +19,9 @@
 %>
                 <p><%:UiResources.UiTexts.confirm_discussion_delete%></p>
                 <p class="submit"><input type="submit" value="<%:UiResources.UiTexts.delete_message%>" /></p>
-                <%:Html.ActionLink(
-                    UiResources.UiTexts.cancel,
-                    WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
-                    WebUi.ViewModels.NavigationKeys.ProductController,
-                    new { productName = Model.Product })%>     
-                <input type="hidden" name="Product" value="<%:Model.Product%>" />
+                <a href="<%:Model.ReturnUrl%>"><%:UiResources.UiTexts.cancel%></a>
+
+                <input type="hidden" name="ReturnUrl" value="<%:Model.ReturnUrl%>" />
                 <input type="hidden" name="Message" value="<%:Model.MessageToDelete.ToString()%>" />
 <%
             }
@@ -39,13 +36,9 @@
 %>
                 <p><%:UiResources.UiTexts.confirm_discussion_report%></p>
                 <p class="submit"><input type="submit" value="<%:UiResources.UiTexts.report_abuse%>" /></p>
-                <%:Html.ActionLink(
-                    UiResources.UiTexts.cancel,
-                    WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
-                    WebUi.ViewModels.NavigationKeys.ProductController,
-                    new { productName = Model.Product })%>
+                <a href="<%:Model.ReturnUrl%>"><%:UiResources.UiTexts.cancel%></a>
 
-                <input type="hidden" name="Product" value="<%:Model.Product%>" />
+                <input type="hidden" name="ReturnUrl" value="<%:Model.ReturnUrl%>" />
                 <input type="hidden" name="Message" value="<%:Model.MessageToReport.ToString()%>" />
 <%
             }

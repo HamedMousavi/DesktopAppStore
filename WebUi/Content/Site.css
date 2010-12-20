@@ -1463,3 +1463,38 @@ input#search_term
     padding-right:15px;
 }
 */
+
+/*
+.image-set-thumb-gallery .image-thumb {
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px !important;
+    margin-left: 3px !important;
+    margin-right: 12px !important;
+}
+content.css (line 48)
+.image-set-thumb-gallery .image-thumb {
+    -moz-border-radius: 7px 7px 7px 7px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+}
+site-d...min.css (line 19)
+.image-set-thumb-gallery .image-thumb-small, .image-set-thumb-gallery .image-thumb-small a {
+    width: 100px;
+}
+site-d...min.css (line 19)
+.image-set-thumb-gallery .image-thumb, .image-set-thumb-gallery .image-thumb a, .image-set-thumb-gallery .image-thumb a img, .image-set-flow .image, .image-set-flow .image a, .image-set-flow .image a img, .image-set-thumb-flow .image-thumb, .image-set-thumb-flow .image-thumb a, .image-set-thumb-flow .image-thumb a img {
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+site-d...min.css (line 19)
+.image-set-thumb-gallery .image-thumb, .image-set-flow .image, .image-set-thumb-flow .image-thumb {
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    vertical-align: top;
+}
+site-d...min.css (line 19)
+
+*/

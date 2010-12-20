@@ -142,6 +142,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Branches.
+        /// </summary>
+        public static string branches {
+            get {
+                return ResourceManager.GetString("branches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string cancel {
@@ -552,6 +561,15 @@ namespace UiResources {
         public static string megabytes {
             get {
                 return ResourceManager.GetString("megabytes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Member since: .
+        /// </summary>
+        public static string member_since {
+            get {
+                return ResourceManager.GetString("member_since", resourceCulture);
             }
         }
         
@@ -1236,6 +1254,15 @@ namespace UiResources {
         public static string registeration_form {
             get {
                 return ResourceManager.GetString("registeration_form", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered products.
+        /// </summary>
+        public static string registered_products {
+            get {
+                return ResourceManager.GetString("registered_products", resourceCulture);
             }
         }
         

@@ -65,10 +65,11 @@
                     </p>
                     <p class="submit"><input type="submit" value="<%:UiResources.UiTexts.message_send%>" /></p>
                 </div>
-                <input type="hidden" name="Product" value="<%:Model.Product%>" />
-                <input type="hidden" name="Message" value="<%:Model.MessageToEdit.Id%>" />
-
+                <input type="hidden" name="ReturnUrl" value="<%:Model.ReturnUrl%>" />
+                <input type="hidden" name="ForumId" value="<%:Model.MessageToEdit.Discussion.Forum.ForumId%>" />
+                <input type="hidden" name="PageId" value="<%:Model.MessageToEdit.Discussion.Forum.PageId%>" />
                 <input type="hidden" name="Discussion" value="<%:(Model.MessageToEdit.Discussion == null)? 0 : Model.MessageToEdit.Discussion.Id%>" />
+                <input type="hidden" name="Message" value="<%:Model.MessageToEdit.Id%>" />
                 <input type="hidden" name="Parent" value="<%:(Model.MessageToReply == null)? 0 : Model.MessageToReply.Id%>" />
             <%
             }

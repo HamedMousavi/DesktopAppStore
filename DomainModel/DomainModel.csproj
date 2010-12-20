@@ -52,11 +52,13 @@
     <Compile Include="Abstract\IUser.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\ApplicationProduct.cs" />
+    <Compile Include="Entities\BranchCollection.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\CategoryCollection.cs" />
     <Compile Include="Entities\CategoryParent.cs" />
     <Compile Include="Entities\CategoryParentCollection.cs" />
     <Compile Include="Entities\ContactMediaType.cs" />
+    <Compile Include="Entities\ContactCollection.cs" />
     <Compile Include="Entities\ContactUnit.cs" />
     <Compile Include="Entities\Discussion.cs" />
     <Compile Include="Entities\DiscussionMessage.cs" />

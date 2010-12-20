@@ -208,7 +208,9 @@ namespace WebUi.Controllers
             }
 
             // If profile is loaded and doesn't need a reload use it, otherwise load profile
-            if (profile.Ownership.Details[WebUi.Models.AppCulture.CurrentCulture.CultureId].LastLoaded == null || 
+            if (profile.Ownership.Details.Count <= 0 ||
+                profile.Ownership.Details[WebUi.Models.AppCulture.CurrentCulture.CultureId] == null ||
+                profile.Ownership.Details[WebUi.Models.AppCulture.CurrentCulture.CultureId].LastLoaded == null || 
                 (DateTime.UtcNow - profile.Ownership.Details[WebUi.Models.AppCulture.CurrentCulture.CultureId].LastLoaded.Value).Hours 
                 < 12)
             {
@@ -222,8 +224,12 @@ namespace WebUi.Controllers
                 profile = WebUi.Models.Security.CurrentUser.Profile;
             }
 
+            // UNDONE: PAGING FORUM
+            DomainModel.Repository.Sql.Discussions.LoadProfileDiscussions(profile, 0, 1000);
+
+
             // Return loaded profile
-            return View(profile);
+            return View(WebUi.Models.Security.CurrentUser);
         }
 
 

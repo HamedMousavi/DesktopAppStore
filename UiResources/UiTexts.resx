@@ -612,4 +612,13 @@
   <data name="contact_admin" xml:space="preserve">
     <value>Contact site admin</value>
   </data>
+  <data name="branches" xml:space="preserve">
+    <value>Branches</value>
+  </data>
+  <data name="registered_products" xml:space="preserve">
+    <value>Registered products</value>
+  </data>
+  <data name="member_since" xml:space="preserve">
+    <value>Member since: </value>
+  </data>
 </root>

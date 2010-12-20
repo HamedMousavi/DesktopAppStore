@@ -8,6 +8,7 @@ namespace DomainModel.Entities
     {
         public string Country { get; set; }
         public string City { get; set; }
+        public string Bulavard { get; set; }
         public string Street { get; set; }
         public string Avenue { get; set; }
         public string Plate { get; set; }

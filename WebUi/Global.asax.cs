@@ -30,12 +30,13 @@ namespace WebUi
 
             // /Products/Sarv/Discussions/1/1
             routes.MapRoute(null,
-                "Products/{productName}/Discussions/{action}/{discussion}/{message}",
+                "Discussions/{action}/{group}/{forum}/{discussion}/{message}",
                 new
                 {
                     controller = WebUi.ViewModels.NavigationKeys.DiscussionsController,
                     action = WebUi.ViewModels.NavigationKeys.IndexAction,
-                    productName = (string)null,
+                    group = (Int16?)null,
+                    forum = (Int64?)null,
                     discussion = (Int32?)null,
                     message = (Int32?)null
                 }
@@ -127,6 +128,17 @@ namespace WebUi
                 {
                     controller = WebUi.ViewModels.NavigationKeys.MemberController,
                     action = WebUi.ViewModels.NavigationKeys.MemberProfileAction,
+                    user = (Int64?)null
+                }
+            );
+
+
+            routes.MapRoute(null,
+                "Members/Settings/{user}",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.MemberController,
+                    action = WebUi.ViewModels.NavigationKeys.MemberSettingsAction,
                     user = (Int64?)null
                 }
             );

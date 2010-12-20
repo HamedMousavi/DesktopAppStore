@@ -137,7 +137,9 @@
     <Content Include="Views\Search\Advanced.aspx" />
     <Content Include="Views\Search\Basic.aspx" />
     <Content Include="Views\Security\BadInput.aspx" />
+    <Content Include="Views\Shared\Address.ascx" />
     <Content Include="Views\Shared\Announcements.ascx" />
+    <Content Include="Views\Shared\Contacts.ascx" />
     <Content Include="Views\Shared\CultureSelector.ascx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\FeaturedBlogEntries.ascx" />
@@ -147,6 +149,7 @@
     <Content Include="Views\Shared\LogonViewer.ascx" />
     <Content Include="Views\Shared\MemberToolbox.ascx" />
     <Content Include="Views\Shared\PopularProducts.ascx" />
+    <Content Include="Views\Shared\ProductOwnerBranch.ascx" />
     <Content Include="Views\Shared\ProductSummary.ascx" />
     <Content Include="Views\Shared\RegistrationForm.ascx" />
     <Content Include="Views\Shared\SearchBox.ascx" />

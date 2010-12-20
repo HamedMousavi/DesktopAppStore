@@ -16,18 +16,41 @@ namespace DomainModel.Repository.Sql
             Abuse = 1
         }
 
+
         public static bool LoadProductDiscussions(ProductBase product, int startRow, int endRow)
         {
             bool res = false;
+            if (product.ProductId == null ||
+                !product.ProductId.HasValue)
+                return res;
 
             try
             {
                 // Initiate product forum
                 // For all products discussions ForumId = 0
-                product.Forum.ForumId = 0;
-                product.Forum.UrlName = product.Catalog.UrlName;
-                if (product.ProductId != null && product.ProductId.HasValue)
-                    product.Forum.PageId = product.ProductId.Value;
+                Forum forum = product.Forum;
+                forum.UrlName = product.Catalog.UrlName;
+                forum.ForumId = (Int16)Memory.Forums.ForumType.Product;
+                forum.PageId = product.ProductId.Value;
+
+                res = LoadDiscussions(forum, startRow, endRow);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
+            }
+
+            return res;
+        }
+
+
+        private static bool LoadDiscussions(Forum forum, int startRow, int endRow)
+        {
+            bool res = false;
+
+            try
+            {
+                forum.Clear();
 
                 string query = "MessagesList";
                 using (SqlConnection cnn = new SqlConnection(Configurations.ConnectionString))
@@ -36,16 +59,16 @@ namespace DomainModel.Repository.Sql
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add(new SqlParameter("@ForumId", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Default, 0));
-                        cmd.Parameters.Add(new SqlParameter("@ProductUrl", product.Catalog.UrlName));
+                        cmd.Parameters.Add(new SqlParameter("@ForumId", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Default, forum.ForumId));
+                        cmd.Parameters.Add(new SqlParameter("@PageId", forum.PageId));
                         cmd.Parameters.Add(new SqlParameter("@StartRow", startRow));
                         cmd.Parameters.Add(new SqlParameter("@EndRow", endRow));
 
-                        foreach (SqlParameter Parameter in cmd.Parameters) 
-                        { 
-                            if (Parameter.Value == null) 
-                            { 
-                                Parameter.Value = DBNull.Value; 
+                        foreach (SqlParameter Parameter in cmd.Parameters)
+                        {
+                            if (Parameter.Value == null)
+                            {
+                                Parameter.Value = DBNull.Value;
                             }
                         }
 
@@ -84,15 +107,15 @@ namespace DomainModel.Repository.Sql
                                         // This is a message inside a discussion
                                         // Or a root (a discussion) record so
                                         // Let's find discussion by it's id 
-                                        discussion = product.Forum.FindDiscussion(discussionId);
+                                        discussion = forum.FindDiscussion(discussionId);
                                     }
                                 }
 
                                 // If discussion not found, create and add it
                                 if (discussion == null)
                                 {
-                                    discussion = new Discussion(discussionId, product.Forum);
-                                    product.Forum.Add(discussion);
+                                    discussion = new Discussion(discussionId, forum);
+                                    forum.Add(discussion);
 
                                     if (messageId == discussionId)
                                     {
@@ -154,9 +177,11 @@ namespace DomainModel.Repository.Sql
                             reader.NextResult();
                             if (reader.Read())
                             {
-                                product.Forum.TotalMessageCount = 
+                                forum.TotalMessageCount =
                                     Repository.Utils.Convert.ToInt32(reader["TotalRows"]);
                             }
+
+                            res = true;
                         }
 
                         cnn.Close();
@@ -492,6 +517,38 @@ namespace DomainModel.Repository.Sql
                         cnn.Close();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
+            }
+
+            return res;
+        }
+
+
+        public static bool LoadProfileDiscussions(Membership.UserProfile profile, int startRow, int endRow)
+        {
+            bool res = false;
+            
+            try
+            {
+                // Initiate profile forum
+                // For all profiles discussions ForumId = 1
+                Forum forum = profile.Forum;
+
+                if (forum == null)
+                {
+                    forum = new Forum();
+                    profile.Forum = forum;
+                }
+
+                forum.ForumId = (Int16)Memory.Forums.ForumType.UserProfile;
+                forum.UrlName = string.Empty;
+                forum.PageId = profile.Ownership.UserId;
+
+                res = LoadDiscussions(forum, startRow, endRow);
+
             }
             catch (Exception ex)
             {

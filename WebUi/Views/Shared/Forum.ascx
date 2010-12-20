@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<DomainModel.Entities.Forum>" %>
 
     <div class="forum">
-        <a name="discuss"></a>
+        <a name="discuss" class="hidden"></a>
         <div class="forum_title">
             <%:UiResources.UiTexts.discuss%>
         </div>
@@ -13,9 +13,15 @@
                   if (DomainModel.Security.InputController.IsValid(Model.UrlName))
                   {
             %>
-                        <a href="<%:string.Format("/Products/{0}/Discussions/{1}", Model.UrlName, WebUi.ViewModels.NavigationKeys.DiscussionsNewAction) %>"><%:UiResources.UiTexts.new_discussion%></a>
+                        <a href="<%:string.Format("/Discussions/{0}/{1}/{2}?returnUrl={3}", 
+                                        WebUi.ViewModels.NavigationKeys.DiscussionsNewAction,
+                                        Model.ForumId,
+                                        Model.PageId,
+                                        Request.Url.AbsoluteUri) %>">
+                            <%:UiResources.UiTexts.new_discussion%>
+                        </a>
             <%  
-                  }   
+                  }
               }
               else
               {
@@ -24,15 +30,7 @@
             <%} %>
         </div>
 
-        <% 
-            foreach (DomainModel.Entities.Discussion discussion in Model)
-            {
-        %>      
-                <div class="forum_discussion">
-                    <%:Html.ForumDiscussions(discussion)%>
-                </div>
-        <%
-            }   
-        %>
+        <%Model.ForumPageUrl = Request.Url.AbsoluteUri;%>
+        <%:Html.Forum(Model)%>
         </div>
     </div>

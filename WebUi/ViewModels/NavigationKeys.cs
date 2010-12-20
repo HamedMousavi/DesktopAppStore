@@ -28,10 +28,10 @@ namespace WebUi.ViewModels
         public static string CultureController = "Culture";
 
         public static string DiscussionsController = "Discussions";
-        public static string DiscussionsNewAction = "CreateDiscussion";
-        public static string DiscussionsSaveAction = "SaveDiscussion";
-        public static string DiscussionsDeleteAction = "DeleteDiscussion";
-        public static string DiscussionsReportAction = "ReportDiscussion";
+        public static string DiscussionsNewAction = "Create";
+        public static string DiscussionsSaveAction = "Save";
+        public static string DiscussionsDeleteAction = "Delete";
+        public static string DiscussionsReportAction = "Report";
 
         public static string SearchController = "Search";
         public static string SearchBasicAction = "Basic";

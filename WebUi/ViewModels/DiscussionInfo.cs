@@ -22,23 +22,25 @@ namespace WebUi.ViewModels
         public Int32 MessageToReport { get; set; }
 
         public EditorTypes EditorFor { get; set; }
-        public string Product { get; set; }
 
-        public DiscussionInfo(EditorTypes editorFor, string product)
+        public string ReturnUrl { get; set; }
+
+        public DiscussionInfo(EditorTypes editorFor)
         {
             this.EditorFor = editorFor;
-            this.Product = product;
         }
 
 
-        public DiscussionMessage CreateMessage(string productName, Int32 discussion, Int32 message, bool isParent)
+        public DiscussionMessage CreateMessage(Int16? forumGroup, Int64? forum, Int32 discussion, Int32 message, bool isParent)
         {
             DiscussionMessage msg = new DiscussionMessage();
 
             msg.Id = message;
             msg.IsParent = isParent;
             msg.Discussion = new Discussion(discussion, new Forum());
-            msg.Discussion.Forum.UrlName = productName;
+            msg.Discussion.Forum.UrlName = string.Empty;
+            msg.Discussion.Forum.PageId = forum.Value;
+            msg.Discussion.Forum.ForumId = forumGroup.Value;
 
             msg.Parent = new DiscussionMessage();
 

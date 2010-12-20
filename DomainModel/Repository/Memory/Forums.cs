@@ -13,5 +13,11 @@ namespace DomainModel.Repository.Memory
             Answer = 2,
             Joke = 3
         }
+
+        public enum ForumType
+        {
+            Product = 0,
+            UserProfile = 1
+        }
     }
 }

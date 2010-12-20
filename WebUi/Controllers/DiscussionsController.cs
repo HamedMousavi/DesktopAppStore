@@ -18,81 +18,91 @@ namespace WebUi.Controllers
 
 
 
-        public ActionResult CreateDiscussion(string productName)
+        public ActionResult Create(Int16? group, Int64? forum, string returnUrl)
         {
             // UNDONE: SECURITY CONSIDERATIONS
             ViewModels.DiscussionInfo di = new ViewModels.DiscussionInfo(
-                ViewModels.DiscussionInfo.EditorTypes.Insert, productName);
+                ViewModels.DiscussionInfo.EditorTypes.Insert);
+
+            di.ReturnUrl = returnUrl;
 
             di.MessageToEdit =
-                di.CreateMessage(productName, 0, 0, false);
+                di.CreateMessage(group, forum, 0, 0, false);
 
             return View("Edit", di);
         }
 
 
-        public ActionResult Reply(string productName, Int32? discussion, Int32? message)
+        public ActionResult Reply(Int16? group, Int64? forum, Int32? discussion, Int32? message, string returnUrl)
         {
             // UNDONE: SECURITY CONSIDERATIONS
             ViewModels.DiscussionInfo di = new ViewModels.DiscussionInfo(
-                ViewModels.DiscussionInfo.EditorTypes.Reply, productName);
+                ViewModels.DiscussionInfo.EditorTypes.Reply);
 
             di.MessageToReply =
-                di.CreateMessage(productName, discussion.Value, message.Value, false);
+                di.CreateMessage(group, forum, discussion.Value, message.Value, false);
 
             DomainModel.Repository.Sql.Discussions.LoadMessageById(di.MessageToReply);
 
             di.MessageToEdit =
-                di.CreateMessage(productName, discussion.Value, 0, false);
+                di.CreateMessage(group, forum, discussion.Value, 0, false);
+
+            di.ReturnUrl = returnUrl;
 
             return View("Edit", di);
         }
 
 
-        public ActionResult Edit(string productName, Int32? discussion, Int32? message)
+        public ActionResult Edit(Int16? group, Int64? forum, Int32? discussion, Int32? message, string returnUrl)
         {
             // UNDONE: SECURITY CONSIDERATIONS
             ViewModels.DiscussionInfo di = new ViewModels.DiscussionInfo(
-                ViewModels.DiscussionInfo.EditorTypes.Reply, productName);
+                ViewModels.DiscussionInfo.EditorTypes.Reply);
 
             di.MessageToEdit =
-                di.CreateMessage(productName, discussion.Value, message.Value, false);
+                di.CreateMessage(group, forum, discussion.Value, message.Value, false);
 
             di.MessageToReply =
-                di.CreateMessage(productName, 0, 0, false);
+                di.CreateMessage(group, forum, 0, 0, false);
 
             DomainModel.Repository.Sql.Discussions.LoadMessageAndParent(
                 di.MessageToEdit, di.MessageToReply);
 
+            di.ReturnUrl = returnUrl;
+
             return View("Edit", di);
         }
 
 
-        public ActionResult Delete(string productName, Int32? discussion, Int32? message)
+        public ActionResult Delete(Int16? group, Int64? forum, Int32? discussion, Int32? message, string returnUrl)
         {
             // UNDONE: SECURITY CONSIDERATIONS
             ViewModels.DiscussionInfo di = new ViewModels.DiscussionInfo(
-                ViewModels.DiscussionInfo.EditorTypes.Delete, productName);
+                ViewModels.DiscussionInfo.EditorTypes.Delete);
 
             di.MessageToDelete = message.Value;
+
+            di.ReturnUrl = returnUrl;
 
             return View("Confirm", di);
         }
 
 
-        public ActionResult Report(string productName, Int32? discussion, Int32? message)
+        public ActionResult Report(Int16? group, Int64? forum, Int32? discussion, Int32? message, string returnUrl)
         {
              // UNDONE: SECURITY CONSIDERATIONS
            ViewModels.DiscussionInfo di = new ViewModels.DiscussionInfo(
-                ViewModels.DiscussionInfo.EditorTypes.Report, productName);
+                ViewModels.DiscussionInfo.EditorTypes.Report);
 
             di.MessageToReport = message.Value;
+            di.ReturnUrl = returnUrl;
+            
             return View("Confirm", di);
         }
 
 
         [HttpPost]
-        public ActionResult SaveDiscussion(string Product, Int32? Discussion, Int32? Message, Int32? Parent, string MessageType, string Subject, string Body)
+        public ActionResult Save(Int16? ForumId, Int64? PageId, Int32? Discussion, Int32? Message, Int32? Parent, string MessageType, string Subject, string Body, string returnUrl)
         {
             // UNDONE: SECURITY CONSIDERATIONS
 
@@ -112,9 +122,9 @@ namespace WebUi.Controllers
                 DomainModel.Entities.Discussion(
                 (Discussion != null && Discussion.HasValue) ? Discussion.Value : 0,
                 new DomainModel.Entities.Forum());
-            message.Discussion.Forum.ForumId = 0;
-            message.Discussion.Forum.PageId = 0;
-            message.Discussion.Forum.UrlName = Product;
+            message.Discussion.Forum.ForumId = ForumId.Value;
+            message.Discussion.Forum.PageId = PageId.Value;
+            message.Discussion.Forum.UrlName = string.Empty;
             
             message.Parent = new DomainModel.Entities.DiscussionMessage();
             message.Parent.Id = (Parent != null && Parent.HasValue) ? Parent.Value : 0;
@@ -133,16 +143,13 @@ namespace WebUi.Controllers
             }
             
             // UNDONE: DISPLAY MESSAGE. NEED TO UPDATE ROUTING
-            return RedirectToAction(
-                WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
-                WebUi.ViewModels.NavigationKeys.ProductController,
-                new { productName = Product});
+            return Redirect(returnUrl);
         }
 
 
 
         [HttpPost]
-        public ActionResult DeleteDiscussion(string Product, Int32? Message)
+        public ActionResult Delete(Int64? forum, Int32? Message, string returnUrl)
         {
             // UNDONE: AUTHORIZATION
             // UNDONE: SECURITY
@@ -151,16 +158,13 @@ namespace WebUi.Controllers
                 WebUi.Models.Security.CurrentUser.Id,
                 WebUi.Models.Security.UserIp);
 
-            return RedirectToAction(
-                WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
-                WebUi.ViewModels.NavigationKeys.ProductController,
-                new { productName = Product});
+            return Redirect(returnUrl);
         }
 
 
 
         [HttpPost]
-        public ActionResult ReportDiscussion(string Product, Int32? Message)
+        public ActionResult Report(Int64? forum, Int32? Message, string returnUrl)
         {
             // UNDONE: AUTHORIZATION
             // UNDONE: SECURITY
@@ -169,10 +173,7 @@ namespace WebUi.Controllers
                 WebUi.Models.Security.CurrentUser.Id,
                 WebUi.Models.Security.UserIp);
 
-            return RedirectToAction(
-                WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
-                WebUi.ViewModels.NavigationKeys.ProductController,
-                new { productName = Product});
+            return Redirect(returnUrl);
         }
 
     }

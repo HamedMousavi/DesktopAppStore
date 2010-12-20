@@ -8,11 +8,16 @@ namespace WebUi.HtmlHelpers
 {
     public static class ForumHelpers
     {
-        public static MvcHtmlString ForumDiscussions(this HtmlHelper html, Discussion discussion)
+        public static MvcHtmlString Forum(this HtmlHelper html, Forum forum)
         {
             StringBuilder ret = new StringBuilder();
 
-            ret.Append(ForumMessage(discussion));
+            foreach (Discussion discussion in forum)
+            {
+                ret.Append("<div class=\"forum_discussion\">");
+                ret.Append(ForumMessage(discussion));
+                ret.Append("</div>");
+            }   
 
             return MvcHtmlString.Create(ret.ToString());
         }
@@ -59,33 +64,41 @@ namespace WebUi.HtmlHelpers
             {
                 ret.AppendFormat("<ul>");
 
-                ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Reply/{1}/{2}\">{3}</a></li>",
-                    message.Discussion.Forum.UrlName,
+                ret.AppendFormat("<li><a href=\"/Discussions/Reply/{0}/{1}/{2}/{3}?returnUrl={5}\">{4}</a></li>",
+                    message.Discussion.Forum.ForumId,
+                    message.Discussion.Forum.PageId,
                     message.Discussion.Id,
                     message.Id,
-                    UiResources.UiTexts.reply);
+                    UiResources.UiTexts.reply,
+                    message.Discussion.Forum.ForumPageUrl);
 
                 if (Models.Security.CurrentUser.Id == message.UserId.Value)
                 {
-                    ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Edit/{1}/{2}\">{3}</a></li>",
-                        message.Discussion.Forum.UrlName,
+                    ret.AppendFormat("<li><a href=\"/Discussions/Edit/{0}/{1}/{2}/{3}?returnUrl={5}\">{4}</a></li>",
+                        message.Discussion.Forum.ForumId,
+                        message.Discussion.Forum.PageId,
                         message.Discussion.Id,
                         message.Id,
-                        UiResources.UiTexts.edit_message);
+                        UiResources.UiTexts.edit_message,
+                        message.Discussion.Forum.ForumPageUrl);
 
-                    ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Delete/{1}/{2}\">{3}</a></li>",
-                        message.Discussion.Forum.UrlName,
+                    ret.AppendFormat("<li><a href=\"/Discussions/Delete/{0}/{1}/{2}/{3}?returnUrl={5}\">{4}</a></li>",
+                        message.Discussion.Forum.ForumId,
+                        message.Discussion.Forum.PageId,
                         message.Discussion.Id,
                         message.Id,
-                        UiResources.UiTexts.delete_message);
+                        UiResources.UiTexts.delete_message,
+                        message.Discussion.Forum.ForumPageUrl);
                 }
                 else
                 {
-                    ret.AppendFormat("<li><a href=\"/Products/{0}/Discussions/Report/{1}/{2}\" onclick=\"return ConfirmMessageReport();\">{3}</a></li>",
-                        message.Discussion.Forum.UrlName,
+                    ret.AppendFormat("<li><a href=\"/Discussions/Report/{0}/{1}/{2}/{3}?returnUrl={5}\" onclick=\"return ConfirmMessageReport();\">{4}</a></li>",
+                        message.Discussion.Forum.ForumId,
+                        message.Discussion.Forum.PageId,
                         message.Discussion.Id,
                         message.Id,
-                        UiResources.UiTexts.report_abuse);
+                        UiResources.UiTexts.report_abuse,
+                        message.Discussion.Forum.ForumPageUrl);
 
                 }
 
