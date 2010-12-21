@@ -20,7 +20,8 @@
         <%=message.Content%>
     </div>
 <%
-   } 
+    Html.RenderPartial("Forum", message.Forum);    
+   }
 %>
 
 </asp:Content>

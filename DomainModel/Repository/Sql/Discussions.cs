@@ -557,5 +557,37 @@ namespace DomainModel.Repository.Sql
 
             return res;
         }
+
+
+        public static bool LoadWeblogDiscussion(WeblogEntry entry, int startRow, int endRow)
+        {
+            bool res = false;
+
+            try
+            {
+                // Initiate profile forum
+                // For all profiles discussions ForumId = 1
+                Forum forum = entry.Forum;
+
+                if (forum == null)
+                {
+                    forum = new Forum();
+                    entry.Forum = forum;
+                }
+
+                forum.ForumId = (Int16)Memory.Forums.ForumType.Weblog;
+                forum.UrlName = string.Empty;
+                forum.PageId = entry.EntryId.Value;
+
+                res = LoadDiscussions(forum, startRow, endRow);
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Exception:{0}", ex.ToString()));
+            }
+
+            return res;
+        }
     }
 }

@@ -17,7 +17,8 @@ namespace DomainModel.Repository.Memory
         public enum ForumType
         {
             Product = 0,
-            UserProfile = 1
+            UserProfile = 1,
+            Weblog = 2
         }
     }
 }

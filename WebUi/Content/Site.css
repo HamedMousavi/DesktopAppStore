@@ -1180,7 +1180,7 @@ input#search_term
 .forum
 {
     background-color: #FFFEF8;
-    border: 1px solid #6090C0;
+    border: 1px solid #FFA000;
     padding: 0;
     margin: 10px;
     clear: both;
@@ -1193,8 +1193,9 @@ input#search_term
 
 .forum_title
 {
-    color: #FFFFFF;
-    background-color: #6090C0;
+    background-color: #FFCFA0;
+    border-bottom: 1px solid #FFA000;
+    
     font-weight: bold;
     padding: 6px;
 }
@@ -1207,8 +1208,7 @@ input#search_term
 
 .forum_discussion
 {
-    border-top: 1px solid #6090C0;
-    padding: 2px;
+    border-top: 1px solid #FFA000;
     clear: both;
 }
 
@@ -1325,7 +1325,7 @@ input#search_term
 
 .discussion_control_panel
 {
-    background-color: #F8FAFF;
+    /*background-color: #F8FAFF;*/
     padding: 4px;
 }
 

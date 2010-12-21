@@ -17,5 +17,7 @@ namespace DomainModel.Entities
         public Decimal? Score { get; set; }
         public bool? IsAnnouncement { get; set; }
         public Int64? EntryId { get; set; }
+
+        public Forum Forum { get; set; }
     }
 }

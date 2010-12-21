@@ -27,6 +27,12 @@ namespace WebUi.Controllers
 
             if (msgs != null)
             {
+                foreach (DomainModel.Entities.WeblogEntry entry in msgs)
+                {
+                    // UNDONE: MESSAGE PAGING
+                    DomainModel.Repository.Sql.Discussions.LoadWeblogDiscussion(entry, 0, 1000);
+                }
+
                 return View(msgs);
             }
 

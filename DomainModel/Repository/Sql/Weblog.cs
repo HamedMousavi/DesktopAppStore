@@ -39,6 +39,7 @@ namespace DomainModel.Repository.Sql
                         {
                             WeblogEntry msg = new WeblogEntry();
                             msg.CultureId = cultureId;
+                            msg.EntryId = Utils.Convert.ToInt64(reader["EntryId"]);
                             msg.Url = Utils.Convert.ToString(reader["EntryUrl"]);
                             msg.UploadDate = Utils.Convert.ToDateTime(reader["EntryOnlineFrom"]);
                             msg.ExpirationDate = Utils.Convert.ToDateTime(reader["EntryOnlineTo"]);
@@ -94,6 +95,7 @@ namespace DomainModel.Repository.Sql
                             WeblogEntry message = new WeblogEntry();
 
                             message.CultureId = cultureId;
+                            message.EntryId = Utils.Convert.ToInt64(reader["EntryId"]);
                             message.Url = Utils.Convert.ToString(reader["EntryUrl"]);
                             message.UploadDate = Utils.Convert.ToDateTime(reader["EntryOnlineFrom"]);
                             message.ExpirationDate = Utils.Convert.ToDateTime(reader["EntryOnlineTo"]);
