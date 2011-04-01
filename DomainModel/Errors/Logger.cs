@@ -14,7 +14,7 @@ namespace DomainModel.Errors
         }
 
 
-        internal static void LogException(string userName, string culture, string remoteIp, string url, Exception exception)
+        public static void LogException(string userName, string culture, string remoteIp, string url, Exception exception)
         {
             try
             {

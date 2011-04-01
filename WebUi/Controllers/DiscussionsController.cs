@@ -68,6 +68,16 @@ namespace WebUi.Controllers
             DomainModel.Repository.Sql.Discussions.LoadMessageAndParent(
                 di.MessageToEdit, di.MessageToReply);
 
+            if (di.MessageToEdit.Body != null)
+            {
+                di.MessageToEdit.Body = di.MessageToEdit.Body.Replace("<br />", "\r\n");
+            }
+
+            if (di.MessageToReply.Body != null)
+            {
+                di.MessageToReply.Body = di.MessageToReply.Body.Replace("<br />", "\r\n");
+            }
+
             di.ReturnUrl = returnUrl;
 
             return View("Edit", di);
@@ -105,6 +115,10 @@ namespace WebUi.Controllers
         public ActionResult Save(Int16? ForumId, Int64? PageId, Int32? Discussion, Int32? Message, Int32? Parent, string MessageType, string Subject, string Body, string returnUrl)
         {
             // UNDONE: SECURITY CONSIDERATIONS
+
+
+            Body = Body.Replace("\r\n", "<br />");
+
 
             DomainModel.Entities.DiscussionMessage message = new 
                 DomainModel.Entities.DiscussionMessage();

@@ -259,6 +259,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Desktop.
+        /// </summary>
+        public static string desktop {
+            get {
+                return ResourceManager.GetString("desktop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discuss.
         /// </summary>
         public static string discuss {
@@ -493,6 +502,15 @@ namespace UiResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jobs.
+        /// </summary>
+        public static string jobs {
+            get {
+                return ResourceManager.GetString("jobs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string language {
@@ -552,6 +570,15 @@ namespace UiResources {
         public static string login_to_vote {
             get {
                 return ResourceManager.GetString("login_to_vote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manufactorers.
+        /// </summary>
+        public static string manufactorers {
+            get {
+                return ResourceManager.GetString("manufactorers", resourceCulture);
             }
         }
         
@@ -660,6 +687,15 @@ namespace UiResources {
         public static string message_type_question {
             get {
                 return ResourceManager.GetString("message_type_question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile phone.
+        /// </summary>
+        public static string mobile {
+            get {
+                return ResourceManager.GetString("mobile", resourceCulture);
             }
         }
         
@@ -1560,6 +1596,15 @@ namespace UiResources {
         public static string welcome {
             get {
                 return ResourceManager.GetString("welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are here:.
+        /// </summary>
+        public static string you_are_here {
+            get {
+                return ResourceManager.GetString("you_are_here", resourceCulture);
             }
         }
         

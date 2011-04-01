@@ -235,7 +235,7 @@
     <value>اطلاعات ثبت نام</value>
   </data>
   <data name="remember_me" xml:space="preserve">
-    <value>در بازدیدهای بعدی با این کامپیوتر، از من نام کاربری و رمز عبور نپرس</value>
+    <value>در این کامپیوتر، مشخصات مرا به خاطر بسپار</value>
   </data>
   <data name="search" xml:space="preserve">
     <value>جستجو</value>
@@ -620,5 +620,20 @@
   </data>
   <data name="member_since" xml:space="preserve">
     <value>عضو سایت از: </value>
+  </data>
+  <data name="you_are_here" xml:space="preserve">
+    <value>شما اینجا هستید:</value>
+  </data>
+  <data name="desktop" xml:space="preserve">
+    <value>کامپیوتر</value>
+  </data>
+  <data name="jobs" xml:space="preserve">
+    <value>شغل</value>
+  </data>
+  <data name="manufactorers" xml:space="preserve">
+    <value>تولیدکنندگان</value>
+  </data>
+  <data name="mobile" xml:space="preserve">
+    <value>موبایل</value>
   </data>
 </root>

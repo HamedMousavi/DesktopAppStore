@@ -42,7 +42,6 @@ namespace WebUi.HtmlHelpers
         }
 
 
-
         private static string BeginTitleTag(DomainModel.Entities.Category category, bool selected, WebUi.ViewModels.ListingInfo inf)
         {
             string titleUrl = string.Format(
@@ -62,7 +61,6 @@ namespace WebUi.HtmlHelpers
                 category.CategoryId,
                 selected ? "block" : "none");
         }
-
 
 
         private static string GetSubcategoryTag(HtmlHelper html, DomainModel.Entities.Category category, DomainModel.Entities.Category sub, bool selected, WebUi.ViewModels.ListingInfo inf)
@@ -88,5 +86,39 @@ namespace WebUi.HtmlHelpers
                 selected?"_selected":"",
                 url.ToString());
         }
+
+
+        public static MvcHtmlString SectionList(this HtmlHelper html, WebUi.ViewModels.SectionInfo info)
+        {
+            bool isSelected = false;
+
+            StringBuilder markup = new StringBuilder();
+            markup.Append("<ul>");
+
+            foreach (WebUi.ViewModels.SectionLinkInfo item in info.Menu)
+            {
+                isSelected = string.Equals(
+                    info.Section,
+                    item.SectionName,
+                    StringComparison.InvariantCulture);
+
+                markup.Append("<li>");
+                markup.Append(
+                    System.Web.Mvc.Html.LinkExtensions.ActionLink(
+                        html,
+                        item.Text,
+                        item.Action,
+                        item.Controller,
+                        null,
+                        isSelected ? new { Class = "selected" } : null));
+                markup.Append("</li>");
+            }
+
+            markup.Append("</ul>");
+
+
+            return MvcHtmlString.Create(markup.ToString());
+        }
+
     }
 }

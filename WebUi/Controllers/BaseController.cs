@@ -20,12 +20,12 @@ namespace WebUi.Controllers
                 }
             }
             catch (Exception ex)
-            {
+            {/*
                 DomainModel.Errors.Handler.HandleException(
                     this, 
                     HttpContext, 
                     Models.AppCulture.CurrentCulture.CultureId, 
-                    ex);
+                    ex);*/
             }
 
             base.Initialize(requestContext);
@@ -56,12 +56,12 @@ namespace WebUi.Controllers
                 //Let the request know what went wrong
                 filterContext.Controller.TempData[ViewModels.ViewDataKeys.LastException] =
                     filterContext.Exception;
-
+                /*
                 DomainModel.Errors.Handler.HandleException(
                     filterContext.Controller,
                     filterContext.HttpContext,
                     "",
-                    filterContext.Exception);
+                    filterContext.Exception);*/
             }
             catch (Exception ex)
             {

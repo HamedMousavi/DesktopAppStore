@@ -38,19 +38,30 @@
             </div>
         </div>
 
+
+        <div id="bread_crumb">
+            <%:UiResources.UiTexts.you_are_here%>
+        </div>
+
   
         <div class="colmask threecol">
 	        <div class="colmid">
 		        <div class="colleft">
 			        
                     <div class="col_center">
+                        <div id="sections_bar">
+                            <% Html.RenderAction("SiteSections", "Navigation"); %>
+                        </div>
                         <asp:ContentPlaceHolder ID="CenterContent" runat="server">
                         </asp:ContentPlaceHolder>
+                        <br />
                     </div>
 
                     <div class="<%:UiResources.UiTexts.page_direction%>_col_left">
                         <div id="product_categories">
-                            <div class="section_title"><%:UiResources.UiTexts.software_categories%></div>
+                            <div class="section_title product_categories_title">
+                                <%:UiResources.UiTexts.software_categories%>
+                            </div>
                             <% Html.RenderAction("ProductCategories", "Navigation"); %>
                         </div>
                         <asp:ContentPlaceHolder ID="LeftContent" runat="server">
@@ -58,8 +69,10 @@
                     </div>
 
                     <div class="<%:UiResources.UiTexts.page_direction%>_col_right">
+                    <!--/*
                         <% Html.RenderPartial("Announcements"); %>
-                        <% Html.RenderPartial("FeaturedBlogEntries"); %>
+                        <% Html.RenderPartial("FeaturedBlogEntries"); %> */-->
+                        
                         <% Html.RenderPartial("MemberToolbox"); %>
                         <asp:ContentPlaceHolder ID="RightContent" runat="server">
                         </asp:ContentPlaceHolder>

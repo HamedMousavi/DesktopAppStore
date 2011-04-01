@@ -26,11 +26,12 @@
                 <label for="RememberMe"><%:UiTexts.remember_me%></label>
             </p>
                
-            <p class="submit">
-                <input type="submit" value="<%: UiTexts.enter %>" />
-                <%: Html.ActionLink(UiResources.UiTexts.become_a_member, WebUi.ViewModels.NavigationKeys.MemberRegisterAction, WebUi.ViewModels.NavigationKeys.MemberController)%>
-                <%: Html.ActionLink(UiResources.UiTexts.forgot_your_password, WebUi.ViewModels.NavigationKeys.MemberResetPasswordAction, WebUi.ViewModels.NavigationKeys.MemberController)%>
-            </p> 
+            <ul>
+                <li><input type="submit" value="<%: UiTexts.enter %>" /></li>
+                <li><br /></li>
+                <li><%: Html.ActionLink(UiResources.UiTexts.become_a_member, WebUi.ViewModels.NavigationKeys.MemberRegisterAction, WebUi.ViewModels.NavigationKeys.MemberController)%></li>
+                <li><%: Html.ActionLink(UiResources.UiTexts.forgot_your_password, WebUi.ViewModels.NavigationKeys.MemberResetPasswordAction, WebUi.ViewModels.NavigationKeys.MemberController)%></li>
+            </ul> 
             <input type="hidden" name="ReturnUrl" value="<%:Request.Url.AbsoluteUri%>" />
         </div>
 <% } %>

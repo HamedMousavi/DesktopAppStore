@@ -101,6 +101,7 @@ namespace WebUi
                 {
                     controller = WebUi.ViewModels.NavigationKeys.ProductController,
                     action = WebUi.ViewModels.NavigationKeys.ProductListAction,
+                    section = (string)null,
                     category = (string)null,
                     subcategory = (string)null,
                     page = 1,
@@ -154,20 +155,59 @@ namespace WebUi
                     url = (string)null
                 }
             );
-
+            
             // /Homde
             routes.MapRoute(
                 null,
                 "",
-                new { controller = "Home", action = "Index" }
+                new 
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.HomeController,
+                    action = WebUi.ViewModels.NavigationKeys.IndexAction,
+                    section = "Home",
+                    subSection = "Index"                
+                }
+            );
+
+            // /Desktop/Medical/EMR/Page1/Sort1
+            routes.MapRoute(
+                null,
+                "{controller}/{subSection}/{category}/{subcategory}/Page{page}/Sort{sort}",
+                new 
+                { 
+                    controller = WebUi.ViewModels.NavigationKeys.HomeController, 
+                    action = WebUi.ViewModels.NavigationKeys.IndexAction, // List action?
+                    subSection = "Index",
+                    category = (string)null,
+                    subcategory = (string)null,
+                    page = 1,
+                    sort = 1
+                }
+            );
+
+            // /Desktop/Page1/Sort1
+            routes.MapRoute(
+                null,
+                "{controller}/{subSection}/Page{page}/Sort{sort}",
+                new 
+                { 
+                    controller = WebUi.ViewModels.NavigationKeys.HomeController, 
+                    action = WebUi.ViewModels.NavigationKeys.IndexAction, // List action?
+                    subSection = "Index",
+                    page = 1,
+                    sort = 1
+                }
             );
 
             routes.MapRoute(
                 null,
                 "{controller}/{action}",
-                new { controller = "Home", action = "Index" }
+                new 
+                { 
+                    controller = WebUi.ViewModels.NavigationKeys.HomeController, 
+                    action = WebUi.ViewModels.NavigationKeys.IndexAction  
+                }
             );
-
 /*
             routes.MapRoute(
                 null,
@@ -237,6 +277,43 @@ namespace WebUi
         protected void Session_End(object sender, EventArgs e)
         {
             DomainModel.Repository.Memory.Statistics.Instance.OnlineUserCount--;
+        }
+
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception ex = Server.GetLastError();
+
+            HttpException httpEx = ex as HttpException;
+            if (httpEx != null)
+            {
+                // Try to redirect an inexistent .aspx page to a probably existing .ashx page
+                if (httpEx.GetHttpCode() == 404)
+                {
+                    string page = System.IO.Path.GetFileNameWithoutExtension(Request.PhysicalPath);
+                    HttpContext.Current.Response.Redirect("/Errors/NotFound", true);
+                    return;
+                }
+            }
+
+            string url = "";
+            try
+            {
+                url = HttpContext.Current.Request.Url.ToString();
+            }
+            catch { }
+
+            DomainModel.Errors.Logger.LogException(
+                WebUi.Models.Security.CurrentUser.Id.ToString(),
+                WebUi.Models.AppCulture.CurrentCulture.CultureId,
+                WebUi.Models.Security.UserIp,
+                url,
+                ex);
+
+            if (!Request.PhysicalPath.ToLowerInvariant().Contains("Exception"))
+            {
+                HttpContext.Current.Response.Redirect("Errors/Exception", true);
+            }
         }
     }
 }

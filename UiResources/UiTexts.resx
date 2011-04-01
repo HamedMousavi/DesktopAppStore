@@ -621,4 +621,19 @@
   <data name="member_since" xml:space="preserve">
     <value>Member since: </value>
   </data>
+  <data name="you_are_here" xml:space="preserve">
+    <value>You are here:</value>
+  </data>
+  <data name="desktop" xml:space="preserve">
+    <value>Desktop</value>
+  </data>
+  <data name="jobs" xml:space="preserve">
+    <value>Jobs</value>
+  </data>
+  <data name="manufactorers" xml:space="preserve">
+    <value>Manufactorers</value>
+  </data>
+  <data name="mobile" xml:space="preserve">
+    <value>Mobile phone</value>
+  </data>
 </root>

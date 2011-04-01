@@ -72,14 +72,19 @@
   <ItemGroup>
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CultureController.cs" />
+    <Compile Include="Controllers\DesktopController.cs" />
     <Compile Include="Controllers\DiscussionsController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Controllers\ManufactorersController.cs" />
     <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\MobileController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\WeblogController.cs" />
+    <Compile Include="Controllers\WebsiteController.cs" />
     <Compile Include="HtmlHelpers\CatalogHelpers.cs" />
     <Compile Include="HtmlHelpers\ForumHelpers.cs" />
     <Compile Include="HtmlHelpers\ListingHelpers.cs" />
@@ -102,6 +107,8 @@
     <Compile Include="ViewModels\NavigationKeys.cs" />
     <Compile Include="ViewModels\PagingInfo.cs" />
     <Compile Include="ViewModels\ScreenshotInfo.cs" />
+    <Compile Include="ViewModels\SectionInfo.cs" />
+    <Compile Include="ViewModels\SectionLinkInfo.cs" />
     <Compile Include="ViewModels\ViewDataKeys.cs" />
     <Compile Include="ViewModels\VotingInfo.cs" />
     <Compile Include="ViewPages\BaseViewPage.cs">
@@ -117,6 +124,7 @@
     <Content Include="Content\Images\tickmark.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\SarvSoft.js" />
+    <Content Include="Views\Desktop\Index.aspx" />
     <Content Include="Views\Discussions\Confirm.aspx" />
     <Content Include="Views\Discussions\Edit.aspx" />
     <Content Include="Views\Discussions\Index.aspx" />
@@ -128,6 +136,7 @@
     <Content Include="Views\Members\Settings.aspx" />
     <Content Include="Views\Members\Welcome.aspx" />
     <Content Include="Views\Navigation\ProductCategories.ascx" />
+    <Content Include="Views\Navigation\SectionTabBar.ascx" />
     <Content Include="Views\Products\Catalog.aspx" />
     <Content Include="Views\Products\List.aspx" />
     <Content Include="Views\Products\ProductDemoBar.ascx" />
@@ -156,6 +165,7 @@
     <Content Include="Views\Shared\SoftwareSchool.ascx" />
     <Content Include="Views\Shared\WeblogSummary.ascx" />
     <Content Include="Views\Weblog\Index.aspx" />
+    <Content Include="Views\Website\Index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -7,7 +7,7 @@ namespace WebUi.ViewModels
     public class NavigationKeys
     {
         public static string IndexAction = "Index";
-
+        public static string HomeController = "Home";
 
         public static string ProductController = "Products";
         public static string ProductListAction = "List";
@@ -45,5 +45,15 @@ namespace WebUi.ViewModels
         public static string Errors404Action = "NotFound";
 
         public static string WeblogController = "Weblog";
+
+        public static string DesktopController = "Desktop";
+
+        public static string WebsiteController = "Website";
+
+        public static string MobileController = "Mobile";
+
+        public static string ManufactorersController = "Manufactorers";
+
+        public static string JobsController = "Jobs";
     }
 }
