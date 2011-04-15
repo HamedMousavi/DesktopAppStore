@@ -24,6 +24,7 @@ namespace WebUi.ViewModels
         public static string MemberResetPasswordAction = "ResetPassword";
         public static string MemberProfileAction = "Profile";
         public static string MemberSettingsAction = "Settings";
+        public static string MemberWelcomeAction = "Welcome";
 
         public static string CultureController = "Culture";
 

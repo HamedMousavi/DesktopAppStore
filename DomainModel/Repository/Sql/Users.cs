@@ -113,14 +113,19 @@ namespace DomainModel.Repository.Sql
                     cmd.Parameters.Add(new SqlParameter("@Password", password));
                     cmd.Parameters.Add(new SqlParameter("@MembershipDate", DateTime.UtcNow));
                     cmd.Parameters.Add(new SqlParameter("@AppCulture", culture));
+
+                    SqlParameter retVal = new SqlParameter("@ReturnValue", SqlDbType.Int);
+                    retVal.Direction = ParameterDirection.ReturnValue;
+
+                    cmd.Parameters.Add(retVal);
                     foreach (SqlParameter Parameter in cmd.Parameters) { if (Parameter.Value == null) { Parameter.Value = DBNull.Value; } }
 
                     cnn.Open();
 
-                    object queryRes = cmd.ExecuteScalar();
-                    if (queryRes != null)
+                    object queryRes = cmd.ExecuteNonQuery();
+                    if (retVal != null)
                     {
-                        if (Convert.ToInt32(queryRes) == 0) bRes = true;
+                        if (Convert.ToInt32(retVal.Value) == 0) bRes = true;
                     }
 
                     cnn.Close();

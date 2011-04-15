@@ -36,7 +36,7 @@ namespace DataAdministration.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Temp\\Web\\Content\\Products\\Repository\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Job\\SourceCodes\\Hamed\\Website\\Temp\\Images\\")]
         public string ProductResDirBase {
             get {
                 return ((string)(this["ProductResDirBase"]));

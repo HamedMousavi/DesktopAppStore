@@ -2,7 +2,6 @@
 
 
 <%
-    int index = 0;
     DomainModel.Entities.WeblogEntryCollection messages =
         DomainModel.Repository.Memory.Weblog.Instance.GetMessages(
             WebUi.Models.AppCulture.CurrentCulture.CultureId);
@@ -11,12 +10,6 @@
     {
 %>
         <div class="message_item">
-            <% if (index == 0)
-               { %>
-                    <div class="section_title"><%:message.Title%></div>
-            <% }
-               index++;
-            %>
             <%=message.Brief%>
             <%: Html.ActionLink(
                    UiResources.UiTexts.read_more,

@@ -12,7 +12,7 @@
                 Html.ActionLink(
                     title, 
                     WebUi.ViewModels.NavigationKeys.ProductCatalogAction, 
-                    WebUi.ViewModels.NavigationKeys.ProductController, 
+                    WebUi.ViewModels.NavigationKeys.DesktopController, 
                     new { productName = Model.Catalog.UrlName }, 
                     null)
             %>
@@ -41,7 +41,7 @@
             Html.ActionLink(
                 UiResources.UiTexts.more_details, 
                 WebUi.ViewModels.NavigationKeys.ProductCatalogAction, 
-                WebUi.ViewModels.NavigationKeys.ProductController, 
+                WebUi.ViewModels.NavigationKeys.DesktopController, 
                 new { productName = Model.Catalog.UrlName }, 
                 null)
             %>

@@ -45,7 +45,7 @@ namespace WebUi.HtmlHelpers
         private static string BeginTitleTag(DomainModel.Entities.Category category, bool selected, WebUi.ViewModels.ListingInfo inf)
         {
             string titleUrl = string.Format(
-                "<a onclick=\"return ToggleAccordionList('{0}');\"  href=\"/Products/List/{1}/page{2}/sort{3}\">{4}</a>",
+                "<a onclick=\"return ToggleAccordionList('{0}');\"  href=\"/Desktop/List/{1}/page{2}/sort{3}\">{4}</a>",
                 category.CategoryId,
                 category.UrlName,
                 1,
@@ -69,7 +69,7 @@ namespace WebUi.HtmlHelpers
                        html,
                        sub.CategoryName,
                        WebUi.ViewModels.NavigationKeys.ProductListAction,
-                       WebUi.ViewModels.NavigationKeys.ProductController,
+                       WebUi.ViewModels.NavigationKeys.DesktopController,
                        new
                        {
                            category = category.UrlName,
@@ -109,7 +109,7 @@ namespace WebUi.HtmlHelpers
                         item.Text,
                         item.Action,
                         item.Controller,
-                        null,
+                        item.RouteValues,
                         isSelected ? new { Class = "selected" } : null));
                 markup.Append("</li>");
             }

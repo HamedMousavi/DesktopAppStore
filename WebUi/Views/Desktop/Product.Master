@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
+    
+    <div class="home_section_bar">
+    
+        <div style="height: 20px; vertical-align:middle;">
+            <%
+            string urlName = (string)ViewData["productUrlName"];
+            string productName = (string)ViewData["productName"];
+    
+            if (!string.IsNullOrEmpty(productName))
+            {
+            %>
+                <div class="title" style="float:<%:UiResources.UiTexts.float_left%>;">
+                    <%: Html.ActionLink(
+                        productName,
+                        WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
+                        WebUi.ViewModels.NavigationKeys.DesktopController,
+                        new { productName = urlName }, null) %>
+                </div>
+            <%        
+            }
+            %>
+        </div>
+
+        <% Html.RenderAction("ProductSections", "Navigation"); %>
+
+
+        <asp:ContentPlaceHolder ID="CenterContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="LeftContent" runat="server">
+    <div id="product_categories">
+        <div class="section_title product_categories_title">
+            <%:UiResources.UiTexts.software_categories%>
+        </div>
+        <% Html.RenderAction("ProductCategories", "Navigation"); %>
+    </div>
+    <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+    </asp:ContentPlaceHolder></asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <asp:ContentPlaceHolder ID="RightContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="FooterContent" runat="server">
+    <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+

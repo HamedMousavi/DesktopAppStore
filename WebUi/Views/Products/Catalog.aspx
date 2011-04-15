@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
 
-
+    <div class="home_section_bar">
     <div id="catalog">
 
         <div class="title" style="float:<%:UiResources.UiTexts.float_left%>;">
@@ -154,6 +154,7 @@
             <h2><%:UiResources.UiTexts.producer_comments %></h2>
             <%= Model.Article.Content %>
         </div>
+    </div>
     </div>
 
     <!-- Owner data & logo-->

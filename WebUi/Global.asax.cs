@@ -169,15 +169,56 @@ namespace WebUi
                 }
             );
 
+            // /Products/Yaas/Screenshots
+            routes.MapRoute(null,
+                "{controller}/{productName}/Screenshots/{imageIndex}",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.DesktopController,
+                    action = WebUi.ViewModels.NavigationKeys.ProductScreenshotsAction,
+                    productName = (string)null,
+                    imageIndex = 1
+                }
+            );
+
+
+            // /Desktop/Yaas
+            routes.MapRoute(null,
+                "{controller}/{productName}/Catalog",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.DesktopController,
+                    action = WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
+                    productName = (string)null
+                }
+            );
+
             // /Desktop/Medical/EMR/Page1/Sort1
             routes.MapRoute(
                 null,
-                "{controller}/{subSection}/{category}/{subcategory}/Page{page}/Sort{sort}",
+                "{controller}/{action}/{category}/{subcategory}/Page{page}/Sort{sort}",
                 new 
                 { 
                     controller = WebUi.ViewModels.NavigationKeys.HomeController, 
                     action = WebUi.ViewModels.NavigationKeys.IndexAction, // List action?
-                    subSection = "Index",
+                    category = (string)null,
+                    subcategory = (string)null,
+                    page = 1,
+                    sort = 1
+                }
+            );
+
+
+            // /Products/Medical/EMR
+            // /Products/Medical
+            // /Products
+            routes.MapRoute(null,
+                "{controller}/{action}/{category}/Page{page}/Sort{sort}",
+                new
+                {
+                    controller = WebUi.ViewModels.NavigationKeys.HomeController,
+                    action = WebUi.ViewModels.NavigationKeys.IndexAction,
+                    section = (string)null,
                     category = (string)null,
                     subcategory = (string)null,
                     page = 1,
@@ -188,12 +229,11 @@ namespace WebUi
             // /Desktop/Page1/Sort1
             routes.MapRoute(
                 null,
-                "{controller}/{subSection}/Page{page}/Sort{sort}",
+                "{controller}/{action}/Page{page}/Sort{sort}",
                 new 
                 { 
                     controller = WebUi.ViewModels.NavigationKeys.HomeController, 
                     action = WebUi.ViewModels.NavigationKeys.IndexAction, // List action?
-                    subSection = "Index",
                     page = 1,
                     sort = 1
                 }

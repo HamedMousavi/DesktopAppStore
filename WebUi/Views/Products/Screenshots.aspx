@@ -57,7 +57,7 @@ string catalogUrl = Url.Action(
 
             string target = Url.Action(
                 WebUi.ViewModels.NavigationKeys.ProductScreenshotsAction,
-                WebUi.ViewModels.NavigationKeys.ProductController,
+                WebUi.ViewModels.NavigationKeys.DesktopController,
                 new { imageIndex = index + 1 });
     %> 
             <li class="<%:style%>">

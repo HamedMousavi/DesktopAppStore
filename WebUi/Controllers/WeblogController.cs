@@ -20,23 +20,30 @@ namespace WebUi.Controllers
                     WebUi.ViewModels.NavigationKeys.SecurityController);
             }
 
-            DomainModel.Entities.WeblogEntryCollection msgs =
-                DomainModel.Repository.Memory.Weblog.Instance.GetMessages(
-                    WebUi.Models.AppCulture.CurrentCulture.CultureId,
-                    url);
-
-            if (msgs != null)
+            if (string.IsNullOrWhiteSpace(url))
             {
-                foreach (DomainModel.Entities.WeblogEntry entry in msgs)
+                return View();
+            }
+            else
+            {
+                DomainModel.Entities.WeblogEntryCollection msgs =
+                    DomainModel.Repository.Memory.Weblog.Instance.GetMessages(
+                        WebUi.Models.AppCulture.CurrentCulture.CultureId,
+                        url);
+
+                if (msgs != null)
                 {
-                    // UNDONE: MESSAGE PAGING
-                    DomainModel.Repository.Sql.Discussions.LoadWeblogDiscussion(entry, 0, 1000);
+                    foreach (DomainModel.Entities.WeblogEntry entry in msgs)
+                    {
+                        // UNDONE: MESSAGE PAGING
+                        DomainModel.Repository.Sql.Discussions.LoadWeblogDiscussion(entry, 0, 1000);
+                    }
+
+                    return View(msgs);
                 }
 
-                return View(msgs);
+                return RedirectToAction(ViewModels.NavigationKeys.Errors404Action);
             }
-
-            return RedirectToAction(ViewModels.NavigationKeys.Errors404Action);
         }
 
     }

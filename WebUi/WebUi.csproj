@@ -124,7 +124,13 @@
     <Content Include="Content\Images\tickmark.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\SarvSoft.js" />
+    <Content Include="Views\Desktop\Catalog.aspx" />
     <Content Include="Views\Desktop\Index.aspx" />
+    <Content Include="Views\Desktop\List.aspx" />
+    <Content Include="Views\Desktop\ProductDemoBar.ascx" />
+    <Content Include="Views\Desktop\ProductRating.ascx" />
+    <Content Include="Views\Desktop\ProductVotingBar.ascx" />
+    <Content Include="Views\Desktop\Screenshots.aspx" />
     <Content Include="Views\Discussions\Confirm.aspx" />
     <Content Include="Views\Discussions\Edit.aspx" />
     <Content Include="Views\Discussions\Index.aspx" />
@@ -133,6 +139,7 @@
     <Content Include="Views\Members\Logon.aspx" />
     <Content Include="Views\Members\Profile.aspx" />
     <Content Include="Views\Members\Register.aspx" />
+    <Content Include="Views\Members\ResetPassword.aspx" />
     <Content Include="Views\Members\Settings.aspx" />
     <Content Include="Views\Members\Welcome.aspx" />
     <Content Include="Views\Navigation\ProductCategories.ascx" />
@@ -201,6 +208,12 @@
       <Project>{C669BFD8-D671-428D-B14B-C0667F635956}</Project>
       <Name>UiResources</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Desktop\Product.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Members\Members.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

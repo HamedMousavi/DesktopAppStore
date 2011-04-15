@@ -42,14 +42,13 @@ namespace WebUi.Controllers
         }
 
 
-        public ActionResult SiteSections(string subSection)
+        public ActionResult SiteSections()
         {
             //string action = ControllerContext.ParentActionViewContext.RouteData.Values["action"].ToString();
             string section = ControllerContext.ParentActionViewContext.RouteData.Values["controller"].ToString();
 
             WebUi.ViewModels.SectionInfo info = new ViewModels.SectionInfo();
             info.Section = section;
-            info.SubSection = subSection;
 
             info.Menu = new
                 List<WebUi.ViewModels.SectionLinkInfo>();
@@ -65,7 +64,7 @@ namespace WebUi.Controllers
                 WebUi.ViewModels.NavigationKeys.IndexAction,
                 UiResources.UiTexts.desktop,
                 "Desktop"));
-
+            /*
             info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
                 WebUi.ViewModels.NavigationKeys.WebsiteController,
                 WebUi.ViewModels.NavigationKeys.IndexAction,
@@ -77,7 +76,13 @@ namespace WebUi.Controllers
                 WebUi.ViewModels.NavigationKeys.IndexAction,
                 UiResources.UiTexts.mobile,
                 "Mobile"));
-
+            */
+            info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                WebUi.ViewModels.NavigationKeys.MemberController,
+                WebUi.ViewModels.NavigationKeys.IndexAction,
+                UiResources.UiTexts.members,
+                "Members"));
+            /*
             info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
                 WebUi.ViewModels.NavigationKeys.ManufactorersController,
                 WebUi.ViewModels.NavigationKeys.IndexAction,
@@ -89,12 +94,142 @@ namespace WebUi.Controllers
                 WebUi.ViewModels.NavigationKeys.IndexAction,
                 UiResources.UiTexts.jobs,
                 "Jobs"));
-
+            */
             info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
                 WebUi.ViewModels.NavigationKeys.WeblogController,
                 WebUi.ViewModels.NavigationKeys.IndexAction,
                 UiResources.UiTexts.announcements,
                 "Weblog"));
+
+            return View("SectionTabBar", info);
+        }
+
+
+        public ActionResult DesktopSections()
+        {
+            string controller = string.Empty;
+            string sort = string.Empty;
+            string category = string.Empty;
+            string subcategory = string.Empty;
+
+            try
+            {
+                controller  = ControllerContext.ParentActionViewContext.RouteData.Values["controller"].ToString();
+                sort        = ControllerContext.ParentActionViewContext.RouteData.Values["sort"].ToString();
+                category    = ControllerContext.ParentActionViewContext.RouteData.Values["category"].ToString();
+                subcategory = ControllerContext.ParentActionViewContext.RouteData.Values["subcategory"].ToString();
+            }
+            catch (Exception ex)
+            {
+            }
+
+
+            WebUi.ViewModels.SectionInfo info = new ViewModels.SectionInfo();
+            info.Section = sort;
+            info.Menu = new
+                List<WebUi.ViewModels.SectionLinkInfo>();
+
+            foreach (KeyValuePair<int, string> sortOption in DomainModel.Repository.Memory.ProductList.Instance.SortOptions)
+            {
+                string section = Convert.ToString(sortOption.Key);
+                string text = WebUi.Models.DynamicResources.GetText(sortOption.Value);
+
+                info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                    controller,
+                    "List",
+                    new { category = category, subcategory = subcategory, page = "1", sort = section },
+                    text,
+                    section));
+            }
+
+            return View("SectionTabBar", info);
+        }
+
+
+        public ActionResult ProductSections()
+        {
+            string productName = ControllerContext.ParentActionViewContext.
+                RouteData.Values["productName"].ToString();
+
+            string action = ControllerContext.ParentActionViewContext.
+                RouteData.Values["action"].ToString();
+
+            WebUi.ViewModels.SectionInfo info = new ViewModels.SectionInfo();
+            info.Section = action;
+
+            info.Menu = new
+                List<WebUi.ViewModels.SectionLinkInfo>();
+
+            info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                WebUi.ViewModels.NavigationKeys.DesktopController,
+                WebUi.ViewModels.NavigationKeys.ProductCatalogAction,
+                new { productName = productName },
+                UiResources.UiTexts.specification,
+                WebUi.ViewModels.NavigationKeys.ProductCatalogAction));
+
+            info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                WebUi.ViewModels.NavigationKeys.DesktopController,
+                WebUi.ViewModels.NavigationKeys.ProductScreenshotsAction,
+                new { productName = productName, imageIndex = 1},
+                UiResources.UiTexts.screenshots,
+                WebUi.ViewModels.NavigationKeys.ProductScreenshotsAction));
+
+            return View("SectionTabBar", info);
+        }
+
+
+        public ActionResult MembersSections()
+        {
+            string action = ControllerContext.ParentActionViewContext.
+                RouteData.Values["action"].ToString();
+
+            WebUi.ViewModels.SectionInfo info = new ViewModels.SectionInfo();
+            info.Section = action;
+
+            info.Menu = new
+                List<WebUi.ViewModels.SectionLinkInfo>();
+
+            if (WebUi.Models.Security.CurrentUser == null)
+            {
+
+                info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                    WebUi.ViewModels.NavigationKeys.MemberController,
+                    WebUi.ViewModels.NavigationKeys.MemberLogonAction,
+                    UiResources.UiTexts.log_on,
+                    WebUi.ViewModels.NavigationKeys.MemberLogonAction));
+
+                info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                    WebUi.ViewModels.NavigationKeys.MemberController,
+                    WebUi.ViewModels.NavigationKeys.MemberRegisterAction,
+                    UiResources.UiTexts.registration,
+                    WebUi.ViewModels.NavigationKeys.MemberRegisterAction));
+
+                info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                    WebUi.ViewModels.NavigationKeys.MemberController,
+                    WebUi.ViewModels.NavigationKeys.MemberResetPasswordAction,
+                    UiResources.UiTexts.password_recovery_wizard,
+                    WebUi.ViewModels.NavigationKeys.MemberResetPasswordAction));
+            }
+            else
+            {
+                info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                    WebUi.ViewModels.NavigationKeys.MemberController,
+                    WebUi.ViewModels.NavigationKeys.MemberWelcomeAction,
+                    UiResources.UiTexts.title_welcome,
+                    WebUi.ViewModels.NavigationKeys.MemberWelcomeAction));
+
+                info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                    WebUi.ViewModels.NavigationKeys.MemberController,
+                    WebUi.ViewModels.NavigationKeys.MemberSettingsAction,
+                    UiResources.UiTexts.title_settings,
+                    WebUi.ViewModels.NavigationKeys.MemberSettingsAction));
+
+                info.Menu.Add(new WebUi.ViewModels.SectionLinkInfo(
+                    WebUi.ViewModels.NavigationKeys.MemberController,
+                    WebUi.ViewModels.NavigationKeys.MemberProfileAction,
+                    UiResources.UiTexts.title_profile,
+                    WebUi.ViewModels.NavigationKeys.MemberProfileAction));
+            }
 
             return View("SectionTabBar", info);
         }

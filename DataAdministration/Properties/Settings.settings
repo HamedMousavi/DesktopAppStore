@@ -11,7 +11,7 @@
       <Value Profile="(Default)">Data Source=(local)\SQLExpress;Initial Catalog=PersianSoftware;Persist Security Info=True;User ID=PersianSoftwareWebSite;Password=1aXz%VwO*cG~H_P^n</Value>
     </Setting>
     <Setting Name="ProductResDirBase" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\Temp\Web\Content\Products\Repository\</Value>
+      <Value Profile="(Default)">D:\Job\SourceCodes\Hamed\Website\Temp\Images\</Value>
     </Setting>
     <Setting Name="MaxScreenshotSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">800, 600</Value>

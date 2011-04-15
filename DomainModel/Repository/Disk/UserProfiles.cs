@@ -21,7 +21,7 @@ namespace DomainModel.Repository.Disk
  
              */
             Entities.Picture picture = new Entities.Picture();
-            picture.Url = "/Content/Images/logo.gif";
+            picture.Url = "/Content/Users/7/profile.jpg";
             list.Add(picture);
         }
     }

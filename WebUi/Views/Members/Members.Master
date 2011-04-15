@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
+    
+    <div class="home_section_bar">
+        <% Html.RenderAction("MembersSections", "Navigation"); %>
+
+        <asp:ContentPlaceHolder ID="CenterContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="LeftContent" runat="server">
+    <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+    </asp:ContentPlaceHolder></asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="RightContent" runat="server">
+    <asp:ContentPlaceHolder ID="RightContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="FooterContent" runat="server">
+    <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

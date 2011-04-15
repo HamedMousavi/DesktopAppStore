@@ -5,24 +5,40 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
+    <div class="home_section_bar">
+        <div class="home_content">
+            <div class="page_title"><%:UiResources.UiTexts.announcements%></div>
 
-<% foreach (DomainModel.Entities.WeblogEntry message in Model)
-   {
- %>
+            <% if (Model == null)
+               { %>
+                <div id="messages">
+                    <% Html.RenderPartial("WeblogSummary"); %>
+                </div>
 
-    <div class="message_item">
-        <div class="section_title"><%:message.Title%></div>
-        <div class="info_bar">
-            <%: DomainModel.Tools.DateTime.Convert.ToCulture(
-                                        message.UploadDate,
-                      WebUi.Models.AppCulture.CurrentCulture)%>
+                <% 
+               }
+               else
+               {     
+                   foreach (DomainModel.Entities.WeblogEntry message in Model)
+                   {%>
+
+                    <div class="message_item">
+                        <div class="section_title"><%:message.Title%></div>
+                        <div class="info_bar">
+                            <%: DomainModel.Tools.DateTime.Convert.ToCulture(
+                                                        message.UploadDate,
+                                      WebUi.Models.AppCulture.CurrentCulture)%>
+                        </div>
+                        <%=message.Content%>
+                    </div>
+                    <%
+                    Html.RenderPartial("Forum", message.Forum);    
+                   }
+               }
+               %>
+
         </div>
-        <%=message.Content%>
     </div>
-<%
-    Html.RenderPartial("Forum", message.Forum);    
-   }
-%>
 
 </asp:Content>
 

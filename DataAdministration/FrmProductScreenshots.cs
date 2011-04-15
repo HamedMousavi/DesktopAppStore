@@ -305,7 +305,7 @@ namespace DataAdministration
                     }
                     else
                     {
-                        System.IO.File.Copy(file.FullName, fileName);
+                        System.IO.File.Copy(file.FullName, fileName, true);
                     }
                 }
 

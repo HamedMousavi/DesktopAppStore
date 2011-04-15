@@ -169,10 +169,10 @@
     <value>Language</value>
   </data>
   <data name="log_off" xml:space="preserve">
-    <value>Log Off</value>
+    <value>Log off</value>
   </data>
   <data name="log_on" xml:space="preserve">
-    <value>Log On</value>
+    <value>Log on</value>
   </data>
   <data name="megabytes" xml:space="preserve">
     <value>Megabytes</value>
@@ -190,7 +190,7 @@
     <value>Password</value>
   </data>
   <data name="password_recovery_wizard" xml:space="preserve">
-    <value>Password recovery wizard</value>
+    <value>Password recovery</value>
   </data>
   <data name="persian" xml:space="preserve">
     <value>فارسی</value>
@@ -361,7 +361,7 @@
     <value>Screenshots</value>
   </data>
   <data name="inf_screenshot_thumbs" xml:space="preserve">
-    <value>To see more screenshots thumbnails scroll down. To enlarge a thumbnail click on it.</value>
+    <value>More screenshots -&gt; scroll down</value>
   </data>
   <data name="inf_return_to_catalog" xml:space="preserve">
     <value>Click here to return to {0} product catalog</value>
@@ -451,16 +451,16 @@
     <value>Popularity</value>
   </data>
   <data name="product_list_sort_price" xml:space="preserve">
-    <value>Price(Lower first)</value>
+    <value>Cheapests</value>
   </data>
   <data name="product_list_sort_price_desc" xml:space="preserve">
-    <value>Price(Higher first)</value>
+    <value>Most expensives</value>
   </data>
   <data name="product_list_sort_release" xml:space="preserve">
-    <value>ReleaseDate(Older first)</value>
+    <value>Oldests</value>
   </data>
   <data name="product_list_sort_release_desc" xml:space="preserve">
-    <value>ReleaseDate(Younger first)</value>
+    <value>Newest</value>
   </data>
   <data name="product_list_user_rating" xml:space="preserve">
     <value>Users ratings</value>
@@ -472,7 +472,7 @@
     <value>See more details of this product</value>
   </data>
   <data name="more_images" xml:space="preserve">
-    <value>Click here to see more screenshots</value>
+    <value>Zoom in</value>
   </data>
   <data name="votes" xml:space="preserve">
     <value>Votes</value>
@@ -607,7 +607,7 @@
     <value>Unfortunately it was not possible to save changes. Please try again later.</value>
   </data>
   <data name="title_profile" xml:space="preserve">
-    <value>User profile</value>
+    <value>My page</value>
   </data>
   <data name="contact_admin" xml:space="preserve">
     <value>Contact site admin</value>
@@ -635,5 +635,29 @@
   </data>
   <data name="mobile" xml:space="preserve">
     <value>Mobile phone</value>
+  </data>
+  <data name="unsorted" xml:space="preserve">
+    <value>Not sorted</value>
+  </data>
+  <data name="softwares" xml:space="preserve">
+    <value>Softwares, </value>
+  </data>
+  <data name="all_sections" xml:space="preserve">
+    <value>All Sections</value>
+  </data>
+  <data name="specification" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="software_specifications" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="no_screenshot_available" xml:space="preserve">
+    <value>This product does not have any screenshots.</value>
+  </data>
+  <data name="registration" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="title_welcome" xml:space="preserve">
+    <value>Welcome</value>
   </data>
 </root>

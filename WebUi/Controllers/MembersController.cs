@@ -14,7 +14,14 @@ namespace WebUi.Controllers
 
         public ActionResult Index()
         {
-            return RedirectToAction("Logon");
+            if (WebUi.Models.Security.CurrentUser == null)
+            {
+                return RedirectToAction("Register");
+            }
+            else
+            {
+                return RedirectToAction("Welcome");
+            }
         }
 
 
@@ -75,19 +82,42 @@ namespace WebUi.Controllers
             if (ModelState.IsValid)
             {
                 // Authenticate user
-                DomainModel.Membership.User user = MembershipService.ValidateUser(model.Email, model.Password);
+                DomainModel.Membership.User user = null;
+                try
+                {
+                    user = MembershipService.ValidateUser(model.Email, model.Password);
+                }
+                catch (Exception ex)
+                {
+                }
+
                 if (user != null)
                 {
                     MembershipService.SignIn(user, model.RememberMe);
 
+
+                    string homeUrl = Url.Action(
+                        WebUi.ViewModels.NavigationKeys.IndexAction,
+                        WebUi.ViewModels.NavigationKeys.HomeController,
+                        null);
+
+                    string logonUrl = Url.Action(
+                        WebUi.ViewModels.NavigationKeys.MemberLogonAction,
+                        WebUi.ViewModels.NavigationKeys.MemberController,
+                        null);
+
                     // Redirect to return url or homepage
-                    if (!String.IsNullOrWhiteSpace(model.ReturnUrl))
+                    if (!String.IsNullOrWhiteSpace(model.ReturnUrl) &&
+                        //!model.ReturnUrl.Contains(homeUrl) &&
+                        !model.ReturnUrl.Contains(logonUrl))
                     {
                         return Redirect(model.ReturnUrl);
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction(
+                            ViewModels.NavigationKeys.MemberWelcomeAction, 
+                            ViewModels.NavigationKeys.MemberController);
                     }
                 }
                 else
@@ -141,8 +171,7 @@ namespace WebUi.Controllers
             return View("Register");
         }
 
-
-
+        
         [HttpPost]
         public ActionResult VoteProduct(WebUi.ViewModels.VotingInfo votingInf)
         {
@@ -177,6 +206,7 @@ namespace WebUi.Controllers
 
             return Redirect(votingInf.ReturnUrl);
         }
+
 
 
         public ActionResult Profile(Int32? user)
@@ -233,6 +263,7 @@ namespace WebUi.Controllers
         }
 
 
+
         public ActionResult Settings()
         {
             ViewData[ViewModels.ViewDataKeys.HighlightedMemberMenuItem] = 1;
@@ -269,6 +300,13 @@ namespace WebUi.Controllers
 
 
             return View(WebUi.Models.Security.CurrentUser.Profile);
+        }
+
+
+
+        public ActionResult ResetPassword()
+        {
+            return View();
         }
     }
 }

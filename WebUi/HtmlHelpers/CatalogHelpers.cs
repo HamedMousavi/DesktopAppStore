@@ -42,18 +42,19 @@ namespace WebUi.HtmlHelpers
 
             if (product.Screenshots.Count > 0)
             {
-                ret.Append("<div>");
+                ret.Append("<div class=\"screenshot_zoom\">");
+                ret.AppendFormat("<div class=\"icon_zoom_in float_{0}\"></div>", UiResources.UiTexts.float_left);
+                ret.AppendFormat("<b><a href=\"{0}/Screenshots\">{1}</a></b>",
+                    url,
+                    UiResources.UiTexts.more_images);
+                ret.Append("</div>");
+ 
+               ret.Append("<div>");
                 ret.AppendFormat("<a href=\"{2}/Screenshots\"><img alt=\"Product screenshot:{3}\" src=\"{4}\" width=\"{0}px\" height=\"{1}px\" /></a>",
                     400, 300,
                     url,
                     product.Screenshots[0].Description,
                     product.Screenshots[0].Url);
-                ret.Append("</div>");
-
-                ret.Append("<div>");
-                ret.AppendFormat("<b><a href=\"{0}/Screenshots\">{1}</a></b>",
-                    url,
-                    UiResources.UiTexts.more_images);
                 ret.Append("</div>");
 
             }

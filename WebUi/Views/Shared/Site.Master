@@ -33,8 +33,6 @@
                     <div id="nav_menu">
                     </div>
                 </div>
-
-
             </div>
         </div>
 
@@ -58,14 +56,9 @@
                     </div>
 
                     <div class="<%:UiResources.UiTexts.page_direction%>_col_left">
-                        <div id="product_categories">
-                            <div class="section_title product_categories_title">
-                                <%:UiResources.UiTexts.software_categories%>
-                            </div>
-                            <% Html.RenderAction("ProductCategories", "Navigation"); %>
-                        </div>
                         <asp:ContentPlaceHolder ID="LeftContent" runat="server">
                         </asp:ContentPlaceHolder>
+                        &nbsp
                     </div>
 
                     <div class="<%:UiResources.UiTexts.page_direction%>_col_right">

@@ -190,7 +190,7 @@
     <value>رمز عبور</value>
   </data>
   <data name="password_recovery_wizard" xml:space="preserve">
-    <value>گام به گام بازیابی رمز عبور</value>
+    <value>بازیابی رمز عبور</value>
   </data>
   <data name="persian" xml:space="preserve">
     <value>Persian</value>
@@ -364,7 +364,7 @@
     <value>برای بازگشت به صفحه محصول {0} اینجا کلیک کنید</value>
   </data>
   <data name="inf_screenshot_thumbs" xml:space="preserve">
-    <value>پایین همین صفحه میتوانید لیستی از تصاویر موجود را بیابید. برای دیدن تصویر بزرگتر، روی تصاویر کوچک کلیک کنید.</value>
+    <value>تصاویر بیشتر -&gt; پایین صفحه</value>
   </data>
   <data name="software_categories" xml:space="preserve">
     <value>لیست نرم افزارها</value>
@@ -472,7 +472,7 @@
     <value>مشخصات کامل این نرم افزار</value>
   </data>
   <data name="more_images" xml:space="preserve">
-    <value>برای دیدن تصاویر بیشتر اینجا کلیک کنید</value>
+    <value>بزرگنمایی تصویر</value>
   </data>
   <data name="votes" xml:space="preserve">
     <value>تعداد آرا</value>
@@ -607,7 +607,7 @@
     <value>تغییرات ذخیره شدند</value>
   </data>
   <data name="title_profile" xml:space="preserve">
-    <value>صفحه کاربر</value>
+    <value>صفحه من</value>
   </data>
   <data name="contact_admin" xml:space="preserve">
     <value>تماس با مدیر سایت</value>
@@ -635,5 +635,29 @@
   </data>
   <data name="mobile" xml:space="preserve">
     <value>موبایل</value>
+  </data>
+  <data name="unsorted" xml:space="preserve">
+    <value>نامرتب</value>
+  </data>
+  <data name="softwares" xml:space="preserve">
+    <value>نرم‌افزارهای </value>
+  </data>
+  <data name="all_sections" xml:space="preserve">
+    <value>تمام دسته ها</value>
+  </data>
+  <data name="specification" xml:space="preserve">
+    <value>مشخصات</value>
+  </data>
+  <data name="software_specifications" xml:space="preserve">
+    <value>مشخصات نرم افزار</value>
+  </data>
+  <data name="no_screenshot_available" xml:space="preserve">
+    <value>این محصول تصویری برای نمایش ندارد.</value>
+  </data>
+  <data name="registration" xml:space="preserve">
+    <value>عضویت</value>
+  </data>
+  <data name="title_welcome" xml:space="preserve">
+    <value>خوش آمدید</value>
   </data>
 </root>
